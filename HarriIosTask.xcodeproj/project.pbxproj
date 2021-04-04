@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,9 +13,13 @@
 		76BEEFD92619D8F500AD0321 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76BEEFD72619D8F500AD0321 /* Main.storyboard */; };
 		76BEEFDB2619D90100AD0321 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76BEEFDA2619D90100AD0321 /* Assets.xcassets */; };
 		76BEEFDE2619D90100AD0321 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76BEEFDC2619D90100AD0321 /* LaunchScreen.storyboard */; };
+		76BEEFE82619DA7500AD0321 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFE72619DA7500AD0321 /* User.swift */; };
+		76BEEFEB2619DBDA00AD0321 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFEA2619DBDA00AD0321 /* UserTableViewCell.swift */; };
+		AAB3ED51C2C673D55A725450 /* Pods_HarriIosTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73AEFEF0184910AD57C2EBF9 /* Pods_HarriIosTask.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		73AEFEF0184910AD57C2EBF9 /* Pods_HarriIosTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HarriIosTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76BEEFCE2619D8F500AD0321 /* HarriIosTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarriIosTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76BEEFD12619D8F500AD0321 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76BEEFD32619D8F500AD0321 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +28,10 @@
 		76BEEFDA2619D90100AD0321 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76BEEFDD2619D90100AD0321 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76BEEFDF2619D90100AD0321 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76BEEFE72619DA7500AD0321 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		76BEEFEA2619DBDA00AD0321 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		9D4C55E279BCA97AC91F54A4 /* Pods-HarriIosTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarriIosTask.release.xcconfig"; path = "Target Support Files/Pods-HarriIosTask/Pods-HarriIosTask.release.xcconfig"; sourceTree = "<group>"; };
+		AB509C1364E2C818CFC4710E /* Pods-HarriIosTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarriIosTask.debug.xcconfig"; path = "Target Support Files/Pods-HarriIosTask/Pods-HarriIosTask.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +39,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAB3ED51C2C673D55A725450 /* Pods_HarriIosTask.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		121098378366EEB43FDF9CF6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AB509C1364E2C818CFC4710E /* Pods-HarriIosTask.debug.xcconfig */,
+				9D4C55E279BCA97AC91F54A4 /* Pods-HarriIosTask.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		76BEEFC52619D8F500AD0321 = {
 			isa = PBXGroup;
 			children = (
 				76BEEFD02619D8F500AD0321 /* HarriIosTask */,
 				76BEEFCF2619D8F500AD0321 /* Products */,
+				121098378366EEB43FDF9CF6 /* Pods */,
+				9E1FAF8EDCB8AE17D62A7A0D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,8 +83,18 @@
 				76BEEFDA2619D90100AD0321 /* Assets.xcassets */,
 				76BEEFDC2619D90100AD0321 /* LaunchScreen.storyboard */,
 				76BEEFDF2619D90100AD0321 /* Info.plist */,
+				76BEEFE72619DA7500AD0321 /* User.swift */,
+				76BEEFEA2619DBDA00AD0321 /* UserTableViewCell.swift */,
 			);
 			path = HarriIosTask;
+			sourceTree = "<group>";
+		};
+		9E1FAF8EDCB8AE17D62A7A0D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				73AEFEF0184910AD57C2EBF9 /* Pods_HarriIosTask.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 76BEEFE22619D90100AD0321 /* Build configuration list for PBXNativeTarget "HarriIosTask" */;
 			buildPhases = (
+				EACB8954ECFBB6062D919AC2 /* [CP] Check Pods Manifest.lock */,
 				76BEEFCA2619D8F500AD0321 /* Sources */,
 				76BEEFCB2619D8F500AD0321 /* Frameworks */,
 				76BEEFCC2619D8F500AD0321 /* Resources */,
+				6C8692E9D6E0B03EC0A7EE5B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,14 +164,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6C8692E9D6E0B03EC0A7EE5B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HarriIosTask/Pods-HarriIosTask-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HarriIosTask/Pods-HarriIosTask-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HarriIosTask/Pods-HarriIosTask-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EACB8954ECFBB6062D919AC2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HarriIosTask-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		76BEEFCA2619D8F500AD0321 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76BEEFE82619DA7500AD0321 /* User.swift in Sources */,
 				76BEEFD62619D8F500AD0321 /* ViewController.swift in Sources */,
 				76BEEFD22619D8F500AD0321 /* AppDelegate.swift in Sources */,
 				76BEEFD42619D8F500AD0321 /* SceneDelegate.swift in Sources */,
+				76BEEFEB2619DBDA00AD0321 /* UserTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +359,7 @@
 		};
 		76BEEFE32619D90100AD0321 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB509C1364E2C818CFC4710E /* Pods-HarriIosTask.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -301,6 +378,7 @@
 		};
 		76BEEFE42619D90100AD0321 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D4C55E279BCA97AC91F54A4 /* Pods-HarriIosTask.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
