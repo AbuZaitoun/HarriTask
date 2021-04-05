@@ -5,34 +5,34 @@
 //  Created by Anas AbuZaitoun on 05/04/2021.
 //
 import Foundation
+
 class UserViewModel {
-    
-    private var userAPI: UserAPI!
-    private(set) var userData: [User]? {
-        didSet {
-            self.bindUserViewModelToController()
-        }
-    }
-    
     var bindUserViewModelToController : (() -> ()) = {}
+    var firstJob: Bool?
     var name: String
     var locationText: String
     var positionText: String
+    var pictureURL: String?
+    
     init(with: User) {
         self.name = with.fullName
         self.locationText = with.locationText
         self.positionText = with.positionText
-//        userAPI = UserAPI()
-//        fetchData()
-    }
-
-    
-    var bindEmployeeViewModelToController : (() -> ()) = {}
-    @objc func fetchData(){
-        self.userAPI.fetchUsers { (userData) in
-            var temp = self.userData
-            temp?.append(contentsOf: userData.all)
-            self.userData = userData.all
+        self.firstJob = with.isFirstJob
+        if let uuid = with.profileImageUUID {
+            self.pictureURL = "https://d7f8bv52wga7t.cloudfront.net/users/\(with.id)/user_profile/\(uuid)/240_240.jpeg"
         }
     }
+//        userAPI = UserAPI()
+//        fetchData()
+    
+ 
+    var bindEmployeeViewModelToController : (() -> ()) = {}
+//    @objc func fetchData(){
+//        self.userAPI.fetchUsers { (userData) in
+//            var temp = self.userData
+//            temp?.append(contentsOf: userData.all)
+//            self.userData = userData.all
+//        }
+//    }
 }

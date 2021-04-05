@@ -9,25 +9,23 @@ import UIKit
 import Alamofire
 
 class ViewController: UIViewController {
-
-    private let URL_STRING = "https://gateway.harridev.com/core/api/v1/harri_search/search_users"
-    
     @IBOutlet var mainTableView: UITableView!
-    
     private var userViewModel: UserViewModel!
+    private var userNetworkManager: UserNetworkManager!
     var refreshControl = UIRefreshControl()
     var data: [User] = []
+    var total = 0
     var isLoading = false
-    var start = 0
-    var params: [String: Any]?
-    let size = 20
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setTableViewDelegates()
         self.setupPullToRefresh()
-        self.requestData()
-        self.callToViewModelForUIUpdate()
+        self.setupNetworkManager()
+        
+        
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
     }
     
     func setTableViewDelegates() {
@@ -36,35 +34,27 @@ class ViewController: UIViewController {
     }
     func setupPullToRefresh(){
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        refreshControl.addTarget(self, action: #selector(self.userViewModel.fetchData), for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(self.requestData), for: .valueChanged)
         mainTableView.addSubview(refreshControl)
     }
-    func callToViewModelForUIUpdate() {
-//        self.userViewModel = UserViewModel()
-//        self.userViewModel.bindUserViewModelToController = {
-//            self.mainTableView.reloadData()
-//        }
+    func setupNetworkManager(){
+        self.userNetworkManager = UserNetworkManager()
+        self.userNetworkManager.fetchUsers(completion: {(users) in
+            self.onCompletion(users: users)
+        })
     }
     @objc func requestData(){
-        if !self.isLoading {
-            self.isLoading = true
-            
-            params = ["size":size, "start":start, "locations":["40.7127753","-74.0059728"]]
-            AF.request(URL_STRING, method: .post, parameters: params, encoding: JSONEncoding.default).validate().responseDecodable(of: ResponseData.self) { response in
-                // TO-DO: Fix retained cycle presented by self
-                print(response)
-                guard let responseData = response.value
-                else {
-                    self.refreshControl.endRefreshing()
-                    return
-                }
-                self.data.append(contentsOf: responseData.data.all)
-                self.mainTableView.reloadData()
-                self.refreshControl.endRefreshing()
-                self.isLoading = false
-                self.start = self.start + self.size
-            }
-        }
+        self.userNetworkManager.fetchUsers(completion: {(users) in
+            self.onCompletion(users: users)
+            self.refreshControl.endRefreshing()
+            self.isLoading = false
+        })
+    }
+    
+    func onCompletion(users: Users){
+        self.data.append(contentsOf: users.all)
+        self.total = users.hits
+        self.mainTableView.reloadData()
     }
 }
 
@@ -74,10 +64,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) as! UserTableViewCell
             cell.configure(with: UserViewModel(with: data[indexPath.row]))
             return cell
-        }else {
+        }else if (self.data.count < self.total){
             let cell = tableView.dequeueReusableCell(withIdentifier: "LoadingCell", for: indexPath) as! LoadingTableViewCell
             cell.activityIndicator.startAnimating()
             return cell
+        }else {
+            return UITableViewCell()
         }
     }
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -93,11 +85,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-            let offsetY = scrollView.contentOffset.y
-            let contentHeight = scrollView.contentSize.height
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
 
-            if (offsetY > contentHeight - scrollView.frame.height * 4) && !isLoading {
-                self.requestData()
-            }
+        if (offsetY > contentHeight - scrollView.frame.height * 4) && !isLoading {
+            self.userNetworkManager.fetchUsers(completion: {(users) in
+                self.onCompletion(users: users)
+            })
         }
+    }
 }

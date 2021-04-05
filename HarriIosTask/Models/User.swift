@@ -4,6 +4,7 @@
 //
 //  Created by Anas AbuZaitoun on 04/04/2021.
 //
+import Foundation
 
 struct User: Decodable {
     var firstName: String
@@ -18,7 +19,7 @@ struct User: Decodable {
         if isFirstJob ?? false {
             return "Looking for first job"
         }else if let positionName = self.position?.name{
-            return positionName
+            return positionName + ", "
         }else {
             return "Looking for first job"
         }
@@ -43,5 +44,24 @@ struct User: Decodable {
         case position
         case location
         case profileImageUUID
+    }
+}
+
+
+struct Users: Decodable {
+    var hits: Int
+    var all: [User]
+    
+    enum CodingKeys: String, CodingKey {
+        case hits
+        case all = "results"
+    }
+}
+
+struct ResponseData: Decodable {
+    var data: Users
+    
+    enum CodingKeys: String, CodingKey {
+        case data
     }
 }
