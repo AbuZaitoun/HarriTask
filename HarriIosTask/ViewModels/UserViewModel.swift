@@ -4,17 +4,29 @@
 //
 //  Created by Anas AbuZaitoun on 05/04/2021.
 //
-
-struct UserViewModel {
-    var name: String
-    var locationText: String
-    var jobText: String
-    var pictureLink: String
+import Foundation
+class UserViewModel {
     
-    init(with: User) {
-        self.name = with.fullName
-        self.locationText = with.locationText
-        self.jobText = with.positionText
-        self.pictureLink = ""
+    private var userAPI: UserAPI!
+    private(set) var userData: [User]? {
+        didSet {
+            self.bindUserViewModelToController()
+        }
+    }
+    
+    var bindUserViewModelToController : (() -> ()) = {}
+
+    init() {
+        userAPI = UserAPI()
+        fetchData()
+    }
+    
+    var bindEmployeeViewModelToController : (() -> ()) = {}
+    @objc func fetchData(){
+        self.userAPI.fetchUsers { (userData) in
+            var temp = self.userData
+            temp?.append(contentsOf: userData.all)
+            self.userData = userData.all
+        }
     }
 }

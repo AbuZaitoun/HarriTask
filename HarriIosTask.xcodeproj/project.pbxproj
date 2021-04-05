@@ -13,6 +13,8 @@
 		76392470261B15A8009097A6 /* UserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7639246F261B15A8009097A6 /* UserLocation.swift */; };
 		7639247A261B4ADD009097A6 /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76392478261B4ADD009097A6 /* LoadingTableViewCell.swift */; };
 		76392480261B564B009097A6 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7639247F261B564B009097A6 /* UserViewModel.swift */; };
+		76392484261B5EF9009097A6 /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76392483261B5EF9009097A6 /* UserAPI.swift */; };
+		76392489261B741D009097A6 /* UserTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76392488261B741D009097A6 /* UserTableViewDataSource.swift */; };
 		76BEEFD22619D8F500AD0321 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD12619D8F500AD0321 /* AppDelegate.swift */; };
 		76BEEFD42619D8F500AD0321 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD32619D8F500AD0321 /* SceneDelegate.swift */; };
 		76BEEFD62619D8F500AD0321 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD52619D8F500AD0321 /* ViewController.swift */; };
@@ -32,6 +34,8 @@
 		7639246F261B15A8009097A6 /* UserLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocation.swift; sourceTree = "<group>"; };
 		76392478261B4ADD009097A6 /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
 		7639247F261B564B009097A6 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		76392483261B5EF9009097A6 /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
+		76392488261B741D009097A6 /* UserTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewDataSource.swift; sourceTree = "<group>"; };
 		76BEEFCE2619D8F500AD0321 /* HarriIosTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarriIosTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76BEEFD12619D8F500AD0321 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76BEEFD32619D8F500AD0321 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,8 +96,17 @@
 			isa = PBXGroup;
 			children = (
 				7639247F261B564B009097A6 /* UserViewModel.swift */,
+				76392488261B741D009097A6 /* UserTableViewDataSource.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		76392482261B5EE9009097A6 /* API Services */ = {
+			isa = PBXGroup;
+			children = (
+				76392483261B5EF9009097A6 /* UserAPI.swift */,
+			);
+			path = "API Services";
 			sourceTree = "<group>";
 		};
 		76BEEFC52619D8F500AD0321 = {
@@ -117,6 +130,7 @@
 		76BEEFD02619D8F500AD0321 /* HarriIosTask */ = {
 			isa = PBXGroup;
 			children = (
+				76392482261B5EE9009097A6 /* API Services */,
 				7639247E261B563E009097A6 /* ViewModels */,
 				7639246D261B148C009097A6 /* Views */,
 				7639246C261B1475009097A6 /* Models */,
@@ -258,6 +272,8 @@
 				76BEEFE82619DA7500AD0321 /* User.swift in Sources */,
 				76392467261B00D5009097A6 /* ResponseData.swift in Sources */,
 				76BEEFD62619D8F500AD0321 /* ViewController.swift in Sources */,
+				76392484261B5EF9009097A6 /* UserAPI.swift in Sources */,
+				76392489261B741D009097A6 /* UserTableViewDataSource.swift in Sources */,
 				76392470261B15A8009097A6 /* UserLocation.swift in Sources */,
 				76BEEFD22619D8F500AD0321 /* AppDelegate.swift in Sources */,
 				76BEEFD42619D8F500AD0321 /* SceneDelegate.swift in Sources */,
