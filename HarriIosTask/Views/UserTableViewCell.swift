@@ -22,14 +22,13 @@ class UserTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     
-    func configure(with: User){
-        self.nameLabel.text = with.fullName
+    func configure(with: UserViewModel){
+        self.nameLabel.text = with.name
         self.jobLabel.text = with.positionText
         self.locationLabel.text = with.locationText
-        self.profilePicture.setup(imageUrl: with.imageURL ?? "", placeHolderImage: UIImage(named: "squirrel.jpeg") ,fullName: with.fullName)
+//        self.profilePicture.setup(imageUrl: with.imageURL ?? "", placeHolderImage: UIImage(named: "squirrel.jpeg") ,fullName: with.fullName)
     }
 
 }

@@ -15,11 +15,17 @@ class UserViewModel {
     }
     
     var bindUserViewModelToController : (() -> ()) = {}
-
-    init() {
-        userAPI = UserAPI()
-        fetchData()
+    var name: String
+    var locationText: String
+    var positionText: String
+    init(with: User) {
+        self.name = with.fullName
+        self.locationText = with.locationText
+        self.positionText = with.positionText
+//        userAPI = UserAPI()
+//        fetchData()
     }
+
     
     var bindEmployeeViewModelToController : (() -> ()) = {}
     @objc func fetchData(){
