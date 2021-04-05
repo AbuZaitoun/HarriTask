@@ -28,10 +28,11 @@ class UserTableViewCell: UITableViewCell {
         self.jobLabel.text = with.positionText
         if with.firstJob ?? false {
             self.locationLabel.text = ""
-            self.jobLabel.font = UIFont(name: "OpenSans-Italic", size: 14);
+            self.jobLabel.textColor = UIColor(red: 0.26, green: 0.26, blue: 0.26, alpha: 1)
+            self.jobLabel.font = UIFont(name: "OpenSans-Italic", size: 12)
         }else{
             self.locationLabel.text = with.locationText
-            self.jobLabel.font = UIFont(name: "OpenSans-Bold", size: 14)
+            self.jobLabel.font = UIFont(name: "OpenSans-SemiBold", size: 14)
         }
         self.profilePicture.layer.cornerRadius = self.profilePicture.frame.size.height/2
         self.profilePicture.setup(imageUrl: with.pictureURL ?? "", placeHolderImage: UIImage(named: "squirrel.jpeg") ,fullName: with.name)

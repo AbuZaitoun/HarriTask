@@ -17,11 +17,11 @@ struct User: Decodable {
     
     var positionText: String {
         if isFirstJob ?? false {
-            return "Looking for first job"
+            return "Is looking for their first job"
         }else if let positionName = self.position?.name{
             return positionName + ", "
         }else {
-            return "Looking for first job"
+            return "Is looking for their first job"
         }
     }
     var locationText: String {

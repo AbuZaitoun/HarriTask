@@ -12,21 +12,19 @@ class UserNetworkManager {
     var size = 20
     var start = 0
     
-    func fetchUsers(completion : @escaping (Users) -> ()){
+    func fetchUsers(refresh: Bool, completion : @escaping (Users) -> ()){
+        if refresh {
+            start = 0
+        }
         let params = ["size":size, "start":start, "locations":["40.7127753","-74.0059728"]] as [String : Any]
         AF.request(URL_STRING, method: .post, parameters: params, encoding: JSONEncoding.default).validate().responseDecodable(of: ResponseData.self) { response in
             // TO-DO: Fix retained cycle presented by self
             print(response)
             guard let responseData = response.value
             else {
-//                self.refreshControl.endRefreshing()
                 return
             }
             completion(responseData.data)
-//            self.data.append(contentsOf: responseData.data.all)
-//            self.mainTableView.reloadData()
-//            self.refreshControl.endRefreshing()
-//            self.isLoading = false
             self.start = self.start + self.size
         }
     }

@@ -12,6 +12,9 @@
 		7639247A261B4ADD009097A6 /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76392478261B4ADD009097A6 /* LoadingTableViewCell.swift */; };
 		76392480261B564B009097A6 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7639247F261B564B009097A6 /* UserViewModel.swift */; };
 		76392484261B5EF9009097A6 /* UserNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76392483261B5EF9009097A6 /* UserNetworkManager.swift */; };
+		763924A1261BCC02009097A6 /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7639249F261BCBFA009097A6 /* OpenSans-Italic.ttf */; };
+		763924A3261BCC05009097A6 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7639249D261BCBFA009097A6 /* OpenSans-Regular.ttf */; };
+		763924A5261BCC08009097A6 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7639249E261BCBFA009097A6 /* OpenSans-SemiBold.ttf */; };
 		76BEEFD22619D8F500AD0321 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD12619D8F500AD0321 /* AppDelegate.swift */; };
 		76BEEFD42619D8F500AD0321 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD32619D8F500AD0321 /* SceneDelegate.swift */; };
 		76BEEFD62619D8F500AD0321 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD52619D8F500AD0321 /* ViewController.swift */; };
@@ -30,6 +33,9 @@
 		76392478261B4ADD009097A6 /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
 		7639247F261B564B009097A6 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		76392483261B5EF9009097A6 /* UserNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNetworkManager.swift; sourceTree = "<group>"; };
+		7639249D261BCBFA009097A6 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		7639249E261BCBFA009097A6 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		7639249F261BCBFA009097A6 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
 		76BEEFCE2619D8F500AD0321 /* HarriIosTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarriIosTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76BEEFD12619D8F500AD0321 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76BEEFD32619D8F500AD0321 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,9 +106,20 @@
 			path = "API Services";
 			sourceTree = "<group>";
 		};
+		7639249C261BCBF3009097A6 /* font */ = {
+			isa = PBXGroup;
+			children = (
+				7639249F261BCBFA009097A6 /* OpenSans-Italic.ttf */,
+				7639249D261BCBFA009097A6 /* OpenSans-Regular.ttf */,
+				7639249E261BCBFA009097A6 /* OpenSans-SemiBold.ttf */,
+			);
+			path = font;
+			sourceTree = "<group>";
+		};
 		76BEEFC52619D8F500AD0321 = {
 			isa = PBXGroup;
 			children = (
+				7639249C261BCBF3009097A6 /* font */,
 				76BEEFD02619D8F500AD0321 /* HarriIosTask */,
 				76BEEFCF2619D8F500AD0321 /* Products */,
 				121098378366EEB43FDF9CF6 /* Pods */,
@@ -203,8 +220,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				763924A3261BCC05009097A6 /* OpenSans-Regular.ttf in Resources */,
 				76BEEFDE2619D90100AD0321 /* LaunchScreen.storyboard in Resources */,
+				763924A1261BCC02009097A6 /* OpenSans-Italic.ttf in Resources */,
 				76BEEFDB2619D90100AD0321 /* Assets.xcassets in Resources */,
+				763924A5261BCC08009097A6 /* OpenSans-SemiBold.ttf in Resources */,
 				76BEEFD92619D8F500AD0321 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

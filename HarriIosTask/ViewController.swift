@@ -24,8 +24,9 @@ class ViewController: UIViewController {
         self.setupNetworkManager()
         
         
-        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
-        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        let navbarFont = UIFont(name: "OpenSans-Regular", size: 21)
+
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navbarFont, NSAttributedString.Key.foregroundColor:UIColor.white]
     }
     
     func setTableViewDelegates() {
@@ -39,15 +40,17 @@ class ViewController: UIViewController {
     }
     func setupNetworkManager(){
         self.userNetworkManager = UserNetworkManager()
-        self.userNetworkManager.fetchUsers(completion: {(users) in
+        self.userNetworkManager.fetchUsers(refresh: false, completion: {(users) in
             self.onCompletion(users: users)
         })
     }
     @objc func requestData(){
-        self.userNetworkManager.fetchUsers(completion: {(users) in
-            self.onCompletion(users: users)
+        self.userNetworkManager.fetchUsers(refresh: true, completion: {(users) in
+            self.data = users.all
             self.refreshControl.endRefreshing()
             self.isLoading = false
+            self.total = users.hits
+            self.mainTableView.reloadData()
         })
     }
     
@@ -55,6 +58,7 @@ class ViewController: UIViewController {
         self.data.append(contentsOf: users.all)
         self.total = users.hits
         self.mainTableView.reloadData()
+        self.isLoading = false
     }
 }
 
@@ -88,8 +92,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
 
-        if (offsetY > contentHeight - scrollView.frame.height * 4) && !isLoading {
-            self.userNetworkManager.fetchUsers(completion: {(users) in
+        if (offsetY > contentHeight - scrollView.frame.height) && !isLoading && self.data.count < self.total {
+            isLoading = true
+            self.userNetworkManager.fetchUsers(refresh: false, completion: {(users) in
                 self.onCompletion(users: users)
             })
         }
