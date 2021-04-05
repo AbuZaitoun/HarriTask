@@ -21,22 +21,46 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MyCell" id="rqc-Ud-7eZ" customClass="UserTableViewCell" customModule="HarriIosTask" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="66.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rqc-Ud-7eZ" id="MXN-eu-qpD">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="66.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jd7-n5-qFD">
-                                                    <rect key="frame" x="20" y="11" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdZ-Hy-xrG">
+                                                    <rect key="frame" x="8" y="37.5" width="41.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mz9-s8-eUh">
+                                                    <rect key="frame" x="57.5" y="37.5" width="348.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jd7-n5-qFD">
+                                                    <rect key="frame" x="8" y="8" width="398" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="OdZ-Hy-xrG" firstAttribute="top" secondItem="jd7-n5-qFD" secondAttribute="bottom" constant="8" id="4hz-fF-R20"/>
+                                                <constraint firstItem="jd7-n5-qFD" firstAttribute="top" secondItem="MXN-eu-qpD" secondAttribute="top" constant="8" id="MPn-XW-e5u"/>
+                                                <constraint firstItem="OdZ-Hy-xrG" firstAttribute="leading" secondItem="MXN-eu-qpD" secondAttribute="leading" constant="8" id="aGr-hx-FiA"/>
+                                                <constraint firstItem="Mz9-s8-eUh" firstAttribute="leading" secondItem="OdZ-Hy-xrG" secondAttribute="trailing" constant="8" id="aQQ-Nk-aTM"/>
+                                                <constraint firstAttribute="trailing" secondItem="Mz9-s8-eUh" secondAttribute="trailing" constant="8" id="fbn-FJ-b7v"/>
+                                                <constraint firstAttribute="bottom" secondItem="OdZ-Hy-xrG" secondAttribute="bottom" constant="8" id="hnY-Ga-lUM"/>
+                                                <constraint firstAttribute="bottom" secondItem="Mz9-s8-eUh" secondAttribute="bottom" constant="8" id="lwf-zk-aOv"/>
+                                                <constraint firstItem="jd7-n5-qFD" firstAttribute="leading" secondItem="MXN-eu-qpD" secondAttribute="leading" constant="8" id="o1i-iu-tJC"/>
+                                                <constraint firstAttribute="trailing" secondItem="jd7-n5-qFD" secondAttribute="trailing" constant="8" id="qlz-eI-diR"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="jobLabel" destination="OdZ-Hy-xrG" id="1dS-vN-TRD"/>
+                                            <outlet property="locationLabel" destination="Mz9-s8-eUh" id="Ksr-LG-9K3"/>
                                             <outlet property="nameLabel" destination="jd7-n5-qFD" id="55h-Dv-QGV"/>
                                         </connections>
                                     </tableViewCell>

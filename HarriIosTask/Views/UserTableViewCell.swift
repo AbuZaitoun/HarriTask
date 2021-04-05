@@ -10,6 +10,8 @@ import UIKit
 class UserTableViewCell: UITableViewCell {
 
     @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var jobLabel: UILabel!
+    @IBOutlet var locationLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,4 +28,9 @@ class UserTableViewCell: UITableViewCell {
         self.nameLabel.text = with
     }
     
+    func setLabelsText(with: User){
+        self.nameLabel.text = with.fullName
+        self.jobLabel.text = with.positionText
+        self.locationLabel.text = with.locationText
+    }
 }

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76392464261A05C7009097A6 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76392463261A05C7009097A6 /* Users.swift */; };
+		76392467261B00D5009097A6 /* ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76392466261B00D5009097A6 /* ResponseData.swift */; };
+		7639246A261B10FE009097A6 /* UserPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76392469261B10FE009097A6 /* UserPosition.swift */; };
+		76392470261B15A8009097A6 /* UserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7639246F261B15A8009097A6 /* UserLocation.swift */; };
 		76BEEFD22619D8F500AD0321 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD12619D8F500AD0321 /* AppDelegate.swift */; };
 		76BEEFD42619D8F500AD0321 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD32619D8F500AD0321 /* SceneDelegate.swift */; };
 		76BEEFD62619D8F500AD0321 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD52619D8F500AD0321 /* ViewController.swift */; };
@@ -20,6 +24,10 @@
 
 /* Begin PBXFileReference section */
 		73AEFEF0184910AD57C2EBF9 /* Pods_HarriIosTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HarriIosTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76392463261A05C7009097A6 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		76392466261B00D5009097A6 /* ResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseData.swift; sourceTree = "<group>"; };
+		76392469261B10FE009097A6 /* UserPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPosition.swift; sourceTree = "<group>"; };
+		7639246F261B15A8009097A6 /* UserLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocation.swift; sourceTree = "<group>"; };
 		76BEEFCE2619D8F500AD0321 /* HarriIosTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarriIosTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76BEEFD12619D8F500AD0321 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76BEEFD32619D8F500AD0321 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +63,26 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		7639246C261B1475009097A6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				76BEEFE72619DA7500AD0321 /* User.swift */,
+				76392463261A05C7009097A6 /* Users.swift */,
+				76392466261B00D5009097A6 /* ResponseData.swift */,
+				76392469261B10FE009097A6 /* UserPosition.swift */,
+				7639246F261B15A8009097A6 /* UserLocation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7639246D261B148C009097A6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				76BEEFEA2619DBDA00AD0321 /* UserTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		76BEEFC52619D8F500AD0321 = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +104,8 @@
 		76BEEFD02619D8F500AD0321 /* HarriIosTask */ = {
 			isa = PBXGroup;
 			children = (
+				7639246D261B148C009097A6 /* Views */,
+				7639246C261B1475009097A6 /* Models */,
 				76BEEFD12619D8F500AD0321 /* AppDelegate.swift */,
 				76BEEFD32619D8F500AD0321 /* SceneDelegate.swift */,
 				76BEEFD52619D8F500AD0321 /* ViewController.swift */,
@@ -83,8 +113,6 @@
 				76BEEFDA2619D90100AD0321 /* Assets.xcassets */,
 				76BEEFDC2619D90100AD0321 /* LaunchScreen.storyboard */,
 				76BEEFDF2619D90100AD0321 /* Info.plist */,
-				76BEEFE72619DA7500AD0321 /* User.swift */,
-				76BEEFEA2619DBDA00AD0321 /* UserTableViewCell.swift */,
 			);
 			path = HarriIosTask;
 			sourceTree = "<group>";
@@ -212,9 +240,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				76BEEFE82619DA7500AD0321 /* User.swift in Sources */,
+				76392467261B00D5009097A6 /* ResponseData.swift in Sources */,
 				76BEEFD62619D8F500AD0321 /* ViewController.swift in Sources */,
+				76392470261B15A8009097A6 /* UserLocation.swift in Sources */,
 				76BEEFD22619D8F500AD0321 /* AppDelegate.swift in Sources */,
 				76BEEFD42619D8F500AD0321 /* SceneDelegate.swift in Sources */,
+				76392464261A05C7009097A6 /* Users.swift in Sources */,
+				7639246A261B10FE009097A6 /* UserPosition.swift in Sources */,
 				76BEEFEB2619DBDA00AD0321 /* UserTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
