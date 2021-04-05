@@ -8,16 +8,19 @@
 struct User: Decodable {
     var firstName: String
     var lastName: String
-    // var location: String
+    var id: Int
     var isFirstJob: Bool?
     var position: UserPosition?
     var location: UserLocation
+    var profileImageUUID: String?
     
     var positionText: String {
         if isFirstJob ?? false {
             return "Looking for first job"
+        }else if let positionName = self.position?.name{
+            return positionName
         }else {
-            return self.position!.name
+            return "Looking for first job"
         }
     }
     var locationText: String {
@@ -26,11 +29,19 @@ struct User: Decodable {
     var fullName: String {
         return self.firstName + " " + self.lastName
     }
+    var imageURL: String? {
+        if let uuid = self.profileImageUUID {
+        return "https://d7f8bv52wga7t.cloudfront.net/users/\(id)/user_profile/\(uuid)/240_240.jpeg"
+        }
+        else {return nil}
+    }
     enum CodingKeys: String, CodingKey {
         case firstName
         case lastName
+        case id
         case isFirstJob
         case position
         case location
+        case profileImageUUID
     }
 }
