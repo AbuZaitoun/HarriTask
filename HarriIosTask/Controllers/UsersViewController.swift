@@ -80,6 +80,9 @@ class UsersViewController: UIViewController {
         } else {
             print("Something went wrong")
         }
+        let alert = UIAlertController(title: "Alert", message: "Something went wrong :(", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
