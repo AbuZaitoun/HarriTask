@@ -23,16 +23,5 @@ class UserViewModel {
             self.pictureURL = "https://d7f8bv52wga7t.cloudfront.net/users/\(with.id)/user_profile/\(uuid)/240_240.jpeg"
         }
     }
-//        userAPI = UserAPI()
-//        fetchData()
-    
- 
-    var bindEmployeeViewModelToController : (() -> ()) = {}
-//    @objc func fetchData(){
-//        self.userAPI.fetchUsers { (userData) in
-//            var temp = self.userData
-//            temp?.append(contentsOf: userData.all)
-//            self.userData = userData.all
-//        }
-//    }
+
 }

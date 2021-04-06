@@ -6,7 +6,7 @@
 //
 import Foundation
 
-struct User: Decodable {
+struct User: Codable {
     var firstName: String
     var lastName: String
     var id: Int
@@ -48,7 +48,7 @@ struct User: Decodable {
 }
 
 
-struct Users: Decodable {
+struct Users: Codable {
     var hits: Int
     var all: [User]
     
@@ -58,7 +58,7 @@ struct Users: Decodable {
     }
 }
 
-struct ResponseData: Decodable {
+struct ResponseData: Codable {
     var data: Users
     
     enum CodingKeys: String, CodingKey {

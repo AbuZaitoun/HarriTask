@@ -8,7 +8,7 @@
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController {
+class UsersViewController: UIViewController {
     @IBOutlet var mainTableView: UITableView!
     private var userViewModel: UserViewModel!
     private var userNetworkManager: UserNetworkManager!
@@ -22,8 +22,10 @@ class ViewController: UIViewController {
         self.setTableViewDelegates()
         self.setupPullToRefresh()
         self.setupNetworkManager()
-        
-        
+        self.setupNavigationTitle()
+    }
+    
+    func setupNavigationTitle(){
         let navbarFont = UIFont(name: "OpenSans-Regular", size: 21)
 
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navbarFont, NSAttributedString.Key.foregroundColor:UIColor.white]
@@ -33,24 +35,27 @@ class ViewController: UIViewController {
         mainTableView.delegate = self
         mainTableView.dataSource = self
     }
+    
     func setupPullToRefresh(){
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(self.requestData), for: .valueChanged)
         mainTableView.addSubview(refreshControl)
     }
+    
     func setupNetworkManager(){
-        self.userNetworkManager = UserNetworkManager()
-        self.userNetworkManager.fetchUsers(refresh: false, completion: {(users) in
-            self.onCompletion(users: users)
+        self.userNetworkManager = UserNetworkManager.shared
+        self.userNetworkManager.fetchUsers(refresh: false, completion: { [weak self] (users) in
+            self?.onCompletion(users: users)
         })
     }
+    
     @objc func requestData(){
-        self.userNetworkManager.fetchUsers(refresh: true, completion: {(users) in
-            self.data = users.all
-            self.refreshControl.endRefreshing()
-            self.isLoading = false
-            self.total = users.hits
-            self.mainTableView.reloadData()
+        self.userNetworkManager.fetchUsers(refresh: true, completion: { [weak self] (users) in
+            self?.data = users.all
+            self?.refreshControl.endRefreshing()
+            self?.isLoading = false
+            self?.total = users.hits
+            self?.mainTableView.reloadData()
         })
     }
     
@@ -62,23 +67,25 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) as! UserTableViewCell
             cell.configure(with: UserViewModel(with: data[indexPath.row]))
             return cell
-        }else if (self.data.count < self.total){
+        } else if (self.data.count < self.total){
             let cell = tableView.dequeueReusableCell(withIdentifier: "LoadingCell", for: indexPath) as! LoadingTableViewCell
             cell.activityIndicator.startAnimating()
             return cell
-        }else {
+        } else {
             return UITableViewCell()
         }
     }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return data.count
@@ -88,6 +95,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             return 0
         }
     }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height

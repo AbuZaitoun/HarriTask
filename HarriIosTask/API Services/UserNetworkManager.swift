@@ -7,25 +7,44 @@
 import Alamofire
 import Foundation
 class UserNetworkManager {
-    private let URL_STRING = "https://gateway.harridev.com/core/api/v1/harri_search/search_users"
     
-    var size = 20
-    var start = 0
+    static let shared = UserNetworkManager()
+    let size: Int
+    var start: Int
+    
+    private init(){
+        self.size = 20
+        self.start = 0
+    }
+
     
     func fetchUsers(refresh: Bool, completion : @escaping (Users) -> ()){
         if refresh {
-            start = 0
+            self.start = 0
         }
         let params = ["size":size, "start":start, "locations":["40.7127753","-74.0059728"]] as [String : Any]
-        AF.request(URL_STRING, method: .post, parameters: params, encoding: JSONEncoding.default).validate().responseDecodable(of: ResponseData.self) { response in
+        
+        AF.request(UserRouter.readUsers(params: params)).responseJSON() { response in
             // TO-DO: Fix retained cycle presented by self
-            print(response)
-            guard let responseData = response.value
-            else {
-                return
-            }
-            completion(responseData.data)
+           
+            switch response.result {
+                        case .success:
+                            guard let data = response.data else {
+                                let error = NSError(domain:"No Data", code: 999, userInfo: nil)
+//                                completion?(nil, error)
+                                return
+                            }
+                            guard let responseObject = try? JSONDecoder().decode(ResponseData.self, from: data) else {
+                                let error = NSError(domain: "Failed to decode object", code: 999, userInfo: nil)
+//                                completion?(nil, error)
+                                return
+                            }
+                            completion(responseObject.data)
+            case .failure: break
+//                            completion?(nil, response.error)
+                        }
             self.start = self.start + self.size
+            
         }
     }
 }
