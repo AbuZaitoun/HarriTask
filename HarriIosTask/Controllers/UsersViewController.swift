@@ -27,7 +27,7 @@ class UsersViewController: UIViewController {
     
     func setupNavigationTitle(){
         let navbarFont = UIFont(name: "OpenSans-Regular", size: 21)
-
+        
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navbarFont, NSAttributedString.Key.foregroundColor:UIColor.white]
     }
     
@@ -44,18 +44,26 @@ class UsersViewController: UIViewController {
     
     func setupNetworkManager(){
         self.userNetworkManager = UserNetworkManager.shared
-        self.userNetworkManager.fetchUsers(refresh: false, completion: { [weak self] (users) in
-            self?.onCompletion(users: users)
+        self.userNetworkManager.fetchUsers(refresh: false, tries: 0, completion: { [weak self] (users_result, error)  in
+            if let users = users_result {
+                self?.onCompletion(users: users)
+            }else {
+                self?.handleError(error: error)
+            }
         })
     }
     
     @objc func requestData(){
-        self.userNetworkManager.fetchUsers(refresh: true, completion: { [weak self] (users) in
-            self?.data = users.all
-            self?.refreshControl.endRefreshing()
-            self?.isLoading = false
-            self?.total = users.hits
-            self?.mainTableView.reloadData()
+        self.userNetworkManager.fetchUsers(refresh: true, tries: 0, completion: { [weak self] (users_result, error) in
+            if let users = users_result {
+                self?.data = users.all
+                self?.refreshControl.endRefreshing()
+                self?.isLoading = false
+                self?.total = users.hits
+                self?.mainTableView.reloadData()
+            }else {
+                self?.handleError(error: error)
+            }
         })
     }
     
@@ -64,6 +72,14 @@ class UsersViewController: UIViewController {
         self.total = users.hits
         self.mainTableView.reloadData()
         self.isLoading = false
+    }
+    
+    func handleError(error: Error?){
+        if let er = error {
+            print(er.asAFError ?? "Something went wrong")
+        } else {
+            print("Something went wrong")
+        }
     }
 }
 
@@ -99,11 +115,15 @@ extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
-
+        
         if (offsetY > contentHeight - scrollView.frame.height) && !isLoading && self.data.count < self.total {
             isLoading = true
-            self.userNetworkManager.fetchUsers(refresh: false, completion: {(users) in
-                self.onCompletion(users: users)
+            self.userNetworkManager.fetchUsers(refresh: false, tries: 0, completion: {(users_result, error) in
+                if let users = users_result {
+                    self.onCompletion(users: users)
+                } else {
+                    self.handleError(error: error)
+                }
             })
         }
     }
