@@ -6,9 +6,9 @@
 //
 import Alamofire
 import Foundation
-class UserNetworkManager {
+class UsersModel {
     
-    static let shared = UserNetworkManager()
+    static let shared = UsersModel()
     
     let max_tries = 2
     let size: Int

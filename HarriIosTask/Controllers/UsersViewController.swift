@@ -11,7 +11,7 @@ import Alamofire
 class UsersViewController: UIViewController {
     @IBOutlet var mainTableView: UITableView!
     private var userViewModel: UserViewModel!
-    private var userNetworkManager: UserNetworkManager!
+    private var usersModel: UsersModel!
     private var refreshControl = UIRefreshControl()
     private var data: [User] = []
     private var total = 0
@@ -44,8 +44,8 @@ class UsersViewController: UIViewController {
     }
     
     func setupNetworkManager(){
-        self.userNetworkManager = UserNetworkManager.shared
-        self.userNetworkManager.fetchUsers(refresh: false, tries: 0, completion: { [weak self] (users_result, error)  in
+        self.usersModel = UsersModel.shared
+        self.usersModel.fetchUsers(refresh: false, tries: 0, completion: { [weak self] (users_result, error)  in
             if let users = users_result {
                 self?.onCompletion(users: users)
             }else {
@@ -55,7 +55,7 @@ class UsersViewController: UIViewController {
     }
     
     @objc func requestData(){
-        self.userNetworkManager.fetchUsers(refresh: true, tries: 0, completion: { [weak self] (users_result, error) in
+        self.usersModel.fetchUsers(refresh: true, tries: 0, completion: { [weak self] (users_result, error) in
             if let users = users_result {
                 self?.data = users.all
                 self?.total = users.hits
@@ -134,7 +134,7 @@ extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
         
         if (offsetY > contentHeight - scrollView.frame.height) && !isLoading && self.data.count < self.total {
             isLoading = true
-            self.userNetworkManager.fetchUsers(refresh: false, tries: 0, completion: {(users_result, error) in
+            self.usersModel.fetchUsers(refresh: false, tries: 0, completion: {(users_result, error) in
                 if let users = users_result {
                     self.onCompletion(users: users)
                 } else {
