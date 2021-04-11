@@ -29,7 +29,7 @@ class UsersViewController: UIViewController {
     func setupNavigationTitle(){
         let navbarFont = UIFont(name: "OpenSans-Regular", size: 21)
         
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navbarFont, NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navbarFont!, NSAttributedString.Key.foregroundColor:UIColor.white]
     }
     
     func setTableViewDelegates() {

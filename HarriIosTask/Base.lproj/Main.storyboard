@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -44,7 +45,7 @@
                                                     <subviews>
                                                         <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="7Pt-33-RZQ" customClass="JNAvatarWithInitials" customModule="JNAvatarWithInitials">
                                                             <rect key="frame" x="0.0" y="0.5" width="50" height="50"/>
-                                                            <color key="backgroundColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color key="backgroundColor" name="HarriBlue"/>
                                                             <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="Mlw-Fw-lXX"/>
@@ -52,25 +53,25 @@
                                                             </constraints>
                                                         </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="w3E-YE-WtG">
-                                                            <rect key="frame" x="58" y="2" width="340" height="47"/>
+                                                            <rect key="frame" x="58" y="5" width="340" height="41"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jd7-n5-qFD">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="36.5" height="19.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="34.5" height="16.5"/>
                                                                     <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="14"/>
-                                                                    <color key="textColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    <color key="textColor" name="HarriBlue"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yzd-CU-Bcp">
-                                                                    <rect key="frame" x="0.0" y="27.5" width="79" height="19.5"/>
+                                                                    <rect key="frame" x="0.0" y="24.5" width="77" height="16.5"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdZ-Hy-xrG">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="35.5" height="19.5"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="34.5" height="16.5"/>
                                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mz9-s8-eUh">
-                                                                            <rect key="frame" x="43.5" y="0.0" width="35.5" height="19.5"/>
+                                                                            <rect key="frame" x="42.5" y="0.0" width="34.5" height="16.5"/>
                                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -97,22 +98,22 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LoadingCell" id="ZzZ-ai-6C5" customClass="LoadingTableViewCell" customModule="HarriIosTask" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="110.5" width="414" height="74"/>
+                                        <rect key="frame" x="0.0" y="110.5" width="414" height="70.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZzZ-ai-6C5" id="MKx-jt-cfP">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="74"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KbD-WO-GLC">
-                                                    <rect key="frame" x="10" y="10" width="394" height="54"/>
+                                                    <rect key="frame" x="10" y="10" width="394" height="50.5"/>
                                                     <subviews>
                                                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="zEL-ht-4c0">
                                                             <rect key="frame" x="187" y="0.0" width="20" height="20"/>
                                                         </activityIndicatorView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddk-nM-l6U">
-                                                            <rect key="frame" x="164.5" y="30" width="65.5" height="24"/>
+                                                            <rect key="frame" x="166.5" y="30" width="61.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="17"/>
-                                                            <color key="textColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color key="textColor" name="HarriBlue"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -159,7 +160,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HrH-WQ-vHJ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" name="AccentColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -172,6 +173,12 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.4779999852180481" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="HarriBlue">
+            <color red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
