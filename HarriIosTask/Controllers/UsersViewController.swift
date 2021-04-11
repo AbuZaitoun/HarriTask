@@ -12,10 +12,11 @@ class UsersViewController: UIViewController {
     @IBOutlet var mainTableView: UITableView!
     private var userViewModel: UserViewModel!
     private var userNetworkManager: UserNetworkManager!
-    var refreshControl = UIRefreshControl()
-    var data: [User] = []
-    var total = 0
-    var isLoading = false
+    private var refreshControl = UIRefreshControl()
+    private var data: [User] = []
+    private var total = 0
+    private var isLoading = false
+    private var error: Error?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,13 +58,13 @@ class UsersViewController: UIViewController {
         self.userNetworkManager.fetchUsers(refresh: true, tries: 0, completion: { [weak self] (users_result, error) in
             if let users = users_result {
                 self?.data = users.all
-                self?.refreshControl.endRefreshing()
-                self?.isLoading = false
                 self?.total = users.hits
-                self?.mainTableView.reloadData()
             }else {
                 self?.handleError(error: error)
             }
+            self?.refreshControl.endRefreshing()
+            self?.isLoading = false
+            self?.mainTableView.reloadData()
         })
     }
     
@@ -75,14 +76,16 @@ class UsersViewController: UIViewController {
     }
     
     func handleError(error: Error?){
+        self.error = error
         if let er = error {
             print(er.asAFError ?? "Something went wrong")
         } else {
             print("Something went wrong")
         }
-        let alert = UIAlertController(title: "Alert", message: "Something went wrong :(", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        self.mainTableView.reloadData()
+//        let alert = UIAlertController(title: "Alert", message: "Something went wrong :(", preferredStyle: UIAlertController.Style.alert)
+//        alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default, handler: nil))
+//        self.present(alert, animated: true, completion: nil)
     }
 }
 
@@ -96,6 +99,16 @@ extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "LoadingCell", for: indexPath) as! LoadingTableViewCell
             cell.activityIndicator.startAnimating()
             return cell
+        } else if (self.data.count == 0){
+            if let _ = error {
+                let cell = UITableViewCell()
+                cell.textLabel?.text = "Something went wrong"
+                return cell
+            }else {
+                let loadingCell = tableView.dequeueReusableCell(withIdentifier: "LoadingCell", for: indexPath) as! LoadingTableViewCell
+                loadingCell.activityIndicator.startAnimating()
+                return loadingCell
+            }
         } else {
             return UITableViewCell()
         }
