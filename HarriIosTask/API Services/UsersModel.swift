@@ -25,7 +25,7 @@ class UsersModel {
         }
         let params = ["size":size, "start":start, "locations":["40.7127753","-74.0059728"]] as [String : Any]
         
-        AF.request(UserRouter.readUsers(params: params)).responseJSON() { [weak self] response in
+        AF.request(UsersRouter.readUsers(params: params)).responseJSON() { [weak self] response in
             guard let weak_self = self else { return }
             switch response.result {
             case .success:

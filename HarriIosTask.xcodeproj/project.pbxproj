@@ -14,7 +14,7 @@
 		763924A1261BCC02009097A6 /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7639249F261BCBFA009097A6 /* OpenSans-Italic.ttf */; };
 		763924A3261BCC05009097A6 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7639249D261BCBFA009097A6 /* OpenSans-Regular.ttf */; };
 		763924A5261BCC08009097A6 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7639249E261BCBFA009097A6 /* OpenSans-SemiBold.ttf */; };
-		763924AB261C6E68009097A6 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763924AA261C6E68009097A6 /* UserRouter.swift */; };
+		763924AB261C6E68009097A6 /* UsersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763924AA261C6E68009097A6 /* UsersRouter.swift */; };
 		763924AE261C7F57009097A6 /* AnyEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763924AD261C7F57009097A6 /* AnyEncodable.swift */; };
 		76BEEFD22619D8F500AD0321 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD12619D8F500AD0321 /* AppDelegate.swift */; };
 		76BEEFD42619D8F500AD0321 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD32619D8F500AD0321 /* SceneDelegate.swift */; };
@@ -36,7 +36,7 @@
 		7639249D261BCBFA009097A6 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		7639249E261BCBFA009097A6 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		7639249F261BCBFA009097A6 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
-		763924AA261C6E68009097A6 /* UserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
+		763924AA261C6E68009097A6 /* UsersRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRouter.swift; sourceTree = "<group>"; };
 		763924AD261C7F57009097A6 /* AnyEncodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyEncodable.swift; sourceTree = "<group>"; };
 		76BEEFCE2619D8F500AD0321 /* HarriIosTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarriIosTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76BEEFD12619D8F500AD0321 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,7 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				76392483261B5EF9009097A6 /* UsersModel.swift */,
-				763924AA261C6E68009097A6 /* UserRouter.swift */,
+				763924AA261C6E68009097A6 /* UsersRouter.swift */,
 			);
 			path = "API Services";
 			sourceTree = "<group>";
@@ -299,7 +299,7 @@
 				76BEEFD42619D8F500AD0321 /* SceneDelegate.swift in Sources */,
 				7639246A261B10FE009097A6 /* UserData.swift in Sources */,
 				76BEEFEB2619DBDA00AD0321 /* UserTableViewCell.swift in Sources */,
-				763924AB261C6E68009097A6 /* UserRouter.swift in Sources */,
+				763924AB261C6E68009097A6 /* UsersRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

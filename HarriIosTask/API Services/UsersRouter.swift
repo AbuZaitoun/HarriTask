@@ -9,12 +9,12 @@ import Alamofire
 import Foundation
 import UIKit
 
-enum UserRouter: URLRequestConvertible {
+enum UsersRouter: URLRequestConvertible {
     
     static let baseURLString = "https://gateway.harridev.com/core/api/v1/harri_search"
     
     var baseURL: URL {
-        return URL(string: UserRouter.baseURLString)!
+        return URL(string: UsersRouter.baseURLString)!
         }
     
     case readUsers(params: Parameters)
