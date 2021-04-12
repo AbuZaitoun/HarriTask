@@ -4,24 +4,42 @@
 //
 //  Created by Anas AbuZaitoun on 05/04/2021.
 //
-import Foundation
+import UIKit
 
-class UserViewModel {
-    var bindUserViewModelToController : (() -> ()) = {}
-    var firstJob: Bool?
-    var name: String
-    var locationText: String
-    var positionText: String
-    var pictureURL: String?
+class UserViewModel: ViewModel {
     
-    init(with: User) {
-        self.name = with.fullName
-        self.locationText = with.locationText
-        self.positionText = with.positionText
-        self.firstJob = with.isFirstJob
-        if let uuid = with.profileImageUUID {
-            self.pictureURL = "https://d7f8bv52wga7t.cloudfront.net/users/\(with.id)/user_profile/\(uuid)/240_240.jpeg"
-        }
+    private let NUMBER_OF_SECTIONS = 1
+    private var users: [User]
+    private var userRepresentable: [UserTableViewCellRepresentable]
+    
+    init(with users: [User]) {
+        self.users = users
+        self.userRepresentable = []
     }
 
+    private func setupRepresentables() {
+        self.userRepresentable = []
+        
+        for user in self.users {
+            self.userRepresentable.append(UserTableViewCellRepresentable(with: user))
+        }
+    }
+    
+    // MARK: - ViewModel
+    
+    func numberOfSections() -> Int {
+        return self.NUMBER_OF_SECTIONS
+    }
+    
+    func numberOfRows(inSection section: Int) -> Int {
+        return self.userRepresentable.count
+    }
+    
+    func heightForRow(at indexPath: IndexPath, tableView: UITableView) -> CGFloat {
+        return self.userRepresentable[indexPath.row].cellHeight
+    }
+    
+    func representableForRow(at indexPath: IndexPath) -> UserTableViewCellRepresentable? {
+        return self.userRepresentable[indexPath.row]
+    }
 }

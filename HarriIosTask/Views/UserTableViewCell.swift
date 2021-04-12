@@ -43,7 +43,13 @@ class UserTableViewCell: UITableViewCell {
             self.jobLabel.font = UIFont(name: "OpenSans-SemiBold", size: 14)
         }
         self.profilePicture.setup(imageUrl: model.pictureURL ?? "", placeHolderImage: UIImage(named: "squirrel.jpeg") ,fullName: model.name, showInitails: true)
-        
     }
 
+    static func getHeight() -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    static func getReuseModifier() -> String {
+        return "UserTableViewCell"
+    }
 }
