@@ -15,27 +15,17 @@ struct User: Codable {
     var location: UserLocation
     var profileImageUUID: String?
     
-    var positionText: String {
-        if isFirstJob ?? false {
-            return "Is looking for their first job"
-        }else if let positionName = self.position?.name{
-            return positionName + ", "
-        }else {
-            return "Is looking for their first job"
-        }
-    }
-    var locationText: String {
-        return self.location.city ?? "Unknown"
-    }
     var fullName: String {
         return self.firstName + " " + self.lastName
     }
+    
     var imageURL: String? {
         if let uuid = self.profileImageUUID {
         return "https://d7f8bv52wga7t.cloudfront.net/users/\(id)/user_profile/\(uuid)/240_240.jpeg"
         }
         else {return nil}
     }
+    
     enum CodingKeys: String, CodingKey {
         case firstName
         case lastName

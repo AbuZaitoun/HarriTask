@@ -17,6 +17,7 @@ class UserTableViewCellRepresentable: TableViewCellRepresentable {
     private(set) var location: String?
     private(set) var imageURL: String?
     private(set) var isFirstJob: Bool?
+    
     /// Cell height
     var cellHeight: CGFloat
     
