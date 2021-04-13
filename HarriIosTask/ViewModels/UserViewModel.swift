@@ -10,11 +10,14 @@ class UserViewModel: ViewModel {
     
     private let NUMBER_OF_SECTIONS = 1
     private var users: [User]
-    private var userRepresentable: [UserTableViewCellRepresentable]
+    private var userRepresentable: [TableViewCellRepresentable]
+    private var hits: Int
     
-    init(with users: [User]) {
+    init(with users: [User], total hits: Int) {
         self.users = users
-        self.userRepresentable = []
+        self.hits = hits
+        self.userRepresentable = [LoadingTableViewCellRepresentable()]
+        setupRepresentables()
     }
 
     private func setupRepresentables() {
@@ -22,6 +25,9 @@ class UserViewModel: ViewModel {
         
         for user in self.users {
             self.userRepresentable.append(UserTableViewCellRepresentable(with: user))
+        }
+        if self.users.count < self.hits {
+            self.userRepresentable.append(LoadingTableViewCellRepresentable())
         }
     }
     
@@ -39,7 +45,7 @@ class UserViewModel: ViewModel {
         return self.userRepresentable[indexPath.row].cellHeight
     }
     
-    func representableForRow(at indexPath: IndexPath) -> UserTableViewCellRepresentable? {
+    func representableForRow(at indexPath: IndexPath) -> TableViewCellRepresentable? {
         return self.userRepresentable[indexPath.row]
     }
 }

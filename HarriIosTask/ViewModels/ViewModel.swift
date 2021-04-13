@@ -34,5 +34,5 @@ protocol ViewModel {
      - Parameter indexPath: Index path.
      - Returns: Cell representable as tableView cell representable.
      */
-    func representableForRow(at indexPath: IndexPath) -> UserTableViewCellRepresentable?
+    func representableForRow(at indexPath: IndexPath) -> TableViewCellRepresentable?
 }

@@ -10,6 +10,7 @@ import JNAvatarWithInitials
 
 class UserTableViewCell: UITableViewCell {
 
+
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var jobLabel: UILabel!
     @IBOutlet var locationLabel: UILabel!
@@ -31,18 +32,19 @@ class UserTableViewCell: UITableViewCell {
         self.profilePicture.initialLabelInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
     }
     
-    func configure(with model: UserViewModel){
-        self.nameLabel.text = model.name
-        self.jobLabel.text = model.positionText
-        if model.firstJob ?? false {
+    func configure(with representable: UserTableViewCellRepresentable){
+        self.nameLabel.text = representable.name
+        self.jobLabel.text = representable.position
+        if representable.isFirstJob ?? false {
             self.locationLabel.text = ""
             self.jobLabel.textColor = UIColor(red: 0.26, green: 0.26, blue: 0.26, alpha: 1)
             self.jobLabel.font = UIFont(name: "OpenSans-Italic", size: 12)
+            self.jobLabel.text = representable.FIRST_JOB_TEXT
         }else{
-            self.locationLabel.text = model.locationText
+            self.locationLabel.text = representable.location
             self.jobLabel.font = UIFont(name: "OpenSans-SemiBold", size: 14)
         }
-        self.profilePicture.setup(imageUrl: model.pictureURL ?? "", placeHolderImage: UIImage(named: "squirrel.jpeg") ,fullName: model.name, showInitails: true)
+        self.profilePicture.setup(imageUrl: representable.imageURL ?? "", placeHolderImage: UIImage(named: "squirrel.jpeg") ,fullName: representable.name, showInitails: true)
     }
 
     static func getHeight() -> CGFloat {

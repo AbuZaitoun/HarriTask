@@ -9,17 +9,19 @@ import UIKit
 import Alamofire
 
 class UsersViewController: UIViewController {
-    @IBOutlet var mainTableView: UITableView!
-    private var userViewModel: UserViewModel!
-    private var usersModel: UsersModel!
+    
+    @IBOutlet private var mainTableView: UITableView!
+    private(set) var usersViewModel: UserViewModel!
     private var refreshControl = UIRefreshControl()
-    private var data: [User] = []
-    private var total = 0
-    private var isLoading = false
     private var error: Error?
+    
+    var isLoading = false
+    var usersModel: UsersModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.usersViewModel = UserViewModel(with: [], total: 1)
+        self.mainTableView.reloadData()
         self.setTableViewDelegates()
         self.setupPullToRefresh()
         self.setupNetworkManager()
@@ -57,8 +59,7 @@ class UsersViewController: UIViewController {
     @objc func requestData(){
         self.usersModel.fetchUsers(refresh: true, tries: 0, completion: { [weak self] (users_result, error) in
             if let users = users_result {
-                self?.data = users.all
-                self?.total = users.hits
+                self?.usersViewModel = UserViewModel(with: users.all, total: users.hits)
             }else {
                 self?.handleError(error: error)
             }
@@ -69,8 +70,7 @@ class UsersViewController: UIViewController {
     }
     
     func onCompletion(users: Users){
-        self.data.append(contentsOf: users.all)
-        self.total = users.hits
+        self.usersViewModel = UserViewModel(with: users.all, total: users.hits)
         self.mainTableView.reloadData()
         self.isLoading = false
     }
@@ -83,64 +83,7 @@ class UsersViewController: UIViewController {
             print("Something went wrong")
         }
         self.mainTableView.reloadData()
-//        let alert = UIAlertController(title: "Alert", message: "Something went wrong :(", preferredStyle: UIAlertController.Style.alert)
-//        alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default, handler: nil))
-//        self.present(alert, animated: true, completion: nil)
     }
 }
 
-extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) as! UserTableViewCell
-            cell.configure(with: UserViewModel(with: data[indexPath.row]))
-            return cell
-        } else if (self.data.count < self.total){
-            let cell = tableView.dequeueReusableCell(withIdentifier: "LoadingCell", for: indexPath) as! LoadingTableViewCell
-            cell.activityIndicator.startAnimating()
-            return cell
-        } else if (self.data.count == 0){
-            if let _ = error {
-                let cell = UITableViewCell()
-                cell.textLabel?.text = "Something went wrong"
-                return cell
-            }else {
-                let loadingCell = tableView.dequeueReusableCell(withIdentifier: "LoadingCell", for: indexPath) as! LoadingTableViewCell
-                loadingCell.activityIndicator.startAnimating()
-                return loadingCell
-            }
-        } else {
-            return UITableViewCell()
-        }
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return data.count
-        } else if section == 1 {
-            return 1
-        } else {
-            return 0
-        }
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offsetY = scrollView.contentOffset.y
-        let contentHeight = scrollView.contentSize.height
-        
-        if (offsetY > contentHeight - scrollView.frame.height) && !isLoading && self.data.count < self.total {
-            isLoading = true
-            self.usersModel.fetchUsers(refresh: false, tries: 0, completion: {(users_result, error) in
-                if let users = users_result {
-                    self.onCompletion(users: users)
-                } else {
-                    self.handleError(error: error)
-                }
-            })
-        }
-    }
-}
+

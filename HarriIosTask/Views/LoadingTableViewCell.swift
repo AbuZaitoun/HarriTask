@@ -20,4 +20,11 @@ class LoadingTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    static func getHeight() -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    static func getReuseModifier() -> String {
+        return "LoadingCell"
+    }
 }

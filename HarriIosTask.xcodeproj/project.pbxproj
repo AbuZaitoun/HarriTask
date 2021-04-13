@@ -18,6 +18,9 @@
 		763924AE261C7F57009097A6 /* AnyEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763924AD261C7F57009097A6 /* AnyEncodable.swift */; };
 		767C37A92624765200D8980C /* UserTableViewCellRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37A82624765200D8980C /* UserTableViewCellRepresentable.swift */; };
 		767C37B02624A29700D8980C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37AF2624A29700D8980C /* ViewModel.swift */; };
+		767C37B42624AA5000D8980C /* UsersViewController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37B32624AA5000D8980C /* UsersViewController+UITableView.swift */; };
+		767C37B82625954200D8980C /* LoadingTableViewCellRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37B72625954200D8980C /* LoadingTableViewCellRepresentable.swift */; };
+		767C37BB2625960500D8980C /* TableViewCellRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37BA2625960500D8980C /* TableViewCellRepresentable.swift */; };
 		76BEEFD22619D8F500AD0321 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD12619D8F500AD0321 /* AppDelegate.swift */; };
 		76BEEFD42619D8F500AD0321 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD32619D8F500AD0321 /* SceneDelegate.swift */; };
 		76BEEFD62619D8F500AD0321 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD52619D8F500AD0321 /* UsersViewController.swift */; };
@@ -42,6 +45,9 @@
 		763924AD261C7F57009097A6 /* AnyEncodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyEncodable.swift; sourceTree = "<group>"; };
 		767C37A82624765200D8980C /* UserTableViewCellRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCellRepresentable.swift; sourceTree = "<group>"; };
 		767C37AF2624A29700D8980C /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		767C37B32624AA5000D8980C /* UsersViewController+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UsersViewController+UITableView.swift"; sourceTree = "<group>"; };
+		767C37B72625954200D8980C /* LoadingTableViewCellRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCellRepresentable.swift; sourceTree = "<group>"; };
+		767C37BA2625960500D8980C /* TableViewCellRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellRepresentable.swift; sourceTree = "<group>"; };
 		76BEEFCE2619D8F500AD0321 /* HarriIosTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarriIosTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76BEEFD12619D8F500AD0321 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76BEEFD32619D8F500AD0321 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,8 +142,18 @@
 			isa = PBXGroup;
 			children = (
 				767C37A82624765200D8980C /* UserTableViewCellRepresentable.swift */,
+				767C37B72625954200D8980C /* LoadingTableViewCellRepresentable.swift */,
+				767C37BA2625960500D8980C /* TableViewCellRepresentable.swift */,
 			);
 			path = Representables;
+			sourceTree = "<group>";
+		};
+		767C37B22624AA2700D8980C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				767C37B32624AA5000D8980C /* UsersViewController+UITableView.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		76BEEFC52619D8F500AD0321 = {
@@ -161,6 +177,7 @@
 		76BEEFD02619D8F500AD0321 /* HarriIosTask */ = {
 			isa = PBXGroup;
 			children = (
+				767C37B22624AA2700D8980C /* Extensions */,
 				767C37A726246D9B00D8980C /* Representables */,
 				763924A7261BD69C009097A6 /* Controllers */,
 				76392482261B5EE9009097A6 /* API Services */,
@@ -307,11 +324,14 @@
 				767C37A92624765200D8980C /* UserTableViewCellRepresentable.swift in Sources */,
 				76392480261B564B009097A6 /* UserViewModel.swift in Sources */,
 				76BEEFE82619DA7500AD0321 /* User.swift in Sources */,
+				767C37BB2625960500D8980C /* TableViewCellRepresentable.swift in Sources */,
 				76BEEFD62619D8F500AD0321 /* UsersViewController.swift in Sources */,
 				76392484261B5EF9009097A6 /* UsersModel.swift in Sources */,
 				767C37B02624A29700D8980C /* ViewModel.swift in Sources */,
+				767C37B82625954200D8980C /* LoadingTableViewCellRepresentable.swift in Sources */,
 				76BEEFD22619D8F500AD0321 /* AppDelegate.swift in Sources */,
 				763924AE261C7F57009097A6 /* AnyEncodable.swift in Sources */,
+				767C37B42624AA5000D8980C /* UsersViewController+UITableView.swift in Sources */,
 				76BEEFD42619D8F500AD0321 /* SceneDelegate.swift in Sources */,
 				7639246A261B10FE009097A6 /* UserData.swift in Sources */,
 				76BEEFEB2619DBDA00AD0321 /* UserTableViewCell.swift in Sources */,
