@@ -14,9 +14,10 @@ class UsersViewController: UIViewController {
     private(set) var usersViewModel: UserViewModel!
     private var refreshControl = UIRefreshControl()
     private var error: Error?
-    
+    private(set) var requestStart = 0
     var isLoading = false
     var usersModel: UsersModel!
+    let requestSize = 20
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,13 +25,11 @@ class UsersViewController: UIViewController {
         self.mainTableView.reloadData()
         self.setTableViewDelegates()
         self.setupPullToRefresh()
-        self.setupNetworkManager()
         self.setupNavigationTitle()
     }
     
     func setupNavigationTitle(){
         let navbarFont = UIFont(name: "OpenSans-Regular", size: 21)
-        
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navbarFont!, NSAttributedString.Key.foregroundColor:UIColor.white]
     }
     
@@ -44,13 +43,9 @@ class UsersViewController: UIViewController {
         refreshControl.addTarget(self, action: #selector(self.requestData), for: .valueChanged)
         mainTableView.addSubview(refreshControl)
     }
-    
-    func setupNetworkManager(){
-        self.usersModel = UsersModel.shared
-    }
-    
+ 
     @objc func requestData(){
-        self.usersModel.fetchUsers(refresh: true, tries: 0, completion: { [weak self] (users_result, error) in
+        UsersModel.fetchUsers(start: self.requestStart, size: self.requestSize, completion: { [weak self] (users_result, error) in
             if let users = users_result {
                 self?.usersViewModel = UserViewModel(with: users.all, total: users.hits)
             }else {
@@ -64,9 +59,9 @@ class UsersViewController: UIViewController {
     
     func onCompletion(users: Users){
         self.isLoading = false
-        
-        self.usersViewModel.appendResults(results: users.all, total: users.hits) // = UserViewModel(with: users.all, total: users.hits)
+        self.usersViewModel.appendResults(results: users.all, total: users.hits)
         self.mainTableView.reloadData()
+        self.requestStart += self.requestSize
     }
     
     func handleError(error: Error?){

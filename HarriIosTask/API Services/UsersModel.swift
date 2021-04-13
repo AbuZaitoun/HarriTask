@@ -8,60 +8,32 @@ import Alamofire
 import Foundation
 class UsersModel {
     
-    static let shared = UsersModel()
-    
-    let max_tries = 2
-    let size: Int
-    var start: Int
-    var fetchUsersParams: [String : Any]
-    
-    private init(){
-        self.size = 20
-        self.start = 0
-        self.fetchUsersParams = ["size":size, "start":start, "locations":["40.7127753","-74.0059728"]]
+    init(){
+        
     }
  
-    func fetchUsers(refresh: Bool, tries: Int, completion : @escaping (Users?, Error?) -> ()){
-        if refresh {
-            self.start = 0
-        }
-        self.fetchUsersParams = ["size":size, "start":start, "locations":["40.7127753","-74.0059728"]]
-        print("Start is: \(self.start)")
-        AF.request(UsersRouter.readUsers(params: fetchUsersParams)).responseJSON() { [weak self] response in
-            guard let weak_self = self else { return }
+    static func fetchUsers(start: Int, size: Int, completion : @escaping (Users?, Error?) -> ()){
+
+        let fetchUsersParams = ["size":size, "start":start, "locations":["40.7127753","-74.0059728"]] as [String: Any]
+        
+        AF.request(UsersRouter.readUsers(params: fetchUsersParams), interceptor: MyInterceptor()).responseJSON() { response in
             switch response.result {
             case .success:
                 guard let data = response.data else {
                     let error = NSError(domain:"No Data", code: 999, userInfo: nil)
-                    if tries < weak_self.max_tries {
-                        weak_self.fetchUsers(refresh: refresh, tries: tries + 1, completion: completion)
-                        return
-                    } else {
-                        completion(nil, error)
-                        return
-                    }
+                    completion(nil, error)
+                    return
                 }
                 guard let responseObject = try? JSONDecoder().decode(ResponseData.self, from: data) else {
                     let error = NSError(domain: "Failed to decode object", code: 999, userInfo: nil)
-                    
-                    if tries < weak_self.max_tries {
-                        weak_self.fetchUsers(refresh: refresh, tries: tries + 1, completion: completion)
-                        return
-                    } else {
-                        completion(nil, error)
-                        return
-                    }
+                    completion(nil, error)
+                    return
                 }
-                weak_self.start = weak_self.start + weak_self.size
+                
                 completion(responseObject.data, nil)
                 
             case .failure:
-                if tries < weak_self.max_tries{
-                    weak_self.fetchUsers(refresh: refresh, tries: tries + 1, completion: completion)
-                } else {
-                    completion(nil, response.error)
-                }
-                
+                completion(nil, response.error)
             }
         }
         

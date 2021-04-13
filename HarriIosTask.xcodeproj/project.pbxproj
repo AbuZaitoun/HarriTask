@@ -21,6 +21,7 @@
 		767C37B42624AA5000D8980C /* UsersViewController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37B32624AA5000D8980C /* UsersViewController+UITableView.swift */; };
 		767C37B82625954200D8980C /* LoadingTableViewCellRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37B72625954200D8980C /* LoadingTableViewCellRepresentable.swift */; };
 		767C37BB2625960500D8980C /* TableViewCellRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37BA2625960500D8980C /* TableViewCellRepresentable.swift */; };
+		767C37C22625C16F00D8980C /* MyInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37C12625C16F00D8980C /* MyInterceptor.swift */; };
 		76BEEFD22619D8F500AD0321 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD12619D8F500AD0321 /* AppDelegate.swift */; };
 		76BEEFD42619D8F500AD0321 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD32619D8F500AD0321 /* SceneDelegate.swift */; };
 		76BEEFD62619D8F500AD0321 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD52619D8F500AD0321 /* UsersViewController.swift */; };
@@ -48,6 +49,7 @@
 		767C37B32624AA5000D8980C /* UsersViewController+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UsersViewController+UITableView.swift"; sourceTree = "<group>"; };
 		767C37B72625954200D8980C /* LoadingTableViewCellRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCellRepresentable.swift; sourceTree = "<group>"; };
 		767C37BA2625960500D8980C /* TableViewCellRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellRepresentable.swift; sourceTree = "<group>"; };
+		767C37C12625C16F00D8980C /* MyInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInterceptor.swift; sourceTree = "<group>"; };
 		76BEEFCE2619D8F500AD0321 /* HarriIosTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarriIosTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76BEEFD12619D8F500AD0321 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76BEEFD32619D8F500AD0321 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			children = (
 				76392483261B5EF9009097A6 /* UsersModel.swift */,
 				763924AA261C6E68009097A6 /* UsersRouter.swift */,
+				767C37C12625C16F00D8980C /* MyInterceptor.swift */,
 			);
 			path = "API Services";
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				767C37B82625954200D8980C /* LoadingTableViewCellRepresentable.swift in Sources */,
 				76BEEFD22619D8F500AD0321 /* AppDelegate.swift in Sources */,
 				763924AE261C7F57009097A6 /* AnyEncodable.swift in Sources */,
+				767C37C22625C16F00D8980C /* MyInterceptor.swift in Sources */,
 				767C37B42624AA5000D8980C /* UsersViewController+UITableView.swift in Sources */,
 				76BEEFD42619D8F500AD0321 /* SceneDelegate.swift in Sources */,
 				7639246A261B10FE009097A6 /* UserData.swift in Sources */,
