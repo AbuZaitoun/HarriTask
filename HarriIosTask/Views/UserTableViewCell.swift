@@ -12,8 +12,7 @@ class UserTableViewCell: UITableViewCell {
 
 
     @IBOutlet var nameLabel: UILabel!
-    @IBOutlet var jobLabel: UILabel!
-    @IBOutlet var locationLabel: UILabel!
+    @IBOutlet var detailsLabel: UILabel!
     @IBOutlet var profilePicture: JNAvatarWithInitials!
     
     override func awakeFromNib() {
@@ -34,16 +33,7 @@ class UserTableViewCell: UITableViewCell {
     
     func configure(with representable: UserTableViewCellRepresentable){
         self.nameLabel.text = representable.name
-        self.jobLabel.text = representable.position
-        if representable.isFirstJob ?? false {
-            self.locationLabel.text = ""
-            self.jobLabel.textColor = UIColor(red: 0.26, green: 0.26, blue: 0.26, alpha: 1)
-            self.jobLabel.font = UIFont(name: "OpenSans-Italic", size: 12)
-            self.jobLabel.text = representable.FIRST_JOB_TEXT
-        }else{
-            self.locationLabel.text = representable.location
-            self.jobLabel.font = UIFont(name: "OpenSans-SemiBold", size: 14)
-        }
+        self.detailsLabel.attributedText = representable.detailsText
         self.profilePicture.setup(imageUrl: representable.imageURL ?? "", placeHolderImage: UIImage(named: "squirrel.jpeg") ,fullName: representable.name, showInitails: true)
     }
 

@@ -13,7 +13,7 @@ class UsersModel {
     let max_tries = 2
     let size: Int
     var start: Int
-    let fetchUsersParams: [String : Any]
+    var fetchUsersParams: [String : Any]
     
     private init(){
         self.size = 20
@@ -25,7 +25,8 @@ class UsersModel {
         if refresh {
             self.start = 0
         }
-
+        self.fetchUsersParams = ["size":size, "start":start, "locations":["40.7127753","-74.0059728"]]
+        print("Start is: \(self.start)")
         AF.request(UsersRouter.readUsers(params: fetchUsersParams)).responseJSON() { [weak self] response in
             guard let weak_self = self else { return }
             switch response.result {
@@ -51,8 +52,8 @@ class UsersModel {
                         return
                     }
                 }
-                completion(responseObject.data, nil)
                 weak_self.start = weak_self.start + weak_self.size
+                completion(responseObject.data, nil)
                 
             case .failure:
                 if tries < weak_self.max_tries{

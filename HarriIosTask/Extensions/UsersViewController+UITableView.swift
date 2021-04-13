@@ -37,8 +37,8 @@ extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
         
-        if (offsetY > contentHeight - scrollView.frame.height) && !isLoading && self.data.count < self.total {
-            isLoading = true
+        if (offsetY > contentHeight - scrollView.frame.height) && !self.isLoading && self.usersViewModel.users.count < self.usersViewModel.hits {
+            self.isLoading = true
             self.usersModel.fetchUsers(refresh: false, tries: 0, completion: {(users_result, error) in
                 if let users = users_result {
                     self.onCompletion(users: users)

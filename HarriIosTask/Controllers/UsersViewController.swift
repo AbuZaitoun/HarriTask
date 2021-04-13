@@ -47,13 +47,6 @@ class UsersViewController: UIViewController {
     
     func setupNetworkManager(){
         self.usersModel = UsersModel.shared
-        self.usersModel.fetchUsers(refresh: false, tries: 0, completion: { [weak self] (users_result, error)  in
-            if let users = users_result {
-                self?.onCompletion(users: users)
-            }else {
-                self?.handleError(error: error)
-            }
-        })
     }
     
     @objc func requestData(){
@@ -70,9 +63,10 @@ class UsersViewController: UIViewController {
     }
     
     func onCompletion(users: Users){
-        self.usersViewModel = UserViewModel(with: users.all, total: users.hits)
-        self.mainTableView.reloadData()
         self.isLoading = false
+        
+        self.usersViewModel.appendResults(results: users.all, total: users.hits) // = UserViewModel(with: users.all, total: users.hits)
+        self.mainTableView.reloadData()
     }
     
     func handleError(error: Error?){

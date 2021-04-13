@@ -9,25 +9,33 @@ import UIKit
 class UserViewModel: ViewModel {
     
     private let NUMBER_OF_SECTIONS = 1
-    private var users: [User]
-    private var userRepresentable: [TableViewCellRepresentable]
-    private var hits: Int
+    private(set) var users: [User]
+    private var representables: [TableViewCellRepresentable]
+    private(set) var hits: Int
     
     init(with users: [User], total hits: Int) {
         self.users = users
         self.hits = hits
-        self.userRepresentable = [LoadingTableViewCellRepresentable()]
-        setupRepresentables()
+        self.representables = [LoadingTableViewCellRepresentable()]
+        self.setupRepresentables()
     }
 
+    func appendResults(results: [User], total hits: Int) {
+        self.users.append(contentsOf: results)
+        self.hits = hits
+        self.representables = [LoadingTableViewCellRepresentable()]
+        self.setupRepresentables()
+    }
+    
     private func setupRepresentables() {
-        self.userRepresentable = []
-        
+        self.representables = []
+        print(self.users.count)
         for user in self.users {
-            self.userRepresentable.append(UserTableViewCellRepresentable(with: user))
+            self.representables.append(UserTableViewCellRepresentable(with: user))
         }
+        
         if self.users.count < self.hits {
-            self.userRepresentable.append(LoadingTableViewCellRepresentable())
+            self.representables.append(LoadingTableViewCellRepresentable())
         }
     }
     
@@ -38,14 +46,14 @@ class UserViewModel: ViewModel {
     }
     
     func numberOfRows(inSection section: Int) -> Int {
-        return self.userRepresentable.count
+        return self.representables.count
     }
     
     func heightForRow(at indexPath: IndexPath, tableView: UITableView) -> CGFloat {
-        return self.userRepresentable[indexPath.row].cellHeight
+        return self.representables[indexPath.row].cellHeight
     }
     
     func representableForRow(at indexPath: IndexPath) -> TableViewCellRepresentable? {
-        return self.userRepresentable[indexPath.row]
+        return self.representables[indexPath.row]
     }
 }

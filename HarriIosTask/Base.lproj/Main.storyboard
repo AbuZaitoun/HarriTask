@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F8Y-hG-6fu">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -25,26 +25,26 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="UsersViewController" customModule="HarriIosTask" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mKm-Du-RrG">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="436"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="UserTableViewCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserTableViewCell" id="rqc-Ud-7eZ" customClass="UserTableViewCell" customModule="HarriIosTask" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="82.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rqc-Ud-7eZ" id="MXN-eu-qpD">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="82.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Dgy-7k-P29">
-                                                    <rect key="frame" x="8" y="16" width="398" height="50.5"/>
+                                                    <rect key="frame" x="8" y="16" width="304" height="58"/>
                                                     <subviews>
                                                         <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="7Pt-33-RZQ" customClass="JNAvatarWithInitials" customModule="JNAvatarWithInitials">
-                                                            <rect key="frame" x="0.0" y="0.5" width="50" height="50"/>
+                                                            <rect key="frame" x="0.0" y="4" width="50" height="50"/>
                                                             <color key="backgroundColor" name="HarriBlue"/>
                                                             <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                                             <constraints>
@@ -53,25 +53,19 @@
                                                             </constraints>
                                                         </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="w3E-YE-WtG">
-                                                            <rect key="frame" x="58" y="5" width="340" height="41"/>
+                                                            <rect key="frame" x="58" y="0.5" width="246" height="57.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jd7-n5-qFD">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jd7-n5-qFD">
                                                                     <rect key="frame" x="0.0" y="0.0" width="34.5" height="16.5"/>
                                                                     <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="14"/>
                                                                     <color key="textColor" name="HarriBlue"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yzd-CU-Bcp">
-                                                                    <rect key="frame" x="0.0" y="24.5" width="77" height="16.5"/>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yzd-CU-Bcp">
+                                                                    <rect key="frame" x="0.0" y="24.5" width="241.5" height="33"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdZ-Hy-xrG">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="34.5" height="16.5"/>
-                                                                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mz9-s8-eUh">
-                                                                            <rect key="frame" x="42.5" y="0.0" width="34.5" height="16.5"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="751" ambiguous="YES" text="longlonglosuperusperusoereererernglonglonglonglong" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdZ-Hy-xrG">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="241.5" height="33"/>
                                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -91,27 +85,26 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="jobLabel" destination="OdZ-Hy-xrG" id="1dS-vN-TRD"/>
-                                            <outlet property="locationLabel" destination="Mz9-s8-eUh" id="Ksr-LG-9K3"/>
+                                            <outlet property="detailsLabel" destination="OdZ-Hy-xrG" id="1dS-vN-TRD"/>
                                             <outlet property="nameLabel" destination="jd7-n5-qFD" id="55h-Dv-QGV"/>
                                             <outlet property="profilePicture" destination="7Pt-33-RZQ" id="uxY-5V-8D8"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LoadingCell" id="ZzZ-ai-6C5" customClass="LoadingTableViewCell" customModule="HarriIosTask" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="110.5" width="414" height="70.5"/>
+                                        <rect key="frame" x="0.0" y="118" width="320" height="70.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZzZ-ai-6C5" id="MKx-jt-cfP">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="70.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KbD-WO-GLC">
-                                                    <rect key="frame" x="10" y="10" width="394" height="50.5"/>
+                                                    <rect key="frame" x="10" y="10" width="300" height="50.5"/>
                                                     <subviews>
                                                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="zEL-ht-4c0">
-                                                            <rect key="frame" x="187" y="0.0" width="20" height="20"/>
+                                                            <rect key="frame" x="140" y="0.0" width="20" height="20"/>
                                                         </activityIndicatorView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddk-nM-l6U">
-                                                            <rect key="frame" x="166.5" y="30" width="61.5" height="20.5"/>
+                                                            <rect key="frame" x="119.5" y="30" width="61.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="17"/>
                                                             <color key="textColor" name="HarriBlue"/>
                                                             <nil key="highlightedColor"/>
@@ -158,7 +151,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="F8Y-hG-6fu" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HrH-WQ-vHJ">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" name="AccentColor"/>
                     </navigationBar>
