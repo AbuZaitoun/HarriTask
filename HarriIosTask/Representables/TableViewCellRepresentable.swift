@@ -7,7 +7,12 @@
 
 import UIKit
 
+/// Table View Cell Representable
 protocol TableViewCellRepresentable {
+    
+    /// Cell height
     var cellHeight: CGFloat { get set }
+    
+    /// Reuse identifier
     var reuseIdentifier: String { get set }
 }

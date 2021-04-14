@@ -7,22 +7,41 @@
 
 import UIKit
 
+/// User Table View Cell Representable
 class UserTableViewCellRepresentable: TableViewCellRepresentable {
     
+    /// First job text
     let FIRST_JOB_TEXT = "Is looking for their first job"
     
+    /// Name
     private(set) var name: String
+    
+    /// Details text
     private(set) var detailsText: NSAttributedString
+    
+    /// Position
     private(set) var position: String?
+    
+    /// Location
     private(set) var location: String?
+    
+    /// Image url
     private(set) var imageURL: String?
+    
+    /// Is first job
     private(set) var isFirstJob: Bool?
     
     /// Cell height
     var cellHeight: CGFloat
     
+    /// Reuse identifier
     var reuseIdentifier: String
     
+    /**
+     Initializer
+     sets up UserTableViewRepresentable with User object
+     - Parameter user: User
+     */
     init(with user: User) {
         self.name = user.fullName
         self.position = user.position?.name
