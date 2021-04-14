@@ -9,16 +9,21 @@ import Alamofire
 import Foundation
 import UIKit
 
+/// User Router
 enum UsersRouter: URLRequestConvertible {
     
+    /// Base url string
     static let baseURLString = "https://gateway.harridev.com/core/api/v1/harri_search"
     
+    /// Base url
     var baseURL: URL {
         return URL(string: UsersRouter.baseURLString)!
         }
     
+    /// Read users
     case readUsers(params: Parameters)
     
+    /// Method
     var method: HTTPMethod {
         switch self {
         case .readUsers:
@@ -26,6 +31,7 @@ enum UsersRouter: URLRequestConvertible {
         }
     }
     
+    /// Path
     var path: String {
         switch self {
         case .readUsers:
@@ -33,6 +39,13 @@ enum UsersRouter: URLRequestConvertible {
         }
     }
 
+    // MARK: - URLRequestConvertable conformance
+    
+    /**
+     As url request
+     - throws
+     - returns URLRequest
+     */
     func asURLRequest() throws -> URLRequest {
         
         let url = baseURL.appendingPathComponent(path)

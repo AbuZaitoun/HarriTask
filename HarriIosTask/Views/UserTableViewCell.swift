@@ -30,8 +30,8 @@ class UserTableViewCell: UITableViewCell {
     }
 
     /** Set Selected
-    - Parameters selected: Bool
-    - Parameters animated: Bool
+    - Parameter selected: Bool
+    - Parameter animated: Bool
      */
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -48,7 +48,7 @@ class UserTableViewCell: UITableViewCell {
     }
     
     /** Configure
-        - Parameters: representable: User table view cell representable
+        - Parameter representable: User table view cell representable
      */
     func configure(with representable: UserTableViewCellRepresentable){
         self.nameLabel.text = representable.name

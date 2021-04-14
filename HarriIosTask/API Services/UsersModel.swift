@@ -6,12 +6,16 @@
 //
 import Alamofire
 import Foundation
+
+/// User Model
 class UsersModel {
-    
-    init(){
-        
-    }
  
+    /**
+     Fetch users
+     - Parameter start: Integer, start of fetched data
+     - Parameter size: Integer, size of fetched data
+     - Parameter completion: (User?, Error?) --> ()
+     */
     static func fetchUsers(start: Int, size: Int, completion : @escaping (Users?, Error?) -> ()){
 
         let fetchUsersParams = ["size":size, "start":start, "locations":["40.7127753","-74.0059728"]] as [String: Any]
