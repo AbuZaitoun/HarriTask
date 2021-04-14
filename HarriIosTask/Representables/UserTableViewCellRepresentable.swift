@@ -18,19 +18,7 @@ class UserTableViewCellRepresentable: TableViewCellRepresentable {
     
     /// Details text
     private(set) var detailsText: NSAttributedString
-    
-    /// Position
-    private(set) var position: String?
-    
-    /// Location
-    private(set) var location: String?
-    
-    /// Image url
-    private(set) var imageURL: String?
-    
-    /// Is first job
-    private(set) var isFirstJob: Bool?
-    
+
     /// Cell height
     var cellHeight: CGFloat
     
@@ -44,15 +32,11 @@ class UserTableViewCellRepresentable: TableViewCellRepresentable {
      */
     init(with user: User) {
         self.name = user.fullName
-        self.position = user.position?.name
-        self.location = user.location.city
-        self.imageURL = user.imageURL
-        self.isFirstJob = user.isFirstJob
         self.cellHeight = UserTableViewCell.getHeight()
         self.reuseIdentifier = UserTableViewCell.getReuseModifier()
         
         var attributedString: NSMutableAttributedString
-        if self.isFirstJob ?? false {
+        if user.isFirstJob ?? false {
             attributedString = NSMutableAttributedString(attributedString: NSAttributedString(string: self.FIRST_JOB_TEXT, attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 0.26, green: 0.26, blue: 0.26, alpha: 1), NSAttributedString.Key.font: UIFont(name: "OpenSans-Italic", size: 14)]))
         } else {
             attributedString = NSMutableAttributedString(attributedString: NSAttributedString(string: (user.position?.name ?? "") + ", ", attributes: [NSAttributedString.Key.font: UIFont(name: "OpenSans-SemiBold", size: 14)]))
