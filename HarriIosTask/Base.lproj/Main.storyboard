@@ -34,57 +34,45 @@
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="UserTableViewCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserTableViewCell" id="rqc-Ud-7eZ" customClass="UserTableViewCell" customModule="HarriIosTask" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="90"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="72.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rqc-Ud-7eZ" id="MXN-eu-qpD">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="72.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Dgy-7k-P29">
-                                                    <rect key="frame" x="8" y="16" width="304" height="58"/>
-                                                    <subviews>
-                                                        <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="7Pt-33-RZQ" customClass="JNAvatarWithInitials" customModule="JNAvatarWithInitials">
-                                                            <rect key="frame" x="0.0" y="4" width="50" height="50"/>
-                                                            <color key="backgroundColor" name="HarriBlue"/>
-                                                            <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="50" id="Mlw-Fw-lXX"/>
-                                                                <constraint firstAttribute="width" constant="50" id="UTl-ix-YIC"/>
-                                                            </constraints>
-                                                        </view>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="w3E-YE-WtG">
-                                                            <rect key="frame" x="58" y="0.5" width="246" height="57.5"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jd7-n5-qFD">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="34.5" height="16.5"/>
-                                                                    <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="14"/>
-                                                                    <color key="textColor" name="HarriBlue"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yzd-CU-Bcp">
-                                                                    <rect key="frame" x="0.0" y="24.5" width="246" height="33"/>
-                                                                    <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="751" ambiguous="YES" text="longlonglosuperusperusoereererernglonglonglonglong" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdZ-Hy-xrG">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="246" height="33"/>
-                                                                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                    </subviews>
-                                                                </stackView>
-                                                            </subviews>
-                                                            <constraints>
-                                                                <constraint firstItem="yzd-CU-Bcp" firstAttribute="centerX" secondItem="w3E-YE-WtG" secondAttribute="centerX" id="Kfz-9i-IHh"/>
-                                                            </constraints>
-                                                        </stackView>
-                                                    </subviews>
-                                                </stackView>
+                                                <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="7Pt-33-RZQ" customClass="JNAvatarWithInitials" customModule="JNAvatarWithInitials">
+                                                    <rect key="frame" x="11" y="11" width="50" height="50.5"/>
+                                                    <color key="backgroundColor" name="HarriBlue"/>
+                                                    <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="Mlw-Fw-lXX"/>
+                                                        <constraint firstAttribute="width" constant="50" id="UTl-ix-YIC"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jd7-n5-qFD">
+                                                    <rect key="frame" x="69" y="8" width="243" height="14"/>
+                                                    <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="14"/>
+                                                    <color key="textColor" name="HarriBlue"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="751" text="longlonglosuperusperusoereererernglonglonglonglong" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdZ-Hy-xrG">
+                                                    <rect key="frame" x="69" y="26" width="243" height="38.5"/>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="Dgy-7k-P29" secondAttribute="bottom" constant="16" id="VgR-VG-BoP"/>
-                                                <constraint firstAttribute="trailing" secondItem="Dgy-7k-P29" secondAttribute="trailing" constant="8" id="Yxv-0S-ybU"/>
-                                                <constraint firstItem="Dgy-7k-P29" firstAttribute="leading" secondItem="MXN-eu-qpD" secondAttribute="leading" constant="8" id="jJc-G9-oDQ"/>
-                                                <constraint firstItem="Dgy-7k-P29" firstAttribute="top" secondItem="MXN-eu-qpD" secondAttribute="top" constant="16" id="nt1-t6-YnP"/>
+                                                <constraint firstAttribute="trailing" secondItem="jd7-n5-qFD" secondAttribute="trailing" constant="8" id="1qd-Wb-flt"/>
+                                                <constraint firstItem="jd7-n5-qFD" firstAttribute="top" secondItem="MXN-eu-qpD" secondAttribute="top" constant="8" id="HHl-rF-3pw"/>
+                                                <constraint firstItem="7Pt-33-RZQ" firstAttribute="leading" secondItem="MXN-eu-qpD" secondAttribute="leading" constant="11" id="IpW-io-gsS"/>
+                                                <constraint firstItem="jd7-n5-qFD" firstAttribute="leading" secondItem="7Pt-33-RZQ" secondAttribute="trailing" constant="8" id="Ou7-aD-hQs"/>
+                                                <constraint firstAttribute="bottom" secondItem="OdZ-Hy-xrG" secondAttribute="bottom" constant="8" id="WoY-qr-76A"/>
+                                                <constraint firstItem="OdZ-Hy-xrG" firstAttribute="top" secondItem="jd7-n5-qFD" secondAttribute="bottom" constant="4" id="WyT-vq-d36"/>
+                                                <constraint firstAttribute="trailing" secondItem="OdZ-Hy-xrG" secondAttribute="trailing" constant="8" id="Yub-ZH-v2C"/>
+                                                <constraint firstItem="7Pt-33-RZQ" firstAttribute="top" secondItem="MXN-eu-qpD" secondAttribute="top" constant="11" id="eMN-5I-4R4"/>
+                                                <constraint firstItem="OdZ-Hy-xrG" firstAttribute="leading" secondItem="7Pt-33-RZQ" secondAttribute="trailing" constant="8" id="tJa-Fk-uom"/>
+                                                <constraint firstAttribute="bottom" secondItem="7Pt-33-RZQ" secondAttribute="bottom" constant="11" id="tSE-tG-1Ro"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -94,20 +82,20 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LoadingCell" id="ZzZ-ai-6C5" customClass="LoadingTableViewCell" customModule="HarriIosTask" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="118" width="320" height="70.5"/>
+                                        <rect key="frame" x="0.0" y="100.5" width="320" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZzZ-ai-6C5" id="MKx-jt-cfP">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="70.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KbD-WO-GLC">
-                                                    <rect key="frame" x="10" y="10" width="300" height="50.5"/>
+                                                    <rect key="frame" x="10" y="10" width="300" height="54"/>
                                                     <subviews>
                                                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="zEL-ht-4c0">
                                                             <rect key="frame" x="140" y="0.0" width="20" height="20"/>
                                                         </activityIndicatorView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddk-nM-l6U">
-                                                            <rect key="frame" x="119.5" y="30" width="61.5" height="20.5"/>
+                                                            <rect key="frame" x="117.5" y="30" width="65.5" height="24"/>
                                                             <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="17"/>
                                                             <color key="textColor" name="HarriBlue"/>
                                                             <nil key="highlightedColor"/>
@@ -154,7 +142,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="F8Y-hG-6fu" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HrH-WQ-vHJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" name="AccentColor"/>
                     </navigationBar>
