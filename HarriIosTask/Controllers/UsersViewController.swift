@@ -107,8 +107,6 @@ class UsersViewController: UIViewController {
         self.error = error
         if let er = error {
             print(er.asAFError ?? "Something went wrong")
-        } else {
-            print("Something went wrong")
         }
         self.mainTableView.reloadData()
     }
