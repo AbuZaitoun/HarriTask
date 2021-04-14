@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// View Model
 protocol ViewModel {
     /**
      Get number of sections
