@@ -19,6 +19,8 @@ class UserTableViewCellRepresentable: TableViewCellRepresentable {
     /// Details text
     private(set) var detailsText: NSAttributedString
 
+    private(set) var imageURL: String?
+    
     /// Cell height
     var cellHeight: CGFloat
     
@@ -34,7 +36,7 @@ class UserTableViewCellRepresentable: TableViewCellRepresentable {
         self.name = user.fullName
         self.cellHeight = UserTableViewCell.getHeight()
         self.reuseIdentifier = UserTableViewCell.getReuseModifier()
-        
+        self.imageURL = user.imageURL
         var attributedString: NSMutableAttributedString
         if user.isFirstJob ?? false {
             attributedString = NSMutableAttributedString(attributedString: NSAttributedString(string: self.FIRST_JOB_TEXT, attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 0.26, green: 0.26, blue: 0.26, alpha: 1), NSAttributedString.Key.font: UIFont(name: "OpenSans-Italic", size: 14)]))
