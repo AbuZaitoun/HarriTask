@@ -21,6 +21,7 @@
 		767C37B82625954200D8980C /* LoadingTableViewCellRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37B72625954200D8980C /* LoadingTableViewCellRepresentable.swift */; };
 		767C37BB2625960500D8980C /* TableViewCellRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37BA2625960500D8980C /* TableViewCellRepresentable.swift */; };
 		767C37C22625C16F00D8980C /* MyInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37C12625C16F00D8980C /* MyInterceptor.swift */; };
+		767C37C626299ECE00D8980C /* UserInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37C526299ECE00D8980C /* UserInfoTableViewController.swift */; };
 		76BEEFD22619D8F500AD0321 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD12619D8F500AD0321 /* AppDelegate.swift */; };
 		76BEEFD42619D8F500AD0321 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD32619D8F500AD0321 /* SceneDelegate.swift */; };
 		76BEEFD62619D8F500AD0321 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD52619D8F500AD0321 /* UsersViewController.swift */; };
@@ -48,6 +49,7 @@
 		767C37B72625954200D8980C /* LoadingTableViewCellRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCellRepresentable.swift; sourceTree = "<group>"; };
 		767C37BA2625960500D8980C /* TableViewCellRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellRepresentable.swift; sourceTree = "<group>"; };
 		767C37C12625C16F00D8980C /* MyInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInterceptor.swift; sourceTree = "<group>"; };
+		767C37C526299ECE00D8980C /* UserInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewController.swift; sourceTree = "<group>"; };
 		76BEEFCE2619D8F500AD0321 /* HarriIosTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarriIosTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76BEEFD12619D8F500AD0321 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76BEEFD32619D8F500AD0321 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				76BEEFD52619D8F500AD0321 /* UsersViewController.swift */,
+				767C37C526299ECE00D8980C /* UserInfoTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 			files = (
 				7639247A261B4ADD009097A6 /* LoadingTableViewCell.swift in Sources */,
 				767C37A92624765200D8980C /* UserTableViewCellRepresentable.swift in Sources */,
+				767C37C626299ECE00D8980C /* UserInfoTableViewController.swift in Sources */,
 				76392480261B564B009097A6 /* UserViewModel.swift in Sources */,
 				76BEEFE82619DA7500AD0321 /* User.swift in Sources */,
 				767C37BB2625960500D8980C /* TableViewCellRepresentable.swift in Sources */,

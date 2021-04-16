@@ -72,4 +72,12 @@ extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
             })
         }
     }
+    
+    /// Did select row at index
+    /// - Parameters:
+    ///   - tableView: UITableView
+    ///   - indexPath: IndexPath
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
 }
