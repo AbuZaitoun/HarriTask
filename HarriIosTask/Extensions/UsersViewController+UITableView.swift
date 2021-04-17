@@ -78,6 +78,11 @@ extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
     ///   - tableView: UITableView
     ///   - indexPath: IndexPath
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        guard let representable = self.usersViewModel.representableForRow(at: indexPath) as? UserTableViewCellRepresentable else {
+            return
+        }
+        let userInfoTableViewController = self.storyboard!.instantiateViewController(withIdentifier: "UserInfoTableViewController") as! UserInfoTableViewController
+        userInfoTableViewController.setupViewController(userID: representable.userID)
+        self.navigationController!.pushViewController(userInfoTableViewController, animated: true)
     }
 }

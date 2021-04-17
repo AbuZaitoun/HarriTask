@@ -40,6 +40,28 @@ class UsersModel {
                 completion(nil, response.error)
             }
         }
-        
+    }
+    
+    static func fetchUserInfo(userID: String, completion: @escaping (UserDetails?, Error?) -> ()) {
+        let fetchUserInfoParams = ["id": userID]
+        AF.request(UsersRouter.userInfo(params: fetchUserInfoParams, userID: userID), interceptor: MyInterceptor()).responseJSON() { response in
+            switch response.result {
+            case .success:
+                guard let data = response.data else {
+                    let error = NSError(domain:"No Data", code: 999, userInfo: nil)
+                    completion(nil, error)
+                    return
+                }
+                guard let responseObject = try? JSONDecoder().decode(UserDetailsData.self, from: data) else {
+                    let error = NSError(domain: "Failed to decode object", code: 999, userInfo: nil)
+                    completion(nil, error)
+                    return
+                }
+                completion(responseObject.data, nil)
+                
+            case .failure:
+                completion(nil, response.error)
+            }
+        }
     }
 }

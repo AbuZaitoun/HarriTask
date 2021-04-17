@@ -22,6 +22,12 @@
 		767C37BB2625960500D8980C /* TableViewCellRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37BA2625960500D8980C /* TableViewCellRepresentable.swift */; };
 		767C37C22625C16F00D8980C /* MyInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37C12625C16F00D8980C /* MyInterceptor.swift */; };
 		767C37C626299ECE00D8980C /* UserInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37C526299ECE00D8980C /* UserInfoTableViewController.swift */; };
+		767C37C926299FEE00D8980C /* UserInfoAboutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37C826299FEE00D8980C /* UserInfoAboutTableViewCell.swift */; };
+		767C37CC2629A00500D8980C /* UserInfoExperienceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37CB2629A00500D8980C /* UserInfoExperienceTableViewCell.swift */; };
+		767C37CF2629A01D00D8980C /* UserInfoSkillsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37CE2629A01D00D8980C /* UserInfoSkillsTableViewCell.swift */; };
+		767C37D22629A03000D8980C /* UserInfoAvailabilityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37D12629A03000D8980C /* UserInfoAvailabilityTableViewCell.swift */; };
+		767C37D5262A5DDA00D8980C /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37D4262A5DDA00D8980C /* UserInfo.swift */; };
+		767C37D8262A5E4800D8980C /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37D7262A5E4800D8980C /* UserDetails.swift */; };
 		76BEEFD22619D8F500AD0321 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD12619D8F500AD0321 /* AppDelegate.swift */; };
 		76BEEFD42619D8F500AD0321 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD32619D8F500AD0321 /* SceneDelegate.swift */; };
 		76BEEFD62619D8F500AD0321 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD52619D8F500AD0321 /* UsersViewController.swift */; };
@@ -50,6 +56,12 @@
 		767C37BA2625960500D8980C /* TableViewCellRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellRepresentable.swift; sourceTree = "<group>"; };
 		767C37C12625C16F00D8980C /* MyInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInterceptor.swift; sourceTree = "<group>"; };
 		767C37C526299ECE00D8980C /* UserInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewController.swift; sourceTree = "<group>"; };
+		767C37C826299FEE00D8980C /* UserInfoAboutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoAboutTableViewCell.swift; sourceTree = "<group>"; };
+		767C37CB2629A00500D8980C /* UserInfoExperienceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoExperienceTableViewCell.swift; sourceTree = "<group>"; };
+		767C37CE2629A01D00D8980C /* UserInfoSkillsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoSkillsTableViewCell.swift; sourceTree = "<group>"; };
+		767C37D12629A03000D8980C /* UserInfoAvailabilityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoAvailabilityTableViewCell.swift; sourceTree = "<group>"; };
+		767C37D4262A5DDA00D8980C /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		767C37D7262A5E4800D8980C /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
 		76BEEFCE2619D8F500AD0321 /* HarriIosTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarriIosTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76BEEFD12619D8F500AD0321 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76BEEFD32619D8F500AD0321 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +102,8 @@
 			children = (
 				76BEEFE72619DA7500AD0321 /* User.swift */,
 				76392469261B10FE009097A6 /* UserData.swift */,
+				767C37D4262A5DDA00D8980C /* UserInfo.swift */,
+				767C37D7262A5E4800D8980C /* UserDetails.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -99,6 +113,10 @@
 			children = (
 				76BEEFEA2619DBDA00AD0321 /* UserTableViewCell.swift */,
 				76392478261B4ADD009097A6 /* LoadingTableViewCell.swift */,
+				767C37C826299FEE00D8980C /* UserInfoAboutTableViewCell.swift */,
+				767C37CB2629A00500D8980C /* UserInfoExperienceTableViewCell.swift */,
+				767C37CE2629A01D00D8980C /* UserInfoSkillsTableViewCell.swift */,
+				767C37D12629A03000D8980C /* UserInfoAvailabilityTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -332,13 +350,19 @@
 				76BEEFD62619D8F500AD0321 /* UsersViewController.swift in Sources */,
 				76392484261B5EF9009097A6 /* UsersModel.swift in Sources */,
 				767C37B02624A29700D8980C /* ViewModel.swift in Sources */,
+				767C37D22629A03000D8980C /* UserInfoAvailabilityTableViewCell.swift in Sources */,
 				767C37B82625954200D8980C /* LoadingTableViewCellRepresentable.swift in Sources */,
 				76BEEFD22619D8F500AD0321 /* AppDelegate.swift in Sources */,
+				767C37D8262A5E4800D8980C /* UserDetails.swift in Sources */,
 				767C37C22625C16F00D8980C /* MyInterceptor.swift in Sources */,
+				767C37CF2629A01D00D8980C /* UserInfoSkillsTableViewCell.swift in Sources */,
+				767C37C926299FEE00D8980C /* UserInfoAboutTableViewCell.swift in Sources */,
 				767C37B42624AA5000D8980C /* UsersViewController+UITableView.swift in Sources */,
+				767C37CC2629A00500D8980C /* UserInfoExperienceTableViewCell.swift in Sources */,
 				76BEEFD42619D8F500AD0321 /* SceneDelegate.swift in Sources */,
 				7639246A261B10FE009097A6 /* UserData.swift in Sources */,
 				76BEEFEB2619DBDA00AD0321 /* UserTableViewCell.swift in Sources */,
+				767C37D5262A5DDA00D8980C /* UserInfo.swift in Sources */,
 				763924AB261C6E68009097A6 /* UsersRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

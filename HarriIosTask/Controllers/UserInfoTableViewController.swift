@@ -8,10 +8,14 @@
 import UIKit
 
 class UserInfoTableViewController: UITableViewController {
-
+    
+    private var userID: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        UsersModel.fetchUserInfo(userID: userID ?? "", completion: {(userDetails, error) in
+            
+        })
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -19,11 +23,15 @@ class UserInfoTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    func setupViewController(userID: String){
+        self.userID = userID
+    }
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 4
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
