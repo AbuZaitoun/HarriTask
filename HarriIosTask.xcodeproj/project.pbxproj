@@ -33,6 +33,9 @@
 		767C37E1262C1A2300D8980C /* UserExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37E0262C1A2300D8980C /* UserExperience.swift */; };
 		767C37E4262C1A4000D8980C /* Work.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37E3262C1A4000D8980C /* Work.swift */; };
 		767C37E7262C1C8600D8980C /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37E6262C1C8600D8980C /* Brand.swift */; };
+		767C37EA262C2AE500D8980C /* UserInfoExperienceRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37E9262C2AE500D8980C /* UserInfoExperienceRepresentable.swift */; };
+		767C37ED262C2E9700D8980C /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37EC262C2E9700D8980C /* Position.swift */; };
+		767C37F0262C339E00D8980C /* UserInfoExperienceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37EF262C339E00D8980C /* UserInfoExperienceViewModel.swift */; };
 		76BEEFD22619D8F500AD0321 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD12619D8F500AD0321 /* AppDelegate.swift */; };
 		76BEEFD42619D8F500AD0321 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD32619D8F500AD0321 /* SceneDelegate.swift */; };
 		76BEEFD62619D8F500AD0321 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD52619D8F500AD0321 /* UsersViewController.swift */; };
@@ -72,6 +75,9 @@
 		767C37E0262C1A2300D8980C /* UserExperience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserExperience.swift; sourceTree = "<group>"; };
 		767C37E3262C1A4000D8980C /* Work.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Work.swift; sourceTree = "<group>"; };
 		767C37E6262C1C8600D8980C /* Brand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
+		767C37E9262C2AE500D8980C /* UserInfoExperienceRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoExperienceRepresentable.swift; sourceTree = "<group>"; };
+		767C37EC262C2E9700D8980C /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		767C37EF262C339E00D8980C /* UserInfoExperienceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoExperienceViewModel.swift; sourceTree = "<group>"; };
 		76BEEFCE2619D8F500AD0321 /* HarriIosTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarriIosTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76BEEFD12619D8F500AD0321 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76BEEFD32619D8F500AD0321 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +123,7 @@
 				767C37E0262C1A2300D8980C /* UserExperience.swift */,
 				767C37E3262C1A4000D8980C /* Work.swift */,
 				767C37E6262C1C8600D8980C /* Brand.swift */,
+				767C37EC262C2E9700D8980C /* Position.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -140,6 +147,7 @@
 				7639247F261B564B009097A6 /* UserViewModel.swift */,
 				767C37AF2624A29700D8980C /* ViewModel.swift */,
 				767C37DD262AEAE500D8980C /* UserInfoAboutViewModel.swift */,
+				767C37EF262C339E00D8980C /* UserInfoExperienceViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -180,6 +188,7 @@
 				767C37B72625954200D8980C /* LoadingTableViewCellRepresentable.swift */,
 				767C37BA2625960500D8980C /* TableViewCellRepresentable.swift */,
 				767C37DA262AE8D300D8980C /* UserInfoAboutRepresentable.swift */,
+				767C37E9262C2AE500D8980C /* UserInfoExperienceRepresentable.swift */,
 			);
 			path = Representables;
 			sourceTree = "<group>";
@@ -364,9 +373,12 @@
 				767C37BB2625960500D8980C /* TableViewCellRepresentable.swift in Sources */,
 				76BEEFD62619D8F500AD0321 /* UsersViewController.swift in Sources */,
 				76392484261B5EF9009097A6 /* UsersModel.swift in Sources */,
+				767C37ED262C2E9700D8980C /* Position.swift in Sources */,
 				767C37B02624A29700D8980C /* ViewModel.swift in Sources */,
 				767C37DE262AEAE500D8980C /* UserInfoAboutViewModel.swift in Sources */,
+				767C37EA262C2AE500D8980C /* UserInfoExperienceRepresentable.swift in Sources */,
 				767C37D22629A03000D8980C /* UserInfoAvailabilityTableViewCell.swift in Sources */,
+				767C37F0262C339E00D8980C /* UserInfoExperienceViewModel.swift in Sources */,
 				767C37E4262C1A4000D8980C /* Work.swift in Sources */,
 				767C37B82625954200D8980C /* LoadingTableViewCellRepresentable.swift in Sources */,
 				76BEEFD22619D8F500AD0321 /* AppDelegate.swift in Sources */,

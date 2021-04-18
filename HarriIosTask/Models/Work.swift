@@ -8,24 +8,25 @@
 import Foundation
 
 struct Work: Codable {
-//    var customPosition: String
-//    var startDate: String
-//    var endDate: String?
+    var customPosition: String?
+    var startDate: String
+    var endDate: String?
     var description: String
-//    var brand: Brand
-//
+    var brand: Brand
+    var position: Position?
     init() {
 //        self.customPosition = ""
-//        self.startDate = ""
+        self.startDate = ""
         self.description = ""
-//        self.brand = Brand(name: "")
+        self.brand = Brand(name: "")
     }
     
     enum CodingKeys: String, CodingKey {
-//        case customPosition = "custom_position"
+        case customPosition = "custom_position"
         case description = "description"
-//        case startDate = "start_date"
-//        case endDate = "end_date"
-//        case brand
+        case startDate = "start_date"
+        case endDate = "end_date"
+        case brand = "Brand"
+        case position = "Position"
     }
 }
