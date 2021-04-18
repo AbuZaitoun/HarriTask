@@ -38,6 +38,10 @@
 		767C37F0262C339E00D8980C /* UserInfoExperienceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37EF262C339E00D8980C /* UserInfoExperienceViewModel.swift */; };
 		767C37F3262C3B2D00D8980C /* ToDate+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37F2262C3B2D00D8980C /* ToDate+String.swift */; };
 		767C37F6262C3B8600D8980C /* ToString+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37F5262C3B8600D8980C /* ToString+Date.swift */; };
+		76ABFA57262C6A0F007A2D41 /* UserInfoSkillsRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA56262C6A0F007A2D41 /* UserInfoSkillsRepresentable.swift */; };
+		76ABFA5A262C6A42007A2D41 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA59262C6A42007A2D41 /* Skill.swift */; };
+		76ABFA5E262C6B23007A2D41 /* UserInfoSkillsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA5D262C6B23007A2D41 /* UserInfoSkillsViewModel.swift */; };
+		76ABFA61262C6E17007A2D41 /* SkillCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA60262C6E17007A2D41 /* SkillCollectionViewCell.swift */; };
 		76BEEFD22619D8F500AD0321 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD12619D8F500AD0321 /* AppDelegate.swift */; };
 		76BEEFD42619D8F500AD0321 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD32619D8F500AD0321 /* SceneDelegate.swift */; };
 		76BEEFD62619D8F500AD0321 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD52619D8F500AD0321 /* UsersViewController.swift */; };
@@ -82,6 +86,10 @@
 		767C37EF262C339E00D8980C /* UserInfoExperienceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoExperienceViewModel.swift; sourceTree = "<group>"; };
 		767C37F2262C3B2D00D8980C /* ToDate+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDate+String.swift"; sourceTree = "<group>"; };
 		767C37F5262C3B8600D8980C /* ToString+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToString+Date.swift"; sourceTree = "<group>"; };
+		76ABFA56262C6A0F007A2D41 /* UserInfoSkillsRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoSkillsRepresentable.swift; sourceTree = "<group>"; };
+		76ABFA59262C6A42007A2D41 /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
+		76ABFA5D262C6B23007A2D41 /* UserInfoSkillsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoSkillsViewModel.swift; sourceTree = "<group>"; };
+		76ABFA60262C6E17007A2D41 /* SkillCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillCollectionViewCell.swift; sourceTree = "<group>"; };
 		76BEEFCE2619D8F500AD0321 /* HarriIosTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarriIosTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76BEEFD12619D8F500AD0321 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76BEEFD32619D8F500AD0321 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +136,7 @@
 				767C37E3262C1A4000D8980C /* Work.swift */,
 				767C37E6262C1C8600D8980C /* Brand.swift */,
 				767C37EC262C2E9700D8980C /* Position.swift */,
+				76ABFA59262C6A42007A2D41 /* Skill.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -141,6 +150,7 @@
 				767C37CB2629A00500D8980C /* UserInfoExperienceTableViewCell.swift */,
 				767C37CE2629A01D00D8980C /* UserInfoSkillsTableViewCell.swift */,
 				767C37D12629A03000D8980C /* UserInfoAvailabilityTableViewCell.swift */,
+				76ABFA60262C6E17007A2D41 /* SkillCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -152,6 +162,7 @@
 				767C37AF2624A29700D8980C /* ViewModel.swift */,
 				767C37DD262AEAE500D8980C /* UserInfoAboutViewModel.swift */,
 				767C37EF262C339E00D8980C /* UserInfoExperienceViewModel.swift */,
+				76ABFA5D262C6B23007A2D41 /* UserInfoSkillsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -193,6 +204,7 @@
 				767C37BA2625960500D8980C /* TableViewCellRepresentable.swift */,
 				767C37DA262AE8D300D8980C /* UserInfoAboutRepresentable.swift */,
 				767C37E9262C2AE500D8980C /* UserInfoExperienceRepresentable.swift */,
+				76ABFA56262C6A0F007A2D41 /* UserInfoSkillsRepresentable.swift */,
 			);
 			path = Representables;
 			sourceTree = "<group>";
@@ -388,10 +400,12 @@
 				767C37F0262C339E00D8980C /* UserInfoExperienceViewModel.swift in Sources */,
 				767C37E4262C1A4000D8980C /* Work.swift in Sources */,
 				767C37B82625954200D8980C /* LoadingTableViewCellRepresentable.swift in Sources */,
+				76ABFA5E262C6B23007A2D41 /* UserInfoSkillsViewModel.swift in Sources */,
 				76BEEFD22619D8F500AD0321 /* AppDelegate.swift in Sources */,
 				767C37F3262C3B2D00D8980C /* ToDate+String.swift in Sources */,
 				767C37D8262A5E4800D8980C /* UserDetails.swift in Sources */,
 				767C37C22625C16F00D8980C /* MyInterceptor.swift in Sources */,
+				76ABFA5A262C6A42007A2D41 /* Skill.swift in Sources */,
 				767C37CF2629A01D00D8980C /* UserInfoSkillsTableViewCell.swift in Sources */,
 				767C37C926299FEE00D8980C /* UserInfoAboutTableViewCell.swift in Sources */,
 				767C37B42624AA5000D8980C /* UsersViewController+UITableView.swift in Sources */,
@@ -402,7 +416,9 @@
 				76BEEFEB2619DBDA00AD0321 /* UserTableViewCell.swift in Sources */,
 				767C37D5262A5DDA00D8980C /* UserInfo.swift in Sources */,
 				767C37E7262C1C8600D8980C /* Brand.swift in Sources */,
+				76ABFA57262C6A0F007A2D41 /* UserInfoSkillsRepresentable.swift in Sources */,
 				767C37E1262C1A2300D8980C /* UserExperience.swift in Sources */,
+				76ABFA61262C6E17007A2D41 /* SkillCollectionViewCell.swift in Sources */,
 				763924AB261C6E68009097A6 /* UsersRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

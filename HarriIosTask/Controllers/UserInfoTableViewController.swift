@@ -9,20 +9,24 @@ import UIKit
 
 class UserInfoTableViewController: UIViewController {
     
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var skillsCollectionView: UICollectionView!
+    @IBOutlet weak var tableView: UITableView!
     private var userID: String?
     private var aboutViewModel: UserInfoAboutViewModel!
     private var experienceViewModel: UserInfoExperienceViewModel!
+    private var skillsViewModel: UserInfoSkillsViewModel!
     let sectionHeaders = ["About", "Experience", "Skills", "Availability"]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.aboutViewModel = UserInfoAboutViewModel(userInfo: UserInfo(about: ""))
         self.experienceViewModel = UserInfoExperienceViewModel(with: [])
+        self.skillsViewModel = UserInfoSkillsViewModel(with: [])
         
         UsersModel.fetchUserInfo(userID: userID ?? "", completion: {[weak self] (userDetails, error) in
             guard let self = self else { return }
             self.aboutViewModel = UserInfoAboutViewModel(userInfo: userDetails?.userInfo ?? UserInfo(about: ""))
             self.experienceViewModel = UserInfoExperienceViewModel(with: userDetails?.experience ?? [])
+            self.skillsViewModel = UserInfoSkillsViewModel(with: userDetails?.skills ?? [])
             self.tableView.reloadData()
         })
         
@@ -53,6 +57,8 @@ extension UserInfoTableViewController: UITableViewDelegate, UITableViewDataSourc
             return self.aboutViewModel.numberOfRows(inSection: section)
         case 1:
             return self.experienceViewModel.numberOfRows(inSection: section)
+        case 2:
+            return self.skillsViewModel.numberOfRows(inSection: section)
         default:
             return 0
         }
@@ -78,6 +84,14 @@ extension UserInfoTableViewController: UITableViewDelegate, UITableViewDataSourc
                 return UITableViewCell()
             }
             let cell = tableView.dequeueReusableCell(withIdentifier: UserInfoExperienceTableViewCell.getReuseModifier(), for: indexPath) as? UserInfoExperienceTableViewCell
+            cell?.setupCell(with: representable)
+            return cell ?? UITableViewCell()
+            
+        case 2:
+            guard let representable = skillsViewModel.representableForRow(at: indexPath) as? UserInfoSkillsRepresentable else {
+                return UITableViewCell()
+            }
+            let cell = tableView.dequeueReusableCell(withIdentifier: UserInfoSkillsTableViewCell.getReuseModifier(), for: indexPath) as? UserInfoSkillsTableViewCell
             cell?.setupCell(with: representable)
             return cell ?? UITableViewCell()
             

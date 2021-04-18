@@ -6,6 +6,7 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -85,20 +86,20 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LoadingCell" id="ZzZ-ai-6C5" customClass="LoadingTableViewCell" customModule="HarriIosTask" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="100.5" width="414" height="74"/>
+                                        <rect key="frame" x="0.0" y="100.5" width="414" height="70.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZzZ-ai-6C5" id="MKx-jt-cfP">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="74"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KbD-WO-GLC">
-                                                    <rect key="frame" x="10" y="10" width="394" height="54"/>
+                                                    <rect key="frame" x="10" y="10" width="394" height="50.5"/>
                                                     <subviews>
                                                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="zEL-ht-4c0">
                                                             <rect key="frame" x="187" y="0.0" width="20" height="20"/>
                                                         </activityIndicatorView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddk-nM-l6U">
-                                                            <rect key="frame" x="164.5" y="30" width="65.5" height="24"/>
+                                                            <rect key="frame" x="166.5" y="30" width="61.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="17"/>
                                                             <color key="textColor" name="HarriBlue"/>
                                                             <nil key="highlightedColor"/>
@@ -179,26 +180,26 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserInfoExperienceTableViewCell" id="U1I-0p-v4L" userLabel="UserInfoExperienceTableViewCell" customClass="UserInfoExperienceTableViewCell" customModule="HarriIosTask" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="98.5" width="374" height="119.5"/>
+                                        <rect key="frame" x="20" y="98.5" width="374" height="111"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U1I-0p-v4L" id="BYk-6a-KBJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="119.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="111"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mar 2012 - Current" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2q-ZQ-rzB" userLabel="DateLabel">
-                                                    <rect key="frame" x="260" y="8" width="106" height="16.5"/>
+                                                    <rect key="frame" x="263.5" y="8" width="102.5" height="14"/>
                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
                                                     <color key="textColor" name="SecondayText"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Position Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Chk-Qr-4Jf">
-                                                    <rect key="frame" x="8" y="22" width="106" height="21"/>
+                                                    <rect key="frame" x="8" y="22" width="98.5" height="17.5"/>
                                                     <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rp1-0k-f6w">
-                                                    <rect key="frame" x="8" y="47" width="34" height="23.5"/>
+                                                    <rect key="frame" x="8" y="43.5" width="32" height="23.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="23.5" id="qJL-wC-wdb"/>
                                                     </constraints>
@@ -207,7 +208,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="sdsdsdsdsdsdsdsdknaklfjkfakewfafhalkehfauwehfauiwehfaiuwehfiuawheiufhwiehfwhef" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="np4-7O-dha">
-                                                    <rect key="frame" x="8" y="75.5" width="358" height="36"/>
+                                                    <rect key="frame" x="8" y="72" width="358" height="31"/>
                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="13"/>
                                                     <color key="textColor" name="SecondayText"/>
                                                     <nil key="highlightedColor"/>
@@ -234,16 +235,68 @@
                                             <outlet property="positionNameLabel" destination="Chk-Qr-4Jf" id="wxg-5J-VVG"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserInfoSkillsTableViewCell" id="iJt-cQ-SWJ" userLabel="UserInfoSkillsTableViewCell" customClass="UserInfoSkillsTableViewCell" customModule="HarriIosTask" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="209.5" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iJt-cQ-SWJ" id="jlP-0F-7aB">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zjr-nl-qDb">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="89Q-x1-UFa">
+                                                        <size key="itemSize" width="128" height="128"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SkillCollectionViewCell" id="OXh-SN-vUh" customClass="SkillCollectionViewCell" customModule="HarriIosTask" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="G4D-Sa-Cks">
+                                                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ore-ci-07F">
+                                                                        <rect key="frame" x="43" y="24" width="42" height="21"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </collectionViewCellContentView>
+                                                            <connections>
+                                                                <outlet property="label" destination="Ore-ci-07F" id="u6V-4f-iZg"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                </collectionView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Zjr-nl-qDb" secondAttribute="trailing" id="ZSy-DE-A4m"/>
+                                                <constraint firstAttribute="bottom" secondItem="Zjr-nl-qDb" secondAttribute="bottom" id="neW-SD-P9L"/>
+                                                <constraint firstItem="Zjr-nl-qDb" firstAttribute="top" secondItem="jlP-0F-7aB" secondAttribute="top" id="t2V-zS-pSG"/>
+                                                <constraint firstItem="Zjr-nl-qDb" firstAttribute="leading" secondItem="jlP-0F-7aB" secondAttribute="leading" id="xE5-Ck-Ml1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="collectionView" destination="Zjr-nl-qDb" id="WL1-lw-r29"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bjd-Sq-ifv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="XJF-kt-ic2" firstAttribute="leading" secondItem="bjd-Sq-ifv" secondAttribute="leading" id="5U4-ei-i9E"/>
-                            <constraint firstItem="XJF-kt-ic2" firstAttribute="top" secondItem="bjd-Sq-ifv" secondAttribute="top" id="KSu-it-pCX"/>
-                            <constraint firstItem="bjd-Sq-ifv" firstAttribute="bottom" secondItem="XJF-kt-ic2" secondAttribute="bottom" id="U3p-vV-bat"/>
-                            <constraint firstItem="bjd-Sq-ifv" firstAttribute="trailing" secondItem="XJF-kt-ic2" secondAttribute="trailing" id="dL8-6L-Avc"/>
+                            <constraint firstItem="XJF-kt-ic2" firstAttribute="top" secondItem="bjd-Sq-ifv" secondAttribute="top" id="HUH-Go-RQz"/>
+                            <constraint firstItem="XJF-kt-ic2" firstAttribute="leading" secondItem="bjd-Sq-ifv" secondAttribute="leading" id="aDX-Xa-73D"/>
+                            <constraint firstItem="XJF-kt-ic2" firstAttribute="trailing" secondItem="bjd-Sq-ifv" secondAttribute="trailing" id="gso-wd-kzh"/>
+                            <constraint firstItem="bjd-Sq-ifv" firstAttribute="bottom" secondItem="XJF-kt-ic2" secondAttribute="bottom" id="rDA-oH-YUi"/>
                         </constraints>
                     </view>
                     <connections>
@@ -279,7 +332,7 @@
             <color red="0.0" green="0.4779999852180481" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="HarriBlue">
-            <color red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.28999999165534973" green="0.56499999761581421" blue="0.88599997758865356" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="SecondayText">
             <color red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
