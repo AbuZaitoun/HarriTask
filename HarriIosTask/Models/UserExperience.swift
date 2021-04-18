@@ -6,13 +6,13 @@
 //
 
 struct UserExperience: Codable {
-    var workList: [Work]
+    var work: Work
     
     init() {
-        self.workList = []
+        self.work = Work()
     }
-    
+
     enum CodingKeys: String, CodingKey {
-        case workList = ""
+        case work = "Work"
     }
 }

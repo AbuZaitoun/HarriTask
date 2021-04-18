@@ -10,9 +10,13 @@ import Foundation
 struct UserDetails: Codable {
     
     var userInfo: UserInfo
+    var experience: [UserExperience]
+    var currentJob: String
     //Availability goes here along side others
     enum CodingKeys: String, CodingKey {
         case userInfo = "user_info"
+        case experience = "experience"
+        case currentJob = "current_job"
     }
 }
 
