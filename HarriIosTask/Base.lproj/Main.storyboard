@@ -140,72 +140,61 @@
             <point key="canvasLocation" x="1042.0289855072465" y="116.51785714285714"/>
         </scene>
         <!--User Info Table View Controller-->
-        <scene sceneID="J1f-Lb-Cgu">
+        <scene sceneID="k4w-Xe-tSs">
             <objects>
-                <tableViewController storyboardIdentifier="UserInfoTableViewController" id="bDl-K9-yuI" customClass="UserInfoTableViewController" customModule="HarriIosTask" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tD3-bc-3oj">
+                <viewController storyboardIdentifier="UserInfoTableViewController" id="1sx-bF-8iW" customClass="UserInfoTableViewController" customModule="HarriIosTask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WKV-8J-Mp0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="XJF-kt-ic2">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserInfoAboutTableViewCell" id="nJh-kZ-NKf" customClass="UserInfoAboutTableViewCell" customModule="HarriIosTask" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="55.5" width="374" height="43"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nJh-kZ-NKf" id="EW9-7A-AWH">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83J-2J-uHX">
+                                                    <rect key="frame" x="20" y="11" width="334" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="83J-2J-uHX" firstAttribute="top" secondItem="EW9-7A-AWH" secondAttribute="topMargin" id="18T-f5-kkB"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="83J-2J-uHX" secondAttribute="bottom" id="D1O-gu-qw2"/>
+                                                <constraint firstItem="83J-2J-uHX" firstAttribute="leading" secondItem="EW9-7A-AWH" secondAttribute="leadingMargin" id="RBi-yO-8wx"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="83J-2J-uHX" secondAttribute="trailing" id="yh7-Z9-qYv"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="aboutLabel" destination="83J-2J-uHX" id="aUF-Ku-7Eh"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bjd-Sq-ifv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <sections>
-                            <tableViewSection headerTitle="About" id="4IN-yr-Dmi">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="IHn-BY-ipq" customClass="UserInfoAboutTableViewCell" customModule="HarriIosTask" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IHn-BY-ipq" id="2qS-TC-2Ur">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="Experience" id="qhj-go-Vr9">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="q2o-69-oaQ" customClass="UserInfoExperienceTableViewCell" customModule="HarriIosTask" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="127.5" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="q2o-69-oaQ" id="CuJ-so-8U1">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="Skills" id="VN7-8b-EgC">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="YUq-RN-uv2" customClass="UserInfoSkillsTableViewCell" customModule="HarriIosTask" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="227" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YUq-RN-uv2" id="3Ip-Lw-Mxk">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="Availability" id="pbW-D8-BGC">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Z6o-4T-H1U" customClass="UserInfoAvailabilityTableViewCell" customModule="HarriIosTask" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="326.5" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z6o-4T-H1U" id="xM6-JL-RrN">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="bDl-K9-yuI" id="7eX-TW-ulA"/>
-                            <outlet property="delegate" destination="bDl-K9-yuI" id="HIz-Ch-2Z8"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jxf-6n-uVq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="XJF-kt-ic2" firstAttribute="leading" secondItem="bjd-Sq-ifv" secondAttribute="leading" id="5U4-ei-i9E"/>
+                            <constraint firstItem="XJF-kt-ic2" firstAttribute="top" secondItem="bjd-Sq-ifv" secondAttribute="top" id="KSu-it-pCX"/>
+                            <constraint firstItem="bjd-Sq-ifv" firstAttribute="bottom" secondItem="XJF-kt-ic2" secondAttribute="bottom" id="U3p-vV-bat"/>
+                            <constraint firstItem="bjd-Sq-ifv" firstAttribute="trailing" secondItem="XJF-kt-ic2" secondAttribute="trailing" id="dL8-6L-Avc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="XJF-kt-ic2" id="OF0-fa-nhl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RPO-rn-4Jd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1862" y="131"/>
+            <point key="canvasLocation" x="2628" y="163"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rfL-aX-4N1">

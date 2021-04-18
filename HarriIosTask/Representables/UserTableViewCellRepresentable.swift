@@ -22,6 +22,7 @@ class UserTableViewCellRepresentable: TableViewCellRepresentable {
     /// Image url
     private(set) var imageURL: String?
     
+    /// User id
     var userID: String
     
     /// Cell height

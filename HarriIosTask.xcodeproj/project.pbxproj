@@ -28,6 +28,11 @@
 		767C37D22629A03000D8980C /* UserInfoAvailabilityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37D12629A03000D8980C /* UserInfoAvailabilityTableViewCell.swift */; };
 		767C37D5262A5DDA00D8980C /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37D4262A5DDA00D8980C /* UserInfo.swift */; };
 		767C37D8262A5E4800D8980C /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37D7262A5E4800D8980C /* UserDetails.swift */; };
+		767C37DB262AE8D300D8980C /* UserInfoAboutRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37DA262AE8D300D8980C /* UserInfoAboutRepresentable.swift */; };
+		767C37DE262AEAE500D8980C /* UserInfoAboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37DD262AEAE500D8980C /* UserInfoAboutViewModel.swift */; };
+		767C37E1262C1A2300D8980C /* UserExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37E0262C1A2300D8980C /* UserExperience.swift */; };
+		767C37E4262C1A4000D8980C /* Work.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37E3262C1A4000D8980C /* Work.swift */; };
+		767C37E7262C1C8600D8980C /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37E6262C1C8600D8980C /* Brand.swift */; };
 		76BEEFD22619D8F500AD0321 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD12619D8F500AD0321 /* AppDelegate.swift */; };
 		76BEEFD42619D8F500AD0321 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD32619D8F500AD0321 /* SceneDelegate.swift */; };
 		76BEEFD62619D8F500AD0321 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD52619D8F500AD0321 /* UsersViewController.swift */; };
@@ -62,6 +67,11 @@
 		767C37D12629A03000D8980C /* UserInfoAvailabilityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoAvailabilityTableViewCell.swift; sourceTree = "<group>"; };
 		767C37D4262A5DDA00D8980C /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		767C37D7262A5E4800D8980C /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
+		767C37DA262AE8D300D8980C /* UserInfoAboutRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoAboutRepresentable.swift; sourceTree = "<group>"; };
+		767C37DD262AEAE500D8980C /* UserInfoAboutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoAboutViewModel.swift; sourceTree = "<group>"; };
+		767C37E0262C1A2300D8980C /* UserExperience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserExperience.swift; sourceTree = "<group>"; };
+		767C37E3262C1A4000D8980C /* Work.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Work.swift; sourceTree = "<group>"; };
+		767C37E6262C1C8600D8980C /* Brand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
 		76BEEFCE2619D8F500AD0321 /* HarriIosTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarriIosTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76BEEFD12619D8F500AD0321 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76BEEFD32619D8F500AD0321 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +114,9 @@
 				76392469261B10FE009097A6 /* UserData.swift */,
 				767C37D4262A5DDA00D8980C /* UserInfo.swift */,
 				767C37D7262A5E4800D8980C /* UserDetails.swift */,
+				767C37E0262C1A2300D8980C /* UserExperience.swift */,
+				767C37E3262C1A4000D8980C /* Work.swift */,
+				767C37E6262C1C8600D8980C /* Brand.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -126,6 +139,7 @@
 			children = (
 				7639247F261B564B009097A6 /* UserViewModel.swift */,
 				767C37AF2624A29700D8980C /* ViewModel.swift */,
+				767C37DD262AEAE500D8980C /* UserInfoAboutViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -165,6 +179,7 @@
 				767C37A82624765200D8980C /* UserTableViewCellRepresentable.swift */,
 				767C37B72625954200D8980C /* LoadingTableViewCellRepresentable.swift */,
 				767C37BA2625960500D8980C /* TableViewCellRepresentable.swift */,
+				767C37DA262AE8D300D8980C /* UserInfoAboutRepresentable.swift */,
 			);
 			path = Representables;
 			sourceTree = "<group>";
@@ -350,7 +365,9 @@
 				76BEEFD62619D8F500AD0321 /* UsersViewController.swift in Sources */,
 				76392484261B5EF9009097A6 /* UsersModel.swift in Sources */,
 				767C37B02624A29700D8980C /* ViewModel.swift in Sources */,
+				767C37DE262AEAE500D8980C /* UserInfoAboutViewModel.swift in Sources */,
 				767C37D22629A03000D8980C /* UserInfoAvailabilityTableViewCell.swift in Sources */,
+				767C37E4262C1A4000D8980C /* Work.swift in Sources */,
 				767C37B82625954200D8980C /* LoadingTableViewCellRepresentable.swift in Sources */,
 				76BEEFD22619D8F500AD0321 /* AppDelegate.swift in Sources */,
 				767C37D8262A5E4800D8980C /* UserDetails.swift in Sources */,
@@ -359,10 +376,13 @@
 				767C37C926299FEE00D8980C /* UserInfoAboutTableViewCell.swift in Sources */,
 				767C37B42624AA5000D8980C /* UsersViewController+UITableView.swift in Sources */,
 				767C37CC2629A00500D8980C /* UserInfoExperienceTableViewCell.swift in Sources */,
+				767C37DB262AE8D300D8980C /* UserInfoAboutRepresentable.swift in Sources */,
 				76BEEFD42619D8F500AD0321 /* SceneDelegate.swift in Sources */,
 				7639246A261B10FE009097A6 /* UserData.swift in Sources */,
 				76BEEFEB2619DBDA00AD0321 /* UserTableViewCell.swift in Sources */,
 				767C37D5262A5DDA00D8980C /* UserInfo.swift in Sources */,
+				767C37E7262C1C8600D8980C /* Brand.swift in Sources */,
+				767C37E1262C1A2300D8980C /* UserExperience.swift in Sources */,
 				763924AB261C6E68009097A6 /* UsersRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

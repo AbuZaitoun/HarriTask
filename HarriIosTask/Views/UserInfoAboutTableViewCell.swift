@@ -9,6 +9,8 @@ import UIKit
 
 class UserInfoAboutTableViewCell: UITableViewCell {
 
+    @IBOutlet var aboutLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,5 +21,24 @@ class UserInfoAboutTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    func setupCell(with representable: UserInfoAboutRepresentable){
+        self.aboutLabel.text = representable.aboutText
+    }
+    
+    /**
+       Get Height of cell
+     - returns height as CGFloat
+     */
+    static func getHeight() -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    /**
+     Get resuse modifier
+     - Returns reuse modifer as String
+     */
+    static func getReuseModifier() -> String {
+        return "UserInfoAboutTableViewCell"
+    }
 }
