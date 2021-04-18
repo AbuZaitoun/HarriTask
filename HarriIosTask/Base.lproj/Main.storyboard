@@ -154,7 +154,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="XJF-kt-ic2">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="sectionIndexBackgroundColor" systemColor="systemGrayColor"/>
+                                <color key="sectionIndexBackgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserInfoAboutTableViewCell" id="nJh-kZ-NKf" customClass="UserInfoAboutTableViewCell" customModule="HarriIosTask" customModuleProvider="target">
                                         <rect key="frame" x="20" y="55.5" width="374" height="43"/>
@@ -238,20 +238,17 @@
                                             <outlet property="positionNameLabel" destination="Chk-Qr-4Jf" id="wxg-5J-VVG"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserInfoSkillsTableViewCell" rowHeight="200" id="iJt-cQ-SWJ" userLabel="UserInfoSkillsTableViewCell" customClass="UserInfoSkillsTableViewCell" customModule="HarriIosTask" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="209.5" width="374" height="200"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserInfoSkillsTableViewCell" id="iJt-cQ-SWJ" userLabel="UserInfoSkillsTableViewCell" customClass="UserInfoSkillsTableViewCell" customModule="HarriIosTask" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="209.5" width="374" height="10.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iJt-cQ-SWJ" id="jlP-0F-7aB">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="10.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zjr-nl-qDb">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="200"/>
+                                                    <rect key="frame" x="5" y="5" width="364" height="0.5"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="200" id="aSS-BR-AaS"/>
-                                                    </constraints>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="6" minimumInteritemSpacing="5" sectionInsetReference="safeArea" id="50f-v0-rT2" customClass="MyFlowLayout" customModule="HarriIosTask" customModuleProvider="target">
+                                                    <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="6" minimumInteritemSpacing="10" sectionInsetReference="safeArea" id="50f-v0-rT2" customClass="MyFlowLayout" customModule="HarriIosTask" customModuleProvider="target">
                                                         <size key="itemSize" width="78" height="26"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -297,10 +294,10 @@
                                                 </collectionView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="Zjr-nl-qDb" secondAttribute="trailing" id="ZSy-DE-A4m"/>
-                                                <constraint firstAttribute="bottom" secondItem="Zjr-nl-qDb" secondAttribute="bottom" id="neW-SD-P9L"/>
-                                                <constraint firstItem="Zjr-nl-qDb" firstAttribute="top" secondItem="jlP-0F-7aB" secondAttribute="top" id="t2V-zS-pSG"/>
-                                                <constraint firstItem="Zjr-nl-qDb" firstAttribute="leading" secondItem="jlP-0F-7aB" secondAttribute="leading" id="xE5-Ck-Ml1"/>
+                                                <constraint firstAttribute="trailing" secondItem="Zjr-nl-qDb" secondAttribute="trailing" constant="5" id="ZSy-DE-A4m"/>
+                                                <constraint firstAttribute="bottom" secondItem="Zjr-nl-qDb" secondAttribute="bottom" constant="5" id="neW-SD-P9L"/>
+                                                <constraint firstItem="Zjr-nl-qDb" firstAttribute="top" secondItem="jlP-0F-7aB" secondAttribute="top" constant="5" id="t2V-zS-pSG"/>
+                                                <constraint firstItem="Zjr-nl-qDb" firstAttribute="leading" secondItem="jlP-0F-7aB" secondAttribute="leading" constant="5" id="xE5-Ck-Ml1"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -313,7 +310,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bjd-Sq-ifv"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="XJF-kt-ic2" firstAttribute="top" secondItem="bjd-Sq-ifv" secondAttribute="top" id="HUH-Go-RQz"/>
                             <constraint firstItem="XJF-kt-ic2" firstAttribute="leading" secondItem="bjd-Sq-ifv" secondAttribute="leading" id="aDX-Xa-73D"/>
@@ -362,9 +359,6 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

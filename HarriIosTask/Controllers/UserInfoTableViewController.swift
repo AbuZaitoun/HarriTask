@@ -18,6 +18,7 @@ class UserInfoTableViewController: UIViewController {
     let sectionHeaders = ["About", "Experience", "Skills", "Availability"]
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.backgroundColor = .systemGray5
         self.aboutViewModel = UserInfoAboutViewModel(userInfo: UserInfo(about: ""))
         self.experienceViewModel = UserInfoExperienceViewModel(with: [])
         self.skillsViewModel = UserInfoSkillsViewModel(with: [])
@@ -34,7 +35,7 @@ class UserInfoTableViewController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.delegate = self
     }
-
+    
     func setupViewController(userID: String){
         self.userID = userID
     }
@@ -42,14 +43,14 @@ class UserInfoTableViewController: UIViewController {
     // MARK: - Table view data source
     
     
-
+    
 }
 extension UserInfoTableViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 4
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         switch section {
@@ -63,7 +64,7 @@ extension UserInfoTableViewController: UITableViewDelegate, UITableViewDataSourc
             return 0
         }
     }
-
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return self.sectionHeaders[section]
     }
@@ -101,7 +102,7 @@ extension UserInfoTableViewController: UITableViewDelegate, UITableViewDataSourc
         
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-
+        
         // constants, should be initialized somewhere else
         switch indexPath.section {
         case 0:
@@ -112,23 +113,33 @@ extension UserInfoTableViewController: UITableViewDelegate, UITableViewDataSourc
             let totalItem: CGFloat = 20
             let totalCellInARow: CGFloat = 3
             let cellHeight: CGFloat = 30
-
+            
             let collViewTopOffset: CGFloat = 10
             let collViewBottomOffset: CGFloat = 10
-
+            
             let minLineSpacing: CGFloat = 5
-
+            
             // calculations
             let totalRow = ceil(totalItem / totalCellInARow)
             let totalTopBottomOffset = collViewTopOffset + collViewBottomOffset
             let totalSpacing = CGFloat(totalRow - 1) * minLineSpacing   // total line space in UICollectionView is (totalRow - 1)
             let totalHeight  = (cellHeight * totalRow) + totalTopBottomOffset + totalSpacing
-
+            
             return totalHeight
-//            return self.skillsViewModel.heightForRow(at: indexPath, tableView: tableView)
+        //            return self.skillsViewModel.heightForRow(at: indexPath, tableView: tableView)
         default:
             return CGFloat(0)
         }
         
+    }
+ 
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    
+        let headerLabel = UILabel()
+        headerLabel.text = self.sectionHeaders[section]
+        headerLabel.font = UIFont(name: "OpenSans-Regular", size: 16)
+        headerLabel.textColor = UIColor.black
+        headerLabel.textAlignment = .center
+        return headerLabel
     }
 }
