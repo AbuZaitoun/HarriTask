@@ -15,7 +15,7 @@ struct Work: Codable {
     var brand: Brand
     var position: Position?
     init() {
-//        self.customPosition = ""
+        self.customPosition = ""
         self.startDate = ""
         self.description = ""
         self.brand = Brand(name: "")
@@ -28,5 +28,9 @@ struct Work: Codable {
         case endDate = "end_date"
         case brand = "Brand"
         case position = "Position"
+    }
+    
+    var startDateAsDate: Date? {
+        return self.startDate.toDate()
     }
 }

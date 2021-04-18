@@ -31,6 +31,10 @@ class UserInfoExperienceRepresentable: TableViewCellRepresentable {
         } else {
             self.positionName = "Position"
         }
-        self.dateText = ""
+        
+        let startString = work.startDateAsDate?.toString()
+        
+        self.dateText = (startString ?? "Start") + " - " + (work.endDate?.toDate()?.toString() ?? "Current")
+        
     }
 }

@@ -30,7 +30,7 @@ class UserInfoExperienceTableViewCell: UITableViewCell {
         self.dateLabel.text = representable.dateText
         self.positionNameLabel.text = representable.positionName
         self.brandNameLabel.text = representable.brandName
-        self.positionDescriptionLabel.text = representable.positionName
+        self.positionDescriptionLabel.text = representable.description
     }
     
     /**
