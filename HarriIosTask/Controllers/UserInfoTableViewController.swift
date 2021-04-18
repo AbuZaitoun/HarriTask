@@ -100,4 +100,35 @@ extension UserInfoTableViewController: UITableViewDelegate, UITableViewDataSourc
         }
         
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+
+        // constants, should be initialized somewhere else
+        switch indexPath.section {
+        case 0:
+            return self.aboutViewModel.heightForRow(at: indexPath, tableView: tableView)
+        case 1:
+            return self.experienceViewModel.heightForRow(at: indexPath, tableView: tableView)
+        case 2:
+            let totalItem: CGFloat = 20
+            let totalCellInARow: CGFloat = 3
+            let cellHeight: CGFloat = 30
+
+            let collViewTopOffset: CGFloat = 10
+            let collViewBottomOffset: CGFloat = 10
+
+            let minLineSpacing: CGFloat = 5
+
+            // calculations
+            let totalRow = ceil(totalItem / totalCellInARow)
+            let totalTopBottomOffset = collViewTopOffset + collViewBottomOffset
+            let totalSpacing = CGFloat(totalRow - 1) * minLineSpacing   // total line space in UICollectionView is (totalRow - 1)
+            let totalHeight  = (cellHeight * totalRow) + totalTopBottomOffset + totalSpacing
+
+            return totalHeight
+//            return self.skillsViewModel.heightForRow(at: indexPath, tableView: tableView)
+        default:
+            return CGFloat(0)
+        }
+        
+    }
 }

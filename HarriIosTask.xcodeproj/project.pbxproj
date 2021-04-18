@@ -41,7 +41,8 @@
 		76ABFA57262C6A0F007A2D41 /* UserInfoSkillsRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA56262C6A0F007A2D41 /* UserInfoSkillsRepresentable.swift */; };
 		76ABFA5A262C6A42007A2D41 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA59262C6A42007A2D41 /* Skill.swift */; };
 		76ABFA5E262C6B23007A2D41 /* UserInfoSkillsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA5D262C6B23007A2D41 /* UserInfoSkillsViewModel.swift */; };
-		76ABFA61262C6E17007A2D41 /* SkillCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA60262C6E17007A2D41 /* SkillCollectionViewCell.swift */; };
+		76ABFA6C262C7E81007A2D41 /* SkillCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA6B262C7E81007A2D41 /* SkillCollectionViewCell.swift */; };
+		76ABFA6F262C829D007A2D41 /* MyFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA6E262C829D007A2D41 /* MyFlowLayout.swift */; };
 		76BEEFD22619D8F500AD0321 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD12619D8F500AD0321 /* AppDelegate.swift */; };
 		76BEEFD42619D8F500AD0321 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD32619D8F500AD0321 /* SceneDelegate.swift */; };
 		76BEEFD62619D8F500AD0321 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD52619D8F500AD0321 /* UsersViewController.swift */; };
@@ -89,7 +90,8 @@
 		76ABFA56262C6A0F007A2D41 /* UserInfoSkillsRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoSkillsRepresentable.swift; sourceTree = "<group>"; };
 		76ABFA59262C6A42007A2D41 /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
 		76ABFA5D262C6B23007A2D41 /* UserInfoSkillsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoSkillsViewModel.swift; sourceTree = "<group>"; };
-		76ABFA60262C6E17007A2D41 /* SkillCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillCollectionViewCell.swift; sourceTree = "<group>"; };
+		76ABFA6B262C7E81007A2D41 /* SkillCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillCollectionViewCell.swift; sourceTree = "<group>"; };
+		76ABFA6E262C829D007A2D41 /* MyFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFlowLayout.swift; sourceTree = "<group>"; };
 		76BEEFCE2619D8F500AD0321 /* HarriIosTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarriIosTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76BEEFD12619D8F500AD0321 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76BEEFD32619D8F500AD0321 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,7 +152,7 @@
 				767C37CB2629A00500D8980C /* UserInfoExperienceTableViewCell.swift */,
 				767C37CE2629A01D00D8980C /* UserInfoSkillsTableViewCell.swift */,
 				767C37D12629A03000D8980C /* UserInfoAvailabilityTableViewCell.swift */,
-				76ABFA60262C6E17007A2D41 /* SkillCollectionViewCell.swift */,
+				76ABFA6B262C7E81007A2D41 /* SkillCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -192,6 +194,7 @@
 			children = (
 				76BEEFD52619D8F500AD0321 /* UsersViewController.swift */,
 				767C37C526299ECE00D8980C /* UserInfoTableViewController.swift */,
+				76ABFA6E262C829D007A2D41 /* MyFlowLayout.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				7639247A261B4ADD009097A6 /* LoadingTableViewCell.swift in Sources */,
 				767C37A92624765200D8980C /* UserTableViewCellRepresentable.swift in Sources */,
 				767C37C626299ECE00D8980C /* UserInfoTableViewController.swift in Sources */,
+				76ABFA6F262C829D007A2D41 /* MyFlowLayout.swift in Sources */,
 				76392480261B564B009097A6 /* UserViewModel.swift in Sources */,
 				76BEEFE82619DA7500AD0321 /* User.swift in Sources */,
 				767C37BB2625960500D8980C /* TableViewCellRepresentable.swift in Sources */,
@@ -418,7 +422,7 @@
 				767C37E7262C1C8600D8980C /* Brand.swift in Sources */,
 				76ABFA57262C6A0F007A2D41 /* UserInfoSkillsRepresentable.swift in Sources */,
 				767C37E1262C1A2300D8980C /* UserExperience.swift in Sources */,
-				76ABFA61262C6E17007A2D41 /* SkillCollectionViewCell.swift in Sources */,
+				76ABFA6C262C7E81007A2D41 /* SkillCollectionViewCell.swift in Sources */,
 				763924AB261C6E68009097A6 /* UsersRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

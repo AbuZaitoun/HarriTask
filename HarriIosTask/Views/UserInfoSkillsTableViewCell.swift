@@ -9,6 +9,11 @@ import UIKit
 
 class UserInfoSkillsTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet weak var collectionLayout: UICollectionViewFlowLayout! {
+        didSet {
+                collectionLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+            }
+    }
     @IBOutlet var collectionView: UICollectionView!
     
     var skills: [Skill]?
@@ -16,6 +21,9 @@ class UserInfoSkillsTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
     override func awakeFromNib() {
         super.awakeFromNib()
         self.setupCollectionView()
+        if let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
+              flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+            }
     }
 
     func setupCollectionView(){
@@ -57,9 +65,27 @@ class UserInfoSkillsTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var mycell = collectionView.dequeueReusableCell(withReuseIdentifier: "SkillCollectionViewCell", for: indexPath) as! SkillCollectionViewCell
+        let mycell = collectionView.dequeueReusableCell(withReuseIdentifier: "SkillCollectionViewCell", for: indexPath) as! SkillCollectionViewCell
         mycell.label.text = self.skills![indexPath.row].name
         return mycell
     }
+
+}
+class Constant {
+    static let totalItem: CGFloat = 20
     
+    static let column: CGFloat = 3
+    
+    static let minLineSpacing: CGFloat = 1.0
+    static let minItemSpacing: CGFloat = 1.0
+    
+    static let offset: CGFloat = 1.0 // TODO: for each side, define its offset
+    
+    static func getItemWidth(boundWidth: CGFloat) -> CGFloat {
+        
+        // totalCellWidth = (collectionview width or tableview width) - (left offset + right offset) - (total space x space width)
+        let totalWidth = boundWidth - (offset + offset) - ((column - 1) * minItemSpacing)
+        
+        return totalWidth / column
+    }
 }
