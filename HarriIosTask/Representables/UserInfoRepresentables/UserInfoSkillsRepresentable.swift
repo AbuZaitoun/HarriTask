@@ -12,11 +12,18 @@ class UserInfoSkillsRepresentable: TableViewCellRepresentable {
     
     var reuseIdentifier: String
     
-//    var skillName: String
-    var skills: [Skill]
+    var skillName: String?
+    var skills: [Skill]?
+    
     init(with skills: [Skill]) {
         self.skills = skills
 //        self.skillName = skill.name
+        self.cellHeight = UserInfoSkillsTableViewCell.getHeight()
+        self.reuseIdentifier = UserInfoSkillsTableViewCell.getReuseModifier()
+    }
+    
+    init(with skill: Skill) {
+        self.skillName = skill.name
         self.cellHeight = UserInfoSkillsTableViewCell.getHeight()
         self.reuseIdentifier = UserInfoSkillsTableViewCell.getReuseModifier()
     }

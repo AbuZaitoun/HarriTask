@@ -43,8 +43,13 @@
 		76ABFA5E262C6B23007A2D41 /* UserInfoSkillsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA5D262C6B23007A2D41 /* UserInfoSkillsViewModel.swift */; };
 		76ABFA6C262C7E81007A2D41 /* SkillCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA6B262C7E81007A2D41 /* SkillCollectionViewCell.swift */; };
 		76ABFA6F262C829D007A2D41 /* MyFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA6E262C829D007A2D41 /* MyFlowLayout.swift */; };
-		76ABFA72262C8D93007A2D41 /* SkillRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA71262C8D93007A2D41 /* SkillRepresentable.swift */; };
-		76ABFA7A262C8E9C007A2D41 /* SkillViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA79262C8E9C007A2D41 /* SkillViewModel.swift */; };
+		76ABFA81262D7B90007A2D41 /* Availability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA80262D7B90007A2D41 /* Availability.swift */; };
+		76ABFA88262D8357007A2D41 /* UserInfoAvailabilityRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA87262D8357007A2D41 /* UserInfoAvailabilityRepresentable.swift */; };
+		76ABFA94262D9002007A2D41 /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA93262D9002007A2D41 /* CollectionViewModel.swift */; };
+		76ABFA97262D92AF007A2D41 /* UserInfoAvailabilityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA96262D92AF007A2D41 /* UserInfoAvailabilityViewModel.swift */; };
+		76ABFA9A262D980C007A2D41 /* AvailabilityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA99262D980C007A2D41 /* AvailabilityCollectionViewCell.swift */; };
+		76ABFA9D262DA1C6007A2D41 /* ResizableCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA9C262DA1C6007A2D41 /* ResizableCollectionView.swift */; };
+		76ABFAA0262DAB89007A2D41 /* Newfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA9F262DAB89007A2D41 /* Newfile.swift */; };
 		76BEEFD22619D8F500AD0321 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD12619D8F500AD0321 /* AppDelegate.swift */; };
 		76BEEFD42619D8F500AD0321 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD32619D8F500AD0321 /* SceneDelegate.swift */; };
 		76BEEFD62619D8F500AD0321 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD52619D8F500AD0321 /* UsersViewController.swift */; };
@@ -94,8 +99,13 @@
 		76ABFA5D262C6B23007A2D41 /* UserInfoSkillsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoSkillsViewModel.swift; sourceTree = "<group>"; };
 		76ABFA6B262C7E81007A2D41 /* SkillCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillCollectionViewCell.swift; sourceTree = "<group>"; };
 		76ABFA6E262C829D007A2D41 /* MyFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFlowLayout.swift; sourceTree = "<group>"; };
-		76ABFA71262C8D93007A2D41 /* SkillRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillRepresentable.swift; sourceTree = "<group>"; };
-		76ABFA79262C8E9C007A2D41 /* SkillViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillViewModel.swift; sourceTree = "<group>"; };
+		76ABFA80262D7B90007A2D41 /* Availability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Availability.swift; sourceTree = "<group>"; };
+		76ABFA87262D8357007A2D41 /* UserInfoAvailabilityRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoAvailabilityRepresentable.swift; sourceTree = "<group>"; };
+		76ABFA93262D9002007A2D41 /* CollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
+		76ABFA96262D92AF007A2D41 /* UserInfoAvailabilityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoAvailabilityViewModel.swift; sourceTree = "<group>"; };
+		76ABFA99262D980C007A2D41 /* AvailabilityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailabilityCollectionViewCell.swift; sourceTree = "<group>"; };
+		76ABFA9C262DA1C6007A2D41 /* ResizableCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableCollectionView.swift; sourceTree = "<group>"; };
+		76ABFA9F262DAB89007A2D41 /* Newfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Newfile.swift; sourceTree = "<group>"; };
 		76BEEFCE2619D8F500AD0321 /* HarriIosTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarriIosTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76BEEFD12619D8F500AD0321 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76BEEFD32619D8F500AD0321 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,15 +144,8 @@
 		7639246C261B1475009097A6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				76BEEFE72619DA7500AD0321 /* User.swift */,
-				76392469261B10FE009097A6 /* UserData.swift */,
-				767C37D4262A5DDA00D8980C /* UserInfo.swift */,
-				767C37D7262A5E4800D8980C /* UserDetails.swift */,
-				767C37E0262C1A2300D8980C /* UserExperience.swift */,
-				767C37E3262C1A4000D8980C /* Work.swift */,
-				767C37E6262C1C8600D8980C /* Brand.swift */,
-				767C37EC262C2E9700D8980C /* Position.swift */,
-				76ABFA59262C6A42007A2D41 /* Skill.swift */,
+				76ABFA83262D7B9D007A2D41 /* UserListModels */,
+				76ABFA84262D7BBD007A2D41 /* UserInfoModels */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -150,13 +153,8 @@
 		7639246D261B148C009097A6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				76BEEFEA2619DBDA00AD0321 /* UserTableViewCell.swift */,
-				76392478261B4ADD009097A6 /* LoadingTableViewCell.swift */,
-				767C37C826299FEE00D8980C /* UserInfoAboutTableViewCell.swift */,
-				767C37CB2629A00500D8980C /* UserInfoExperienceTableViewCell.swift */,
-				767C37CE2629A01D00D8980C /* UserInfoSkillsTableViewCell.swift */,
-				767C37D12629A03000D8980C /* UserInfoAvailabilityTableViewCell.swift */,
-				76ABFA6B262C7E81007A2D41 /* SkillCollectionViewCell.swift */,
+				76ABFA8D262D8DB7007A2D41 /* UserListViews */,
+				76ABFA8E262D8DC5007A2D41 /* UserInfoViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -197,6 +195,8 @@
 				76BEEFD52619D8F500AD0321 /* UsersViewController.swift */,
 				767C37C526299ECE00D8980C /* UserInfoTableViewController.swift */,
 				76ABFA6E262C829D007A2D41 /* MyFlowLayout.swift */,
+				76ABFA9C262DA1C6007A2D41 /* ResizableCollectionView.swift */,
+				76ABFA9F262DAB89007A2D41 /* Newfile.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -204,13 +204,9 @@
 		767C37A726246D9B00D8980C /* Representables */ = {
 			isa = PBXGroup;
 			children = (
-				767C37A82624765200D8980C /* UserTableViewCellRepresentable.swift */,
-				767C37B72625954200D8980C /* LoadingTableViewCellRepresentable.swift */,
-				767C37BA2625960500D8980C /* TableViewCellRepresentable.swift */,
-				767C37DA262AE8D300D8980C /* UserInfoAboutRepresentable.swift */,
-				767C37E9262C2AE500D8980C /* UserInfoExperienceRepresentable.swift */,
-				76ABFA56262C6A0F007A2D41 /* UserInfoSkillsRepresentable.swift */,
-				76ABFA71262C8D93007A2D41 /* SkillRepresentable.swift */,
+				76ABFA7D262D7B07007A2D41 /* UserListRepresentables */,
+				76ABFA7E262D7B26007A2D41 /* UserInfoRepresentables */,
+				76ABFA7F262D7B3E007A2D41 /* Protocols */,
 			);
 			path = Representables;
 			sourceTree = "<group>";
@@ -229,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				767C37AF2624A29700D8980C /* ViewModel.swift */,
+				76ABFA93262D9002007A2D41 /* CollectionViewModel.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -239,7 +236,7 @@
 				767C37DD262AEAE500D8980C /* UserInfoAboutViewModel.swift */,
 				767C37EF262C339E00D8980C /* UserInfoExperienceViewModel.swift */,
 				76ABFA5D262C6B23007A2D41 /* UserInfoSkillsViewModel.swift */,
-				76ABFA79262C8E9C007A2D41 /* SkillViewModel.swift */,
+				76ABFA96262D92AF007A2D41 /* UserInfoAvailabilityViewModel.swift */,
 			);
 			path = UserInfoViewModel;
 			sourceTree = "<group>";
@@ -250,6 +247,96 @@
 				7639247F261B564B009097A6 /* UserViewModel.swift */,
 			);
 			path = UserListViewModel;
+			sourceTree = "<group>";
+		};
+		76ABFA7D262D7B07007A2D41 /* UserListRepresentables */ = {
+			isa = PBXGroup;
+			children = (
+				767C37A82624765200D8980C /* UserTableViewCellRepresentable.swift */,
+				767C37B72625954200D8980C /* LoadingTableViewCellRepresentable.swift */,
+			);
+			path = UserListRepresentables;
+			sourceTree = "<group>";
+		};
+		76ABFA7E262D7B26007A2D41 /* UserInfoRepresentables */ = {
+			isa = PBXGroup;
+			children = (
+				767C37DA262AE8D300D8980C /* UserInfoAboutRepresentable.swift */,
+				767C37E9262C2AE500D8980C /* UserInfoExperienceRepresentable.swift */,
+				76ABFA56262C6A0F007A2D41 /* UserInfoSkillsRepresentable.swift */,
+				76ABFA87262D8357007A2D41 /* UserInfoAvailabilityRepresentable.swift */,
+			);
+			path = UserInfoRepresentables;
+			sourceTree = "<group>";
+		};
+		76ABFA7F262D7B3E007A2D41 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				767C37BA2625960500D8980C /* TableViewCellRepresentable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		76ABFA83262D7B9D007A2D41 /* UserListModels */ = {
+			isa = PBXGroup;
+			children = (
+				76BEEFE72619DA7500AD0321 /* User.swift */,
+				76392469261B10FE009097A6 /* UserData.swift */,
+			);
+			path = UserListModels;
+			sourceTree = "<group>";
+		};
+		76ABFA84262D7BBD007A2D41 /* UserInfoModels */ = {
+			isa = PBXGroup;
+			children = (
+				767C37D4262A5DDA00D8980C /* UserInfo.swift */,
+				767C37D7262A5E4800D8980C /* UserDetails.swift */,
+				767C37E0262C1A2300D8980C /* UserExperience.swift */,
+				767C37E3262C1A4000D8980C /* Work.swift */,
+				767C37E6262C1C8600D8980C /* Brand.swift */,
+				767C37EC262C2E9700D8980C /* Position.swift */,
+				76ABFA59262C6A42007A2D41 /* Skill.swift */,
+				76ABFA80262D7B90007A2D41 /* Availability.swift */,
+			);
+			path = UserInfoModels;
+			sourceTree = "<group>";
+		};
+		76ABFA8D262D8DB7007A2D41 /* UserListViews */ = {
+			isa = PBXGroup;
+			children = (
+				76BEEFEA2619DBDA00AD0321 /* UserTableViewCell.swift */,
+				76392478261B4ADD009097A6 /* LoadingTableViewCell.swift */,
+			);
+			path = UserListViews;
+			sourceTree = "<group>";
+		};
+		76ABFA8E262D8DC5007A2D41 /* UserInfoViews */ = {
+			isa = PBXGroup;
+			children = (
+				76ABFA8F262D8DD0007A2D41 /* TableViewCells */,
+				76ABFA90262D8DDB007A2D41 /* CollectionViewCells */,
+			);
+			path = UserInfoViews;
+			sourceTree = "<group>";
+		};
+		76ABFA8F262D8DD0007A2D41 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				767C37C826299FEE00D8980C /* UserInfoAboutTableViewCell.swift */,
+				767C37CB2629A00500D8980C /* UserInfoExperienceTableViewCell.swift */,
+				767C37CE2629A01D00D8980C /* UserInfoSkillsTableViewCell.swift */,
+				767C37D12629A03000D8980C /* UserInfoAvailabilityTableViewCell.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		76ABFA90262D8DDB007A2D41 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				76ABFA6B262C7E81007A2D41 /* SkillCollectionViewCell.swift */,
+				76ABFA99262D980C007A2D41 /* AvailabilityCollectionViewCell.swift */,
+			);
+			path = CollectionViewCells;
 			sourceTree = "<group>";
 		};
 		76BEEFC52619D8F500AD0321 = {
@@ -419,6 +506,7 @@
 				7639247A261B4ADD009097A6 /* LoadingTableViewCell.swift in Sources */,
 				767C37A92624765200D8980C /* UserTableViewCellRepresentable.swift in Sources */,
 				767C37C626299ECE00D8980C /* UserInfoTableViewController.swift in Sources */,
+				76ABFAA0262DAB89007A2D41 /* Newfile.swift in Sources */,
 				76ABFA6F262C829D007A2D41 /* MyFlowLayout.swift in Sources */,
 				76392480261B564B009097A6 /* UserViewModel.swift in Sources */,
 				76BEEFE82619DA7500AD0321 /* User.swift in Sources */,
@@ -426,14 +514,17 @@
 				76BEEFD62619D8F500AD0321 /* UsersViewController.swift in Sources */,
 				76392484261B5EF9009097A6 /* UsersModel.swift in Sources */,
 				767C37ED262C2E9700D8980C /* Position.swift in Sources */,
-				76ABFA7A262C8E9C007A2D41 /* SkillViewModel.swift in Sources */,
+				76ABFA94262D9002007A2D41 /* CollectionViewModel.swift in Sources */,
 				767C37B02624A29700D8980C /* ViewModel.swift in Sources */,
+				76ABFA88262D8357007A2D41 /* UserInfoAvailabilityRepresentable.swift in Sources */,
 				767C37DE262AEAE500D8980C /* UserInfoAboutViewModel.swift in Sources */,
+				76ABFA97262D92AF007A2D41 /* UserInfoAvailabilityViewModel.swift in Sources */,
 				767C37EA262C2AE500D8980C /* UserInfoExperienceRepresentable.swift in Sources */,
 				767C37F6262C3B8600D8980C /* ToString+Date.swift in Sources */,
 				767C37D22629A03000D8980C /* UserInfoAvailabilityTableViewCell.swift in Sources */,
 				767C37F0262C339E00D8980C /* UserInfoExperienceViewModel.swift in Sources */,
 				767C37E4262C1A4000D8980C /* Work.swift in Sources */,
+				76ABFA9D262DA1C6007A2D41 /* ResizableCollectionView.swift in Sources */,
 				767C37B82625954200D8980C /* LoadingTableViewCellRepresentable.swift in Sources */,
 				76ABFA5E262C6B23007A2D41 /* UserInfoSkillsViewModel.swift in Sources */,
 				76BEEFD22619D8F500AD0321 /* AppDelegate.swift in Sources */,
@@ -441,11 +532,11 @@
 				767C37D8262A5E4800D8980C /* UserDetails.swift in Sources */,
 				767C37C22625C16F00D8980C /* MyInterceptor.swift in Sources */,
 				76ABFA5A262C6A42007A2D41 /* Skill.swift in Sources */,
+				76ABFA81262D7B90007A2D41 /* Availability.swift in Sources */,
 				767C37CF2629A01D00D8980C /* UserInfoSkillsTableViewCell.swift in Sources */,
 				767C37C926299FEE00D8980C /* UserInfoAboutTableViewCell.swift in Sources */,
 				767C37B42624AA5000D8980C /* UsersViewController+UITableView.swift in Sources */,
 				767C37CC2629A00500D8980C /* UserInfoExperienceTableViewCell.swift in Sources */,
-				76ABFA72262C8D93007A2D41 /* SkillRepresentable.swift in Sources */,
 				767C37DB262AE8D300D8980C /* UserInfoAboutRepresentable.swift in Sources */,
 				76BEEFD42619D8F500AD0321 /* SceneDelegate.swift in Sources */,
 				7639246A261B10FE009097A6 /* UserData.swift in Sources */,
@@ -456,6 +547,7 @@
 				767C37E1262C1A2300D8980C /* UserExperience.swift in Sources */,
 				76ABFA6C262C7E81007A2D41 /* SkillCollectionViewCell.swift in Sources */,
 				763924AB261C6E68009097A6 /* UsersRouter.swift in Sources */,
+				76ABFA9A262D980C007A2D41 /* AvailabilityCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

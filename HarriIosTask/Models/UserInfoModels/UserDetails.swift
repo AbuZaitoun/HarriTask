@@ -13,12 +13,14 @@ struct UserDetails: Codable {
     var experience: [UserExperience]
     var currentJob: String
     var skills: [Skill]
-    //Availability goes here along side others
+    var availability: Availability
+    
     enum CodingKeys: String, CodingKey {
         case userInfo = "user_info"
         case experience = "experience"
         case currentJob = "current_job"
         case skills = "user_skill"
+        case availability = "availability"
     }
 }
 

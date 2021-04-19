@@ -15,19 +15,24 @@ class UserInfoTableViewController: UIViewController {
     private var aboutViewModel: UserInfoAboutViewModel!
     private var experienceViewModel: UserInfoExperienceViewModel!
     private var skillsViewModel: UserInfoSkillsViewModel!
+    private var availabilityViewModel: UserInfoAvailabilityViewModel!
+    
     let sectionHeaders = ["About", "Experience", "Skills", "Availability"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.backgroundColor = .systemGray5
         self.aboutViewModel = UserInfoAboutViewModel(userInfo: UserInfo(about: ""))
         self.experienceViewModel = UserInfoExperienceViewModel(with: [])
         self.skillsViewModel = UserInfoSkillsViewModel(with: [])
+        self.availabilityViewModel = UserInfoAvailabilityViewModel(with: [])
         
         UsersModel.fetchUserInfo(userID: userID ?? "", completion: {[weak self] (userDetails, error) in
             guard let self = self else { return }
             self.aboutViewModel = UserInfoAboutViewModel(userInfo: userDetails?.userInfo ?? UserInfo(about: ""))
             self.experienceViewModel = UserInfoExperienceViewModel(with: userDetails?.experience ?? [])
             self.skillsViewModel = UserInfoSkillsViewModel(with: userDetails?.skills ?? [])
+            self.availabilityViewModel = UserInfoAvailabilityViewModel(with: userDetails?.availability.availabilities ?? [])
             self.tableView.reloadData()
         })
         
@@ -60,6 +65,8 @@ extension UserInfoTableViewController: UITableViewDelegate, UITableViewDataSourc
             return self.experienceViewModel.numberOfRows(inSection: section)
         case 2:
             return self.skillsViewModel.numberOfRows(inSection: section)
+        case 3:
+            return self.availabilityViewModel.numberOfRows(inSection: section)
         default:
             return 0
         }
@@ -96,42 +103,67 @@ extension UserInfoTableViewController: UITableViewDelegate, UITableViewDataSourc
             cell?.setupCell(with: representable)
             return cell ?? UITableViewCell()
             
+        case 3:
+            guard let representable = availabilityViewModel.representableForRow(at: indexPath) as? UserInfoAvailabilityRepresentable else {
+                return UITableViewCell()
+            }
+            let cell = tableView.dequeueReusableCell(withIdentifier: UserInfoAvailabilityTableViewCell.getReuseModifier(), for: indexPath) as? UserInfoAvailabilityTableViewCell
+            cell?.setupCell(with: representable)
+            return cell ?? UITableViewCell()
+            
         default:
             return UITableViewCell()
         }
         
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        // constants, should be initialized somewhere else
-        switch indexPath.section {
-        case 0:
-            return self.aboutViewModel.heightForRow(at: indexPath, tableView: tableView)
-        case 1:
-            return self.experienceViewModel.heightForRow(at: indexPath, tableView: tableView)
-        case 2:
-            let totalItem: CGFloat = 20
-            let totalCellInARow: CGFloat = 3
-            let cellHeight: CGFloat = 30
-            
-            let collViewTopOffset: CGFloat = 10
-            let collViewBottomOffset: CGFloat = 10
-            
-            let minLineSpacing: CGFloat = 5
-            
-            // calculations
-            let totalRow = ceil(totalItem / totalCellInARow)
-            let totalTopBottomOffset = collViewTopOffset + collViewBottomOffset
-            let totalSpacing = CGFloat(totalRow - 1) * minLineSpacing   // total line space in UICollectionView is (totalRow - 1)
-            let totalHeight  = (cellHeight * totalRow) + totalTopBottomOffset + totalSpacing
-            
-            return totalHeight
-        //            return self.skillsViewModel.heightForRow(at: indexPath, tableView: tableView)
-        default:
-            return CGFloat(0)
-        }
-        
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//
+//        // constants, should be initialized somewhere else
+//        switch indexPath.section {
+//        case 0:
+//            return self.aboutViewModel.heightForRow(at: indexPath, tableView: tableView)
+//        case 1:
+//            return self.experienceViewModel.heightForRow(at: indexPath, tableView: tableView)
+//        case 2:
+//            let totalItem: CGFloat = 20
+//            let totalCellInARow: CGFloat = 3
+//            let cellHeight: CGFloat = 30
+//
+//            let collViewTopOffset: CGFloat = 10
+//            let collViewBottomOffset: CGFloat = 10
+//
+//            let minLineSpacing: CGFloat = 5
+//
+//            // calculations
+//            let totalRow = ceil(totalItem / totalCellInARow)
+//            let totalTopBottomOffset = collViewTopOffset + collViewBottomOffset
+//            let totalSpacing = CGFloat(totalRow - 1) * minLineSpacing   // total line space in UICollectionView is (totalRow - 1)
+//            let totalHeight  = (cellHeight * totalRow) + totalTopBottomOffset + totalSpacing
+//
+//            return totalHeight
+//        //            return self.skillsViewModel.heightForRow(at: indexPath, tableView: tableView)
+//        case 3:
+//            let totalItem: CGFloat = 20
+//            let totalCellInARow: CGFloat = 3
+//            let cellHeight: CGFloat = 30
+//
+//            let collViewTopOffset: CGFloat = 10
+//            let collViewBottomOffset: CGFloat = 10
+//
+//            let minLineSpacing: CGFloat = 5
+//
+//            // calculations
+//            let totalRow = ceil(totalItem / totalCellInARow)
+//            let totalTopBottomOffset = collViewTopOffset + collViewBottomOffset
+//            let totalSpacing = CGFloat(totalRow - 1) * minLineSpacing   // total line space in UICollectionView is (totalRow - 1)
+//            let totalHeight  = (cellHeight * totalRow) + totalTopBottomOffset + totalSpacing
+//
+//            return totalHeight
+//        default:
+//            return CGFloat(0)
+//        }
+//        
+//    }
  
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerLabel = UILabel()

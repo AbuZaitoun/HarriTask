@@ -21,7 +21,11 @@ class SkillCollectionViewCell: UICollectionViewCell {
         self.layer.cornerRadius = 5
     }
     
-    func setupCell(with representable: SkillRepresentable){
-        self.label.text = representable.title
+    func setupCell(with representable: UserInfoSkillsRepresentable){
+        self.label.text = representable.skillName ?? ""
+    }
+    
+    static func getReuseIdentifier() -> String{
+        return "SkillCollectionViewCell"
     }
 }
