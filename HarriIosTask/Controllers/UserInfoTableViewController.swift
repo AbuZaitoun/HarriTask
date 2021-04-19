@@ -134,7 +134,6 @@ extension UserInfoTableViewController: UITableViewDelegate, UITableViewDataSourc
     }
  
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    
         let headerLabel = UILabel()
         headerLabel.text = self.sectionHeaders[section]
         headerLabel.font = UIFont(name: "OpenSans-Regular", size: 16)

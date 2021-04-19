@@ -43,6 +43,8 @@
 		76ABFA5E262C6B23007A2D41 /* UserInfoSkillsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA5D262C6B23007A2D41 /* UserInfoSkillsViewModel.swift */; };
 		76ABFA6C262C7E81007A2D41 /* SkillCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA6B262C7E81007A2D41 /* SkillCollectionViewCell.swift */; };
 		76ABFA6F262C829D007A2D41 /* MyFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA6E262C829D007A2D41 /* MyFlowLayout.swift */; };
+		76ABFA72262C8D93007A2D41 /* SkillRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA71262C8D93007A2D41 /* SkillRepresentable.swift */; };
+		76ABFA7A262C8E9C007A2D41 /* SkillViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA79262C8E9C007A2D41 /* SkillViewModel.swift */; };
 		76BEEFD22619D8F500AD0321 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD12619D8F500AD0321 /* AppDelegate.swift */; };
 		76BEEFD42619D8F500AD0321 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD32619D8F500AD0321 /* SceneDelegate.swift */; };
 		76BEEFD62619D8F500AD0321 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD52619D8F500AD0321 /* UsersViewController.swift */; };
@@ -92,6 +94,8 @@
 		76ABFA5D262C6B23007A2D41 /* UserInfoSkillsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoSkillsViewModel.swift; sourceTree = "<group>"; };
 		76ABFA6B262C7E81007A2D41 /* SkillCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillCollectionViewCell.swift; sourceTree = "<group>"; };
 		76ABFA6E262C829D007A2D41 /* MyFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFlowLayout.swift; sourceTree = "<group>"; };
+		76ABFA71262C8D93007A2D41 /* SkillRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillRepresentable.swift; sourceTree = "<group>"; };
+		76ABFA79262C8E9C007A2D41 /* SkillViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillViewModel.swift; sourceTree = "<group>"; };
 		76BEEFCE2619D8F500AD0321 /* HarriIosTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarriIosTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76BEEFD12619D8F500AD0321 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76BEEFD32619D8F500AD0321 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -160,11 +164,9 @@
 		7639247E261B563E009097A6 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				7639247F261B564B009097A6 /* UserViewModel.swift */,
-				767C37AF2624A29700D8980C /* ViewModel.swift */,
-				767C37DD262AEAE500D8980C /* UserInfoAboutViewModel.swift */,
-				767C37EF262C339E00D8980C /* UserInfoExperienceViewModel.swift */,
-				76ABFA5D262C6B23007A2D41 /* UserInfoSkillsViewModel.swift */,
+				76ABFA78262C8E6D007A2D41 /* UserListViewModel */,
+				76ABFA76262C8E0A007A2D41 /* UserInfoViewModel */,
+				76ABFA75262C8E00007A2D41 /* Protocols */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -208,6 +210,7 @@
 				767C37DA262AE8D300D8980C /* UserInfoAboutRepresentable.swift */,
 				767C37E9262C2AE500D8980C /* UserInfoExperienceRepresentable.swift */,
 				76ABFA56262C6A0F007A2D41 /* UserInfoSkillsRepresentable.swift */,
+				76ABFA71262C8D93007A2D41 /* SkillRepresentable.swift */,
 			);
 			path = Representables;
 			sourceTree = "<group>";
@@ -220,6 +223,33 @@
 				767C37F5262C3B8600D8980C /* ToString+Date.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		76ABFA75262C8E00007A2D41 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				767C37AF2624A29700D8980C /* ViewModel.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		76ABFA76262C8E0A007A2D41 /* UserInfoViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				767C37DD262AEAE500D8980C /* UserInfoAboutViewModel.swift */,
+				767C37EF262C339E00D8980C /* UserInfoExperienceViewModel.swift */,
+				76ABFA5D262C6B23007A2D41 /* UserInfoSkillsViewModel.swift */,
+				76ABFA79262C8E9C007A2D41 /* SkillViewModel.swift */,
+			);
+			path = UserInfoViewModel;
+			sourceTree = "<group>";
+		};
+		76ABFA78262C8E6D007A2D41 /* UserListViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7639247F261B564B009097A6 /* UserViewModel.swift */,
+			);
+			path = UserListViewModel;
 			sourceTree = "<group>";
 		};
 		76BEEFC52619D8F500AD0321 = {
@@ -396,6 +426,7 @@
 				76BEEFD62619D8F500AD0321 /* UsersViewController.swift in Sources */,
 				76392484261B5EF9009097A6 /* UsersModel.swift in Sources */,
 				767C37ED262C2E9700D8980C /* Position.swift in Sources */,
+				76ABFA7A262C8E9C007A2D41 /* SkillViewModel.swift in Sources */,
 				767C37B02624A29700D8980C /* ViewModel.swift in Sources */,
 				767C37DE262AEAE500D8980C /* UserInfoAboutViewModel.swift in Sources */,
 				767C37EA262C2AE500D8980C /* UserInfoExperienceRepresentable.swift in Sources */,
@@ -414,6 +445,7 @@
 				767C37C926299FEE00D8980C /* UserInfoAboutTableViewCell.swift in Sources */,
 				767C37B42624AA5000D8980C /* UsersViewController+UITableView.swift in Sources */,
 				767C37CC2629A00500D8980C /* UserInfoExperienceTableViewCell.swift in Sources */,
+				76ABFA72262C8D93007A2D41 /* SkillRepresentable.swift in Sources */,
 				767C37DB262AE8D300D8980C /* UserInfoAboutRepresentable.swift in Sources */,
 				76BEEFD42619D8F500AD0321 /* SceneDelegate.swift in Sources */,
 				7639246A261B10FE009097A6 /* UserData.swift in Sources */,

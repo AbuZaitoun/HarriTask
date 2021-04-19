@@ -15,15 +15,12 @@ class UserInfoSkillsTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
             }
     }
     @IBOutlet var collectionView: UICollectionView!
-    
-    var skills: [Skill]?
+    var skillsViewModel: SkillViewModel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.skillsViewModel = SkillViewModel(with: [])
         self.setupCollectionView()
-        if let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
-              flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-            }
     }
 
     func setupCollectionView(){
@@ -32,14 +29,12 @@ class UserInfoSkillsTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
     }
     
     func setupCell(with representable: UserInfoSkillsRepresentable){
-        self.skills = representable.skills
+        self.skillsViewModel = SkillViewModel(with: representable.skills)
         self.collectionView.reloadData()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
     
@@ -61,16 +56,17 @@ class UserInfoSkillsTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return skills?.count ?? 0
+        return self.skillsViewModel.numberOfItemsInSection(inSection: section)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let mycell = collectionView.dequeueReusableCell(withReuseIdentifier: "SkillCollectionViewCell", for: indexPath) as! SkillCollectionViewCell
-        mycell.label.text = self.skills![indexPath.row].name
+        mycell.setupCell(with: skillsViewModel.representableForRow(at: indexPath))
         return mycell
     }
 
 }
+
 class Constant {
     static let totalItem: CGFloat = 20
     
