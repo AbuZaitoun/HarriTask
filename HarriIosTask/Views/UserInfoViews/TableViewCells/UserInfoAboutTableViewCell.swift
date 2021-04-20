@@ -18,12 +18,19 @@ class UserInfoAboutTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func setupCell(with representable: UserInfoAboutRepresentable){
         self.aboutLabel.text = representable.aboutText
+        let numberOfLine = self.aboutLabel.maxNumberOfLines
+//        self.aboutLabel.numberOfLines = numberOfLine
+        if  numberOfLine > 5{
+            let readmoreFont = UIFont(name: "OpenSans-Regular", size: 13.0)
+            let readmoreFontColor = UIColor(named: "HarriBlue")
+            DispatchQueue.main.async {
+                self.aboutLabel.addTrailing(with: "... ", moreText: "Show More", moreTextFont: readmoreFont!, moreTextColor: readmoreFontColor!)
+            }
+        }
     }
     
     /**
