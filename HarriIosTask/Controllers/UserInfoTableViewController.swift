@@ -41,7 +41,6 @@ class UserInfoTableViewController: UIViewController {
             self.headerViewModel = UserInfoHeaderViewModel(with: self.user ?? User())
             self.setupHeaderView()
             self.tableView.reloadData()
-//            self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
         })
         
         
@@ -66,6 +65,7 @@ class UserInfoTableViewController: UIViewController {
         self.setNavbarTransculent()
     }
     func setupHeaderView(){
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         let header = HeaderView(frame: CGRect(x: 0, y: 0, width: 0, height: 250))
         header.setupView(with: self.headerViewModel.representable)
         self.tableView.tableHeaderView = header
@@ -87,18 +87,23 @@ class UserInfoTableViewController: UIViewController {
 
     private func setNavbar(backgroundColorAlpha alpha: CGFloat) {
         let newColor = UIColor(red: 1, green: 1, blue: 1, alpha: alpha) //your color
+        
         self.navigationController?.navigationBar.backgroundColor = newColor
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navbarFont!, NSAttributedString.Key.foregroundColor: UIColor(red: 0, green: 0.47, blue: 1, alpha: alpha)]
-        self.navigationController?.navigationBar.tintColor = UIColor(red: 0, green: 0.47, blue: 1, alpha: alpha)
-        self.navigationController?.navigationBar.barTintColor = newColor
-        self.navigationItem.title = self.user?.fullName
-        self.navigationController?.navigationBar.backgroundColor = newColor
+        if alpha >= 0.5 {
+            navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navbarFont!, NSAttributedString.Key.foregroundColor: UIColor(red: 0, green: 0.47, blue: 1, alpha: alpha)]
+            self.navigationController?.navigationBar.tintColor = UIColor(red: 0, green: 0.47, blue: 1, alpha: alpha)
+            self.navigationController?.navigationBar.barTintColor = newColor
+            self.navigationItem.title = self.user?.fullName
+        } else {
+            self.navigationItem.title = ""
+        }
+        
         if alpha == 1 {
-            
             self.navigationController?.navigationBar.isTranslucent = false
-            
-        }else {
+            self.navigationController?.navigationBar.tintColor = UIColor(red: 0, green: 0.47, blue: 1, alpha: 1)
+        } else {
             self.navigationController?.navigationBar.isTranslucent = true
+            self.navigationController?.navigationBar.tintColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         }
         
     }

@@ -59,9 +59,10 @@ class UsersViewController: UIViewController {
         let navbarFont = UIFont(name: "OpenSans-Regular", size: 21)
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navbarFont!, NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.title = "Harri"
-//        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.backgroundColor = UIColor(named: "AccentColor")
         self.navigationController?.navigationBar.barTintColor = UIColor(named: "AccentColor")
+        self.mainTableView.reloadData()
     }
     
     /**
