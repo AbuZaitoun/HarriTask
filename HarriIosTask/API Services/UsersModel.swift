@@ -45,6 +45,8 @@ class UsersModel {
     static func fetchUserInfo(userID: String, completion: @escaping (UserDetails?, Error?) -> ()) {
         let fetchUserInfoParams = ["id": userID]
         
+        
+        
         AF.request(UsersRouter.userInfo(params: fetchUserInfoParams, userID: userID), interceptor: MyInterceptor()).responseJSON() { response in
             
             switch response.result {

@@ -9,9 +9,9 @@ import UIKit
 
 class UserInfoTableViewController: UIViewController {
     
-    @IBOutlet weak var skillsCollectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
-    private var userID: String?
+    private var user: User?
+    private var headerViewModel: UserInfoHeaderViewModel!
     private var aboutViewModel: UserInfoAboutViewModel!
     private var experienceViewModel: UserInfoExperienceViewModel!
     private var skillsViewModel: UserInfoSkillsViewModel!
@@ -22,34 +22,81 @@ class UserInfoTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.backgroundColor = .systemGray5
+        self.tableView.contentInsetAdjustmentBehavior = .never
+        self.navigationController?.navigationBar.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
         self.aboutViewModel = UserInfoAboutViewModel(userInfo: UserInfo(about: ""))
         self.experienceViewModel = UserInfoExperienceViewModel(with: [])
         self.skillsViewModel = UserInfoSkillsViewModel(with: [])
         self.availabilityViewModel = UserInfoAvailabilityViewModel(with: [])
-        
-        UsersModel.fetchUserInfo(userID: userID ?? "", completion: {[weak self] (userDetails, error) in
+        self.headerViewModel = UserInfoHeaderViewModel(with: self.user ?? User())
+        self.tableView.contentInset.top = 0
+        UsersModel.fetchUserInfo(userID: String(self.user?.id ?? -1), completion: {[weak self] (userDetails, error) in
             guard let self = self else { return }
+            self.user?.backgroundImageUUID = userDetails?.backgroundImage
             self.aboutViewModel = UserInfoAboutViewModel(userInfo: userDetails?.userInfo ?? UserInfo(about: ""))
             self.experienceViewModel = UserInfoExperienceViewModel(with: userDetails?.experience ?? [])
             self.skillsViewModel = UserInfoSkillsViewModel(with: userDetails?.skills ?? [])
             self.availabilityViewModel = UserInfoAvailabilityViewModel(with: userDetails?.availability.availabilities ?? [])
+            self.headerViewModel = UserInfoHeaderViewModel(with: self.user ?? User())
+            self.setupHeaderView()
             self.tableView.reloadData()
+//            self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
         })
         
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        
     }
     
-    func setupViewController(userID: String){
-        self.userID = userID
+    func setupViewController(user: User?){
+        if let user = user {
+            self.user = user
+        }
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+//        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+//        navigationController?.navigationBar.shadowImage = UIImage()
+//        navigationController?.navigationBar.barTintColor = .white
+//
+//        navigationController?.navigationBar.isTranslucent = true
+//
+        self.setNavbarTransculent()
+    }
+    func setupHeaderView(){
+        let header = HeaderView(frame: CGRect(x: 0, y: 0, width: 0, height: 250))
+        header.setupView(with: self.headerViewModel.representable)
+        self.tableView.tableHeaderView = header
+    }
+
     
     // MARK: - Table view data source
-    
-    
-    
+    private func setNavbarTransculent() {
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let denominator: CGFloat = 250 //your offset treshold
+        let alpha = min(1, scrollView.contentOffset.y / denominator)
+        self.setNavbar(backgroundColorAlpha: alpha)
+    }
+
+    private func setNavbar(backgroundColorAlpha alpha: CGFloat) {
+        let newColor = UIColor(red: 1, green: 1, blue: 1, alpha: alpha) //your color
+        self.navigationController?.navigationBar.backgroundColor = newColor
+        if alpha == 1 {
+            let navbarFont = UIFont(name: "OpenSans-Regular", size: 21)
+            navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navbarFont!, NSAttributedString.Key.foregroundColor:UIColor.blue]
+            self.navigationController?.navigationBar.tintColor = .blue
+            self.navigationController?.title = self.user?.fullName
+        }
+        
+    }
 }
+
 extension UserInfoTableViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -116,55 +163,7 @@ extension UserInfoTableViewController: UITableViewDelegate, UITableViewDataSourc
         }
         
     }
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//
-//        // constants, should be initialized somewhere else
-//        switch indexPath.section {
-//        case 0:
-//            return self.aboutViewModel.heightForRow(at: indexPath, tableView: tableView)
-//        case 1:
-//            return self.experienceViewModel.heightForRow(at: indexPath, tableView: tableView)
-//        case 2:
-//            let totalItem: CGFloat = 20
-//            let totalCellInARow: CGFloat = 3
-//            let cellHeight: CGFloat = 30
-//
-//            let collViewTopOffset: CGFloat = 10
-//            let collViewBottomOffset: CGFloat = 10
-//
-//            let minLineSpacing: CGFloat = 5
-//
-//            // calculations
-//            let totalRow = ceil(totalItem / totalCellInARow)
-//            let totalTopBottomOffset = collViewTopOffset + collViewBottomOffset
-//            let totalSpacing = CGFloat(totalRow - 1) * minLineSpacing   // total line space in UICollectionView is (totalRow - 1)
-//            let totalHeight  = (cellHeight * totalRow) + totalTopBottomOffset + totalSpacing
-//
-//            return totalHeight
-//        //            return self.skillsViewModel.heightForRow(at: indexPath, tableView: tableView)
-//        case 3:
-//            let totalItem: CGFloat = 20
-//            let totalCellInARow: CGFloat = 3
-//            let cellHeight: CGFloat = 30
-//
-//            let collViewTopOffset: CGFloat = 10
-//            let collViewBottomOffset: CGFloat = 10
-//
-//            let minLineSpacing: CGFloat = 5
-//
-//            // calculations
-//            let totalRow = ceil(totalItem / totalCellInARow)
-//            let totalTopBottomOffset = collViewTopOffset + collViewBottomOffset
-//            let totalSpacing = CGFloat(totalRow - 1) * minLineSpacing   // total line space in UICollectionView is (totalRow - 1)
-//            let totalHeight  = (cellHeight * totalRow) + totalTopBottomOffset + totalSpacing
-//
-//            return totalHeight
-//        default:
-//            return CGFloat(0)
-//        }
-//        
-//    }
- 
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerLabel = UILabel()
         headerLabel.text = self.sectionHeaders[section]

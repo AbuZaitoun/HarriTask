@@ -134,7 +134,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mKm-Du-RrG" secondAttribute="bottom" id="pYj-bI-gSB"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Harri" id="CuN-3N-H73"/>
+                    <navigationItem key="navigationItem" title="Harri" id="CuN-3N-H73">
+                        <barButtonItem key="backBarButtonItem" title=" " id="ufV-Ey-QXb"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="mainTableView" destination="mKm-Du-RrG" id="GeL-hD-w6p"/>
                     </connections>
@@ -152,7 +154,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="XJF-kt-ic2">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -368,9 +370,9 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bjd-Sq-ifv"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
-                            <constraint firstItem="XJF-kt-ic2" firstAttribute="top" secondItem="bjd-Sq-ifv" secondAttribute="top" id="HUH-Go-RQz"/>
+                            <constraint firstItem="XJF-kt-ic2" firstAttribute="top" secondItem="WKV-8J-Mp0" secondAttribute="top" id="HUH-Go-RQz"/>
                             <constraint firstItem="XJF-kt-ic2" firstAttribute="leading" secondItem="bjd-Sq-ifv" secondAttribute="leading" id="aDX-Xa-73D"/>
                             <constraint firstItem="XJF-kt-ic2" firstAttribute="trailing" secondItem="bjd-Sq-ifv" secondAttribute="trailing" id="gso-wd-kzh"/>
                             <constraint firstItem="bjd-Sq-ifv" firstAttribute="bottom" secondItem="XJF-kt-ic2" secondAttribute="bottom" id="rDA-oH-YUi"/>
@@ -382,7 +384,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RPO-rn-4Jd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2627.536231884058" y="162.72321428571428"/>
+            <point key="canvasLocation" x="1748" y="117"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rfL-aX-4N1">
@@ -401,7 +403,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qks-f4-mK5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="116.51785714285714"/>
+            <point key="canvasLocation" x="293" y="117"/>
         </scene>
     </scenes>
     <resources>
@@ -417,6 +419,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

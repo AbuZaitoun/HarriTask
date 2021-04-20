@@ -82,7 +82,7 @@ extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
             return
         }
         let userInfoTableViewController = self.storyboard!.instantiateViewController(withIdentifier: "UserInfoTableViewController") as! UserInfoTableViewController
-        userInfoTableViewController.setupViewController(userID: representable.userID)
+        userInfoTableViewController.setupViewController(user: representable.user ?? nil)
         self.navigationController!.pushViewController(userInfoTableViewController, animated: true)
     }
 }

@@ -16,7 +16,7 @@ class UserInfoAboutRepresentable: TableViewCellRepresentable {
     var reuseIdentifier: String
     
     init(with userInfo: UserInfo){
-        self.aboutText = userInfo.about
+        self.aboutText = userInfo.about ?? "Wow, such empty"
         self.cellHeight = UserInfoAboutTableViewCell.getHeight()
         self.reuseIdentifier = UserInfoAboutTableViewCell.getReuseModifier()
     }

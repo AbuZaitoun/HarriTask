@@ -22,6 +22,9 @@ class UserTableViewCellRepresentable: TableViewCellRepresentable {
     /// Image url
     private(set) var imageURL: String?
     
+    private(set) var positionText: String?
+    
+    private(set) var user: User?
     /// User id
     var userID: String
     
@@ -41,6 +44,8 @@ class UserTableViewCellRepresentable: TableViewCellRepresentable {
         self.cellHeight = UserTableViewCell.getHeight()
         self.reuseIdentifier = UserTableViewCell.getReuseModifier()
         self.imageURL = user.imageURL
+        self.positionText = user.position?.name
+        self.user = user
         self.userID = String(user.id)
         var attributedString: NSMutableAttributedString
         if user.isFirstJob ?? false {

@@ -20,9 +20,7 @@ class UserInfoSkillsTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
     }
     
     func setupCollectionView(){
-        if let layout = self.collectionView.collectionViewLayout as? AlignedCollectionViewFlowLayout {
-            layout.horizontalAlignment = .left
-        }
+    
         self.collectionView.isScrollEnabled = false
         self.collectionView.delegate = self
         self.collectionView.dataSource = self

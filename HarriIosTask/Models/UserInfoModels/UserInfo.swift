@@ -9,7 +9,7 @@ import Foundation
 
 struct UserInfo: Codable {
     
-    var about: String
+    var about: String?
     
     enum CodingKeys: String, CodingKey {
         case about

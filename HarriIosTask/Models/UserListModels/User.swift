@@ -30,6 +30,8 @@ struct User: Codable {
     /// Profile image uuid
     var profileImageUUID: String?
     
+    var backgroundImageUUID: String?
+    
     /// Full name
     var fullName: String {
         return self.firstName + " " + self.lastName
@@ -41,6 +43,12 @@ struct User: Codable {
         return "https://d7f8bv52wga7t.cloudfront.net/users/\(id)/user_profile/\(uuid)/240_240.jpeg"
         }
         else {return nil}
+    }
+    
+    var backgroundURL: String? {
+        if let uuid = self.backgroundImageUUID {
+            return "https://d7f8bv52wga7t.cloudfront.net/users/\(id)/user_background/\(uuid)/240_240.jpeg"
+        } else {return nil}
     }
     
     /** Initializer

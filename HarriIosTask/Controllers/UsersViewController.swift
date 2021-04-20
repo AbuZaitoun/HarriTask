@@ -47,12 +47,19 @@ class UsersViewController: UIViewController {
         self.setupNavigationTitle()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavigationTitle()
+    }
+    
     /**
     setup navigation title
      */
     func setupNavigationTitle(){
         let navbarFont = UIFont(name: "OpenSans-Regular", size: 21)
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navbarFont!, NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.title = "Harri"
+        self.navigationController?.navigationBar.backgroundColor = UIColor(named: "AccentColor")
     }
     
     /**
