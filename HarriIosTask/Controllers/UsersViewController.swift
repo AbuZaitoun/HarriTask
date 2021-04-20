@@ -36,15 +36,14 @@ class UsersViewController: UIViewController {
     let requestSize = 20
     
     /**
-    View did load
+     View did load
      */
     override func viewDidLoad() {
         super.viewDidLoad()
         self.usersViewModel = UserViewModel(with: [], total: 1)
-        self.mainTableView.reloadData()
         self.setTableViewDelegates()
         self.setupPullToRefresh()
-        self.setupNavigationTitle()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,16 +52,14 @@ class UsersViewController: UIViewController {
     }
     
     /**
-    setup navigation title
+     setup navigation title
      */
     func setupNavigationTitle(){
         let navbarFont = UIFont(name: "OpenSans-Regular", size: 21)
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navbarFont!, NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.title = "Harri"
-        self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.backgroundColor = UIColor(named: "AccentColor")
         self.navigationController?.navigationBar.barTintColor = UIColor(named: "AccentColor")
-        self.mainTableView.reloadData()
     }
     
     /**
@@ -79,22 +76,27 @@ class UsersViewController: UIViewController {
     func setupPullToRefresh(){
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(self.requestData), for: .valueChanged)
-        mainTableView.addSubview(refreshControl)
+//        mainTableView.addSubview(refreshControl)
+        mainTableView.refreshControl = refreshControl
+        self.view.layoutIfNeeded()
     }
- 
+    
     /**
      request data
      */
     @objc func requestData(){
-        UsersModel.fetchUsers(start: self.requestStart, size: self.requestSize, completion: { [weak self] (users_result, error) in
+        UsersModel.fetchUsers(start: 0, size: self.requestSize, completion: { [weak self] (users_result, error) in
             if let users = users_result {
                 self?.usersViewModel = UserViewModel(with: users.all, total: users.hits)
             }else {
                 self?.handleError(error: error)
             }
-            self?.refreshControl.endRefreshing()
-            self?.isLoading = false
-            self?.mainTableView.reloadData()
+//            DispatchQueue.main.async {
+                self?.refreshControl.endRefreshing()
+                self?.isLoading = false
+                self?.mainTableView.reloadData()
+//            }
+            
         })
     }
     
@@ -103,10 +105,12 @@ class UsersViewController: UIViewController {
      - Parameter users: Users
      */
     func onCompletion(users: Users){
-        self.isLoading = false
-        self.usersViewModel.appendResults(results: users.all, total: users.hits)
-        self.mainTableView.reloadData()
-        self.requestStart += self.requestSize
+//        DispatchQueue.main.async {
+            self.isLoading = false
+            self.usersViewModel.appendResults(results: users.all, total: users.hits)
+            self.mainTableView.reloadData()
+            self.requestStart += self.requestSize
+//        }
     }
     
     /**

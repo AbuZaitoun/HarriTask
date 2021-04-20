@@ -10,6 +10,7 @@ import JNAvatarWithInitials
 
 class HeaderView: UIView {
     
+    @IBOutlet weak var widthConstraint: NSLayoutConstraint!
     @IBOutlet var view: UIView!
 
     @IBOutlet weak var profilePicture: JNAvatarWithInitials!
@@ -20,6 +21,7 @@ class HeaderView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         Bundle.main.loadNibNamed("HeaderView", owner: self, options: nil)
+        self.widthConstraint.constant = UIScreen.main.bounds.size.width
         self.addSubview(view)
         self.setupProfilePicture()
     }
@@ -28,7 +30,7 @@ class HeaderView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override class func awakeFromNib() {
+    override func awakeFromNib() {
         Bundle.main.loadNibNamed("HeaderView", owner: self, options: nil)
     }
 

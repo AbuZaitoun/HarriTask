@@ -15,6 +15,7 @@
 		763924A3261BCC05009097A6 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7639249D261BCBFA009097A6 /* OpenSans-Regular.ttf */; };
 		763924A5261BCC08009097A6 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7639249E261BCBFA009097A6 /* OpenSans-SemiBold.ttf */; };
 		763924AB261C6E68009097A6 /* UsersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763924AA261C6E68009097A6 /* UsersRouter.swift */; };
+		764DFEA5262EF39500E72305 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 764DFEA4262EF39500E72305 /* HeaderView.xib */; };
 		767C37A92624765200D8980C /* UserTableViewCellRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37A82624765200D8980C /* UserTableViewCellRepresentable.swift */; };
 		767C37B02624A29700D8980C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37AF2624A29700D8980C /* ViewModel.swift */; };
 		767C37B42624AA5000D8980C /* UsersViewController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C37B32624AA5000D8980C /* UsersViewController+UITableView.swift */; };
@@ -50,7 +51,6 @@
 		76ABFA9A262D980C007A2D41 /* AvailabilityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA99262D980C007A2D41 /* AvailabilityCollectionViewCell.swift */; };
 		76ABFA9D262DA1C6007A2D41 /* ResizableCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA9C262DA1C6007A2D41 /* ResizableCollectionView.swift */; };
 		76ABFAA7262DC44C007A2D41 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFAA6262DC44C007A2D41 /* HeaderView.swift */; };
-		76ABFAAF262E1AAE007A2D41 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76ABFAAE262E1AAE007A2D41 /* HeaderView.xib */; };
 		76ABFAB2262E1F1E007A2D41 /* UserInfoHeaderRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFAB1262E1F1E007A2D41 /* UserInfoHeaderRepresentable.swift */; };
 		76ABFAB5262E2018007A2D41 /* UserInfoHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFAB4262E2018007A2D41 /* UserInfoHeaderViewModel.swift */; };
 		76BEEFD22619D8F500AD0321 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD12619D8F500AD0321 /* AppDelegate.swift */; };
@@ -74,6 +74,7 @@
 		7639249E261BCBFA009097A6 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		7639249F261BCBFA009097A6 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
 		763924AA261C6E68009097A6 /* UsersRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRouter.swift; sourceTree = "<group>"; };
+		764DFEA4262EF39500E72305 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HeaderView.xib; path = ../../../../../Downloads/HeaderView.xib; sourceTree = "<group>"; };
 		767C37A82624765200D8980C /* UserTableViewCellRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCellRepresentable.swift; sourceTree = "<group>"; };
 		767C37AF2624A29700D8980C /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		767C37B32624AA5000D8980C /* UsersViewController+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UsersViewController+UITableView.swift"; sourceTree = "<group>"; };
@@ -109,7 +110,6 @@
 		76ABFA99262D980C007A2D41 /* AvailabilityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailabilityCollectionViewCell.swift; sourceTree = "<group>"; };
 		76ABFA9C262DA1C6007A2D41 /* ResizableCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableCollectionView.swift; sourceTree = "<group>"; };
 		76ABFAA6262DC44C007A2D41 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
-		76ABFAAE262E1AAE007A2D41 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HeaderView.xib; path = ../../../../../.Trash/HeaderView.xib; sourceTree = "<group>"; };
 		76ABFAB1262E1F1E007A2D41 /* UserInfoHeaderRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoHeaderRepresentable.swift; sourceTree = "<group>"; };
 		76ABFAB4262E2018007A2D41 /* UserInfoHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoHeaderViewModel.swift; sourceTree = "<group>"; };
 		76BEEFCE2619D8F500AD0321 /* HarriIosTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarriIosTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,7 +162,7 @@
 				76ABFA8D262D8DB7007A2D41 /* UserListViews */,
 				76ABFA8E262D8DC5007A2D41 /* UserInfoViews */,
 				76ABFAA6262DC44C007A2D41 /* HeaderView.swift */,
-				76ABFAAE262E1AAE007A2D41 /* HeaderView.xib */,
+				764DFEA4262EF39500E72305 /* HeaderView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -457,10 +457,10 @@
 				763924A3261BCC05009097A6 /* OpenSans-Regular.ttf in Resources */,
 				76BEEFDE2619D90100AD0321 /* LaunchScreen.storyboard in Resources */,
 				763924A1261BCC02009097A6 /* OpenSans-Italic.ttf in Resources */,
+				764DFEA5262EF39500E72305 /* HeaderView.xib in Resources */,
 				76BEEFDB2619D90100AD0321 /* Assets.xcassets in Resources */,
 				763924A5261BCC08009097A6 /* OpenSans-SemiBold.ttf in Resources */,
 				76BEEFD92619D8F500AD0321 /* Main.storyboard in Resources */,
-				76ABFAAF262E1AAE007A2D41 /* HeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
