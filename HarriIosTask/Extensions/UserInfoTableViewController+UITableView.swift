@@ -40,8 +40,8 @@ extension UserInfoTableViewController: UITableViewDelegate, UITableViewDataSourc
                 return UITableViewCell()
             }
             let cell = tableView.dequeueReusableCell(withIdentifier: UserInfoAboutTableViewCell.getReuseModifier(), for: indexPath) as? UserInfoAboutTableViewCell
-            cell?.setupCell(with: representable)
-            
+            cell?.setupCell(with: representable, shouldExpand: false)
+            cell?.delegate = self
             return cell ?? UITableViewCell()
             
         case 1:
@@ -87,6 +87,12 @@ extension UserInfoTableViewController: UITableViewDelegate, UITableViewDataSourc
         let denominator: CGFloat = 250 
         let alpha = min(1, scrollView.contentOffset.y / denominator)
         self.setNavbar(backgroundColorAlpha: alpha)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            self.labelClicked(indexPath: indexPath)
+        }
     }
 }
 
