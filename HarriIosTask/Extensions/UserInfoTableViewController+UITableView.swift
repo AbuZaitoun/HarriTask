@@ -7,12 +7,24 @@
 
 import UIKit
 
+/// User Info Table View Controller
 extension UserInfoTableViewController: UITableViewDelegate, UITableViewDataSource {
     
+    
+    /** Number of sections
+     - Parameter tableView: UITableView
+     - Returns: Integer, number of sections in tableView
+    */
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.NUMBER_OF_SECTIONS
     }
     
+    /** Number of rows in section
+     - Parameters:
+       - tableView: UITableView
+       - section: Integer, current section
+     - Returns: Integer, number of rows in said section
+    */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         switch section {
@@ -29,10 +41,22 @@ extension UserInfoTableViewController: UITableViewDelegate, UITableViewDataSourc
         }
     }
     
+    /** Title for header in section
+     - Parameters:
+       - tableView: UITableView
+       - section: Integer, current section
+     - Returns: String, header of section
+     */
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return self.sectionHeaders[section]
     }
     
+    /** Cell for row
+     - Parameters:
+       - tableView: UITableView
+       - indexPath: IndexPath for needed cell
+     - Returns: UITableViewCell, cell in provided indexpath
+    */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
@@ -74,6 +98,12 @@ extension UserInfoTableViewController: UITableViewDelegate, UITableViewDataSourc
         
     }
     
+    /** View for header in section
+     - Parameters:
+       - tableView: UITableView
+       - section: Integer, target section
+     - Returns: UIView, optional, view to be presented as section header
+     */
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerLabel = UILabel()
         headerLabel.text = self.sectionHeaders[section]
@@ -83,12 +113,21 @@ extension UserInfoTableViewController: UITableViewDelegate, UITableViewDataSourc
         return headerLabel
     }
     
+    
+    /** Scroll view did scroll
+     - Parameter scrollView: UIScrollView
+     */
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let denominator: CGFloat = 250 
         let alpha = min(1, scrollView.contentOffset.y / denominator)
         self.setNavbar(backgroundColorAlpha: alpha)
     }
     
+    /** Did select row at
+     - Parameters:
+       - tableView: UITableView
+       - indexPath: IndexPath
+    */
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
             self.labelClicked(indexPath: indexPath)
