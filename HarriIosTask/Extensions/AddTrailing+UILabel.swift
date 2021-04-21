@@ -7,8 +7,16 @@
 
 import UIKit
 
+/// UILabel
 extension UILabel {
     
+    /** Add trailing text to UILabel
+     - Parameters:
+       - trailingText: String, text to add at end of UILabel
+       - moreText: String, additional string to be added to end of UILabel
+       - moreTextFont: UIFont, font for added text
+       - moreTextColor: UIColor, color of added text
+    */
     func addTrailing(with trailingText: String, moreText: String, moreTextFont: UIFont, moreTextColor: UIColor) {
         let readMoreText: String = trailingText + moreText
         
@@ -23,6 +31,8 @@ extension UILabel {
         self.attributedText = answerAttributed
     }
     
+    
+    /// Number of characters of text visible
     var vissibleTextLength: Int {
         let font: UIFont = self.font
         let mode: NSLineBreakMode = self.lineBreakMode
@@ -50,12 +60,14 @@ extension UILabel {
         }
         return self.text!.count
     }
+    
+    
+    /// Is UILabel Truncated
     var isTruncated: Bool {
         
         guard let labelText = text else {
             return false
         }
-        
         let labelTextSize = (labelText as NSString).boundingRect(
             with: CGSize(width: frame.size.width, height: .greatestFiniteMagnitude),
             options: .usesLineFragmentOrigin,
@@ -65,6 +77,7 @@ extension UILabel {
         return labelTextSize.height > bounds.size.height
     }
     
+    /// Max number of lines for UILabel
     var maxNumberOfLines: Int {
         let maxSize = CGSize(width: frame.size.width, height: CGFloat(MAXFLOAT))
         let text = (self.text ?? "") as NSString

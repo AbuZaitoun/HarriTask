@@ -7,8 +7,13 @@
 
 import Foundation
 
+/// Date
 extension Date {
-
+    
+    /** Convert Date to String
+     - Parameter format: String, date format
+     - Returns: String, date as string
+    */
     func toString(withFormat format: String = "MMM yyyy") -> String {
 
         let dateFormatter = DateFormatter()

@@ -11,8 +11,9 @@ import UIKit
 
 extension UserInfoTableViewController: UserInfoAboutCellDelegate {
     
-    /// Label clicked
-    /// - Parameter indexPath: IndexPath
+    /** Label clicked
+     - Parameter indexPath: IndexPath
+     */
     func labelClicked(indexPath: IndexPath) {
         
         let cell = self.tableView.cellForRow(at: indexPath) as! UserInfoAboutTableViewCell
