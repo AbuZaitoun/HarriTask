@@ -31,18 +31,20 @@ class UserInfoAboutTableViewCell: UITableViewCell {
     }
  
     
-    /// Set selected
-    /// - Parameters:
-    ///   - selected: Boolean
-    ///   - animated: Boolean
+    /** Set selected
+     - Parameters:
+       - selected: Boolean
+       - animated: Boolean
+    */
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
-    /// Set up cell with representable
-    /// - Parameters:
-    ///   - representable: UserInfoAboutRepresentable
-    ///   - shouldExpand: Boolean
+    /** Set up cell with representable
+     - Parameters:
+       - representable: UserInfoAboutRepresentable
+       - shouldExpand: Boolean
+    */
     func setupCell(with representable: UserInfoAboutRepresentable, shouldExpand: Bool){
         self.aboutLabel.text = representable.aboutText
         let maxNumberOfLine = self.aboutLabel.maxNumberOfLines

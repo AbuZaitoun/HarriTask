@@ -7,25 +7,35 @@
 
 import UIKit
 
-class UserInfoSkillsTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+/// User Info Skills Table View Cell
+class UserInfoSkillsTableViewCell: UITableViewCell {
     
+    /// Collection layout
     @IBOutlet weak var collectionLayout: UICollectionViewFlowLayout!
+    
+    /// Collection view
     @IBOutlet var collectionView: UICollectionView!
+    
+    /// Skills view model
     var skillsViewModel: UserInfoSkillsViewModel!
     
+    /// awake from nib
     override func awakeFromNib() {
         super.awakeFromNib()
         self.skillsViewModel = UserInfoSkillsViewModel(with: [])
         self.setupCollectionView()
     }
     
+    /// Set up collection view
     func setupCollectionView(){
-    
         self.collectionView.isScrollEnabled = false
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
     }
     
+    /** Set up cell
+     - Parameter representable: UserInfoSkillsRepresentable
+    */
     func setupCell(with representable: UserInfoSkillsRepresentable) {
         self.skillsViewModel = UserInfoSkillsViewModel(with: representable.skills ?? [])
         self.collectionView.reloadData()
@@ -47,34 +57,4 @@ class UserInfoSkillsTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
         return "UserInfoSkillsTableViewCell"
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.skillsViewModel.numberOfItemsInSection(inSection: section)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let mycell = collectionView.dequeueReusableCell(withReuseIdentifier: SkillCollectionViewCell.getReuseIdentifier(), for: indexPath) as! SkillCollectionViewCell
-        guard let representable = skillsViewModel.representableForCollection(at: indexPath) as? UserInfoSkillsRepresentable else {
-            return mycell
-        }
-        mycell.setupCell(with: representable)
-        return mycell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        guard let representable = skillsViewModel.representableForCollection(at: indexPath) as? UserInfoSkillsRepresentable else {
-            return CGSize()
-        }
-        let cellWord = representable.skillName ?? "h"
-        let font = UIFont(name: "OpenSans-Regular", size: 13)
-        let size = CGSize(width: UIScreen.main.bounds.width, height: 26)
-        
-        let textRect = cellWord.boundingRect(with: size,
-                                             options: [.usesLineFragmentOrigin],
-                                             attributes: [NSAttributedString.Key.font: font],
-                                             context: nil)
-        
-        return CGSize(width: textRect.width + 8,
-                      height: textRect.height + 4)
-    }
 }

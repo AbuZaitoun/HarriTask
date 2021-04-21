@@ -101,6 +101,8 @@ class UserInfoTableViewController: UIViewController {
         
         self.tableView.backgroundColor = .systemGray5
         self.tableView.contentInsetAdjustmentBehavior = .never
+//        self.tableView.contentInset = UIEdgeInsets(top: 44,left: 0,bottom: 0,right: 0)
+
     }
     
     /// Initialize view models

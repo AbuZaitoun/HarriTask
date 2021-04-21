@@ -56,6 +56,8 @@
 		76ABFAC2262F1016007A2D41 /* AddTrailing+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFAC1262F1016007A2D41 /* AddTrailing+UILabel.swift */; };
 		76ABFAC5262F3344007A2D41 /* UserInfoTableViewController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFAC4262F3344007A2D41 /* UserInfoTableViewController+UITableView.swift */; };
 		76ABFAC9262F9688007A2D41 /* UserInfoTableViewController+UserInfoAboutCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFAC8262F9688007A2D41 /* UserInfoTableViewController+UserInfoAboutCellDelegate.swift */; };
+		76ABFACD26303604007A2D41 /* SkillsTableViewCell+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFACC26303604007A2D41 /* SkillsTableViewCell+CollectionView.swift */; };
+		76ABFAD026303676007A2D41 /* AvailabilityTableViewCell+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFACF26303676007A2D41 /* AvailabilityTableViewCell+CollectionView.swift */; };
 		76BEEFD22619D8F500AD0321 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD12619D8F500AD0321 /* AppDelegate.swift */; };
 		76BEEFD42619D8F500AD0321 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD32619D8F500AD0321 /* SceneDelegate.swift */; };
 		76BEEFD62619D8F500AD0321 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD52619D8F500AD0321 /* UsersViewController.swift */; };
@@ -118,6 +120,8 @@
 		76ABFAC1262F1016007A2D41 /* AddTrailing+UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddTrailing+UILabel.swift"; sourceTree = "<group>"; };
 		76ABFAC4262F3344007A2D41 /* UserInfoTableViewController+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserInfoTableViewController+UITableView.swift"; sourceTree = "<group>"; };
 		76ABFAC8262F9688007A2D41 /* UserInfoTableViewController+UserInfoAboutCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserInfoTableViewController+UserInfoAboutCellDelegate.swift"; sourceTree = "<group>"; };
+		76ABFACC26303604007A2D41 /* SkillsTableViewCell+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SkillsTableViewCell+CollectionView.swift"; sourceTree = "<group>"; };
+		76ABFACF26303676007A2D41 /* AvailabilityTableViewCell+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AvailabilityTableViewCell+CollectionView.swift"; sourceTree = "<group>"; };
 		76BEEFCE2619D8F500AD0321 /* HarriIosTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarriIosTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76BEEFD12619D8F500AD0321 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76BEEFD32619D8F500AD0321 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -233,6 +237,8 @@
 				767C37F2262C3B2D00D8980C /* ToDate+String.swift */,
 				767C37F5262C3B8600D8980C /* ToString+Date.swift */,
 				76ABFAC1262F1016007A2D41 /* AddTrailing+UILabel.swift */,
+				76ABFACC26303604007A2D41 /* SkillsTableViewCell+CollectionView.swift */,
+				76ABFACF26303676007A2D41 /* AvailabilityTableViewCell+CollectionView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -527,6 +533,7 @@
 				767C37A92624765200D8980C /* UserTableViewCellRepresentable.swift in Sources */,
 				767C37C626299ECE00D8980C /* UserInfoTableViewController.swift in Sources */,
 				76ABFA6F262C829D007A2D41 /* MyFlowLayout.swift in Sources */,
+				76ABFAD026303676007A2D41 /* AvailabilityTableViewCell+CollectionView.swift in Sources */,
 				76392480261B564B009097A6 /* UserViewModel.swift in Sources */,
 				76BEEFE82619DA7500AD0321 /* User.swift in Sources */,
 				767C37BB2625960500D8980C /* TableViewCellRepresentable.swift in Sources */,
@@ -538,6 +545,7 @@
 				76ABFA88262D8357007A2D41 /* UserInfoAvailabilityRepresentable.swift in Sources */,
 				767C37DE262AEAE500D8980C /* UserInfoAboutViewModel.swift in Sources */,
 				76ABFAB5262E2018007A2D41 /* UserInfoHeaderViewModel.swift in Sources */,
+				76ABFACD26303604007A2D41 /* SkillsTableViewCell+CollectionView.swift in Sources */,
 				76ABFA97262D92AF007A2D41 /* UserInfoAvailabilityViewModel.swift in Sources */,
 				767C37EA262C2AE500D8980C /* UserInfoExperienceRepresentable.swift in Sources */,
 				767C37F6262C3B8600D8980C /* ToString+Date.swift in Sources */,

@@ -7,25 +7,30 @@
 
 import UIKit
 
+/// User Info Experience Table View Cell
 class UserInfoExperienceTableViewCell: UITableViewCell {
-
+    
+    /// Date label
     @IBOutlet var dateLabel: UILabel!
+    
+    /// Position name label
     @IBOutlet var positionNameLabel: UILabel!
+    
+    /// Brand name label
     @IBOutlet var brandNameLabel: UILabel!
+    
+    /// Position description label
     @IBOutlet var positionDescriptionLabel: UILabel!
     
-    
+    /// awake from nib
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    
+    /** Set up cell
+     - Parameter representable: UserInfoExperienceRepresentable
+    */
     func setupCell(with representable: UserInfoExperienceRepresentable){
         self.dateLabel.text = representable.dateText
         self.positionNameLabel.text = representable.positionName
