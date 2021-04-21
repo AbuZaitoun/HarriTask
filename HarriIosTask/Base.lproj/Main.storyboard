@@ -170,6 +170,15 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="lastLineFillPercent">
+                                                            <integer key="value" value="40"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -178,8 +187,14 @@
                                                 <constraint firstItem="83J-2J-uHX" firstAttribute="leading" secondItem="EW9-7A-AWH" secondAttribute="leadingMargin" id="RBi-yO-8wx"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="83J-2J-uHX" secondAttribute="trailing" id="yh7-Z9-qYv"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="aboutLabel" destination="83J-2J-uHX" id="aUF-Ku-7Eh"/>
                                         </connections>
@@ -196,12 +211,18 @@
                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
                                                     <color key="textColor" name="SecondayText"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Position Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Chk-Qr-4Jf">
                                                     <rect key="frame" x="8" y="22" width="98.5" height="17.5"/>
                                                     <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rp1-0k-f6w">
                                                     <rect key="frame" x="8" y="43.5" width="32" height="23.5"/>
@@ -211,12 +232,18 @@
                                                     <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="13"/>
                                                     <color key="textColor" name="AccentColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="sdsdsdsdsdsdsdsdknaklfjkfakewfafhalkehfauwehfauiwehfaiuwehfiuawheiufhwiehfwhef" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="np4-7O-dha">
                                                     <rect key="frame" x="8" y="72" width="358" height="31"/>
                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="13"/>
                                                     <color key="textColor" name="SecondayText"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -233,6 +260,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="brandNameLabel" destination="Rp1-0k-f6w" id="zbQ-1b-2nd"/>
                                             <outlet property="dateLabel" destination="d2q-ZQ-rzB" id="5Em-aN-zt6"/>
@@ -303,6 +333,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="collectionLayout" destination="50f-v0-rT2" id="VD5-3C-fv8"/>
                                             <outlet property="collectionView" destination="Zjr-nl-qDb" id="WL1-lw-r29"/>
@@ -337,6 +370,9 @@
                                                                         <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="13"/>
                                                                         <color key="textColor" name="AccentColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                 </subviews>
                                                                 <constraints>
@@ -345,7 +381,13 @@
                                                                     <constraint firstAttribute="trailing" secondItem="9zo-fk-TMK" secondAttribute="trailing" constant="8" id="fhg-36-Bar"/>
                                                                     <constraint firstItem="9zo-fk-TMK" firstAttribute="top" secondItem="ltc-Ff-OI9" secondAttribute="top" constant="8" id="rBQ-WJ-l5f"/>
                                                                 </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </collectionViewCellContentView>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                            </userDefinedRuntimeAttributes>
                                                             <connections>
                                                                 <outlet property="label" destination="9zo-fk-TMK" id="zPj-7j-ORE"/>
                                                             </connections>
@@ -359,47 +401,48 @@
                                                 <constraint firstItem="dqK-F3-dmW" firstAttribute="top" secondItem="ASz-1K-jDw" secondAttribute="top" constant="6" id="qrh-yg-Hb6"/>
                                                 <constraint firstAttribute="trailing" secondItem="dqK-F3-dmW" secondAttribute="trailing" constant="5" id="tIV-8K-KIM"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="collectionLayout" destination="qDn-6g-I9P" id="oeb-4a-VNA"/>
                                             <outlet property="collectionView" destination="dqK-F3-dmW" id="aHc-w4-IB1"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LoadingCell" id="Htz-we-2MV" customClass="LoadingTableViewCell" customModule="HarriIosTask" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="375.5" width="374" height="70.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ZeroExperienceCell" id="Htz-we-2MV" customClass="ZeroExperienceCell" customModule="HarriIosTask" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="375.5" width="374" height="36"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Htz-we-2MV" id="vaJ-Vz-BJn">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="70.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="36"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eGo-wj-SIe">
-                                                    <rect key="frame" x="10" y="10" width="354" height="50.5"/>
-                                                    <subviews>
-                                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="WA3-bc-bYQ">
-                                                            <rect key="frame" x="167" y="0.0" width="20" height="20"/>
-                                                        </activityIndicatorView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcM-Hk-iYa">
-                                                            <rect key="frame" x="146.5" y="30" width="61.5" height="20.5"/>
-                                                            <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="17"/>
-                                                            <color key="textColor" name="HarriBlue"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No experience" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcM-Hk-iYa">
+                                                    <rect key="frame" x="10" y="10" width="354" height="16"/>
+                                                    <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="13"/>
+                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="eGo-wj-SIe" secondAttribute="trailing" constant="10" id="IUk-PT-3Vh"/>
-                                                <constraint firstItem="eGo-wj-SIe" firstAttribute="top" secondItem="vaJ-Vz-BJn" secondAttribute="top" constant="10" id="heG-lb-ZyN"/>
-                                                <constraint firstAttribute="bottom" secondItem="eGo-wj-SIe" secondAttribute="bottom" constant="10" id="ng0-e9-X8d"/>
-                                                <constraint firstItem="eGo-wj-SIe" firstAttribute="leading" secondItem="vaJ-Vz-BJn" secondAttribute="leading" constant="10" id="oxB-uv-HlY"/>
+                                                <constraint firstAttribute="bottom" secondItem="dcM-Hk-iYa" secondAttribute="bottom" constant="10" id="2GH-Zs-PHK"/>
+                                                <constraint firstItem="dcM-Hk-iYa" firstAttribute="top" secondItem="vaJ-Vz-BJn" secondAttribute="top" constant="10" id="QCg-7n-SCg"/>
+                                                <constraint firstAttribute="trailing" secondItem="dcM-Hk-iYa" secondAttribute="trailing" constant="10" id="s38-hq-1u2"/>
+                                                <constraint firstItem="dcM-Hk-iYa" firstAttribute="leading" secondItem="vaJ-Vz-BJn" secondAttribute="leading" constant="10" id="wcY-mC-f3d"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="activityIndicator" destination="WA3-bc-bYQ" id="aAH-0N-ISX"/>
+                                            <outlet property="label" destination="dcM-Hk-iYa" id="daI-iy-W0e"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bjd-Sq-ifv"/>
@@ -410,6 +453,9 @@
                             <constraint firstItem="XJF-kt-ic2" firstAttribute="trailing" secondItem="bjd-Sq-ifv" secondAttribute="trailing" id="gso-wd-kzh"/>
                             <constraint firstItem="bjd-Sq-ifv" firstAttribute="bottom" secondItem="XJF-kt-ic2" secondAttribute="bottom" id="rDA-oH-YUi"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="XJF-kt-ic2" id="OF0-fa-nhl"/>

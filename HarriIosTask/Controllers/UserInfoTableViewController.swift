@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import SkeletonView
 /// User Info Table View Controller
 class UserInfoTableViewController: UIViewController {
 
@@ -20,7 +20,7 @@ class UserInfoTableViewController: UIViewController {
     let navbarFont = UIFont(name: "OpenSans-Regular", size: 21)
     
     /// Header
-    let tableViewHeaderView = TableViewHeaderView()
+    let tableViewHeaderView = TableViewHeaderView(reuseIdentifier: "Header")
     
     /// Section headers
     let sectionHeaders = ["About", "Experience", "Skills", "Availability"]
@@ -65,6 +65,9 @@ class UserInfoTableViewController: UIViewController {
     */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tableView.isSkeletonable = true
+        self.tableView.showAnimatedGradientSkeleton()
+        
         self.setNavbarTransculent()
     }
     
@@ -73,6 +76,7 @@ class UserInfoTableViewController: UIViewController {
     */
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         self.navigationController?.navigationBar.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
     }
     
@@ -95,7 +99,10 @@ class UserInfoTableViewController: UIViewController {
             self.availabilityViewModel = UserInfoAvailabilityViewModel(with: userDetails?.availability.availabilities ?? [])
             self.tableHeaderViewModel = UserInfoHeaderViewModel(with: self.user ?? User())
             self.tableViewHeaderView.setupView(with: self.tableHeaderViewModel.representable)
+            self.tableView.stopSkeletonAnimation()
+            self.view.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.25))
             self.tableView.reloadData()
+            
         })
     }
     
@@ -133,6 +140,8 @@ class UserInfoTableViewController: UIViewController {
         self.navigationController?.navigationBar.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
         
         self.tableView.tableHeaderView = tableViewHeaderView
+        self.tableView.register(TableViewHeaderView.self,
+               forHeaderFooterViewReuseIdentifier: "Header")
         tableViewHeaderView.translatesAutoresizingMaskIntoConstraints = false
         tableViewHeaderView.leftAnchor.constraint(equalTo: self.tableView.leftAnchor).isActive = true
         tableViewHeaderView.rightAnchor.constraint(equalTo: self.tableView.rightAnchor).isActive = true
@@ -153,8 +162,6 @@ class UserInfoTableViewController: UIViewController {
     
     /// Set up navigation bar transculent
     private func setNavbarTransculent() {
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.setNavigationBarHidden(true, animated: true)
 //        self.navigationController?.navigationBar.isTranslucent = true
     }

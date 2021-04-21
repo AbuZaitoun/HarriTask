@@ -34,7 +34,7 @@ class UserInfoExperienceRepresentable: TableViewCellRepresentable {
     init(with work: Work){
         self.description = work.description
         self.cellHeight = UserInfoExperienceTableViewCell.getHeight()
-        self.reuseIdentifier = UserInfoExperienceTableViewCell.getReuseModifier()
+        self.reuseIdentifier = UserInfoExperienceTableViewCell.getReuseIdentifier()
         
         self.brandName = work.brand.name
         if let position = work.position {

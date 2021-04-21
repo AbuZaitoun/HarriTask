@@ -69,6 +69,9 @@
 		76BEEFDE2619D90100AD0321 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76BEEFDC2619D90100AD0321 /* LaunchScreen.storyboard */; };
 		76BEEFE82619DA7500AD0321 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFE72619DA7500AD0321 /* User.swift */; };
 		76BEEFEB2619DBDA00AD0321 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFEA2619DBDA00AD0321 /* UserTableViewCell.swift */; };
+		76CC6CEE263068620061FA82 /* ZeroExperienceRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC6CED263068620061FA82 /* ZeroExperienceRepresentable.swift */; };
+		76CC6CF1263068B90061FA82 /* ZeroExperienceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC6CF0263068B90061FA82 /* ZeroExperienceCell.swift */; };
+		76CC6CF4263070B00061FA82 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76CC6CF3263070B00061FA82 /* OpenSans-Light.ttf */; };
 		AAB3ED51C2C673D55A725450 /* Pods_HarriIosTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73AEFEF0184910AD57C2EBF9 /* Pods_HarriIosTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -138,6 +141,9 @@
 		76BEEFDF2619D90100AD0321 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76BEEFE72619DA7500AD0321 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		76BEEFEA2619DBDA00AD0321 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		76CC6CED263068620061FA82 /* ZeroExperienceRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroExperienceRepresentable.swift; sourceTree = "<group>"; };
+		76CC6CF0263068B90061FA82 /* ZeroExperienceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroExperienceCell.swift; sourceTree = "<group>"; };
+		76CC6CF3263070B00061FA82 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
 		9D4C55E279BCA97AC91F54A4 /* Pods-HarriIosTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarriIosTask.release.xcconfig"; path = "Target Support Files/Pods-HarriIosTask/Pods-HarriIosTask.release.xcconfig"; sourceTree = "<group>"; };
 		AB509C1364E2C818CFC4710E /* Pods-HarriIosTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarriIosTask.debug.xcconfig"; path = "Target Support Files/Pods-HarriIosTask/Pods-HarriIosTask.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -177,8 +183,6 @@
 			children = (
 				76ABFA8D262D8DB7007A2D41 /* UserListViews */,
 				76ABFA8E262D8DC5007A2D41 /* UserInfoViews */,
-				76ABFAA6262DC44C007A2D41 /* TableViewHeaderView.swift */,
-				76ABFABD262F0E41007A2D41 /* HeaderView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -206,6 +210,7 @@
 		7639249C261BCBF3009097A6 /* font */ = {
 			isa = PBXGroup;
 			children = (
+				76CC6CF3263070B00061FA82 /* OpenSans-Light.ttf */,
 				7639249F261BCBFA009097A6 /* OpenSans-Italic.ttf */,
 				7639249D261BCBFA009097A6 /* OpenSans-Regular.ttf */,
 				7639249E261BCBFA009097A6 /* OpenSans-SemiBold.ttf */,
@@ -297,6 +302,7 @@
 				76ABFA56262C6A0F007A2D41 /* UserInfoSkillsRepresentable.swift */,
 				76ABFA87262D8357007A2D41 /* UserInfoAvailabilityRepresentable.swift */,
 				76ABFAD62630456C007A2D41 /* HeaderViewRepresentable.swift */,
+				76CC6CED263068620061FA82 /* ZeroExperienceRepresentable.swift */,
 			);
 			path = UserInfoRepresentables;
 			sourceTree = "<group>";
@@ -345,9 +351,11 @@
 		76ABFA8E262D8DC5007A2D41 /* UserInfoViews */ = {
 			isa = PBXGroup;
 			children = (
+				76ABFAD226304259007A2D41 /* UserInfoHeaderView.swift */,
+				76ABFAA6262DC44C007A2D41 /* TableViewHeaderView.swift */,
+				76ABFABD262F0E41007A2D41 /* HeaderView.xib */,
 				76ABFA8F262D8DD0007A2D41 /* TableViewCells */,
 				76ABFA90262D8DDB007A2D41 /* CollectionViewCells */,
-				76ABFAD226304259007A2D41 /* UserInfoHeaderView.swift */,
 			);
 			path = UserInfoViews;
 			sourceTree = "<group>";
@@ -359,6 +367,7 @@
 				767C37CB2629A00500D8980C /* UserInfoExperienceTableViewCell.swift */,
 				767C37CE2629A01D00D8980C /* UserInfoSkillsTableViewCell.swift */,
 				767C37D12629A03000D8980C /* UserInfoAvailabilityTableViewCell.swift */,
+				76CC6CF0263068B90061FA82 /* ZeroExperienceCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -480,6 +489,7 @@
 			files = (
 				763924A3261BCC05009097A6 /* OpenSans-Regular.ttf in Resources */,
 				76BEEFDE2619D90100AD0321 /* LaunchScreen.storyboard in Resources */,
+				76CC6CF4263070B00061FA82 /* OpenSans-Light.ttf in Resources */,
 				763924A1261BCC02009097A6 /* OpenSans-Italic.ttf in Resources */,
 				76ABFABE262F0E41007A2D41 /* HeaderView.xib in Resources */,
 				76BEEFDB2619D90100AD0321 /* Assets.xcassets in Resources */,
@@ -553,6 +563,7 @@
 				76ABFA94262D9002007A2D41 /* CollectionViewModel.swift in Sources */,
 				767C37B02624A29700D8980C /* ViewModel.swift in Sources */,
 				76ABFA88262D8357007A2D41 /* UserInfoAvailabilityRepresentable.swift in Sources */,
+				76CC6CEE263068620061FA82 /* ZeroExperienceRepresentable.swift in Sources */,
 				767C37DE262AEAE500D8980C /* UserInfoAboutViewModel.swift in Sources */,
 				76ABFAB5262E2018007A2D41 /* UserInfoHeaderViewModel.swift in Sources */,
 				76ABFACD26303604007A2D41 /* SkillsTableViewCell+CollectionView.swift in Sources */,
@@ -588,6 +599,7 @@
 				76ABFA57262C6A0F007A2D41 /* UserInfoSkillsRepresentable.swift in Sources */,
 				767C37E1262C1A2300D8980C /* UserExperience.swift in Sources */,
 				76ABFA6C262C7E81007A2D41 /* SkillCollectionViewCell.swift in Sources */,
+				76CC6CF1263068B90061FA82 /* ZeroExperienceCell.swift in Sources */,
 				763924AB261C6E68009097A6 /* UsersRouter.swift in Sources */,
 				76ABFAB2262E1F1E007A2D41 /* UserInfoHeaderRepresentable.swift in Sources */,
 				76ABFAC5262F3344007A2D41 /* UserInfoTableViewController+UITableView.swift in Sources */,

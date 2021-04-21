@@ -36,6 +36,6 @@ extension UserInfoSkillsTableViewCell: UICollectionViewDelegate, UICollectionVie
                                              context: nil)
         
         return CGSize(width: textRect.width + 8,
-                      height: textRect.height + 4)
+                      height: textRect.height + 5)
     }
 }

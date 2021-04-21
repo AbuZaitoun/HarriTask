@@ -9,7 +9,7 @@ import UIKit
 
 /// User View Controller
 extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
-    
+
     // MARK: - UITableViewDelegate, UITableViewDataSource Conformance
     
     /**

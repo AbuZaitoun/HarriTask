@@ -24,9 +24,12 @@ class UserInfoExperienceViewModel: ViewModel {
     */
     init(with userExperience: [UserExperience]) {
         self.userExperience = userExperience
-        self.representables = [LoadingTableViewCellRepresentable()]
-        if userExperience.count > 0 {
+        self.representables = []
+        if !userExperience.isEmpty {
             self.setupRepresentable()
+        } else {
+            
+            self.representables = [ZeroExperienceRepresentable()] 
         }
         
     }

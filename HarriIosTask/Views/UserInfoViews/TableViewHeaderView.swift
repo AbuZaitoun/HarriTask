@@ -8,7 +8,7 @@
 import UIKit
 import JNAvatarWithInitials
 
-class TableViewHeaderView: UIView {
+class TableViewHeaderView: UITableViewHeaderFooterView {
     
     @IBOutlet weak var widthConstraint: NSLayoutConstraint!
     @IBOutlet var view: UIView!
@@ -20,8 +20,8 @@ class TableViewHeaderView: UIView {
     @IBOutlet weak var positionLabel: UILabel!
     @IBOutlet weak var backgroundPicture: JNAvatarWithInitials!
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(reuseIdentifier: String?) {
+        super.init(reuseIdentifier: reuseIdentifier)
         Bundle.main.loadNibNamed("HeaderView", owner: self, options: nil)
         self.widthConstraint.constant = UIScreen.main.bounds.size.width
         self.addSubview(view)

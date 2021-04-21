@@ -46,7 +46,15 @@ class UserInfoAboutTableViewCell: UITableViewCell {
        - shouldExpand: Boolean
     */
     func setupCell(with representable: UserInfoAboutRepresentable, shouldExpand: Bool){
-        self.aboutLabel.text = representable.aboutText
+        if let text = representable.aboutText {
+            self.aboutLabel.text = text
+        } else {
+            self.aboutLabel.textAlignment = .center
+            self.aboutLabel.font = UIFont(name: "OpenSans-Light", size: 12)
+            self.aboutLabel.textColor = .systemGray2
+            self.aboutLabel.text = representable.noAboutText!
+        }
+        
         let maxNumberOfLine = self.aboutLabel.maxNumberOfLines
 //        let numOfLines = self.aboutLabel.numberOfLines
         if shouldExpand {
@@ -78,7 +86,7 @@ class UserInfoAboutTableViewCell: UITableViewCell {
      Get resuse modifier
      - Returns reuse modifer as String
      */
-    static func getReuseModifier() -> String {
+    static func getReuseIdentifier() -> String {
         return "UserInfoAboutTableViewCell"
     }
 }

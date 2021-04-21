@@ -51,7 +51,7 @@ class UserInfoAvailabilityTableViewCell: UITableViewCell {
      Get resuse modifier
      - Returns reuse modifer as String
      */
-    static func getReuseModifier() -> String {
+    static func getReuseIdentifier() -> String {
         return "UserInfoAvailabilityTableViewCell"
     }
     

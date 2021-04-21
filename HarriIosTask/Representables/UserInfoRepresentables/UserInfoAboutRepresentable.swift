@@ -11,7 +11,7 @@ import UIKit
 class UserInfoAboutRepresentable: TableViewCellRepresentable {
     
     /// About text
-    var aboutText: String
+    var aboutText: String?
     
     /// Cell height
     var cellHeight: CGFloat
@@ -19,12 +19,19 @@ class UserInfoAboutRepresentable: TableViewCellRepresentable {
     /// Reuse indentifier
     var reuseIdentifier: String
     
+    var noAboutText: String?
+    
     /** Initializer
      - Parameter userInfo: UserInfo
     */
     init(with userInfo: UserInfo){
-        self.aboutText = userInfo.about ?? "Wow, such empty"
+        if let text = userInfo.about {
+            self.aboutText = text
+        } else {
+            self.noAboutText = "No info to show"
+        }
+        
         self.cellHeight = UserInfoAboutTableViewCell.getHeight()
-        self.reuseIdentifier = UserInfoAboutTableViewCell.getReuseModifier()
+        self.reuseIdentifier = UserInfoAboutTableViewCell.getReuseIdentifier()
     }
 }
