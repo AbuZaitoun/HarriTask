@@ -7,17 +7,30 @@
 
 import UIKit
 
+/// User Info Expreience Representable
 class UserInfoExperienceRepresentable: TableViewCellRepresentable {
     
+    /// Cell height
     var cellHeight: CGFloat
     
+    /// Reuse identifier
     var reuseIdentifier: String
     
+    /// Position name
     var positionName: String
+    
+    /// Brand name
     var brandName: String
+    
+    /// Description
     var description: String
+    
+    /// Date text
     var dateText: String
     
+    /** Initializer
+     - Parameter work: Work
+    */
     init(with work: Work){
         self.description = work.description
         self.cellHeight = UserInfoExperienceTableViewCell.getHeight()

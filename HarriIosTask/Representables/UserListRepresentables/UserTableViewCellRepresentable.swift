@@ -22,9 +22,12 @@ class UserTableViewCellRepresentable: TableViewCellRepresentable {
     /// Image url
     private(set) var imageURL: String?
     
+    /// Position Text
     private(set) var positionText: String?
     
+    /// User
     private(set) var user: User?
+    
     /// User id
     var userID: String
     
