@@ -9,7 +9,7 @@ import UIKit
 
 /// User Info Table View Controller
 class UserInfoTableViewController: UIViewController {
-    
+
     /// Table view
     @IBOutlet weak var tableView: UITableView!
     
@@ -20,16 +20,19 @@ class UserInfoTableViewController: UIViewController {
     let navbarFont = UIFont(name: "OpenSans-Regular", size: 21)
     
     /// Header
-    let header = HeaderView()
+    let tableViewHeaderView = TableViewHeaderView()
     
     /// Section headers
     let sectionHeaders = ["About", "Experience", "Skills", "Availability"]
+    
+    /// Navbar Like view
+    var headerView: HeaderView!
     
     /// User
     private(set) var user: User?
     
     /// User info header view model
-    private(set) var headerViewModel: UserInfoHeaderViewModel!
+    private(set) var tableHeaderViewModel: UserInfoHeaderViewModel!
     
     /// User info about view model
     private(set) var aboutViewModel: UserInfoAboutViewModel!
@@ -43,13 +46,16 @@ class UserInfoTableViewController: UIViewController {
     /// User info availability view model
     private(set) var availabilityViewModel: UserInfoAvailabilityViewModel!
     
+    private(set) var headerViewModel: HeaderViewModel!
     
     /// View did lead
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.headerView = HeaderView(view: self.view)
         
-        self.setupTableView()
         self.initializeViewModels()
+        self.setupTableView()
+        self.setupTableViewHeaderView()
         self.setupHeaderView()
         self.requestData()
     }
@@ -68,7 +74,6 @@ class UserInfoTableViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.navigationController?.navigationBar.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
-        self.navigationController?.navigationBar.isTranslucent = true
     }
     
     /** View will disappear
@@ -88,8 +93,8 @@ class UserInfoTableViewController: UIViewController {
             self.experienceViewModel = UserInfoExperienceViewModel(with: userDetails?.experience ?? [])
             self.skillsViewModel = UserInfoSkillsViewModel(with: userDetails?.skills ?? [])
             self.availabilityViewModel = UserInfoAvailabilityViewModel(with: userDetails?.availability.availabilities ?? [])
-            self.headerViewModel = UserInfoHeaderViewModel(with: self.user ?? User())
-            self.header.setupView(with: self.headerViewModel.representable)
+            self.tableHeaderViewModel = UserInfoHeaderViewModel(with: self.user ?? User())
+            self.tableViewHeaderView.setupView(with: self.tableHeaderViewModel.representable)
             self.tableView.reloadData()
         })
     }
@@ -98,11 +103,8 @@ class UserInfoTableViewController: UIViewController {
     private func setupTableView(){
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        
         self.tableView.backgroundColor = .systemGray5
         self.tableView.contentInsetAdjustmentBehavior = .never
-//        self.tableView.contentInset = UIEdgeInsets(top: 44,left: 0,bottom: 0,right: 0)
-
     }
     
     /// Initialize view models
@@ -111,7 +113,9 @@ class UserInfoTableViewController: UIViewController {
         self.experienceViewModel = UserInfoExperienceViewModel(with: [])
         self.skillsViewModel = UserInfoSkillsViewModel(with: [])
         self.availabilityViewModel = UserInfoAvailabilityViewModel(with: [])
-        self.headerViewModel = UserInfoHeaderViewModel(with: self.user ?? User())
+        self.tableHeaderViewModel = UserInfoHeaderViewModel(with: self.user ?? User())
+        self.headerViewModel = HeaderViewModel(with: "", alpha: 0)
+        self.headerView.delegate = self
     }
     
     /** Setup view controller
@@ -124,46 +128,52 @@ class UserInfoTableViewController: UIViewController {
     }
     
     /// Set up header view
-    func setupHeaderView(){
+    func setupTableViewHeaderView(){
         self.navigationController?.navigationBar.tintColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         self.navigationController?.navigationBar.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
         
-        self.tableView.tableHeaderView = header
-        header.translatesAutoresizingMaskIntoConstraints = false
-        header.leftAnchor.constraint(equalTo: self.tableView.leftAnchor).isActive = true
-        header.rightAnchor.constraint(equalTo: self.tableView.rightAnchor).isActive = true
-        header.topAnchor.constraint(equalTo: self.tableView.topAnchor).isActive = true
-        header.heightAnchor.constraint(equalToConstant: 250).isActive = true
+        self.tableView.tableHeaderView = tableViewHeaderView
+        tableViewHeaderView.translatesAutoresizingMaskIntoConstraints = false
+        tableViewHeaderView.leftAnchor.constraint(equalTo: self.tableView.leftAnchor).isActive = true
+        tableViewHeaderView.rightAnchor.constraint(equalTo: self.tableView.rightAnchor).isActive = true
+        tableViewHeaderView.topAnchor.constraint(equalTo: self.tableView.topAnchor).isActive = true
+        tableViewHeaderView.heightAnchor.constraint(equalToConstant: 250).isActive = true
         self.tableView.layoutIfNeeded()
+    }
+    
+    private func setupHeaderView() {
+        headerView.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
+        self.view.addSubview(headerView)
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        headerView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+        headerView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
+        headerView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        headerView.heightAnchor.constraint(equalToConstant: 100).isActive = true
     }
     
     /// Set up navigation bar transculent
     private func setNavbarTransculent() {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+//        self.navigationController?.navigationBar.isTranslucent = true
     }
     
     /** Set up navitation bar background color
      - Parameter alpha: Alpha
     */
     func setNavbar(backgroundColorAlpha alpha: CGFloat) {
-        let newColor = UIColor(red: 1, green: 1, blue: 1, alpha: alpha)
-        self.navigationController?.navigationBar.backgroundColor = newColor
-        if alpha >= 0.5 {
-            navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navbarFont!, NSAttributedString.Key.foregroundColor: UIColor(red: 0, green: 0.47, blue: 1, alpha: alpha)]
-            self.navigationController?.navigationBar.tintColor = UIColor(red: 0, green: 0.47, blue: 1, alpha: alpha)
-            self.navigationController?.navigationBar.barTintColor = newColor
-            self.navigationItem.title = self.user?.fullName
-            if alpha == 1 {
-                self.navigationController?.navigationBar.isTranslucent = false
-                self.navigationController?.navigationBar.tintColor = UIColor(red: 0, green: 0.47, blue: 1, alpha: 1)
-            }
-        } else {
-            self.navigationItem.title = ""
-            self.navigationController?.navigationBar.isTranslucent = true
-            self.navigationController?.navigationBar.tintColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-        }
+        self.headerViewModel.setName(with: user?.fullName ?? "")
+        self.headerViewModel.setAlpha(with: alpha)
+        self.headerView.setup(with: headerViewModel.representable)
+    }
+
+}
+
+extension UserInfoTableViewController: HeaderViewDelegate {
+    func backButtonAction() {
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        let _ = self.navigationController?.popViewController(animated: true)
     }
 }
 

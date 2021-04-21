@@ -49,7 +49,7 @@
 		76ABFA97262D92AF007A2D41 /* UserInfoAvailabilityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA96262D92AF007A2D41 /* UserInfoAvailabilityViewModel.swift */; };
 		76ABFA9A262D980C007A2D41 /* AvailabilityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA99262D980C007A2D41 /* AvailabilityCollectionViewCell.swift */; };
 		76ABFA9D262DA1C6007A2D41 /* ResizableCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA9C262DA1C6007A2D41 /* ResizableCollectionView.swift */; };
-		76ABFAA7262DC44C007A2D41 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFAA6262DC44C007A2D41 /* HeaderView.swift */; };
+		76ABFAA7262DC44C007A2D41 /* TableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFAA6262DC44C007A2D41 /* TableViewHeaderView.swift */; };
 		76ABFAB2262E1F1E007A2D41 /* UserInfoHeaderRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFAB1262E1F1E007A2D41 /* UserInfoHeaderRepresentable.swift */; };
 		76ABFAB5262E2018007A2D41 /* UserInfoHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFAB4262E2018007A2D41 /* UserInfoHeaderViewModel.swift */; };
 		76ABFABE262F0E41007A2D41 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76ABFABD262F0E41007A2D41 /* HeaderView.xib */; };
@@ -58,6 +58,9 @@
 		76ABFAC9262F9688007A2D41 /* UserInfoTableViewController+UserInfoAboutCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFAC8262F9688007A2D41 /* UserInfoTableViewController+UserInfoAboutCellDelegate.swift */; };
 		76ABFACD26303604007A2D41 /* SkillsTableViewCell+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFACC26303604007A2D41 /* SkillsTableViewCell+CollectionView.swift */; };
 		76ABFAD026303676007A2D41 /* AvailabilityTableViewCell+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFACF26303676007A2D41 /* AvailabilityTableViewCell+CollectionView.swift */; };
+		76ABFAD326304259007A2D41 /* UserInfoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFAD226304259007A2D41 /* UserInfoHeaderView.swift */; };
+		76ABFAD72630456C007A2D41 /* HeaderViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFAD62630456C007A2D41 /* HeaderViewRepresentable.swift */; };
+		76ABFADA263045E6007A2D41 /* HeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFAD9263045E6007A2D41 /* HeaderViewModel.swift */; };
 		76BEEFD22619D8F500AD0321 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD12619D8F500AD0321 /* AppDelegate.swift */; };
 		76BEEFD42619D8F500AD0321 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD32619D8F500AD0321 /* SceneDelegate.swift */; };
 		76BEEFD62619D8F500AD0321 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEEFD52619D8F500AD0321 /* UsersViewController.swift */; };
@@ -113,7 +116,7 @@
 		76ABFA96262D92AF007A2D41 /* UserInfoAvailabilityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoAvailabilityViewModel.swift; sourceTree = "<group>"; };
 		76ABFA99262D980C007A2D41 /* AvailabilityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailabilityCollectionViewCell.swift; sourceTree = "<group>"; };
 		76ABFA9C262DA1C6007A2D41 /* ResizableCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableCollectionView.swift; sourceTree = "<group>"; };
-		76ABFAA6262DC44C007A2D41 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		76ABFAA6262DC44C007A2D41 /* TableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHeaderView.swift; sourceTree = "<group>"; };
 		76ABFAB1262E1F1E007A2D41 /* UserInfoHeaderRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoHeaderRepresentable.swift; sourceTree = "<group>"; };
 		76ABFAB4262E2018007A2D41 /* UserInfoHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoHeaderViewModel.swift; sourceTree = "<group>"; };
 		76ABFABD262F0E41007A2D41 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
@@ -122,6 +125,9 @@
 		76ABFAC8262F9688007A2D41 /* UserInfoTableViewController+UserInfoAboutCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserInfoTableViewController+UserInfoAboutCellDelegate.swift"; sourceTree = "<group>"; };
 		76ABFACC26303604007A2D41 /* SkillsTableViewCell+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SkillsTableViewCell+CollectionView.swift"; sourceTree = "<group>"; };
 		76ABFACF26303676007A2D41 /* AvailabilityTableViewCell+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AvailabilityTableViewCell+CollectionView.swift"; sourceTree = "<group>"; };
+		76ABFAD226304259007A2D41 /* UserInfoHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoHeaderView.swift; sourceTree = "<group>"; };
+		76ABFAD62630456C007A2D41 /* HeaderViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewRepresentable.swift; sourceTree = "<group>"; };
+		76ABFAD9263045E6007A2D41 /* HeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewModel.swift; sourceTree = "<group>"; };
 		76BEEFCE2619D8F500AD0321 /* HarriIosTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarriIosTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76BEEFD12619D8F500AD0321 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76BEEFD32619D8F500AD0321 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -171,7 +177,7 @@
 			children = (
 				76ABFA8D262D8DB7007A2D41 /* UserListViews */,
 				76ABFA8E262D8DC5007A2D41 /* UserInfoViews */,
-				76ABFAA6262DC44C007A2D41 /* HeaderView.swift */,
+				76ABFAA6262DC44C007A2D41 /* TableViewHeaderView.swift */,
 				76ABFABD262F0E41007A2D41 /* HeaderView.xib */,
 			);
 			path = Views;
@@ -260,6 +266,7 @@
 				767C37EF262C339E00D8980C /* UserInfoExperienceViewModel.swift */,
 				76ABFA5D262C6B23007A2D41 /* UserInfoSkillsViewModel.swift */,
 				76ABFA96262D92AF007A2D41 /* UserInfoAvailabilityViewModel.swift */,
+				76ABFAD9263045E6007A2D41 /* HeaderViewModel.swift */,
 			);
 			path = UserInfoViewModel;
 			sourceTree = "<group>";
@@ -289,6 +296,7 @@
 				767C37E9262C2AE500D8980C /* UserInfoExperienceRepresentable.swift */,
 				76ABFA56262C6A0F007A2D41 /* UserInfoSkillsRepresentable.swift */,
 				76ABFA87262D8357007A2D41 /* UserInfoAvailabilityRepresentable.swift */,
+				76ABFAD62630456C007A2D41 /* HeaderViewRepresentable.swift */,
 			);
 			path = UserInfoRepresentables;
 			sourceTree = "<group>";
@@ -339,6 +347,7 @@
 			children = (
 				76ABFA8F262D8DD0007A2D41 /* TableViewCells */,
 				76ABFA90262D8DDB007A2D41 /* CollectionViewCells */,
+				76ABFAD226304259007A2D41 /* UserInfoHeaderView.swift */,
 			);
 			path = UserInfoViews;
 			sourceTree = "<group>";
@@ -528,6 +537,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76ABFAD72630456C007A2D41 /* HeaderViewRepresentable.swift in Sources */,
 				76ABFAC2262F1016007A2D41 /* AddTrailing+UILabel.swift in Sources */,
 				7639247A261B4ADD009097A6 /* LoadingTableViewCell.swift in Sources */,
 				767C37A92624765200D8980C /* UserTableViewCellRepresentable.swift in Sources */,
@@ -548,11 +558,12 @@
 				76ABFACD26303604007A2D41 /* SkillsTableViewCell+CollectionView.swift in Sources */,
 				76ABFA97262D92AF007A2D41 /* UserInfoAvailabilityViewModel.swift in Sources */,
 				767C37EA262C2AE500D8980C /* UserInfoExperienceRepresentable.swift in Sources */,
+				76ABFADA263045E6007A2D41 /* HeaderViewModel.swift in Sources */,
 				767C37F6262C3B8600D8980C /* ToString+Date.swift in Sources */,
 				767C37D22629A03000D8980C /* UserInfoAvailabilityTableViewCell.swift in Sources */,
 				767C37F0262C339E00D8980C /* UserInfoExperienceViewModel.swift in Sources */,
 				767C37E4262C1A4000D8980C /* Work.swift in Sources */,
-				76ABFAA7262DC44C007A2D41 /* HeaderView.swift in Sources */,
+				76ABFAA7262DC44C007A2D41 /* TableViewHeaderView.swift in Sources */,
 				76ABFA9D262DA1C6007A2D41 /* ResizableCollectionView.swift in Sources */,
 				767C37B82625954200D8980C /* LoadingTableViewCellRepresentable.swift in Sources */,
 				76ABFA5E262C6B23007A2D41 /* UserInfoSkillsViewModel.swift in Sources */,
@@ -560,6 +571,7 @@
 				767C37F3262C3B2D00D8980C /* ToDate+String.swift in Sources */,
 				767C37D8262A5E4800D8980C /* UserDetails.swift in Sources */,
 				767C37C22625C16F00D8980C /* MyInterceptor.swift in Sources */,
+				76ABFAD326304259007A2D41 /* UserInfoHeaderView.swift in Sources */,
 				76ABFA5A262C6A42007A2D41 /* Skill.swift in Sources */,
 				76ABFA81262D7B90007A2D41 /* Availability.swift in Sources */,
 				767C37CF2629A01D00D8980C /* UserInfoSkillsTableViewCell.swift in Sources */,

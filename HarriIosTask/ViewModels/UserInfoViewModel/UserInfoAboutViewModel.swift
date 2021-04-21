@@ -17,14 +17,14 @@ class UserInfoAboutViewModel: ViewModel {
     var userInfo: UserInfo
     
     /// Representables
-    var representables: [UserInfoAboutRepresentable]
+    var representables: [TableViewCellRepresentable]
     
     /** initializer
      - Parameter userInfo: User Info
     */
     init(userInfo: UserInfo){
         self.userInfo = userInfo
-        self.representables = []
+        self.representables = [LoadingTableViewCellRepresentable()]
         self.setupRepresentable()
     }
     

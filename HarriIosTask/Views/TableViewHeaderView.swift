@@ -8,7 +8,7 @@
 import UIKit
 import JNAvatarWithInitials
 
-class HeaderView: UIView {
+class TableViewHeaderView: UIView {
     
     @IBOutlet weak var widthConstraint: NSLayoutConstraint!
     @IBOutlet var view: UIView!

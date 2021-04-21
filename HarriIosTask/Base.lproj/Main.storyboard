@@ -240,15 +240,15 @@
                                             <outlet property="positionNameLabel" destination="Chk-Qr-4Jf" id="wxg-5J-VVG"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserInfoSkillsTableViewCell" id="iJt-cQ-SWJ" userLabel="UserInfoSkillsTableViewCell" customClass="UserInfoSkillsTableViewCell" customModule="HarriIosTask" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="209.5" width="374" height="12.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserInfoSkillsTableViewCell" rowHeight="99" id="iJt-cQ-SWJ" userLabel="UserInfoSkillsTableViewCell" customClass="UserInfoSkillsTableViewCell" customModule="HarriIosTask" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="209.5" width="374" height="99"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iJt-cQ-SWJ" id="jlP-0F-7aB">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="12.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zjr-nl-qDb" customClass="ResizableCollectionView" customModule="HarriIosTask" customModuleProvider="target">
-                                                    <rect key="frame" x="5" y="6" width="364" height="0.5"/>
+                                                    <rect key="frame" x="5" y="6" width="364" height="87"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="6" minimumInteritemSpacing="10" sectionInsetReference="safeArea" id="50f-v0-rT2" customClass="MyFlowLayout" customModule="HarriIosTask" customModuleProvider="target">
                                                         <size key="itemSize" width="78" height="26"/>
@@ -258,10 +258,10 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SkillCollectionViewCell" id="OXh-SN-vUh" customClass="SkillCollectionViewCell" customModule="HarriIosTask" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="68.5" height="26"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="67.5" height="26"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="mHy-Rq-vP0">
-                                                                <rect key="frame" x="0.0" y="0.0" width="68.5" height="26"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="67.5" height="26"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ore-ci-07F">
@@ -281,7 +281,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="bottom" secondItem="Ore-ci-07F" secondAttribute="bottom" constant="8" id="D4g-CX-pEs"/>
                                                                     <constraint firstAttribute="bottom" secondItem="hiJ-NL-Qns" secondAttribute="bottom" constant="3" id="HM3-vc-tK8"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="Ore-ci-07F" secondAttribute="trailing" constant="8" id="OKu-9k-DRX"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="Ore-ci-07F" secondAttribute="trailing" constant="7" id="OKu-9k-DRX"/>
                                                                     <constraint firstItem="hiJ-NL-Qns" firstAttribute="leading" secondItem="mHy-Rq-vP0" secondAttribute="leading" constant="3" id="Swq-6A-WkT"/>
                                                                     <constraint firstItem="Ore-ci-07F" firstAttribute="leading" secondItem="hiJ-NL-Qns" secondAttribute="trailing" constant="5.5" id="Uat-ro-Ng2"/>
                                                                     <constraint firstItem="hiJ-NL-Qns" firstAttribute="top" secondItem="mHy-Rq-vP0" secondAttribute="top" constant="3" id="dlD-44-Jq0"/>
@@ -308,15 +308,15 @@
                                             <outlet property="collectionView" destination="Zjr-nl-qDb" id="WL1-lw-r29"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserInfoAvailabilityTableViewCell" id="7tn-OF-WeD" userLabel="UserInfoAvailabilityTableViewCell" customClass="UserInfoAvailabilityTableViewCell" customModule="HarriIosTask" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="222" width="374" height="12.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserInfoAvailabilityTableViewCell" rowHeight="67" id="7tn-OF-WeD" userLabel="UserInfoAvailabilityTableViewCell" customClass="UserInfoAvailabilityTableViewCell" customModule="HarriIosTask" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="308.5" width="374" height="67"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7tn-OF-WeD" id="ASz-1K-jDw">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="12.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="67"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dqK-F3-dmW" customClass="ResizableCollectionView" customModule="HarriIosTask" customModuleProvider="target">
-                                                    <rect key="frame" x="5" y="6" width="364" height="0.5"/>
+                                                    <rect key="frame" x="5" y="6" width="364" height="55"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="6" minimumInteritemSpacing="10" sectionInsetReference="safeArea" id="qDn-6g-I9P" customClass="MyFlowLayout" customModule="HarriIosTask" customModuleProvider="target">
                                                         <size key="itemSize" width="78" height="26"/>
@@ -366,6 +366,39 @@
                                             <outlet property="collectionView" destination="dqK-F3-dmW" id="aHc-w4-IB1"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LoadingCell" id="Htz-we-2MV" customClass="LoadingTableViewCell" customModule="HarriIosTask" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="375.5" width="374" height="70.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Htz-we-2MV" id="vaJ-Vz-BJn">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="70.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eGo-wj-SIe">
+                                                    <rect key="frame" x="10" y="10" width="354" height="50.5"/>
+                                                    <subviews>
+                                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="WA3-bc-bYQ">
+                                                            <rect key="frame" x="167" y="0.0" width="20" height="20"/>
+                                                        </activityIndicatorView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcM-Hk-iYa">
+                                                            <rect key="frame" x="146.5" y="30" width="61.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="17"/>
+                                                            <color key="textColor" name="HarriBlue"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="eGo-wj-SIe" secondAttribute="trailing" constant="10" id="IUk-PT-3Vh"/>
+                                                <constraint firstItem="eGo-wj-SIe" firstAttribute="top" secondItem="vaJ-Vz-BJn" secondAttribute="top" constant="10" id="heG-lb-ZyN"/>
+                                                <constraint firstAttribute="bottom" secondItem="eGo-wj-SIe" secondAttribute="bottom" constant="10" id="ng0-e9-X8d"/>
+                                                <constraint firstItem="eGo-wj-SIe" firstAttribute="leading" secondItem="vaJ-Vz-BJn" secondAttribute="leading" constant="10" id="oxB-uv-HlY"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="activityIndicator" destination="WA3-bc-bYQ" id="aAH-0N-ISX"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
@@ -384,7 +417,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RPO-rn-4Jd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1748" y="117"/>
+            <point key="canvasLocation" x="1747.826086956522" y="116.51785714285714"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rfL-aX-4N1">

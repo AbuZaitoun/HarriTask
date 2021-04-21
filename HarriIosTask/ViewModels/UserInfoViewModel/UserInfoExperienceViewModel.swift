@@ -14,7 +14,7 @@ class UserInfoExperienceViewModel: ViewModel {
     private let NUMBER_OF_SECTIONS = 1
     
     /// representables
-    var representables: [UserInfoExperienceRepresentable]
+    var representables: [TableViewCellRepresentable]
     
     /// User experience
     var userExperience: [UserExperience]
@@ -24,8 +24,11 @@ class UserInfoExperienceViewModel: ViewModel {
     */
     init(with userExperience: [UserExperience]) {
         self.userExperience = userExperience
-        self.representables = []
-        self.setupRepresentable()
+        self.representables = [LoadingTableViewCellRepresentable()]
+        if userExperience.count > 0 {
+            self.setupRepresentable()
+        }
+        
     }
     
     /// Setup representable

@@ -16,7 +16,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeaderView" customModule="HarriIosTask" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TableViewHeaderView" customModule="HarriIosTask" customModuleProvider="target">
             <connections>
                 <outlet property="backgroundPicture" destination="rtJ-WZ-sde" id="Z3Z-YO-2kJ"/>
                 <outlet property="editButton" destination="GPx-ce-cwp" id="6Nd-8k-y6Z"/>

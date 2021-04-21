@@ -48,7 +48,7 @@ class UserInfoAboutTableViewCell: UITableViewCell {
     func setupCell(with representable: UserInfoAboutRepresentable, shouldExpand: Bool){
         self.aboutLabel.text = representable.aboutText
         let maxNumberOfLine = self.aboutLabel.maxNumberOfLines
-        let numOfLines = self.aboutLabel.numberOfLines
+//        let numOfLines = self.aboutLabel.numberOfLines
         if shouldExpand {
             DispatchQueue.main.async {
                 self.aboutLabel.numberOfLines = maxNumberOfLine
@@ -56,7 +56,7 @@ class UserInfoAboutTableViewCell: UITableViewCell {
                 self.layoutIfNeeded()
             }
         }
-
+        
         if maxNumberOfLine > self.aboutLabel.numberOfLines {
             let readmoreFont = UIFont(name: "OpenSans-Regular", size: 13.0)
             let readmoreFontColor = UIColor(named: "HarriBlue")
@@ -65,7 +65,7 @@ class UserInfoAboutTableViewCell: UITableViewCell {
             }
         }
     }
-    
+
     /**
        Get Height of cell
      - returns height as CGFloat
