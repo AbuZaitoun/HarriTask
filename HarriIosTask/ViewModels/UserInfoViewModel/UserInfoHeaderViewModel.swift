@@ -7,9 +7,16 @@
 
 import Foundation
 
+
+/// User Info Header View Model
 class UserInfoHeaderViewModel {
+    
+    /// Representables
     var representable: UserInfoHeaderRepresentable
     
+    /** Initializer
+     - Parameter user: User
+    */
     init(with user: User) {
         self.representable = UserInfoHeaderRepresentable(with: user)
     }

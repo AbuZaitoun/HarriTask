@@ -14,12 +14,16 @@ enum UsersRouter: URLRequestConvertible {
     
     /// Base url string
     static let baseUserListURLString = "https://gateway.harridev.com/core/api/v1/harri_search"
+    
+    /// Base url string for user info
     static let baseUserInfoURLString = "https://api.harridev.com/api/v1"
+    
     /// Base url
     var usersListURL: URL {
         return URL(string: UsersRouter.baseUserListURLString)!
     }
     
+    /// User info url
     var userInfoURL: URL {
         return URL(string: UsersRouter.baseUserInfoURLString)!
     }

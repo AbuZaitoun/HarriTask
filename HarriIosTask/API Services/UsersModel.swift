@@ -42,6 +42,11 @@ class UsersModel {
         }
     }
     
+    /** Fetch user infotation
+     - Parameters:
+       - userID: User id
+       - completion: Completion closure
+    */
     static func fetchUserInfo(userID: String, completion: @escaping (UserDetails?, Error?) -> ()) {
         let fetchUserInfoParams = ["id": userID]
         
