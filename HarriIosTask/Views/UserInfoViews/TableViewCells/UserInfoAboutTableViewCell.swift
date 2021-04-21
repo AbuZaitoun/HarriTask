@@ -7,24 +7,42 @@
 
 import UIKit
 
+/// User Info About Cell Delegate
 protocol UserInfoAboutCellDelegate: AnyObject {
+    
+    /// Label Clicked
+    /// - Parameter indexPath: IndexPath
     func labelClicked(indexPath: IndexPath)
 }
 
+/// User Info About Table View Cell
 class UserInfoAboutTableViewCell: UITableViewCell {
-
+    
+    /// About label
     @IBOutlet var aboutLabel: UILabel!
+    
+    /// Delegate
     weak var delegate: UserInfoAboutCellDelegate?
+    
+    /// Awake from nib
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
  
     
+    /// Set selected
+    /// - Parameters:
+    ///   - selected: Boolean
+    ///   - animated: Boolean
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
+    /// Set up cell with representable
+    /// - Parameters:
+    ///   - representable: UserInfoAboutRepresentable
+    ///   - shouldExpand: Boolean
     func setupCell(with representable: UserInfoAboutRepresentable, shouldExpand: Bool){
         self.aboutLabel.text = representable.aboutText
         let maxNumberOfLine = self.aboutLabel.maxNumberOfLines
