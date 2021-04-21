@@ -7,14 +7,17 @@
 
 import UIKit
 
+/// Resizable Collection View
 class ResizableCollectionView: UICollectionView {
     
+    /// Reload data
     override func reloadData() {
         super.reloadData()
         
         self.invalidateIntrinsicContentSize()
     }
     
+    /// Intrinsic Content size
     override var intrinsicContentSize: CGSize {
         
         var size = self.collectionViewLayout.collectionViewContentSize

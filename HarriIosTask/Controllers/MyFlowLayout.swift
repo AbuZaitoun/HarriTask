@@ -7,8 +7,13 @@
 
 import UIKit
 
+/// My Flow Layout
 class MyFlowLayout: UICollectionViewFlowLayout {
-
+    
+    /** Layout Attributes for
+     - Parameter rect: CGRect
+     - Returns: [UICollectionViewLayoutAttributes]
+    */
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         let attributes = super.layoutAttributesForElements(in: rect)
 

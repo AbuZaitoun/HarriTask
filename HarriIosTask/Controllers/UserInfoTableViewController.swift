@@ -7,23 +7,44 @@
 
 import UIKit
 
+/// User Info Table View Controller
 class UserInfoTableViewController: UIViewController {
     
+    /// Table view
     @IBOutlet weak var tableView: UITableView!
     
+    /// Number of sections
     let NUMBER_OF_SECTIONS = 4
+    
+    /// navigation bar font
     let navbarFont = UIFont(name: "OpenSans-Regular", size: 21)
+    
+    /// Header
     let header = HeaderView()
+    
+    /// Section headers
     let sectionHeaders = ["About", "Experience", "Skills", "Availability"]
     
+    /// User
     private(set) var user: User?
+    
+    /// User info header view model
     private(set) var headerViewModel: UserInfoHeaderViewModel!
+    
+    /// User info about view model
     private(set) var aboutViewModel: UserInfoAboutViewModel!
+    
+    /// User info experience view model
     private(set) var experienceViewModel: UserInfoExperienceViewModel!
+    
+    /// User info skills view model
     private(set) var skillsViewModel: UserInfoSkillsViewModel!
+    
+    /// User info availability view model
     private(set) var availabilityViewModel: UserInfoAvailabilityViewModel!
     
     
+    /// View did lead
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,22 +54,32 @@ class UserInfoTableViewController: UIViewController {
         self.requestData()
     }
     
+    /** View will appear
+     - Parameter animated: Boolean
+    */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setNavbarTransculent()
     }
     
+    /** View did appear
+     - Parameter animated: Boolean
+    */
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.navigationController?.navigationBar.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
         self.navigationController?.navigationBar.isTranslucent = true
     }
     
+    /** View will disappear
+     - Parameter animated: Boolean
+    */
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.navigationBar.isTranslucent = false
     }
     
+    /// Request data
     private func requestData() {
         UsersModel.fetchUserInfo(userID: String(self.user?.id ?? -1), completion: { [weak self] (userDetails, error) in
             guard let self = self else { return }
@@ -63,6 +94,7 @@ class UserInfoTableViewController: UIViewController {
         })
     }
     
+    /// Set up table view
     private func setupTableView(){
         self.tableView.dataSource = self
         self.tableView.delegate = self
@@ -71,6 +103,7 @@ class UserInfoTableViewController: UIViewController {
         self.tableView.contentInsetAdjustmentBehavior = .never
     }
     
+    /// Initialize view models
     private func initializeViewModels() {
         self.aboutViewModel = UserInfoAboutViewModel(userInfo: UserInfo(about: ""))
         self.experienceViewModel = UserInfoExperienceViewModel(with: [])
@@ -79,12 +112,16 @@ class UserInfoTableViewController: UIViewController {
         self.headerViewModel = UserInfoHeaderViewModel(with: self.user ?? User())
     }
     
+    /** Setup view controller
+     - Parameter user: User
+    */
     func setupViewController(user: User?){
         if let user = user {
             self.user = user
         }
     }
-
+    
+    /// Set up header view
     func setupHeaderView(){
         self.navigationController?.navigationBar.tintColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         self.navigationController?.navigationBar.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
@@ -97,13 +134,17 @@ class UserInfoTableViewController: UIViewController {
         header.heightAnchor.constraint(equalToConstant: 250).isActive = true
         self.tableView.layoutIfNeeded()
     }
-
+    
+    /// Set up navigation bar transculent
     private func setNavbarTransculent() {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
     }
-
+    
+    /** Set up navitation bar background color
+     - Parameter alpha: Alpha
+    */
     func setNavbar(backgroundColorAlpha alpha: CGFloat) {
         let newColor = UIColor(red: 1, green: 1, blue: 1, alpha: alpha)
         self.navigationController?.navigationBar.backgroundColor = newColor
