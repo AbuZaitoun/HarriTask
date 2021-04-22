@@ -178,6 +178,9 @@
                                                         <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
                                                             <integer key="value" value="5"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="skeletonLineSpacing">
+                                                            <real key="value" value="8"/>
+                                                        </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                             </subviews>

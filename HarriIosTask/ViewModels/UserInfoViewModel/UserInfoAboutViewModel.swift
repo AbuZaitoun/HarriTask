@@ -33,6 +33,14 @@ class UserInfoAboutViewModel: ViewModel {
         self.representables = [UserInfoAboutRepresentable(with: self.userInfo)]
     }
     
+    func toggleExpanded(for indexPath: IndexPath) {
+        guard let representable = self.representableForRow(at: indexPath) as? UserInfoAboutRepresentable else {
+            return
+        }
+        representable.isExpanded.toggle()
+    }
+    
+    
     /** Number of sections
      - Returns: Integer,  number of sections
     */

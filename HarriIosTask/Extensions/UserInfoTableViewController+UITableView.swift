@@ -65,8 +65,7 @@ extension UserInfoTableViewController: UITableViewDelegate, SkeletonTableViewDat
                 return UITableViewCell()
             }
             let cell = tableView.dequeueReusableCell(withIdentifier: UserInfoAboutTableViewCell.getReuseIdentifier(), for: indexPath) as? UserInfoAboutTableViewCell
-            cell?.setupCell(with: representable, shouldExpand: false)
-            cell?.delegate = self
+            cell?.setupCell(with: representable)
             return cell ?? UITableViewCell()
             
         case 1:
@@ -86,12 +85,19 @@ extension UserInfoTableViewController: UITableViewDelegate, SkeletonTableViewDat
             
             
         case 2:
-            guard let representable = skillsViewModel.representableForRow(at: indexPath) as? UserInfoSkillsRepresentable else {
+            if let representable = skillsViewModel.representableForRow(at: indexPath) as? UserInfoSkillsRepresentable {
+                let cell = tableView.dequeueReusableCell(withIdentifier: UserInfoSkillsTableViewCell.getReuseIdentifier(), for: indexPath) as? UserInfoSkillsTableViewCell
+                cell?.setupCell(with: representable)
+                return cell ?? UITableViewCell()
+            }
+            else if let representable = skillsViewModel.representableForRow(at: indexPath) as? ZeroExperienceRepresentable {
+                let cell = tableView.dequeueReusableCell(withIdentifier: ZeroExperienceCell.getReuseIdentifier(), for: indexPath) as? ZeroExperienceCell
+                cell?.setup(with: representable)
+                return cell ?? UITableViewCell()
+            }
+            else {
                 return UITableViewCell()
             }
-            let cell = tableView.dequeueReusableCell(withIdentifier: UserInfoSkillsTableViewCell.getReuseIdentifier(), for: indexPath) as? UserInfoSkillsTableViewCell
-            cell?.setupCell(with: representable)
-            return cell ?? UITableViewCell()
             
         case 3:
             guard let representable = availabilityViewModel.representableForRow(at: indexPath) as? UserInfoAvailabilityRepresentable else {
@@ -139,7 +145,9 @@ extension UserInfoTableViewController: UITableViewDelegate, SkeletonTableViewDat
     */
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
-            self.labelClicked(indexPath: indexPath)
+            self.aboutViewModel.toggleExpanded(for: indexPath)
+            self.tableView.reloadRows(at: [indexPath], with: .fade)
+//            self.labelClicked(indexPath: indexPath)
         }
     }
     

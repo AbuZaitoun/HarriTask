@@ -7,16 +7,22 @@
 
 import UIKit
 
+/// Zero Experience Representable
 class ZeroExperienceRepresentable: TableViewCellRepresentable {
     
+    /// No experience text
+    var noExperienceText: String
+    
+    /// Cell height
     var cellHeight: CGFloat
     
+    /// Reuse identifier
     var reuseIdentifier: String
     
-    var NO_EXPERIENCE_TEXT = "No experience to show"
-    
-    init() {
+    /// Initializer
+    init(with string: String) {
         self.cellHeight = ZeroExperienceCell.getHeight()
         self.reuseIdentifier = ZeroExperienceCell.getReuseIdentifier()
+        self.noExperienceText = string
     }
 }

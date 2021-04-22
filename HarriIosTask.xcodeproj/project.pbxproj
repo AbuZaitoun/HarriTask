@@ -55,7 +55,6 @@
 		76ABFABE262F0E41007A2D41 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76ABFABD262F0E41007A2D41 /* HeaderView.xib */; };
 		76ABFAC2262F1016007A2D41 /* AddTrailing+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFAC1262F1016007A2D41 /* AddTrailing+UILabel.swift */; };
 		76ABFAC5262F3344007A2D41 /* UserInfoTableViewController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFAC4262F3344007A2D41 /* UserInfoTableViewController+UITableView.swift */; };
-		76ABFAC9262F9688007A2D41 /* UserInfoTableViewController+UserInfoAboutCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFAC8262F9688007A2D41 /* UserInfoTableViewController+UserInfoAboutCellDelegate.swift */; };
 		76ABFACD26303604007A2D41 /* SkillsTableViewCell+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFACC26303604007A2D41 /* SkillsTableViewCell+CollectionView.swift */; };
 		76ABFAD026303676007A2D41 /* AvailabilityTableViewCell+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFACF26303676007A2D41 /* AvailabilityTableViewCell+CollectionView.swift */; };
 		76ABFAD326304259007A2D41 /* UserInfoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFAD226304259007A2D41 /* UserInfoHeaderView.swift */; };
@@ -125,7 +124,6 @@
 		76ABFABD262F0E41007A2D41 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		76ABFAC1262F1016007A2D41 /* AddTrailing+UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddTrailing+UILabel.swift"; sourceTree = "<group>"; };
 		76ABFAC4262F3344007A2D41 /* UserInfoTableViewController+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserInfoTableViewController+UITableView.swift"; sourceTree = "<group>"; };
-		76ABFAC8262F9688007A2D41 /* UserInfoTableViewController+UserInfoAboutCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserInfoTableViewController+UserInfoAboutCellDelegate.swift"; sourceTree = "<group>"; };
 		76ABFACC26303604007A2D41 /* SkillsTableViewCell+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SkillsTableViewCell+CollectionView.swift"; sourceTree = "<group>"; };
 		76ABFACF26303676007A2D41 /* AvailabilityTableViewCell+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AvailabilityTableViewCell+CollectionView.swift"; sourceTree = "<group>"; };
 		76ABFAD226304259007A2D41 /* UserInfoHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoHeaderView.swift; sourceTree = "<group>"; };
@@ -244,7 +242,6 @@
 			children = (
 				767C37B32624AA5000D8980C /* UsersViewController+UITableView.swift */,
 				76ABFAC4262F3344007A2D41 /* UserInfoTableViewController+UITableView.swift */,
-				76ABFAC8262F9688007A2D41 /* UserInfoTableViewController+UserInfoAboutCellDelegate.swift */,
 				767C37F2262C3B2D00D8980C /* ToDate+String.swift */,
 				767C37F5262C3B8600D8980C /* ToString+Date.swift */,
 				76ABFAC1262F1016007A2D41 /* AddTrailing+UILabel.swift */,
@@ -351,9 +348,7 @@
 		76ABFA8E262D8DC5007A2D41 /* UserInfoViews */ = {
 			isa = PBXGroup;
 			children = (
-				76ABFAD226304259007A2D41 /* UserInfoHeaderView.swift */,
-				76ABFAA6262DC44C007A2D41 /* TableViewHeaderView.swift */,
-				76ABFABD262F0E41007A2D41 /* HeaderView.xib */,
+				76CC6CF7263170E00061FA82 /* Headers */,
 				76ABFA8F262D8DD0007A2D41 /* TableViewCells */,
 				76ABFA90262D8DDB007A2D41 /* CollectionViewCells */,
 			);
@@ -418,6 +413,16 @@
 				7639249C261BCBF3009097A6 /* font */,
 			);
 			path = HarriIosTask;
+			sourceTree = "<group>";
+		};
+		76CC6CF7263170E00061FA82 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				76ABFAD226304259007A2D41 /* UserInfoHeaderView.swift */,
+				76ABFAA6262DC44C007A2D41 /* TableViewHeaderView.swift */,
+				76ABFABD262F0E41007A2D41 /* HeaderView.xib */,
+			);
+			path = Headers;
 			sourceTree = "<group>";
 		};
 		9E1FAF8EDCB8AE17D62A7A0D /* Frameworks */ = {
@@ -591,7 +596,6 @@
 				767C37CC2629A00500D8980C /* UserInfoExperienceTableViewCell.swift in Sources */,
 				767C37DB262AE8D300D8980C /* UserInfoAboutRepresentable.swift in Sources */,
 				76BEEFD42619D8F500AD0321 /* SceneDelegate.swift in Sources */,
-				76ABFAC9262F9688007A2D41 /* UserInfoTableViewController+UserInfoAboutCellDelegate.swift in Sources */,
 				7639246A261B10FE009097A6 /* UserData.swift in Sources */,
 				76BEEFEB2619DBDA00AD0321 /* UserTableViewCell.swift in Sources */,
 				767C37D5262A5DDA00D8980C /* UserInfo.swift in Sources */,

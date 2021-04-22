@@ -29,7 +29,7 @@ class UserInfoExperienceViewModel: ViewModel {
             self.setupRepresentable()
         } else {
             
-            self.representables = [ZeroExperienceRepresentable()] 
+            self.representables = [ZeroExperienceRepresentable(with: "No experience to show")] 
         }
         
     }

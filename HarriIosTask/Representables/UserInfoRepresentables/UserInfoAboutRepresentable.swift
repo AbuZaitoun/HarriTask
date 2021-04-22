@@ -21,6 +21,7 @@ class UserInfoAboutRepresentable: TableViewCellRepresentable {
     
     var noAboutText: String?
     
+    var isExpanded: Bool
     /** Initializer
      - Parameter userInfo: UserInfo
     */
@@ -30,7 +31,7 @@ class UserInfoAboutRepresentable: TableViewCellRepresentable {
         } else {
             self.noAboutText = "No info to show"
         }
-        
+        self.isExpanded = false
         self.cellHeight = UserInfoAboutTableViewCell.getHeight()
         self.reuseIdentifier = UserInfoAboutTableViewCell.getReuseIdentifier()
     }

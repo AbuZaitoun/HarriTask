@@ -11,7 +11,7 @@ import UIKit
 class UserInfoSkillsViewModel: ViewModel, CollectionViewModel {
     
     /// Representables
-    var representables: [UserInfoSkillsRepresentable] // Refactor
+    var representables: [TableViewCellRepresentable] // Refactor
     
     /// Skill Representables
     var skillRepresentable: [UserInfoSkillsRepresentable]
@@ -26,7 +26,12 @@ class UserInfoSkillsViewModel: ViewModel, CollectionViewModel {
         self.representables = []
         self.skillRepresentable = []
         self.skills = skills
-        self.setupRepresentables(skills: skills)
+        if !skills.isEmpty {
+            self.setupRepresentables(skills: skills)
+        } else {
+            self.representables.append(ZeroExperienceRepresentable(with: "No skills to show"))
+        }
+        
     }
     
     

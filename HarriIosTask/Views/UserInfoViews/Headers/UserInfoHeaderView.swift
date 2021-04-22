@@ -28,7 +28,7 @@ class HeaderView: UIView {
         backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
         self.addSubview(backButton)
         self.addSubview(nameLabel)
-        
+        self.setupShadow()
         self.setupBackButton()
         self.setupLabel()
     }
@@ -49,7 +49,14 @@ class HeaderView: UIView {
         }
     }
     
-    func setupBackButton(){
+    private func setupShadow(){
+        self.layer.shadowColor = UIColor.gray.cgColor
+        self.layer.shadowOpacity = 0.6
+        self.layer.shadowOffset = .zero
+        self.layer.shadowRadius = 10
+    }
+    
+    private func setupBackButton(){
         backButton.setImage(backImage, for: .normal)
         backButton.tintColor = .white
         backButton.addTarget(self, action: #selector(self.backButtonPressed), for: .touchUpInside)
@@ -61,7 +68,7 @@ class HeaderView: UIView {
         backButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 55).isActive = true
     }
     
-    func setupLabel(){
+    private func setupLabel(){
         nameLabel.text = ""
         nameLabel.font = UIFont(name: "OpenSans-Regular", size: 21)
         nameLabel.textColor = UIColor(red: 0, green: 0.47, blue: 1, alpha: 0)

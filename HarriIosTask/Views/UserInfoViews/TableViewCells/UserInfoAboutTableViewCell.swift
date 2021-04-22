@@ -7,22 +7,11 @@
 
 import UIKit
 
-/// User Info About Cell Delegate
-protocol UserInfoAboutCellDelegate: AnyObject {
-    
-    /// Label Clicked
-    /// - Parameter indexPath: IndexPath
-    func labelClicked(indexPath: IndexPath)
-}
-
 /// User Info About Table View Cell
 class UserInfoAboutTableViewCell: UITableViewCell {
     
     /// About label
     @IBOutlet var aboutLabel: UILabel!
-    
-    /// Delegate
-    weak var delegate: UserInfoAboutCellDelegate?
     
     /// Awake from nib
     override func awakeFromNib() {
@@ -45,24 +34,24 @@ class UserInfoAboutTableViewCell: UITableViewCell {
        - representable: UserInfoAboutRepresentable
        - shouldExpand: Boolean
     */
-    func setupCell(with representable: UserInfoAboutRepresentable, shouldExpand: Bool){
+    func setupCell(with representable: UserInfoAboutRepresentable){
         if let text = representable.aboutText {
             self.aboutLabel.text = text
         } else {
             self.aboutLabel.textAlignment = .center
-            self.aboutLabel.font = UIFont(name: "OpenSans-Light", size: 12)
-            self.aboutLabel.textColor = .systemGray2
+            self.aboutLabel.font = UIFont(name: "OpenSans-Light", size: 13)
+            self.aboutLabel.textColor = .systemGray
             self.aboutLabel.text = representable.noAboutText!
         }
         
         let maxNumberOfLine = self.aboutLabel.maxNumberOfLines
 //        let numOfLines = self.aboutLabel.numberOfLines
-        if shouldExpand {
-            DispatchQueue.main.async {
+        if representable.isExpanded {
+//            DispatchQueue.main.async {
                 self.aboutLabel.numberOfLines = maxNumberOfLine
                 self.setNeedsLayout()
                 self.layoutIfNeeded()
-            }
+//            }
         }
         
         if maxNumberOfLine > self.aboutLabel.numberOfLines {
