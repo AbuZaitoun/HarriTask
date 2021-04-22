@@ -7,9 +7,13 @@
 
 import Foundation
 
+/// Skill
 struct Skill: Codable {
+    
+    /// Name
     var name: String
     
+    /// Coding keys
     enum CodingKeys: String, CodingKey {
         case name
     }

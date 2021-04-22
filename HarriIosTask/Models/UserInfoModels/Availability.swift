@@ -7,37 +7,94 @@
 
 import Foundation
 
+/// Availability
 struct Availability: Codable {
     
+    /// Any time
     var anytime: Bool = false
+    
+    /// Friday afternoon
     var friday_afternoon: Bool = false
+    
+    /// Friday evenin
     var friday_evening: Bool = false
+    
+    /// Friday morning
     var friday_morning: Bool = false
+    
+    /// Fulltime
     var full_time: Bool = false
+    
+    /// Monday afternoon
     var monday_afternoon: Bool = false
+    
+    /// Monday evening
     var monday_evening: Bool = false
+    
+    /// Monday morning
     var monday_morning: Bool = false
+    
+    /// Part time
     var part_time: Bool = false
+    
+    /// Saturday afternoon
     var saturday_afternoon: Bool = false
+    
+    /// Saturday evening
     var saturday_evening: Bool = false
+    
+    /// Saturday morning
     var saturday_morning: Bool = false
+    
+    /// Sunday afternoon
     var sunday_afternoon: Bool = false
+    
+    /// Sunday evening
     var sunday_evening: Bool = false
+    
+    /// Sunday mornning
     var sunday_morning: Bool = false
+    
+    /// Thursday afternoon
     var thursday_afternoon: Bool = false
+    
+    /// Thursday evening
     var thursday_evening: Bool = false
+    
+    /// Thursday morning
     var thursday_morning: Bool = false
+    
+    /// Tuesday afternoon
     var tuesday_afternoon: Bool = false
+    
+    /// Tuesday evening
     var tuesday_evening: Bool = false
+    
+    /// Tuesday morning
     var tuesday_morning: Bool = false
+    
+    /// Wednesday afternoon
     var wednesday_afternoon: Bool = false
+    
+    /// Wednesday evening
     var wednesday_evening: Bool = false
+    
+    /// Wednesday morning
     var wednesday_morning: Bool = false
+    
+    /// Weekdays
     var weekdays: Bool = false
+    
+    /// Weekend days
     var weekend_days: Bool = false
+    
+    /// Weekend nights
     var weekend_nights: Bool = false
+    
+    /// Week nights
     var weeknights: Bool = false
     
+    /// Availabilities
     var availabilities: [(String, Bool)] {
         var toReturn:[(title: String, value: Bool)] = []
         toReturn.append((title: "AnyTime", value: self.anytime))
@@ -72,6 +129,7 @@ struct Availability: Codable {
     }
 
     
+    /// Coding keys
     enum CodingKeys: String, CodingKey {
         case anytime
         case friday_afternoon

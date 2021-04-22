@@ -7,10 +7,13 @@
 
 import Foundation
 
+/// User Info
 struct UserInfo: Codable {
     
+    /// About
     var about: String?
     
+    /// Coding keys
     enum CodingKeys: String, CodingKey {
         case about
     }
