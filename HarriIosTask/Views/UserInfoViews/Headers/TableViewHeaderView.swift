@@ -10,6 +10,8 @@ import JNAvatarWithInitials
 
 class TableViewHeaderView: UITableViewHeaderFooterView {
     
+    @IBOutlet weak var viewWidthConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var widthConstraint: NSLayoutConstraint!
     @IBOutlet var view: UIView!
 
@@ -23,6 +25,7 @@ class TableViewHeaderView: UITableViewHeaderFooterView {
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         Bundle.main.loadNibNamed("HeaderView", owner: self, options: nil)
+        self.viewWidthConstraint.constant = UIScreen.main.bounds.size.width
         self.widthConstraint.constant = UIScreen.main.bounds.size.width
         self.addSubview(view)
         self.setupProfilePicture()

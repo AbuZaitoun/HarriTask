@@ -147,6 +147,7 @@ class UserInfoTableViewController: UIViewController {
         tableViewHeaderView.rightAnchor.constraint(equalTo: self.tableView.rightAnchor).isActive = true
         tableViewHeaderView.topAnchor.constraint(equalTo: self.tableView.topAnchor).isActive = true
         tableViewHeaderView.heightAnchor.constraint(equalToConstant: 250).isActive = true
+        tableViewHeaderView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width).isActive = true
         self.tableView.layoutIfNeeded()
     }
     
