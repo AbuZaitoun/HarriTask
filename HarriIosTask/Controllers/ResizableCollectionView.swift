@@ -21,8 +21,8 @@ class ResizableCollectionView: UICollectionView {
     override var intrinsicContentSize: CGSize {
         
         var size = self.collectionViewLayout.collectionViewContentSize
-        let height = CGFloat((1+self.numberOfItems(inSection: 0))*6)
-        size.height += (height + 3)
+        let height = CGFloat((self.numberOfItems(inSection: 0)))
+        size.height += (height)
         
         return size
     }
