@@ -133,8 +133,9 @@ extension UserInfoTableViewController: UITableViewDelegate, SkeletonTableViewDat
      - Parameter scrollView: UIScrollView
      */
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let denominator: CGFloat = 250 
+        let denominator: CGFloat = 271
         let alpha = min(1, scrollView.contentOffset.y / denominator)
+        
         self.setNavbar(backgroundColorAlpha: alpha)
     }
     
