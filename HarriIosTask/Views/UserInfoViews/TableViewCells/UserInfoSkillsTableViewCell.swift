@@ -22,7 +22,7 @@ class UserInfoSkillsTableViewCell: UITableViewCell {
     /// awake from nib
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.skillsViewModel = UserInfoSkillsViewModel(with: [])
+        self.skillsViewModel = UserInfoSkillsViewModel(with: [], width: self.collectionView.bounds.width)
         self.setupCollectionView()
     }
     
@@ -37,7 +37,7 @@ class UserInfoSkillsTableViewCell: UITableViewCell {
      - Parameter representable: UserInfoSkillsRepresentable
     */
     func setupCell(with representable: UserInfoSkillsRepresentable) {
-        self.skillsViewModel = UserInfoSkillsViewModel(with: representable.skills ?? [])
+        self.skillsViewModel = UserInfoSkillsViewModel(with: representable.skills ?? [], width: self.collectionView.bounds.width)
         self.collectionView.reloadData()
     }
     

@@ -12,7 +12,7 @@ import Alamofire
 class UsersViewController: UIViewController {
     
     /// Main tableview
-    @IBOutlet private var mainTableView: UITableView!
+    @IBOutlet private(set) var mainTableView: UITableView!
     
     /// Users viewmodel
     private(set) var usersViewModel: UserViewModel!
@@ -43,8 +43,12 @@ class UsersViewController: UIViewController {
         self.usersViewModel = UserViewModel(with: [], total: 1)
         self.setTableViewDelegates()
         self.setupPullToRefresh()
-        
+        setNeedsStatusBarAppearanceUpdate()
     }
+    
+//    override var preferredStatusBarStyle: UIStatusBarStyle {
+//        return .lightContent
+//    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

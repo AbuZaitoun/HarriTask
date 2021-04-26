@@ -22,7 +22,7 @@ class ResizableCollectionView: UICollectionView {
         
         var size = self.collectionViewLayout.collectionViewContentSize
         let height = CGFloat((self.numberOfItems(inSection: 0)))
-        size.height += (height)
+        size.height = size.height + (height)
         
         return size
     }

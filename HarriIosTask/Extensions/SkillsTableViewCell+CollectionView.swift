@@ -26,13 +26,15 @@ extension UserInfoSkillsTableViewCell: UICollectionViewDelegate, UICollectionVie
         guard let representable = skillsViewModel.representableForCollection(at: indexPath) as? UserInfoSkillsRepresentable else {
             return CGSize()
         }
+        
+        
         let cellWord = representable.skillName ?? "Place holder"
         let font = UIFont(name: "OpenSans-Light", size: 13)
-        let size = CGSize(width: collectionView.bounds.width, height: 40)
+        let size = CGSize(width: collectionView.bounds.width - 15, height: 40)
         
         let textRect = cellWord.boundingRect(with: size, options: [.usesLineFragmentOrigin], attributes: [NSAttributedString.Key.font: font], context: nil)
         
-        return CGSize(width: min(textRect.width + 40, collectionView.bounds.width), height: min(textRect.height + 15, 33))
+        return CGSize(width: min(textRect.width + 40, collectionView.bounds.width - 15), height: min(textRect.height + 15, 33))
     }
     
 }

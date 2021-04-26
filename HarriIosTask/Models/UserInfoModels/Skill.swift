@@ -13,8 +13,12 @@ struct Skill: Codable {
     /// Name
     var name: String
     
+    /// Id
+    var id: Int
+    
     /// Coding keys
     enum CodingKeys: String, CodingKey {
         case name
+        case id
     }
 }

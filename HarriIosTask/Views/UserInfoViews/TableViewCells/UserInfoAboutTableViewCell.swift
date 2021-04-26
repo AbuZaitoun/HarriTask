@@ -37,6 +37,7 @@ class UserInfoAboutTableViewCell: UITableViewCell {
     func setupCell(with representable: UserInfoAboutRepresentable){
         if let text = representable.aboutText {
             self.aboutLabel.text = text
+            self.aboutLabel.font = UIFont(name: "OpenSans-Regular", size: 13)
         } else {
             self.aboutLabel.textAlignment = .center
             self.aboutLabel.font = UIFont(name: "OpenSans-Light", size: 13)

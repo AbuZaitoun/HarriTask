@@ -70,7 +70,7 @@ class HeaderView: UIView {
     
     private func setupLabel(){
         self.nameLabel.text = ""
-        self.nameLabel.font = UIFont(name: "OpenSans-Regular", size: 21)
+        self.nameLabel.font = UIFont(name: "OpenSans-Regular", size: 14)
         self.nameLabel.textColor = UIColor(red: 0, green: 0.47, blue: 1, alpha: 0)
         self.nameLabel.translatesAutoresizingMaskIntoConstraints = false
         self.nameLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -17).isActive = true

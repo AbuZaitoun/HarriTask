@@ -20,7 +20,7 @@ class UserInfoTableViewController: UIViewController {
     let navbarFont = UIFont(name: "OpenSans-Regular", size: 21)
     
     /// Header
-    let tableViewHeaderView = TableViewHeaderView(reuseIdentifier: "Header")
+    let tableViewHeaderView = TableViewHeaderView()
     
     /// Section headers
     let sectionHeaders = ["About", "Experience", "Skills", "Availability"]
@@ -95,7 +95,7 @@ class UserInfoTableViewController: UIViewController {
             self.user?.backgroundImageUUID = userDetails?.backgroundImage
             self.aboutViewModel = UserInfoAboutViewModel(userInfo: userDetails?.userInfo ?? UserInfo(about: ""))
             self.experienceViewModel = UserInfoExperienceViewModel(with: userDetails?.experience ?? [])
-            self.skillsViewModel = UserInfoSkillsViewModel(with: userDetails?.skills ?? [])
+            self.skillsViewModel = UserInfoSkillsViewModel(with: userDetails?.skills ?? [], width: 0)
             self.availabilityViewModel = UserInfoAvailabilityViewModel(with: userDetails?.availability.availabilities ?? [])
             self.tableHeaderViewModel = UserInfoHeaderViewModel(with: self.user ?? User())
             self.tableViewHeaderView.setupView(with: self.tableHeaderViewModel.representable)
@@ -118,7 +118,7 @@ class UserInfoTableViewController: UIViewController {
     private func initializeViewModels() {
         self.aboutViewModel = UserInfoAboutViewModel(userInfo: UserInfo(about: ""))
         self.experienceViewModel = UserInfoExperienceViewModel(with: [])
-        self.skillsViewModel = UserInfoSkillsViewModel(with: [])
+        self.skillsViewModel = UserInfoSkillsViewModel(with: [], width: 0)
         self.availabilityViewModel = UserInfoAvailabilityViewModel(with: [])
         self.tableHeaderViewModel = UserInfoHeaderViewModel(with: self.user ?? User())
         self.headerViewModel = HeaderViewModel(with: "", alpha: 0)
@@ -140,13 +140,13 @@ class UserInfoTableViewController: UIViewController {
         self.navigationController?.navigationBar.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
         
         self.tableView.tableHeaderView = tableViewHeaderView
-        self.tableView.register(TableViewHeaderView.self,
-               forHeaderFooterViewReuseIdentifier: "Header")
+//        self.tableView.register(TableViewHeaderView.self,
+//               forHeaderFooterViewReuseIdentifier: "Header")
         tableViewHeaderView.translatesAutoresizingMaskIntoConstraints = false
         tableViewHeaderView.leftAnchor.constraint(equalTo: self.tableView.leftAnchor).isActive = true
         tableViewHeaderView.rightAnchor.constraint(equalTo: self.tableView.rightAnchor).isActive = true
         tableViewHeaderView.topAnchor.constraint(equalTo: self.tableView.topAnchor).isActive = true
-        tableViewHeaderView.heightAnchor.constraint(equalToConstant: 250).isActive = true
+        tableViewHeaderView.heightAnchor.constraint(equalToConstant: 271).isActive = true
         tableViewHeaderView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width).isActive = true
         self.tableView.layoutIfNeeded()
     }

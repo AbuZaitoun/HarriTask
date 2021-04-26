@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		763393462634713100A712F7 /* GetWidth+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763393452634713100A712F7 /* GetWidth+String.swift */; };
+		7633934A263595CE00A712F7 /* Combinations+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76339349263595CE00A712F7 /* Combinations+Array.swift */; };
 		7639246A261B10FE009097A6 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76392469261B10FE009097A6 /* UserData.swift */; };
 		7639247A261B4ADD009097A6 /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76392478261B4ADD009097A6 /* LoadingTableViewCell.swift */; };
 		76392480261B564B009097A6 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7639247F261B564B009097A6 /* UserViewModel.swift */; };
@@ -76,6 +78,8 @@
 
 /* Begin PBXFileReference section */
 		73AEFEF0184910AD57C2EBF9 /* Pods_HarriIosTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HarriIosTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		763393452634713100A712F7 /* GetWidth+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetWidth+String.swift"; sourceTree = "<group>"; };
+		76339349263595CE00A712F7 /* Combinations+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Combinations+Array.swift"; sourceTree = "<group>"; };
 		76392469261B10FE009097A6 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		76392478261B4ADD009097A6 /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
 		7639247F261B564B009097A6 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
@@ -247,6 +251,8 @@
 				76ABFAC1262F1016007A2D41 /* AddTrailing+UILabel.swift */,
 				76ABFACC26303604007A2D41 /* SkillsTableViewCell+CollectionView.swift */,
 				76ABFACF26303676007A2D41 /* AvailabilityTableViewCell+CollectionView.swift */,
+				763393452634713100A712F7 /* GetWidth+String.swift */,
+				76339349263595CE00A712F7 /* Combinations+Array.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -575,6 +581,7 @@
 				76ABFA97262D92AF007A2D41 /* UserInfoAvailabilityViewModel.swift in Sources */,
 				767C37EA262C2AE500D8980C /* UserInfoExperienceRepresentable.swift in Sources */,
 				76ABFADA263045E6007A2D41 /* HeaderViewModel.swift in Sources */,
+				7633934A263595CE00A712F7 /* Combinations+Array.swift in Sources */,
 				767C37F6262C3B8600D8980C /* ToString+Date.swift in Sources */,
 				767C37D22629A03000D8980C /* UserInfoAvailabilityTableViewCell.swift in Sources */,
 				767C37F0262C339E00D8980C /* UserInfoExperienceViewModel.swift in Sources */,
@@ -589,6 +596,7 @@
 				767C37C22625C16F00D8980C /* MyInterceptor.swift in Sources */,
 				76ABFAD326304259007A2D41 /* UserInfoHeaderView.swift in Sources */,
 				76ABFA5A262C6A42007A2D41 /* Skill.swift in Sources */,
+				763393462634713100A712F7 /* GetWidth+String.swift in Sources */,
 				76ABFA81262D7B90007A2D41 /* Availability.swift in Sources */,
 				767C37CF2629A01D00D8980C /* UserInfoSkillsTableViewCell.swift in Sources */,
 				767C37C926299FEE00D8980C /* UserInfoAboutTableViewCell.swift in Sources */,
