@@ -63,6 +63,7 @@ class UserInfoTableViewController: UIViewController {
         self.setupTableViewHeaderView()
         self.setupHeaderView()
         self.requestData()
+
     }
     
     /** View will appear
@@ -159,13 +160,24 @@ class UserInfoTableViewController: UIViewController {
     }
     
     private func setupHeaderView() {
+        var heightOfSafeArea: CGFloat = 0
+        
+//        if #available(iOS 11.0, *) {
+//            let window = UIApplication.shared.keyWindow
+//            heightOfSafeArea = window?.safeAreaInsets.top ?? 0
+//        }
+        if #available(iOS 13.0, *) {
+            let window = UIApplication.shared.windows[0]
+            heightOfSafeArea = window.safeAreaInsets.top
+        }
+        
         headerView.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
         self.view.addSubview(headerView)
         headerView.translatesAutoresizingMaskIntoConstraints = false
         headerView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         headerView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
         headerView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-        headerView.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        headerView.heightAnchor.constraint(equalToConstant: heightOfSafeArea).isActive = true
     }
     
     /// Set up navigation bar transculent
@@ -181,11 +193,10 @@ class UserInfoTableViewController: UIViewController {
      */
     func setNavbar(backgroundColorAlpha alpha: CGFloat) {
         if alpha > 0.5 {
-            self.navigationController?.navigationBar.tintColor = self.harriBlue.withAlphaComponent(alpha)
-            
+            self.navigationController?.navigationBar.tintColor = self.harriBlue
             self.title = user?.fullName
         } else {
-            self.navigationController?.navigationBar.tintColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+            self.navigationController?.navigationBar.tintColor = self.whiteColor
             self.title = ""
         }
         if alpha == 1 {
@@ -195,8 +206,8 @@ class UserInfoTableViewController: UIViewController {
         }
         self.headerViewModel.setAlpha(with: alpha)
         self.headerView.setup(with: headerViewModel.representable)
-        self.navigationController?.navigationBar.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: alpha)
-        self.navigationController?.navigationBar.barTintColor = UIColor.init(cgColor: CGColor(red: 1, green: 1, blue: 1, alpha: alpha))
+        self.navigationController?.navigationBar.backgroundColor = self.whiteColor.withAlphaComponent(alpha)
+        self.navigationController?.navigationBar.barTintColor = self.whiteColor.withAlphaComponent(1)
     }
     
 }
