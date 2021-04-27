@@ -26,7 +26,7 @@ class UserInfoTableViewController: UIViewController {
     let whiteColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
     
     /// Header
-    let tableViewHeaderView = TableViewHeaderView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 271))
+    let tableViewHeaderView = TableViewHeaderView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 271))
     
     /// Section headers
     let sectionHeaders = ["About", "Experience", "Skills", "Availability"]
@@ -156,7 +156,7 @@ class UserInfoTableViewController: UIViewController {
         tableViewHeaderView.rightAnchor.constraint(equalTo: self.tableView.rightAnchor).isActive = true
         tableViewHeaderView.topAnchor.constraint(equalTo: self.tableView.topAnchor).isActive = true
         tableViewHeaderView.heightAnchor.constraint(equalToConstant: 271).isActive = true
-        tableViewHeaderView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width).isActive = true
+        tableViewHeaderView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.width).isActive = true
         self.tableView.layoutIfNeeded()
     }
     

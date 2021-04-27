@@ -29,6 +29,7 @@ class UserInfoSkillsViewModel: ViewModel {
             return
         }
         if !skills.isEmpty {
+//            self.representables.append(UserInfoSkillsRepresentable(with: skills))
             self.sortSkillsAccordingToLength()
         } else {
             self.representables.append(ZeroExperienceRepresentable(with: "No skills to show"))

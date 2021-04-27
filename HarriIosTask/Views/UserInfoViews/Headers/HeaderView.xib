@@ -20,6 +20,7 @@
             <connections>
                 <outlet property="backgroundPicture" destination="rtJ-WZ-sde" id="Z3Z-YO-2kJ"/>
                 <outlet property="editButton" destination="GPx-ce-cwp" id="6Nd-8k-y6Z"/>
+                <outlet property="imageWidth" destination="CLC-tq-gF9" id="1p9-SI-VOI"/>
                 <outlet property="nameLabel" destination="9pC-TY-XOw" id="F7L-Xi-wCx"/>
                 <outlet property="positionLabel" destination="vTG-NX-Trm" id="d0g-gG-sDK"/>
                 <outlet property="profilePicture" destination="ed7-c1-k0y" id="fcP-2m-8jW"/>
@@ -136,7 +137,6 @@
                         <constraint firstAttribute="trailing" secondItem="rtJ-WZ-sde" secondAttribute="trailing" id="dpR-i0-6F2"/>
                         <constraint firstItem="vTG-NX-Trm" firstAttribute="top" secondItem="9pC-TY-XOw" secondAttribute="bottom" constant="5" id="ec6-hh-hVA"/>
                         <constraint firstItem="qHp-jL-Hs1" firstAttribute="top" secondItem="vTG-NX-Trm" secondAttribute="bottom" constant="11" id="lrr-r6-mVg"/>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="414" id="q8P-O6-cKH"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>

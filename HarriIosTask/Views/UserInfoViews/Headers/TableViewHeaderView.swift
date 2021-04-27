@@ -12,6 +12,7 @@ class TableViewHeaderView: UIView {
     
     @IBOutlet weak var viewWidthConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var imageWidth: NSLayoutConstraint!
     @IBOutlet weak var widthConstraint: NSLayoutConstraint!
     @IBOutlet var view: UIView!
 
@@ -26,7 +27,8 @@ class TableViewHeaderView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         Bundle.main.loadNibNamed("HeaderView", owner: self, options: nil)
-        self.widthConstraint.constant = UIScreen.main.bounds.width
+        self.widthConstraint.constant = UIScreen.main.bounds.size.width
+        self.viewWidthConstraint.constant = UIScreen.main.bounds.size.width
         self.addSubview(view)
         self.showSkeleton()
         self.setupProfilePicture()
@@ -39,6 +41,7 @@ class TableViewHeaderView: UIView {
     
     override func awakeFromNib() {
         Bundle.main.loadNibNamed("HeaderView", owner: self, options: nil)
+        self.widthConstraint.constant = UIScreen.main.bounds.width
     }
 
     func setupView(with representable: UserInfoHeaderRepresentable) {
