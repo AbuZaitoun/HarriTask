@@ -29,8 +29,8 @@ class UserInfoSkillsTableViewCell: UITableViewCell {
     /// Set up collection view
     func setupCollectionView(){
         self.collectionView.isScrollEnabled = false
-        self.collectionView.delegate = self
-        self.collectionView.dataSource = self
+//        self.collectionView.delegate = self
+//        self.collectionView.dataSource = self
     }
     
     /** Set up cell

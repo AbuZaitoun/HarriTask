@@ -26,7 +26,7 @@ class UserInfoTableViewController: UIViewController {
     let whiteColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
     
     /// Header
-    let tableViewHeaderView = TableViewHeaderView()
+    let tableViewHeaderView = TableViewHeaderView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 271))
     
     /// Section headers
     let sectionHeaders = ["About", "Experience", "Skills", "Availability"]
@@ -63,7 +63,8 @@ class UserInfoTableViewController: UIViewController {
         self.setupTableViewHeaderView()
         self.setupHeaderView()
         self.requestData()
-
+        self.tableView.isSkeletonable = true
+        self.tableView.showAnimatedGradientSkeleton()
     }
     
     /** View will appear
@@ -71,9 +72,7 @@ class UserInfoTableViewController: UIViewController {
      */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tableView.isSkeletonable = true
-        self.tableView.showAnimatedGradientSkeleton()
-        
+
         self.setNavbarTransculent()
     }
     
@@ -102,13 +101,15 @@ class UserInfoTableViewController: UIViewController {
             self.user?.backgroundImageUUID = userDetails?.backgroundImage
             self.aboutViewModel = UserInfoAboutViewModel(userInfo: userDetails?.userInfo ?? UserInfo(about: ""))
             self.experienceViewModel = UserInfoExperienceViewModel(with: userDetails?.experience ?? [])
-            self.skillsViewModel = UserInfoSkillsViewModel(with: userDetails?.skills ?? [], width: 0)
+            self.skillsViewModel = UserInfoSkillsViewModel(with: userDetails?.skills ?? [], width: self.tableView.bounds.width)
             self.availabilityViewModel = UserInfoAvailabilityViewModel(with: userDetails?.availability.availabilities ?? [])
             self.tableHeaderViewModel = UserInfoHeaderViewModel(with: self.user ?? User())
             self.tableViewHeaderView.setupView(with: self.tableHeaderViewModel.representable)
-            self.tableView.stopSkeletonAnimation()
-            self.view.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.25))
-            self.tableView.reloadData()
+            DispatchQueue.main.async { [weak self] in
+                self?.tableView.stopSkeletonAnimation()
+                self?.view.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.25))
+                self?.tableView.reloadData()
+            }
             
         })
     }

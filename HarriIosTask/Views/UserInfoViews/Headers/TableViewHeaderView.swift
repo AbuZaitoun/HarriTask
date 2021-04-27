@@ -23,10 +23,10 @@ class TableViewHeaderView: UIView {
     @IBOutlet weak var backgroundPicture: JNAvatarWithInitials!
     
     
-    init() {
-        super.init(frame: CGRect())
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         Bundle.main.loadNibNamed("HeaderView", owner: self, options: nil)
-
+        self.widthConstraint.constant = UIScreen.main.bounds.width
         self.addSubview(view)
         self.showSkeleton()
         self.setupProfilePicture()

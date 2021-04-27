@@ -27,17 +27,16 @@ class UserInfoSkillsRepresentable: TableViewCellRepresentable {
     */
     init(with skills: [Skill]) {
         self.skills = skills
-//        self.skillName = skill.name
-        self.cellHeight = UserInfoSkillsTableViewCell.getHeight()
-        self.reuseIdentifier = UserInfoSkillsTableViewCell.getReuseIdentifier()
+        self.cellHeight = SkillsListTableViewCell.getHeight()
+        self.reuseIdentifier = SkillsListTableViewCell.getReuseIdentifier()
     }
     
     /** Initializer
      - Parameter skill: Skill
     */
-    init(with skill: Skill) {
-        self.skillName = skill.name
-        self.cellHeight = UserInfoSkillsTableViewCell.getHeight()
-        self.reuseIdentifier = UserInfoSkillsTableViewCell.getReuseIdentifier()
-    }
+//    init(with skill: Skill) {
+//        self.skillName = skill.name
+//        self.cellHeight = SkillsListTableViewCell.getHeight()
+//        self.reuseIdentifier = SkillsListTableViewCell.getReuseIdentifier()
+//    }
 }

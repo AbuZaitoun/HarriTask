@@ -86,8 +86,8 @@ extension UserInfoTableViewController: UITableViewDelegate, SkeletonTableViewDat
             
         case 2:
             if let representable = skillsViewModel.representableForRow(at: indexPath) as? UserInfoSkillsRepresentable {
-                let cell = tableView.dequeueReusableCell(withIdentifier: UserInfoSkillsTableViewCell.getReuseIdentifier(), for: indexPath) as? UserInfoSkillsTableViewCell
-                cell?.setupCell(with: representable)
+                let cell = tableView.dequeueReusableCell(withIdentifier: SkillsListTableViewCell.getReuseIdentifier(), for: indexPath) as? SkillsListTableViewCell
+                cell?.setupCell(with: representable, width: tableView.bounds.width)
                 return cell ?? UITableViewCell()
             }
             else if let representable = skillsViewModel.representableForRow(at: indexPath) as? ZeroExperienceRepresentable {
@@ -150,6 +150,9 @@ extension UserInfoTableViewController: UITableViewDelegate, SkeletonTableViewDat
             self.tableView.reloadRows(at: [indexPath], with: .fade)
 //            self.labelClicked(indexPath: indexPath)
         }
+        else {
+            self.tableView.deselectRow(at: indexPath, animated: true)
+        }
     }
     
     //MARK: - Skeleton
@@ -160,7 +163,7 @@ extension UserInfoTableViewController: UITableViewDelegate, SkeletonTableViewDat
         case 1:
             return UserInfoExperienceTableViewCell.getReuseIdentifier()
         case 2:
-            return UserInfoSkillsTableViewCell.getReuseIdentifier()
+            return SkillsListTableViewCell.getReuseIdentifier()
         case 3:
             return UserInfoAvailabilityTableViewCell.getReuseIdentifier()
         default:
