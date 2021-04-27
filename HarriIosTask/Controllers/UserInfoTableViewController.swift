@@ -132,6 +132,12 @@ class UserInfoTableViewController: UIViewController {
         self.tableView.backgroundColor = .systemGray5
         self.tableView.contentInsetAdjustmentBehavior = .never
         self.extendedLayoutIncludesOpaqueBars = true;
+        
+//        self.tableViewHeaderView.clipsToBounds = true
+//        self.tableViewHeaderView.imageView.image = UIImage(named: "squirrel")
+        
+//        tableViewHeaderView.imageView.image = UIImage(named: "squirrel")
+        self.tableView.tableHeaderView = tableViewHeaderView
     }
     
     /// Initialize view models
@@ -158,19 +164,6 @@ class UserInfoTableViewController: UIViewController {
     func setupTableViewHeaderView(){
         self.navigationController?.navigationBar.tintColor = self.whiteColor.withAlphaComponent(1)
         self.navigationController?.navigationBar.backgroundColor = self.whiteColor.withAlphaComponent(0)
-        
-        self.tableView.tableHeaderView = tableViewHeaderView
-        //        self.tableView.register(TableViewHeaderView.self,
-        //               forHeaderFooterViewReuseIdentifier: "Header")
-//        tableViewHeaderView.translatesAutoresizingMaskIntoConstraints = false
-//        tableViewHeaderView.leftAnchor.constraint(equalTo: self.tableView.leftAnchor).isActive = true
-//        tableViewHeaderView.rightAnchor.constraint(equalTo: self.tableView.rightAnchor).isActive = true
-//        tableViewHeaderView.topAnchor.constraint(equalTo: self.tableView.topAnchor).isActive = true
-//        tableViewHeaderView.heightAnchor.constraint(equalToConstant: 271).isActive = true
-//        tableViewHeaderView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.width).isActive = true
-//        self.tableView.layoutIfNeeded()
-//        headerHeightConstraint = headerView.heightAnchor.constraint(equalToConstant: 271)
-//        headerHeightConstraint.isActive = true
     }
     
     private func setupHeaderView() {
