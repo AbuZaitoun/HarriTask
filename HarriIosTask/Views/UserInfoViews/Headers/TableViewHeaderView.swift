@@ -23,6 +23,10 @@ class TableViewHeaderView: UIView {
     @IBOutlet weak var positionLabel: UILabel!
     @IBOutlet weak var backgroundPicture: JNAvatarWithInitials!
     
+    var imageViewHeight = NSLayoutConstraint()
+    var imageViewBottom = NSLayoutConstraint()
+    @IBOutlet weak var containerViewHeight: NSLayoutConstraint!
+
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,9 +34,32 @@ class TableViewHeaderView: UIView {
         self.widthConstraint.constant = UIScreen.main.bounds.size.width
         self.viewWidthConstraint.constant = UIScreen.main.bounds.size.width
         self.addSubview(view)
-        self.showSkeleton()
         self.setupProfilePicture()
         self.setupButtons()
+        self.clipsToBounds = true
+        backgroundPicture.contentMode = .scaleAspectFill
+        backgroundPicture.clipsToBounds = true
+        
+        
+        NSLayoutConstraint.activate([
+            self.widthAnchor.constraint(equalTo: self.view.widthAnchor),
+            self.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.heightAnchor.constraint(equalTo: self.view.heightAnchor)
+        ])
+        
+        // Container View Constraints
+        self.view.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.view.widthAnchor.constraint(equalTo: backgroundPicture.widthAnchor).isActive = true
+        
+        // ImageView Constraints
+        backgroundPicture.translatesAutoresizingMaskIntoConstraints = false
+        backgroundPicture.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        imageViewBottom = backgroundPicture.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+        imageViewBottom.isActive = true
+        imageViewHeight = backgroundPicture.heightAnchor.constraint(equalTo: self.view.heightAnchor)
+        imageViewHeight.isActive = true
+        
     }
     
     required init?(coder: NSCoder) {
@@ -84,7 +111,16 @@ class TableViewHeaderView: UIView {
         
         self.sendButton.isHidden = true
         self.editButton.isHidden = true
-        self.editButton.layoutIfNeeded()
+        
     }
     
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        containerViewHeight.constant = scrollView.contentInset.top
+
+        let offsetY = -(scrollView.contentOffset.y + scrollView.contentInset.top)
+        view.clipsToBounds = offsetY <= 0
+        imageViewBottom.constant = offsetY >= 0 ? 0 : -offsetY / 2
+        imageViewHeight.constant = max(offsetY + scrollView.contentInset.top, scrollView.contentInset.top)
+        
+    }
 }

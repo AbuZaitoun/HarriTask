@@ -25,6 +25,7 @@ class SkillsListTableViewCell: UITableViewCell {
             view.removeFromSuperview()
         }
     }
+    
     func setupCell(with representable: UserInfoSkillsRepresentable, width: CGFloat?){
         let maxWidth = (width ?? CGFloat(400)) - 30
         var remainingWidth = maxWidth
@@ -40,7 +41,8 @@ class SkillsListTableViewCell: UITableViewCell {
         view.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         view.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         view.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-
+        
+        
         let font = UIFont(name: "OpenSans-Regular", size: 13)!
         var cell: SkillCollectionViewCell
         var labelSize = CGSize()
@@ -52,7 +54,7 @@ class SkillsListTableViewCell: UITableViewCell {
                 yCoordinates += (labelSize.height + padding.y)
                 xCoordinates = CGFloat(15)
                 cell = SkillCollectionViewCell(frame: CGRect(x: xCoordinates, y: yCoordinates, width: labelSize.width + 35, height: labelSize.height))
-
+                
                 
             } else {
                 cell = SkillCollectionViewCell(frame: CGRect(x: xCoordinates, y: yCoordinates, width: labelSize.width + 35, height: labelSize.height))

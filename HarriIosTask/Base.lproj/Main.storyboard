@@ -220,7 +220,7 @@
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Position Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Chk-Qr-4Jf">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Position Name" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Chk-Qr-4Jf">
                                                     <rect key="frame" x="18" y="22" width="98.5" height="17.5"/>
                                                     <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="15"/>
                                                     <nil key="textColor"/>
@@ -259,6 +259,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="np4-7O-dha" secondAttribute="bottom" constant="8" id="Fyp-Pt-ZUz"/>
                                                 <constraint firstItem="d2q-ZQ-rzB" firstAttribute="top" secondItem="BYk-6a-KBJ" secondAttribute="top" constant="8" id="NWG-DM-pEQ"/>
                                                 <constraint firstAttribute="trailing" secondItem="np4-7O-dha" secondAttribute="trailing" constant="9" id="Zqc-fw-geh"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Chk-Qr-4Jf" secondAttribute="trailing" constant="10" id="das-Li-Btv"/>
                                                 <constraint firstItem="np4-7O-dha" firstAttribute="top" secondItem="Rp1-0k-f6w" secondAttribute="bottom" constant="5" id="lUH-V3-fEc"/>
                                                 <constraint firstItem="Rp1-0k-f6w" firstAttribute="top" secondItem="Chk-Qr-4Jf" secondAttribute="bottom" constant="4" id="lsh-Iq-SR3"/>
                                                 <constraint firstItem="Rp1-0k-f6w" firstAttribute="leading" secondItem="BYk-6a-KBJ" secondAttribute="leading" constant="18" id="tzy-gn-bFE"/>

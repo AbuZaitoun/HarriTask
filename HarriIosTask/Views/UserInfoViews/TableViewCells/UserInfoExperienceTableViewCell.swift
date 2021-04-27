@@ -36,6 +36,7 @@ class UserInfoExperienceTableViewCell: UITableViewCell {
         self.positionNameLabel.text = representable.positionName
         self.brandNameLabel.text = representable.brandName
         self.positionDescriptionLabel.text = representable.description
+        self.hideSkeleton()
     }
     
     /**

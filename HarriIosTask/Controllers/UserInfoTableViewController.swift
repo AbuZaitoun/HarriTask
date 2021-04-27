@@ -54,6 +54,9 @@ class UserInfoTableViewController: UIViewController {
     
     private(set) var headerViewModel: HeaderViewModel!
     
+    
+    var headerHeightConstraint: NSLayoutConstraint!
+    
     /// View did lead
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,8 +66,10 @@ class UserInfoTableViewController: UIViewController {
         self.setupTableViewHeaderView()
         self.setupHeaderView()
         self.requestData()
+        
         self.tableView.isSkeletonable = true
-        self.tableView.showAnimatedGradientSkeleton()
+        self.tableView.showSkeleton()
+        
     }
     
     /** View will appear
@@ -72,7 +77,6 @@ class UserInfoTableViewController: UIViewController {
      */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
         self.setNavbarTransculent()
     }
     
@@ -84,6 +88,7 @@ class UserInfoTableViewController: UIViewController {
         self.navigationController?.navigationBar.backgroundColor = self.whiteColor.withAlphaComponent(0)
         self.navigationController?.navigationBar.tintColor = self.whiteColor.withAlphaComponent(1)
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navbarFont!, NSAttributedString.Key.foregroundColor: self.harriBlue]
+        
     }
     
     /** View will disappear
@@ -105,9 +110,15 @@ class UserInfoTableViewController: UIViewController {
             self.availabilityViewModel = UserInfoAvailabilityViewModel(with: userDetails?.availability.availabilities ?? [])
             self.tableHeaderViewModel = UserInfoHeaderViewModel(with: self.user ?? User())
             self.tableViewHeaderView.setupView(with: self.tableHeaderViewModel.representable)
+            self.tableView.stopSkeletonAnimation()
+            self.view.updateSkeleton()
+            self.view.hideSkeleton()
+            self.view.stopSkeletonAnimation()
+            self.tableView.updateSkeleton()
+            self.tableView.hideSkeleton()
+            self.tableView.stopSkeletonAnimation()
+            
             DispatchQueue.main.async { [weak self] in
-                self?.tableView.stopSkeletonAnimation()
-                self?.view.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.25))
                 self?.tableView.reloadData()
             }
             
@@ -151,13 +162,15 @@ class UserInfoTableViewController: UIViewController {
         self.tableView.tableHeaderView = tableViewHeaderView
         //        self.tableView.register(TableViewHeaderView.self,
         //               forHeaderFooterViewReuseIdentifier: "Header")
-        tableViewHeaderView.translatesAutoresizingMaskIntoConstraints = false
-        tableViewHeaderView.leftAnchor.constraint(equalTo: self.tableView.leftAnchor).isActive = true
-        tableViewHeaderView.rightAnchor.constraint(equalTo: self.tableView.rightAnchor).isActive = true
-        tableViewHeaderView.topAnchor.constraint(equalTo: self.tableView.topAnchor).isActive = true
-        tableViewHeaderView.heightAnchor.constraint(equalToConstant: 271).isActive = true
-        tableViewHeaderView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.width).isActive = true
-        self.tableView.layoutIfNeeded()
+//        tableViewHeaderView.translatesAutoresizingMaskIntoConstraints = false
+//        tableViewHeaderView.leftAnchor.constraint(equalTo: self.tableView.leftAnchor).isActive = true
+//        tableViewHeaderView.rightAnchor.constraint(equalTo: self.tableView.rightAnchor).isActive = true
+//        tableViewHeaderView.topAnchor.constraint(equalTo: self.tableView.topAnchor).isActive = true
+//        tableViewHeaderView.heightAnchor.constraint(equalToConstant: 271).isActive = true
+//        tableViewHeaderView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.width).isActive = true
+//        self.tableView.layoutIfNeeded()
+//        headerHeightConstraint = headerView.heightAnchor.constraint(equalToConstant: 271)
+//        headerHeightConstraint.isActive = true
     }
     
     private func setupHeaderView() {
@@ -187,6 +200,7 @@ class UserInfoTableViewController: UIViewController {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default) //UIImage.init(named: "transparent.png")
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
+        self.title = ""
     }
     
     /** Set up navitation bar background color

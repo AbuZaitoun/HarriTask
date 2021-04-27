@@ -137,6 +137,14 @@ extension UserInfoTableViewController: UITableViewDelegate, SkeletonTableViewDat
         let alpha = min(1, scrollView.contentOffset.y / denominator)
         
         self.setNavbar(backgroundColorAlpha: alpha)
+        
+//        let contentY = scrollView.contentOffset.y
+//        let height = initialImageHeight - contentY
+//        imageViewHeightConstraint.constant = height
+        if let headerView = self.tableView.tableHeaderView as? TableViewHeaderView {
+            headerView.scrollViewDidScroll(scrollView: self.tableView)
+        }
+
     }
     
     /** Did select row at
