@@ -32,51 +32,95 @@ class SkillsListTableViewCell: UITableViewCell {
         var yCoordinates = CGFloat(15)
         var xCoordinates = CGFloat(15)
         let padding = (x: CGFloat(11), y: CGFloat(8))
-//        var label = UILabel()
-//        label.text = "Loading"
-//        label.backgroundColor = .red
-//        self.addSubview(label)
+        //        var label = UILabel()
+        //        label.text = "Loading"
+        //        label.backgroundColor = .red
+        //        self.addSubview(label)
         
-//        DispatchQueue.main.async {
-            self.view = UIView()
-            
-            self.addSubview(self.view)
-//            self.translatesAutoresizingMaskIntoConstraints = false
-            self.view.translatesAutoresizingMaskIntoConstraints = false
-            self.view.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-            self.view.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-            self.view.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-            self.view.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-            
-            
-            let font = UIFont(name: "OpenSans-Regular", size: 13)!
-            var cell: SkillCollectionViewCell
-            var labelSize = CGSize()
-            
-            for skill in representable.skills! {
-                labelSize = skill.name.labelSize(for: font, widthLimit: (maxWidth - (padding.x*2)))
-                if (labelSize.width + 40 + (padding.x*2)) > remainingWidth {
-                    remainingWidth = maxWidth
-                    yCoordinates += (labelSize.height + padding.y)
-                    xCoordinates = CGFloat(15)
-                    cell = SkillCollectionViewCell(frame: CGRect(x: xCoordinates, y: yCoordinates, width: labelSize.width + 35, height: labelSize.height))
-                    
-                    
-                } else {
-                    cell = SkillCollectionViewCell(frame: CGRect(x: xCoordinates, y: yCoordinates, width: labelSize.width + 35, height: labelSize.height))
-                }
-                cell.setupCell(with: skill.name)
-                self.view.addSubview(cell)
-                remainingWidth -= ((labelSize.width) + padding.x + 35)
-                xCoordinates += (labelSize.width + padding.x + 35)
+        //        DispatchQueue.main.async {
+        self.view = UIView()
+        
+        self.addSubview(self.view)
+        
+        self.view.translatesAutoresizingMaskIntoConstraints = false
+        self.view.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        self.view.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        self.view.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        self.view.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        
+        
+        let font = UIFont(name: "OpenSans-Regular", size: 13)!
+        var cell: SkillCollectionViewCell
+        var labelSize = CGSize()
+        
+        for skill in representable.skills! {
+            labelSize = skill.name.labelSize(for: font, widthLimit: (maxWidth - (padding.x*2)))
+            if (labelSize.width + 40 + (padding.x*2)) > remainingWidth {
+                remainingWidth = maxWidth
+                yCoordinates += (labelSize.height + padding.y)
+                xCoordinates = CGFloat(15)
+                cell = SkillCollectionViewCell(frame: CGRect(x: xCoordinates, y: yCoordinates, width: labelSize.width + 35, height: labelSize.height))
+                
+                
+            } else {
+                cell = SkillCollectionViewCell(frame: CGRect(x: xCoordinates, y: yCoordinates, width: labelSize.width + 35, height: labelSize.height))
             }
-            self.view.heightAnchor.constraint(equalToConstant: (yCoordinates + labelSize.height + 15)).isActive = true
-//            self.view.setNeedsLayout()
-//            self.view.layoutIfNeeded()
-//            self.setNeedsLayout()
-//            self.layoutIfNeeded()
-//        }
+            cell.setupCell(with: skill.name)
+            self.view.addSubview(cell)
+            remainingWidth -= ((labelSize.width) + padding.x + 35)
+            xCoordinates += (labelSize.width + padding.x + 35)
+        }
+        self.view.heightAnchor.constraint(equalToConstant: (yCoordinates + labelSize.height + 15)).isActive = true
+        self.view.setNeedsLayout()
+        self.view.layoutIfNeeded()
+        self.setNeedsLayout()
+        self.layoutIfNeeded()
+        //                }
         
+        
+        //        var verticalStack = UIStackView()
+        //        verticalStack.alignment = .fill
+        //        verticalStack.axis = .vertical
+        //        verticalStack.translatesAutoresizingMaskIntoConstraints = false
+        //        self.addSubview(verticalStack)
+        //        verticalStack.topAnchor.constraint(equalTo: self.topAnchor, constant: 15).isActive = true
+        //        verticalStack.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -15).isActive = true
+        //        verticalStack.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15).isActive = true
+        //        verticalStack.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -15).isActive = true
+        //        verticalStack.spacing = padding.y
+        //        verticalStack.distribution = .equalSpacing
+        //
+        //
+        //        var horizontalStack = UIStackView()
+        //        horizontalStack.axis = .horizontal
+        //        horizontalStack.alignment = .leading
+        //        horizontalStack.distribution = .fillProportionally
+        //        horizontalStack.spacing = padding.x
+        //
+        //        var shouldGoDown = false
+        //        for skill in representable.skills ?? [] {
+        //            labelSize = skill.name.labelSize(for: font, widthLimit: (maxWidth - (padding.x*2)))
+        //            cell = SkillCollectionViewCell(frame: CGRect(x: 0, y: 0, width: labelSize.width + 35, height: labelSize.height))
+        //            cell.setupCell(with: skill.name)
+        //
+        //            if (labelSize.width + 40 + (padding.x*2)) > remainingWidth {
+        //                remainingWidth = maxWidth
+        //                shouldGoDown = true
+        //                verticalStack.addArrangedSubview(horizontalStack)
+        //                horizontalStack = UIStackView()
+        //                horizontalStack.axis = .horizontal
+        //                horizontalStack.alignment = .leading
+        //                horizontalStack.spacing = padding.x
+        //                horizontalStack.distribution = .fillProportionally
+        //                horizontalStack.addArrangedSubview(cell)
+        //            } else {
+        //                remainingWidth -= ((labelSize.width) + padding.x + 35)
+        //                shouldGoDown = false
+        //                horizontalStack.addArrangedSubview(cell)
+        //            }
+        //
+        //
+        //        }
     }
     
     /**
