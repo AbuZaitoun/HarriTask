@@ -87,7 +87,7 @@ extension UserInfoTableViewController: UITableViewDelegate, SkeletonTableViewDat
         case 2:
             if let representable = skillsViewModel.representableForRow(at: indexPath) as? UserInfoSkillsRepresentable {
                 let cell = tableView.dequeueReusableCell(withIdentifier: SkillsListTableViewCell.getReuseIdentifier(), for: indexPath) as? SkillsListTableViewCell
-                cell?.setupCell(with: representable, width: tableView.bounds.width)
+                cell?.setupCell(with: representable, width: tableView.bounds.width, for: tableView, at: indexPath)
                 return cell ?? UITableViewCell()
             }
             else if let representable = skillsViewModel.representableForRow(at: indexPath) as? ZeroExperienceRepresentable {
@@ -138,9 +138,6 @@ extension UserInfoTableViewController: UITableViewDelegate, SkeletonTableViewDat
         
         self.setNavbar(backgroundColorAlpha: alpha)
         
-//        let contentY = scrollView.contentOffset.y
-//        let height = initialImageHeight - contentY
-//        imageViewHeightConstraint.constant = height
         if let headerView = self.tableView.tableHeaderView as? TableViewHeaderView {
             headerView.scrollViewDidScroll(scrollView: self.tableView)
         }

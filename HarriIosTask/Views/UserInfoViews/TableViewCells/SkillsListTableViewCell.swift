@@ -26,7 +26,7 @@ class SkillsListTableViewCell: UITableViewCell {
         }
     }
     
-    func setupCell(with representable: UserInfoSkillsRepresentable, width: CGFloat?){
+    func setupCell(with representable: UserInfoSkillsRepresentable, width: CGFloat?, for tableView: UITableView, at indexPath: IndexPath){
         let maxWidth = (width ?? CGFloat(400)) - 30
         var remainingWidth = maxWidth
         var yCoordinates = CGFloat(15)
@@ -65,6 +65,10 @@ class SkillsListTableViewCell: UITableViewCell {
             xCoordinates += (labelSize.width + padding.x + 35)
         }
         self.view.heightAnchor.constraint(equalToConstant: (yCoordinates + labelSize.height + 15)).isActive = true
+        
+        
+        
+        
     }
     
     /**

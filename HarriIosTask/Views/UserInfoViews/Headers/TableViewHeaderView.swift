@@ -11,43 +11,30 @@ import JNAvatarWithInitials
 class TableViewHeaderView: UIView {
     
     
-    var imageWidth: NSLayoutConstraint!
-    var widthConstraint: NSLayoutConstraint!
+    private var imageWidth: NSLayoutConstraint!
+    private var widthConstraint: NSLayoutConstraint!
     
-    @IBOutlet weak var sendButton: UIButton!
-    var editButton: UIButton!
-    var profilePicture: JNAvatarWithInitials!
-    var nameLabel: UILabel!
-    var positionLabel: UILabel!
-    var imageView: JNAvatarWithInitials!
+    private var sendButton: UIButton!
+    private var editButton: UIButton!
+    private var profilePicture: JNAvatarWithInitials!
+    private var nameLabel: UILabel!
+    private var positionLabel: UILabel!
+    private var imageView: JNAvatarWithInitials!
     
     
-    var imageViewBottom = NSLayoutConstraint()
-    var containerView: UIView!
-    var containerViewHeight = NSLayoutConstraint()
-    @IBOutlet weak var imageViewHeight: NSLayoutConstraint!
+    private var imageViewBottom = NSLayoutConstraint()
+    private var containerView: UIView!
+    private var containerViewHeight = NSLayoutConstraint()
+    private var imageViewHeight: NSLayoutConstraint!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        //        self.widthConstraint.constant = UIScreen.main.bounds.size.width
-        //        self.viewWidthConstraint.constant = UIScreen.main.bounds.size.width
-        //        backgroundPicture = UIImageView()
-        containerView = UIView()
-        //        backgroundPicture.clipsToBounds = true
-        //        backgroundPicture.backgroundColor = .yellow
-        //        backgroundPicture.contentMode = .scaleAspectFill
-        
         containerView = UIView()
         self.addSubview(containerView)
         
-        // ImageView for background
-        imageView = JNAvatarWithInitials()
-        imageView.clipsToBounds = true
-        imageView.backgroundColor = .white
-        imageView.contentMode = .scaleAspectFill
-        containerView.addSubview(imageView)
-        
+        self.createBackgroundPicture()
+        self.setupBackgroundPicture()
         self.createProfilePicture()
         self.setupProfilePictureProperties()
         self.createNameLabel()
@@ -55,6 +42,8 @@ class TableViewHeaderView: UIView {
         self.createPositionLabel()
         self.setupPositionLabelProperties()
         self.setViewConstraints()
+        self.createButtons()
+        self.setupButtons()
     }
     
     func setViewConstraints() {
@@ -90,39 +79,13 @@ class TableViewHeaderView: UIView {
     }
     
     func setupView(with representable: UserInfoHeaderRepresentable) {
-        //        self.backgroundPicture.contentMode = .scaleAspectFill
         self.nameLabel.text = representable.name
         self.positionLabel.text = representable.position
-                self.profilePicture.setup(imageUrl: representable.profilePictureURL ?? "", placeHolderImage: UIImage(named: "squirrel.jpeg") ,fullName: representable.name, showInitails: true)
+        self.profilePicture.setup(imageUrl: representable.profilePictureURL ?? "", placeHolderImage: UIImage(named: "squirrel.jpeg") ,fullName: representable.name, showInitails: true)
         self.imageView.setup(imageUrl: representable.backgroundPictureURL ?? "",placeHolderImage: UIImage(named: "squirrel.jpeg"), fullName: "")
         
-        //
-        //        self.sendButton.isHidden = false
-        //        self.editButton.isHidden = false
-    }
-    
-    private func setupButtons() {
-        self.editButton.layer.cornerRadius = self.editButton.frame.size.height/2
-        self.sendButton.layer.cornerRadius = self.sendButton.frame.size.height/2
-        self.editButton.backgroundColor = .white
-        self.sendButton.backgroundColor = .white
-        self.editButton.imageView?.bounds = self.editButton.frame
-        
-        self.editButton.imageView?.contentMode = .scaleToFill
-        self.sendButton.imageView?.contentMode = .scaleToFill
-        
-        let edges = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        
-        self.editButton.imageEdgeInsets = edges
-        self.editButton.contentHorizontalAlignment = .fill
-        self.editButton.contentVerticalAlignment = .fill
-        self.sendButton.imageEdgeInsets = edges
-        self.sendButton.contentHorizontalAlignment = .fill
-        self.sendButton.contentVerticalAlignment = .fill
-        
-        self.sendButton.isHidden = true
-        self.editButton.isHidden = true
-        
+        self.sendButton.isHidden = false
+        self.editButton.isHidden = false
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -146,7 +109,7 @@ class TableViewHeaderView: UIView {
     
     private func setupProfilePictureProperties(){
         self.profilePicture.layer.cornerRadius = 32
-        self.profilePicture.layer.borderWidth = 1
+        self.profilePicture.layer.borderWidth = 2
         self.profilePicture.layer.borderColor = UIColor.white.cgColor
         self.profilePicture.initialsFont = UIFont(name: "OpenSans-SemiBold", size: 14)!
         self.profilePicture.initialTextColor = UIColor(named: "AccentColor")!
@@ -179,5 +142,69 @@ class TableViewHeaderView: UIView {
     private func setupPositionLabelProperties(){
         self.positionLabel.textColor = .white
         self.positionLabel.font = UIFont(name: "OpenSans-Regular", size: 13)
+    }
+    
+    private func createBackgroundPicture() {
+        self.imageView = JNAvatarWithInitials()
+        self.containerView.addSubview(self.imageView)
+    }
+    private func setupBackgroundPicture(){
+        self.imageView.clipsToBounds = true
+        self.imageView.backgroundColor = .white
+        self.imageView.contentMode = .scaleAspectFill
+    }
+    
+    private func createButtons() {
+        let view = UIView()
+        self.containerView.addSubview(view)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.widthAnchor.constraint(equalToConstant: 102).isActive = true
+        view.centerXAnchor.constraint(equalTo: self.containerView.centerXAnchor).isActive = true
+        view.topAnchor.constraint(equalTo: self.positionLabel.bottomAnchor, constant: 11).isActive = true
+        
+        self.editButton = UIButton()
+        self.editButton.setImage(UIImage(named: "EditImage"), for: .normal)
+        view.addSubview(editButton)
+        self.editButton.translatesAutoresizingMaskIntoConstraints = false
+        self.editButton.widthAnchor.constraint(equalToConstant: 42).isActive = true
+        self.editButton.heightAnchor.constraint(equalToConstant: 42).isActive = true
+        self.editButton.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        self.editButton.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        self.editButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        self.sendButton = UIButton()
+        self.sendButton.setImage(UIImage(named: "SendImage"), for: .normal)
+        view.addSubview(sendButton)
+        self.sendButton.translatesAutoresizingMaskIntoConstraints = false
+        self.sendButton.widthAnchor.constraint(equalToConstant: 42).isActive = true
+        self.sendButton.heightAnchor.constraint(equalToConstant: 42).isActive = true
+        self.sendButton.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        self.sendButton.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        self.sendButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        
+    }
+    
+    private func setupButtons(){
+        self.editButton.layer.cornerRadius = 21
+        self.sendButton.layer.cornerRadius = 21
+        self.editButton.backgroundColor = .white
+        self.sendButton.backgroundColor = .white
+        self.editButton.imageView?.bounds = self.editButton.frame
+        
+        self.editButton.imageView?.contentMode = .scaleToFill
+        self.sendButton.imageView?.contentMode = .scaleToFill
+        
+        let edges = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        
+        self.editButton.imageEdgeInsets = edges
+        self.editButton.contentHorizontalAlignment = .fill
+        self.editButton.contentVerticalAlignment = .fill
+        self.sendButton.imageEdgeInsets = edges
+        self.sendButton.contentHorizontalAlignment = .fill
+        self.sendButton.contentVerticalAlignment = .fill
+        
+        self.sendButton.isHidden = true
+        self.editButton.isHidden = true
     }
 }
