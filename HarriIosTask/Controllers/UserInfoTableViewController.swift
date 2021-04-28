@@ -34,6 +34,8 @@ class UserInfoTableViewController: UIViewController {
     /// Navbar Like view
     var headerView: HeaderView!
     
+    var myCell: SkillsListTableViewCell?
+    
     /// User
     private(set) var user: User?
     
@@ -110,6 +112,11 @@ class UserInfoTableViewController: UIViewController {
             self.availabilityViewModel = UserInfoAvailabilityViewModel(with: userDetails?.availability.availabilities ?? [])
             self.tableHeaderViewModel = UserInfoHeaderViewModel(with: self.user ?? User())
             self.tableViewHeaderView.setupView(with: self.tableHeaderViewModel.representable)
+            
+            if let representable = self.skillsViewModel.representables[0] as? UserInfoSkillsRepresentable {
+                self.myCell = SkillsListTableViewCell()
+                self.myCell?.setupCell(with: representable, width: self.tableView.frame.width)
+            }
             self.tableView.stopSkeletonAnimation()
             self.view.updateSkeleton()
             self.view.hideSkeleton()

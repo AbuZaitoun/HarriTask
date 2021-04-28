@@ -111,6 +111,7 @@ class TableViewHeaderView: UIView {
         self.profilePicture.layer.cornerRadius = 32
         self.profilePicture.layer.borderWidth = 2
         self.profilePicture.layer.borderColor = UIColor.white.cgColor
+        self.profilePicture.layer.backgroundColor = UIColor.white.cgColor
         self.profilePicture.initialsFont = UIFont(name: "OpenSans-SemiBold", size: 14)!
         self.profilePicture.initialTextColor = UIColor(named: "AccentColor")!
         self.profilePicture.initialLabelInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)

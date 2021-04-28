@@ -86,9 +86,14 @@ extension UserInfoTableViewController: UITableViewDelegate, SkeletonTableViewDat
             
         case 2:
             if let representable = skillsViewModel.representableForRow(at: indexPath) as? UserInfoSkillsRepresentable {
-                let cell = tableView.dequeueReusableCell(withIdentifier: SkillsListTableViewCell.getReuseIdentifier(), for: indexPath) as? SkillsListTableViewCell
-                cell?.setupCell(with: representable, width: tableView.bounds.width, for: tableView, at: indexPath)
-                return cell ?? UITableViewCell()
+                if let cell = self.myCell {
+                    return cell
+                }else {
+                    let cell = tableView.dequeueReusableCell(withIdentifier: SkillsListTableViewCell.getReuseIdentifier(), for: indexPath) as? SkillsListTableViewCell
+                    cell?.setupCell(with: representable, width: tableView.bounds.width)
+                    self.myCell = cell
+                    return cell ?? UITableViewCell()
+                }
             }
             else if let representable = skillsViewModel.representableForRow(at: indexPath) as? ZeroExperienceRepresentable {
                 let cell = tableView.dequeueReusableCell(withIdentifier: ZeroExperienceCell.getReuseIdentifier(), for: indexPath) as? ZeroExperienceCell
