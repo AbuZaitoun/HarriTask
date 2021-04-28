@@ -136,7 +136,7 @@ class UserInfoTableViewController: UIViewController {
     private func setupTableView(){
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        self.tableView.backgroundColor = .systemGray5
+        self.tableView.backgroundColor = UIColor(named: "BackgroundColor")
         self.tableView.contentInsetAdjustmentBehavior = .never
         self.extendedLayoutIncludesOpaqueBars = true;
         

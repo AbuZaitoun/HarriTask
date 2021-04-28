@@ -52,8 +52,8 @@ class SkillCollectionViewCell: UIView {
     
     /// setup title
     func setupTitle(){
-        self.layer.borderWidth = 0.5
-        self.layer.borderColor = UIColor.blue.cgColor
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor(named: "HarriBlue")?.cgColor
         self.layer.cornerRadius = 5
     }
     

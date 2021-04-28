@@ -193,10 +193,10 @@ class TableViewHeaderView: UIView {
         self.sendButton.backgroundColor = .white
         self.editButton.imageView?.bounds = self.editButton.frame
         
-        self.editButton.imageView?.contentMode = .scaleToFill
-        self.sendButton.imageView?.contentMode = .scaleToFill
+        self.editButton.imageView?.contentMode = .scaleAspectFill
+        self.sendButton.imageView?.contentMode = .scaleAspectFill
         
-        let edges = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        let edges = UIEdgeInsets(top: 10, left: 10, bottom: 9, right: 9)
         
         self.editButton.imageEdgeInsets = edges
         self.editButton.contentHorizontalAlignment = .fill

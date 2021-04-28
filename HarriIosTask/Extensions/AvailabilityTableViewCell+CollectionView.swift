@@ -27,10 +27,10 @@ extension UserInfoAvailabilityTableViewCell: UICollectionViewDelegate, UICollect
         }
         let cellWord = representable.availableText ?? "h"
         let font = UIFont(name: "OpenSans-Light", size: 13)
-        let size = CGSize(width: UIScreen.main.bounds.width, height: 26)
+        let size = CGSize(width: UIScreen.main.bounds.width, height: 25)
         
         let textRect = cellWord.boundingRect(with: size, options: [.usesLineFragmentOrigin], attributes: [NSAttributedString.Key.font: font!], context: nil)
         
-        return CGSize(width: textRect.width + 20, height: textRect.height + 15)
+        return CGSize(width: textRect.width + 20, height: 25)
     }
 }
