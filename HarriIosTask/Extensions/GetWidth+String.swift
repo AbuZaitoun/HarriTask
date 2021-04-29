@@ -29,6 +29,7 @@ extension String {
     func labelSize(for font: UIFont, widthLimit: CGFloat) -> CGSize {
         let cellWord = self
         let size = CGSize(width: widthLimit, height: 40)
+        // truncatesLastVisibleLine is also a viable option
         let textRect = cellWord.boundingRect(with: size, options: [.usesLineFragmentOrigin], attributes: [NSAttributedString.Key.font: font], context: nil)
         let finishSize = CGSize(width: min(textRect.width, widthLimit - 50), height: 25)
         
