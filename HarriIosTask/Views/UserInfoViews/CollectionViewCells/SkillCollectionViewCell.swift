@@ -27,7 +27,7 @@ class SkillCollectionViewCell: UIView {
         label.topAnchor.constraint(equalTo: self.topAnchor, constant: 2).isActive = true
         label.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -2).isActive = true
         label.leftAnchor.constraint(equalTo: self.image.rightAnchor, constant: 4).isActive = true
-        label.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -2).isActive = true
+        label.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10).isActive = true
         
         image.translatesAutoresizingMaskIntoConstraints = false
         image.topAnchor.constraint(equalTo: self.topAnchor, constant: 4).isActive = true

@@ -282,11 +282,25 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iJt-cQ-SWJ" id="jlP-0F-7aB">
                                             <rect key="frame" x="0.0" y="0.0" width="288" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="left" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gBb-3H-Ni8">
+                                                    <rect key="frame" x="15" y="15" width="258" height="69"/>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="gBb-3H-Ni8" secondAttribute="bottom" constant="15" id="B3M-Ae-W3X"/>
+                                                <constraint firstAttribute="trailing" secondItem="gBb-3H-Ni8" secondAttribute="trailing" constant="15" id="nTR-hN-crv"/>
+                                                <constraint firstItem="gBb-3H-Ni8" firstAttribute="leading" secondItem="jlP-0F-7aB" secondAttribute="leading" constant="15" id="oK6-59-Js9"/>
+                                                <constraint firstItem="gBb-3H-Ni8" firstAttribute="top" secondItem="jlP-0F-7aB" secondAttribute="top" constant="15" id="s3r-h2-lXs"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="verticalStack" destination="gBb-3H-Ni8" id="iH8-v2-R7V"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserInfoAvailabilityTableViewCell" rowHeight="67" id="7tn-OF-WeD" userLabel="UserInfoAvailabilityTableViewCell" customClass="UserInfoAvailabilityTableViewCell" customModule="HarriIosTask" customModuleProvider="target">
                                         <rect key="frame" x="16" y="403" width="288" height="67"/>

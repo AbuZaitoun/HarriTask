@@ -74,6 +74,7 @@
 		76CC6CEE263068620061FA82 /* ZeroExperienceRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC6CED263068620061FA82 /* ZeroExperienceRepresentable.swift */; };
 		76CC6CF1263068B90061FA82 /* ZeroExperienceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC6CF0263068B90061FA82 /* ZeroExperienceCell.swift */; };
 		76CC6CF4263070B00061FA82 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76CC6CF3263070B00061FA82 /* OpenSans-Light.ttf */; };
+		76F8F049263AB8610063EB61 /* setUp+UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F8F048263AB8610063EB61 /* setUp+UIStackView.swift */; };
 		76FC7A182638B0FC0053FFDE /* StretchyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FC7A172638B0FC0053FFDE /* StretchyHeader.swift */; };
 		AAB3ED51C2C673D55A725450 /* Pods_HarriIosTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73AEFEF0184910AD57C2EBF9 /* Pods_HarriIosTask.framework */; };
 /* End PBXBuildFile section */
@@ -149,6 +150,7 @@
 		76CC6CED263068620061FA82 /* ZeroExperienceRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroExperienceRepresentable.swift; sourceTree = "<group>"; };
 		76CC6CF0263068B90061FA82 /* ZeroExperienceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroExperienceCell.swift; sourceTree = "<group>"; };
 		76CC6CF3263070B00061FA82 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		76F8F048263AB8610063EB61 /* setUp+UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "setUp+UIStackView.swift"; sourceTree = "<group>"; };
 		76FC7A172638B0FC0053FFDE /* StretchyHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeader.swift; sourceTree = "<group>"; };
 		9D4C55E279BCA97AC91F54A4 /* Pods-HarriIosTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarriIosTask.release.xcconfig"; path = "Target Support Files/Pods-HarriIosTask/Pods-HarriIosTask.release.xcconfig"; sourceTree = "<group>"; };
 		AB509C1364E2C818CFC4710E /* Pods-HarriIosTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarriIosTask.debug.xcconfig"; path = "Target Support Files/Pods-HarriIosTask/Pods-HarriIosTask.debug.xcconfig"; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				76ABFACF26303676007A2D41 /* AvailabilityTableViewCell+CollectionView.swift */,
 				763393452634713100A712F7 /* GetWidth+String.swift */,
 				76339349263595CE00A712F7 /* Combinations+Array.swift */,
+				76F8F048263AB8610063EB61 /* setUp+UIStackView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -602,6 +605,7 @@
 				767C37D8262A5E4800D8980C /* UserDetails.swift in Sources */,
 				767C37C22625C16F00D8980C /* MyInterceptor.swift in Sources */,
 				76ABFAD326304259007A2D41 /* UserInfoHeaderView.swift in Sources */,
+				76F8F049263AB8610063EB61 /* setUp+UIStackView.swift in Sources */,
 				76ABFA5A262C6A42007A2D41 /* Skill.swift in Sources */,
 				763393462634713100A712F7 /* GetWidth+String.swift in Sources */,
 				76ABFA81262D7B90007A2D41 /* Availability.swift in Sources */,

@@ -113,10 +113,10 @@ class UserInfoTableViewController: UIViewController {
             self.tableHeaderViewModel = UserInfoHeaderViewModel(with: self.user ?? User())
             self.tableViewHeaderView.setupView(with: self.tableHeaderViewModel.representable)
             
-            if let representable = self.skillsViewModel.representables[0] as? UserInfoSkillsRepresentable {
-                self.myCell = SkillsListTableViewCell()
-                self.myCell?.setupCell(with: representable, width: self.tableView.frame.width)
-            }
+//            if let representable = self.skillsViewModel.representables[0] as? UserInfoSkillsRepresentable {
+//                self.myCell = SkillsListTableViewCell()
+//                self.myCell?.setupCell(with: representable, width: self.tableView.frame.width)
+//            }
             self.tableView.stopSkeletonAnimation()
             self.view.updateSkeleton()
             self.view.hideSkeleton()

@@ -44,6 +44,7 @@ class TableViewHeaderView: UIView {
         self.setViewConstraints()
         self.createButtons()
         self.setupButtons()
+        self.setSkeletonableActive()
     }
     
     func setViewConstraints() {
@@ -80,10 +81,14 @@ class TableViewHeaderView: UIView {
     
     func setupView(with representable: UserInfoHeaderRepresentable) {
         self.nameLabel.text = representable.name
+        self.nameLabel.hideSkeleton()
         self.positionLabel.text = representable.position
+        self.positionLabel.hideSkeleton()
         self.profilePicture.setup(imageUrl: representable.profilePictureURL ?? "", placeHolderImage: UIImage(named: "squirrel.jpeg") ,fullName: representable.name, showInitails: true)
+        self.profilePicture.hideSkeleton()
         self.imageView.setup(imageUrl: representable.backgroundPictureURL ?? "",placeHolderImage: UIImage(named: "squirrel.jpeg"), fullName: "")
-        
+        self.imageView.hideSkeleton()
+        self.containerView.hideSkeleton()
         self.sendButton.isHidden = false
         self.editButton.isHidden = false
     }
@@ -119,7 +124,7 @@ class TableViewHeaderView: UIView {
     
     private func createNameLabel(){
         self.nameLabel = UILabel()
-        self.nameLabel.text = ""
+        self.nameLabel.text = "something something"
         self.containerView.addSubview(self.nameLabel)
         self.nameLabel.translatesAutoresizingMaskIntoConstraints = false
         self.nameLabel.topAnchor.constraint(equalTo: self.containerView.topAnchor, constant: 163).isActive = true
@@ -207,5 +212,26 @@ class TableViewHeaderView: UIView {
         
         self.sendButton.isHidden = true
         self.editButton.isHidden = true
+    }
+    
+    private func setSkeletonableActive() {
+        self.containerView.isSkeletonable = true
+        self.containerView.showSkeleton()
+        
+        // UILabel Skeletons
+        self.nameLabel.text = "Place holder"
+        self.positionLabel.text = "Loading"
+        self.nameLabel.isSkeletonable = true
+        self.positionLabel.isSkeletonable = true
+        self.nameLabel.skeletonCornerRadius = 5
+        self.positionLabel.skeletonCornerRadius = 5
+        self.nameLabel.showAnimatedGradientSkeleton()
+        self.positionLabel.showAnimatedGradientSkeleton()
+        
+        // Image Views Skeletons
+        self.imageView.isSkeletonable = true
+        self.imageView.showAnimatedGradientSkeleton()
+        self.profilePicture.isSkeletonable = true
+        self.profilePicture.showAnimatedGradientSkeleton()
     }
 }
