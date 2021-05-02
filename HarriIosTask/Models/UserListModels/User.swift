@@ -37,6 +37,9 @@ struct User: Codable {
         return self.firstName + " " + self.lastName
     }
     
+    /// User details
+    var userDetails: UserDetails?
+    
     /// Image url
     var imageURL: String? {
         if let uuid = self.profileImageUUID {

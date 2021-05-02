@@ -7,18 +7,44 @@
 
 import UIKit
 
+/// User Info View Model
 class UserInfoViewModel: ViewModel {
     
+    /// Number  of sections
     private let NUMBER_OF_SECTIONS = 4
     
+    /// About representables
     var aboutRepresentables: [TableViewCellRepresentable]
+    
+    /// Experience representables
     var experienceRepresentables: [TableViewCellRepresentable]
+    
+    /// Skills reprensetables
     var skillsRepresentables: [TableViewCellRepresentable]
+    
+    /// Availability representables
     var availabilityRepresentables: [TableViewCellRepresentable]
+    
+    /// Tableview header representable
     var tableViewHeaderRepresentable: UserInfoTableViewHeaderRepresentable?
+    
+    /// Header representable
     var headerRepresentable: HeaderViewRepresentable
     
-    init(with userDetails: UserDetails, user: User, width: CGFloat){
+    /**
+     Initializer
+     - Parameter userDetails: object containing all user details
+     - Parameter width: CGFloat, width of view of sorting
+     */
+    convenience init(with user: User?, width: CGFloat){
+        self.init()
+        guard let user = user else {
+            return
+        }
+        guard let userDetails = user.userDetails else {
+            return
+        }
+        
         self.aboutRepresentables = [UserInfoAboutRepresentable(with: userDetails.userInfo)]
         self.experienceRepresentables = []
         self.availabilityRepresentables = []
@@ -38,6 +64,7 @@ class UserInfoViewModel: ViewModel {
         self.availabilityRepresentables = [UserInfoAvailabilityRepresentable(with: userDetails.availability.availabilities)]
     }
     
+    /// Initializer
     init() {
         self.aboutRepresentables = []
         self.experienceRepresentables = []
@@ -46,10 +73,18 @@ class UserInfoViewModel: ViewModel {
         self.headerRepresentable = HeaderViewRepresentable(alpha:0)
     }
     
+    /**
+     Set alpha, used for header view
+     - Parameter alpha: alpha, CGFloat
+     */
     func setAlpha(with alpha: CGFloat) {
         self.headerRepresentable.alpha = alpha
     }
     
+    /**
+     Toggle expanded, used for About Cell
+     - Parameter indexPath: Index of cell to expand
+     */
     func toggleExpandedInAboutRepresentable(for indexPath: IndexPath) {
         guard let representable = self.representableForRow(at: indexPath) as? UserInfoAboutRepresentable else {
             return
@@ -57,6 +92,11 @@ class UserInfoViewModel: ViewModel {
         representable.isExpanded.toggle()
     }
     
+    /**
+     Sort skills according to text lendth
+     - Parameter skills: list of skills to be used
+     - Parameter width: CGFloat, width of view of sorting
+     */
     func sortSkillsAccordingToLength(skills: [Skill], width: CGFloat) {
         self.skillsRepresentables = []
         
@@ -103,10 +143,21 @@ class UserInfoViewModel: ViewModel {
 
     }
     
+    // MARK: - ViewModel Conformance
+    
+    /**
+     Get number of sections
+     - Returns: Number of Sections as Int.
+     */
     func numberOfSections() -> Int {
         return self.NUMBER_OF_SECTIONS
     }
     
+    /**
+     Get number of rows in sections.
+     - Parameter section: Section number as Int.
+     - Returns: Number of rows in section as Int.
+     */
     func numberOfRows(inSection section: Int) -> Int {
         switch section {
         case 0:
@@ -122,6 +173,12 @@ class UserInfoViewModel: ViewModel {
         }
     }
     
+    /**
+     Get height of row at indexPath.
+     - Parameter indexPath: Index path.
+     - Parameter tableView: Table View.
+     - Returns: height of row at indexPath as CGFloat.
+     */
     func heightForRow(at indexPath: IndexPath, tableView: UITableView) -> CGFloat {
         switch indexPath.section {
         case 0:
@@ -137,6 +194,11 @@ class UserInfoViewModel: ViewModel {
         }
     }
     
+    /**
+     Get cell representable at indexPath.
+     - Parameter indexPath: Index path.
+     - Returns: Cell representable as tableView cell representable.
+     */
     func representableForRow(at indexPath: IndexPath) -> TableViewCellRepresentable? {
         switch indexPath.section {
         case 0:

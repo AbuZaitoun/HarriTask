@@ -34,17 +34,12 @@ class UserInfoTableViewController: UIViewController {
     /// Navbar Like view
     var headerView: HeaderView!
     
-    var myCell: SkillsListTableViewCell?
-    
     /// User
     private(set) var user: User?
     
-  
     /// User info view model
     private(set) var infoViewModel: UserInfoViewModel!
   
-    
-    var headerHeightConstraint: NSLayoutConstraint!
     
     /// View did lead
     override func viewDidLoad() {
@@ -57,7 +52,7 @@ class UserInfoTableViewController: UIViewController {
         self.requestData()
         
         self.tableView.isSkeletonable = true
-        self.tableView.showSkeleton()
+        self.tableView.showAnimatedGradientSkeleton()
         
     }
     
@@ -92,10 +87,12 @@ class UserInfoTableViewController: UIViewController {
     private func requestData() {
         UsersModel.fetchUserInfo(userID: String(self.user?.id ?? -1), completion: { [weak self] (userDetails, error) in
             guard let self = self else { return }
-            guard let userDetails = userDetails else { return }
-            self.user?.backgroundImageUUID = userDetails.backgroundImage
-            self.infoViewModel = UserInfoViewModel(with: userDetails,user: self.user!, width: self.tableView.bounds.width)
-
+            
+            self.user?.backgroundImageUUID = userDetails?.backgroundImage
+            self.user?.userDetails = userDetails
+            
+            self.infoViewModel = UserInfoViewModel(with: self.user, width: self.tableView.bounds.width)
+            
             self.tableView.stopSkeletonAnimation()
             self.view.updateSkeleton()
             self.view.hideSkeleton()
@@ -120,11 +117,6 @@ class UserInfoTableViewController: UIViewController {
         self.tableView.backgroundColor = UIColor(named: "BackgroundColor")
         self.tableView.contentInsetAdjustmentBehavior = .never
         self.extendedLayoutIncludesOpaqueBars = true;
-        
-//        self.tableViewHeaderView.clipsToBounds = true
-//        self.tableViewHeaderView.imageView.image = UIImage(named: "squirrel")
-        
-//        tableViewHeaderView.imageView.image = UIImage(named: "squirrel")
         self.tableView.tableHeaderView = tableViewHeaderView
     }
     
@@ -151,11 +143,7 @@ class UserInfoTableViewController: UIViewController {
     
     private func setupHeaderView() {
         var heightOfSafeArea: CGFloat = 0
-        
-//        if #available(iOS 11.0, *) {
-//            let window = UIApplication.shared.keyWindow
-//            heightOfSafeArea = window?.safeAreaInsets.top ?? 0
-//        }
+
         if #available(iOS 13.0, *) {
             let window = UIApplication.shared.windows[0]
             heightOfSafeArea = window.safeAreaInsets.top
