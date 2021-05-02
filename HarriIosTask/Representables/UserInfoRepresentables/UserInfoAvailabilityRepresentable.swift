@@ -17,10 +17,10 @@ class UserInfoAvailabilityRepresentable: TableViewCellRepresentable {
     var reuseIdentifier: String
     
     /// Available text
-    var availableText: String?
+    private(set) var availableText: String?
     
     /// Availabilities
-    var availabilities: [(String, Bool)]?
+    private(set) var availabilities: [(String, Bool)]?
     
     /** Initializer
      - Parameter availability: (String, Bool)

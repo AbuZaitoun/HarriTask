@@ -17,10 +17,10 @@ class UserInfoSkillsRepresentable: TableViewCellRepresentable {
     var reuseIdentifier: String
     
     /// Skill name
-    var skillName: String?
+    private(set) var skillName: String?
     
     /// Skills
-    var skills: [Skill]?
+    private(set) var skills: [Skill]?
     
     /** Initializer
      - Parameter skills: [Skill]

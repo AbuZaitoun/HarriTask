@@ -11,7 +11,7 @@ import UIKit
 class ZeroExperienceRepresentable: TableViewCellRepresentable {
     
     /// No experience text
-    var noExperienceText: String
+    private(set) var noExperienceText: String
     
     /// Cell height
     var cellHeight: CGFloat

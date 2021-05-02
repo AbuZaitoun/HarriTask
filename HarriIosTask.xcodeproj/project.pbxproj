@@ -403,8 +403,8 @@
 			children = (
 				76ABFAD226304259007A2D41 /* UserInfoHeaderView.swift */,
 				76ABFAA6262DC44C007A2D41 /* TableViewHeaderView.swift */,
-				76ABFABD262F0E41007A2D41 /* HeaderView.xib */,
 				76FC7A172638B0FC0053FFDE /* StretchyHeader.swift */,
+				76ABFABD262F0E41007A2D41 /* HeaderView.xib */,
 			);
 			path = Headers;
 			sourceTree = "<group>";

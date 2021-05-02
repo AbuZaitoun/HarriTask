@@ -17,16 +17,16 @@ class UserInfoExperienceRepresentable: TableViewCellRepresentable {
     var reuseIdentifier: String
     
     /// Position name
-    var positionName: String
+    private(set) var positionName: String
     
     /// Brand name
-    var brandName: String
+    private(set) var brandName: String
     
     /// Description
-    var description: String
+    private(set) var description: String
     
     /// Date text
-    var dateText: String
+    private(set) var dateText: String
     
     /** Initializer
      - Parameter work: Work
