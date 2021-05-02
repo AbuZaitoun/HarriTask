@@ -176,12 +176,8 @@ extension UserInfoTableViewController: UITableViewDelegate, SkeletonTableViewDat
         case 1:
             return 2
         default:
-            return 0
+            return 1
         }
-    }
-    
-    func collectionSkeletonView(_ skeletonView: UITableView, identifierForHeaderInSection section: Int) -> ReusableHeaderFooterIdentifier? {
-        return "Header"
     }
     
 }

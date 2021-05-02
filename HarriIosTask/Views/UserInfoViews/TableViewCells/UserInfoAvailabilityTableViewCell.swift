@@ -30,7 +30,7 @@ class UserInfoAvailabilityTableViewCell: UITableViewCell {
      - Parameter representable: UserInfoAvailabilityRepresentable
     */
     func setupCell(with representable: UserInfoAvailabilityRepresentable, width: CGFloat?) {
-        
+        self.hideSkeleton()
         let maxWidth = (width ?? CGFloat(400)) - 30
         var remainingWidth = maxWidth
         let padding = (x: CGFloat(11), y: CGFloat(8))
@@ -61,6 +61,7 @@ class UserInfoAvailabilityTableViewCell: UITableViewCell {
                 addedToVertical = false
             }
         }
+        
         if !addedToVertical {
             self.verticalStack.addArrangedSubview(horizontalStack)
         }

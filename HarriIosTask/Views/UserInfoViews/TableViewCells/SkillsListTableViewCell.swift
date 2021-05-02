@@ -25,6 +25,7 @@ class SkillsListTableViewCell: UITableViewCell {
     }
     
     func setupCell(with representable: UserInfoSkillsRepresentable, width: CGFloat?){
+        self.hideSkeleton()
         let maxWidth = (width ?? CGFloat(400)) - 30
         var remainingWidth = maxWidth
         let padding = (x: CGFloat(11), y: CGFloat(8))

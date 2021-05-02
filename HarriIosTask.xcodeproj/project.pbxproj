@@ -341,9 +341,9 @@
 			children = (
 				767C37C826299FEE00D8980C /* UserInfoAboutTableViewCell.swift */,
 				767C37CB2629A00500D8980C /* UserInfoExperienceTableViewCell.swift */,
+				7633934C2636CA7A00A712F7 /* SkillsListTableViewCell.swift */,
 				767C37D12629A03000D8980C /* UserInfoAvailabilityTableViewCell.swift */,
 				76CC6CF0263068B90061FA82 /* ZeroExperienceCell.swift */,
-				7633934C2636CA7A00A712F7 /* SkillsListTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
