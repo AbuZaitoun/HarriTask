@@ -6,7 +6,6 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -283,15 +282,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="288" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="left" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gBb-3H-Ni8">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="N6T-Vn-Kb2">
                                                     <rect key="frame" x="15" y="15" width="258" height="69"/>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="gBb-3H-Ni8" secondAttribute="bottom" constant="15" id="B3M-Ae-W3X"/>
-                                                <constraint firstAttribute="trailing" secondItem="gBb-3H-Ni8" secondAttribute="trailing" constant="15" id="nTR-hN-crv"/>
-                                                <constraint firstItem="gBb-3H-Ni8" firstAttribute="leading" secondItem="jlP-0F-7aB" secondAttribute="leading" constant="15" id="oK6-59-Js9"/>
-                                                <constraint firstItem="gBb-3H-Ni8" firstAttribute="top" secondItem="jlP-0F-7aB" secondAttribute="top" constant="15" id="s3r-h2-lXs"/>
+                                                <constraint firstAttribute="trailing" secondItem="N6T-Vn-Kb2" secondAttribute="trailing" constant="15" id="Jfm-9G-igy"/>
+                                                <constraint firstItem="N6T-Vn-Kb2" firstAttribute="leading" secondItem="jlP-0F-7aB" secondAttribute="leading" constant="15" id="UP6-Zf-3QT"/>
+                                                <constraint firstItem="N6T-Vn-Kb2" firstAttribute="top" secondItem="jlP-0F-7aB" secondAttribute="top" constant="15" id="sXD-8o-ZMt"/>
+                                                <constraint firstAttribute="bottom" secondItem="N6T-Vn-Kb2" secondAttribute="bottom" constant="15" id="vi1-eG-VY8"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -299,7 +298,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outlet property="verticalStack" destination="gBb-3H-Ni8" id="iH8-v2-R7V"/>
+                                            <outlet property="verticalStack" destination="N6T-Vn-Kb2" id="liC-TF-7ct"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserInfoAvailabilityTableViewCell" rowHeight="67" id="7tn-OF-WeD" userLabel="UserInfoAvailabilityTableViewCell" customClass="UserInfoAvailabilityTableViewCell" customModule="HarriIosTask" customModuleProvider="target">
@@ -309,57 +308,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="288" height="67"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dqK-F3-dmW" customClass="ResizableCollectionView" customModule="HarriIosTask" customModuleProvider="target">
-                                                    <rect key="frame" x="5" y="6" width="278" height="55"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="6" minimumInteritemSpacing="15" sectionInsetReference="safeArea" id="qDn-6g-I9P" customClass="MyFlowLayout" customModule="HarriIosTask" customModuleProvider="target">
-                                                        <size key="itemSize" width="78" height="26"/>
-                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                        <inset key="sectionInset" minX="10" minY="5" maxX="0.0" maxY="5"/>
-                                                    </collectionViewFlowLayout>
-                                                    <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AvailabilityCollectionViewCell" id="3Xd-fE-Zcv" customClass="AvailabilityCollectionViewCell" customModule="HarriIosTask" customModuleProvider="target">
-                                                            <rect key="frame" x="10" y="5" width="78" height="26"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ltc-Ff-OI9">
-                                                                <rect key="frame" x="0.0" y="0.0" width="78" height="26"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zo-fk-TMK">
-                                                                        <rect key="frame" x="8" y="5.5" width="62" height="15.5"/>
-                                                                        <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="13"/>
-                                                                        <color key="textColor" name="AccentColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </label>
-                                                                </subviews>
-                                                                <constraints>
-                                                                    <constraint firstItem="9zo-fk-TMK" firstAttribute="centerY" secondItem="ltc-Ff-OI9" secondAttribute="centerY" id="Tc8-49-bNL"/>
-                                                                    <constraint firstItem="9zo-fk-TMK" firstAttribute="leading" secondItem="ltc-Ff-OI9" secondAttribute="leading" constant="8" id="aFu-mj-cev"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="9zo-fk-TMK" secondAttribute="trailing" constant="8" id="fhg-36-Bar"/>
-                                                                </constraints>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                                                </userDefinedRuntimeAttributes>
-                                                            </collectionViewCellContentView>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                                            </userDefinedRuntimeAttributes>
-                                                            <connections>
-                                                                <outlet property="label" destination="9zo-fk-TMK" id="zPj-7j-ORE"/>
-                                                            </connections>
-                                                        </collectionViewCell>
-                                                    </cells>
-                                                </collectionView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="KhC-te-PPQ">
+                                                    <rect key="frame" x="15" y="15" width="258" height="37"/>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="dqK-F3-dmW" firstAttribute="leading" secondItem="ASz-1K-jDw" secondAttribute="leading" constant="5" id="HJB-Bu-1Jm"/>
-                                                <constraint firstAttribute="bottom" secondItem="dqK-F3-dmW" secondAttribute="bottom" constant="6" id="Ver-cn-X3A"/>
-                                                <constraint firstItem="dqK-F3-dmW" firstAttribute="top" secondItem="ASz-1K-jDw" secondAttribute="top" constant="6" id="qrh-yg-Hb6"/>
-                                                <constraint firstAttribute="trailing" secondItem="dqK-F3-dmW" secondAttribute="trailing" constant="5" id="tIV-8K-KIM"/>
+                                                <constraint firstAttribute="trailing" secondItem="KhC-te-PPQ" secondAttribute="trailing" constant="15" id="5BZ-wv-7U1"/>
+                                                <constraint firstItem="KhC-te-PPQ" firstAttribute="top" secondItem="ASz-1K-jDw" secondAttribute="top" constant="15" id="JTt-RO-WRo"/>
+                                                <constraint firstAttribute="bottom" secondItem="KhC-te-PPQ" secondAttribute="bottom" constant="15" id="P4B-qF-p12"/>
+                                                <constraint firstItem="KhC-te-PPQ" firstAttribute="leading" secondItem="ASz-1K-jDw" secondAttribute="leading" constant="15" id="ziI-Yk-Qdg"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
@@ -370,8 +327,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outlet property="collectionLayout" destination="qDn-6g-I9P" id="oeb-4a-VNA"/>
-                                            <outlet property="collectionView" destination="dqK-F3-dmW" id="aHc-w4-IB1"/>
+                                            <outlet property="verticalStack" destination="KhC-te-PPQ" id="SQ6-A7-EBC"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ZeroExperienceCell" id="Htz-we-2MV" customClass="ZeroExperienceCell" customModule="HarriIosTask" customModuleProvider="target">

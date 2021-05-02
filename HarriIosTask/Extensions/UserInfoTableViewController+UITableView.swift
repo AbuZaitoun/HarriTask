@@ -15,37 +15,26 @@ extension UserInfoTableViewController: UITableViewDelegate, SkeletonTableViewDat
     /** Number of sections
      - Parameter tableView: UITableView
      - Returns: Integer, number of sections in tableView
-    */
+     */
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.NUMBER_OF_SECTIONS
     }
     
     /** Number of rows in section
      - Parameters:
-       - tableView: UITableView
-       - section: Integer, current section
+     - tableView: UITableView
+     - section: Integer, current section
      - Returns: Integer, number of rows in said section
-    */
+     */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        switch section {
-        case 0:
-            return self.aboutViewModel.numberOfRows(inSection: section)
-        case 1:
-            return self.experienceViewModel.numberOfRows(inSection: section)
-        case 2:
-            return self.skillsViewModel.numberOfRows(inSection: section)
-        case 3:
-            return self.availabilityViewModel.numberOfRows(inSection: section)
-        default:
-            return 0
-        }
+        
+        return self.infoViewModel.numberOfRows(inSection: section)
     }
     
     /** Title for header in section
      - Parameters:
-       - tableView: UITableView
-       - section: Integer, current section
+     - tableView: UITableView
+     - section: Integer, current section
      - Returns: String, header of section
      */
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -54,14 +43,14 @@ extension UserInfoTableViewController: UITableViewDelegate, SkeletonTableViewDat
     
     /** Cell for row
      - Parameters:
-       - tableView: UITableView
-       - indexPath: IndexPath for needed cell
+     - tableView: UITableView
+     - indexPath: IndexPath for needed cell
      - Returns: UITableViewCell, cell in provided indexpath
-    */
+     */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
-            guard let representable = aboutViewModel.representableForRow(at: indexPath) as? UserInfoAboutRepresentable else {
+            guard let representable = infoViewModel.representableForRow(at: indexPath) as? UserInfoAboutRepresentable else {
                 return UITableViewCell()
             }
             let cell = tableView.dequeueReusableCell(withIdentifier: UserInfoAboutTableViewCell.getReuseIdentifier(), for: indexPath) as? UserInfoAboutTableViewCell
@@ -69,12 +58,12 @@ extension UserInfoTableViewController: UITableViewDelegate, SkeletonTableViewDat
             return cell ?? UITableViewCell()
             
         case 1:
-            if let representable = experienceViewModel.representableForRow(at: indexPath) as? UserInfoExperienceRepresentable {
+            if let representable = infoViewModel.representableForRow(at: indexPath) as? UserInfoExperienceRepresentable {
                 let cell = tableView.dequeueReusableCell(withIdentifier: UserInfoExperienceTableViewCell.getReuseIdentifier(), for: indexPath) as? UserInfoExperienceTableViewCell
                 cell?.setupCell(with: representable)
                 return cell ?? UITableViewCell()
             }
-            else if let representable = experienceViewModel.representableForRow(at: indexPath) as? ZeroExperienceRepresentable {
+            else if let representable = infoViewModel.representableForRow(at: indexPath) as? ZeroExperienceRepresentable {
                 let cell = tableView.dequeueReusableCell(withIdentifier: ZeroExperienceCell.getReuseIdentifier(), for: indexPath) as? ZeroExperienceCell
                 cell?.setup(with: representable)
                 return cell ?? UITableViewCell()
@@ -85,17 +74,14 @@ extension UserInfoTableViewController: UITableViewDelegate, SkeletonTableViewDat
             
             
         case 2:
-            if let representable = skillsViewModel.representableForRow(at: indexPath) as? UserInfoSkillsRepresentable {
-//                if let cell = self.myCell {
-//                    return cell
-//                }else {
-                    let cell = tableView.dequeueReusableCell(withIdentifier: SkillsListTableViewCell.getReuseIdentifier(), for: indexPath) as? SkillsListTableViewCell
-                    cell?.setupCell(with: representable, width: tableView.bounds.width)
-//                    self.myCell = cell
-                    return cell ?? UITableViewCell()
-//                }
+            if let representable = infoViewModel.representableForRow(at: indexPath) as? UserInfoSkillsRepresentable {
+                
+                let cell = tableView.dequeueReusableCell(withIdentifier: SkillsListTableViewCell.getReuseIdentifier(), for: indexPath) as? SkillsListTableViewCell
+                cell?.setupCell(with: representable, width: tableView.bounds.width)
+                
+                return cell ?? UITableViewCell()
             }
-            else if let representable = skillsViewModel.representableForRow(at: indexPath) as? ZeroExperienceRepresentable {
+            else if let representable = infoViewModel.representableForRow(at: indexPath) as? ZeroExperienceRepresentable {
                 let cell = tableView.dequeueReusableCell(withIdentifier: ZeroExperienceCell.getReuseIdentifier(), for: indexPath) as? ZeroExperienceCell
                 cell?.setup(with: representable)
                 return cell ?? UITableViewCell()
@@ -105,11 +91,11 @@ extension UserInfoTableViewController: UITableViewDelegate, SkeletonTableViewDat
             }
             
         case 3:
-            guard let representable = availabilityViewModel.representableForRow(at: indexPath) as? UserInfoAvailabilityRepresentable else {
+            guard let representable = infoViewModel.representableForRow(at: indexPath) as? UserInfoAvailabilityRepresentable else {
                 return UITableViewCell()
             }
             let cell = tableView.dequeueReusableCell(withIdentifier: UserInfoAvailabilityTableViewCell.getReuseIdentifier(), for: indexPath) as? UserInfoAvailabilityTableViewCell
-            cell?.setupCell(with: representable)
+            cell?.setupCell(with: representable, width: tableView.bounds.width)
             return cell ?? UITableViewCell()
             
         default:
@@ -120,8 +106,8 @@ extension UserInfoTableViewController: UITableViewDelegate, SkeletonTableViewDat
     
     /** View for header in section
      - Parameters:
-       - tableView: UITableView
-       - section: Integer, target section
+     - tableView: UITableView
+     - section: Integer, target section
      - Returns: UIView, optional, view to be presented as section header
      */
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -146,19 +132,19 @@ extension UserInfoTableViewController: UITableViewDelegate, SkeletonTableViewDat
         if let headerView = self.tableView.tableHeaderView as? TableViewHeaderView {
             headerView.scrollViewDidScroll(scrollView: self.tableView)
         }
-
+        
     }
     
     /** Did select row at
      - Parameters:
-       - tableView: UITableView
-       - indexPath: IndexPath
-    */
+     - tableView: UITableView
+     - indexPath: IndexPath
+     */
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
-            self.aboutViewModel.toggleExpanded(for: indexPath)
+            self.infoViewModel.toggleExpandedInAboutRepresentable(for: indexPath)
             self.tableView.reloadRows(at: [indexPath], with: .fade)
-//            self.labelClicked(indexPath: indexPath)
+            //            self.labelClicked(indexPath: indexPath)
         }
         else {
             self.tableView.deselectRow(at: indexPath, animated: true)

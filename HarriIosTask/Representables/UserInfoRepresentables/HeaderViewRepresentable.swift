@@ -8,11 +8,9 @@
 import UIKit
 
 class HeaderViewRepresentable {
-    var name: String
     var alpha: CGFloat
     
-    init(with name: String, alpha: CGFloat){
-        self.name = name
+    init(alpha: CGFloat){
         self.alpha = alpha
     }
 }

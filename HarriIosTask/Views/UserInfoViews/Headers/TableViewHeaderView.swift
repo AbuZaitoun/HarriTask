@@ -79,7 +79,7 @@ class TableViewHeaderView: UIView {
         //        self.widthConstraint.constant = UIScreen.main.bounds.width
     }
     
-    func setupView(with representable: UserInfoHeaderRepresentable) {
+    func setupView(with representable: UserInfoTableViewHeaderRepresentable) {
         self.nameLabel.text = representable.name
         self.nameLabel.hideSkeleton()
         self.positionLabel.text = representable.position

@@ -8,7 +8,7 @@
 import Foundation
 
 /// User Info Header Representable
-class UserInfoHeaderRepresentable {
+class UserInfoTableViewHeaderRepresentable {
     
     /// Name
     private(set) var name: String

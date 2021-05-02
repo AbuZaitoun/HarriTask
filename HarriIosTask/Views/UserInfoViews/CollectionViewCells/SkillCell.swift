@@ -8,7 +8,7 @@
 import UIKit
 
 /// Skill Collection View Cell
-class SkillCollectionViewCell: UIView {
+class SkillCell: UIView {
     
     /// Label
     @IBOutlet var label: UILabel!
@@ -68,10 +68,4 @@ class SkillCollectionViewCell: UIView {
         self.label.text = string
     }
     
-    /** get reuse identifier
-     - Returns: String
-    */
-    static func getReuseIdentifier() -> String{
-        return "SkillCollectionViewCell"
-    }
 }

@@ -39,23 +39,10 @@ class UserInfoTableViewController: UIViewController {
     /// User
     private(set) var user: User?
     
-    /// User info header view model
-    private(set) var tableHeaderViewModel: UserInfoHeaderViewModel!
-    
-    /// User info about view model
-    private(set) var aboutViewModel: UserInfoAboutViewModel!
-    
-    /// User info experience view model
-    private(set) var experienceViewModel: UserInfoExperienceViewModel!
-    
-    /// User info skills view model
-    private(set) var skillsViewModel: UserInfoSkillsViewModel!
-    
-    /// User info availability view model
-    private(set) var availabilityViewModel: UserInfoAvailabilityViewModel!
-    
-    private(set) var headerViewModel: HeaderViewModel!
-    
+  
+    /// User info view model
+    private(set) var infoViewModel: UserInfoViewModel!
+  
     
     var headerHeightConstraint: NSLayoutConstraint!
     
@@ -105,18 +92,10 @@ class UserInfoTableViewController: UIViewController {
     private func requestData() {
         UsersModel.fetchUserInfo(userID: String(self.user?.id ?? -1), completion: { [weak self] (userDetails, error) in
             guard let self = self else { return }
-            self.user?.backgroundImageUUID = userDetails?.backgroundImage
-            self.aboutViewModel = UserInfoAboutViewModel(userInfo: userDetails?.userInfo ?? UserInfo(about: ""))
-            self.experienceViewModel = UserInfoExperienceViewModel(with: userDetails?.experience ?? [])
-            self.skillsViewModel = UserInfoSkillsViewModel(with: userDetails?.skills ?? [], width: self.tableView.bounds.width)
-            self.availabilityViewModel = UserInfoAvailabilityViewModel(with: userDetails?.availability.availabilities ?? [])
-            self.tableHeaderViewModel = UserInfoHeaderViewModel(with: self.user ?? User())
-            self.tableViewHeaderView.setupView(with: self.tableHeaderViewModel.representable)
-            
-//            if let representable = self.skillsViewModel.representables[0] as? UserInfoSkillsRepresentable {
-//                self.myCell = SkillsListTableViewCell()
-//                self.myCell?.setupCell(with: representable, width: self.tableView.frame.width)
-//            }
+            guard let userDetails = userDetails else { return }
+            self.user?.backgroundImageUUID = userDetails.backgroundImage
+            self.infoViewModel = UserInfoViewModel(with: userDetails,user: self.user!, width: self.tableView.bounds.width)
+
             self.tableView.stopSkeletonAnimation()
             self.view.updateSkeleton()
             self.view.hideSkeleton()
@@ -127,6 +106,8 @@ class UserInfoTableViewController: UIViewController {
             
             DispatchQueue.main.async { [weak self] in
                 self?.tableView.reloadData()
+                self?.tableViewHeaderView.setupView(with: self?.infoViewModel.tableViewHeaderRepresentable ?? UserInfoTableViewHeaderRepresentable(with: User()))
+      
             }
             
         })
@@ -149,12 +130,7 @@ class UserInfoTableViewController: UIViewController {
     
     /// Initialize view models
     private func initializeViewModels() {
-        self.aboutViewModel = UserInfoAboutViewModel(userInfo: UserInfo(about: ""))
-        self.experienceViewModel = UserInfoExperienceViewModel(with: [])
-        self.skillsViewModel = UserInfoSkillsViewModel(with: [], width: 0)
-        self.availabilityViewModel = UserInfoAvailabilityViewModel(with: [])
-        self.tableHeaderViewModel = UserInfoHeaderViewModel(with: self.user ?? User())
-        self.headerViewModel = HeaderViewModel(with: "", alpha: 0)
+        self.infoViewModel = UserInfoViewModel()
         self.headerView.delegate = self
     }
     
@@ -219,8 +195,8 @@ class UserInfoTableViewController: UIViewController {
         } else {
             self.navigationController?.navigationBar.isTranslucent = true
         }
-        self.headerViewModel.setAlpha(with: alpha)
-        self.headerView.setup(with: headerViewModel.representable)
+        self.infoViewModel.setAlpha(with: alpha)
+        self.headerView.setup(with: infoViewModel.headerRepresentable)
         self.navigationController?.navigationBar.backgroundColor = self.whiteColor.withAlphaComponent(alpha)
         self.navigationController?.navigationBar.barTintColor = self.whiteColor.withAlphaComponent(1)
     }

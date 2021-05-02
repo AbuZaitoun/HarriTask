@@ -38,7 +38,13 @@ class UserInfoAvailabilityRepresentable: TableViewCellRepresentable {
     init(with availabilities: [(String, Bool)]) {
         self.cellHeight = UserInfoAvailabilityTableViewCell.getHeight()
         self.reuseIdentifier = UserInfoAvailabilityTableViewCell.getReuseIdentifier()
+        self.availabilities = []
+        for availability in availabilities {
+            if availability.1 {
+                self.availabilities?.append(availability)
+            }
+            
+        }
         
-        self.availabilities = availabilities
     }
 }
