@@ -42,10 +42,8 @@
 		76ABFA57262C6A0F007A2D41 /* UserInfoSkillsRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA56262C6A0F007A2D41 /* UserInfoSkillsRepresentable.swift */; };
 		76ABFA5A262C6A42007A2D41 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA59262C6A42007A2D41 /* Skill.swift */; };
 		76ABFA6C262C7E81007A2D41 /* SkillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA6B262C7E81007A2D41 /* SkillCell.swift */; };
-		76ABFA6F262C829D007A2D41 /* MyFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA6E262C829D007A2D41 /* MyFlowLayout.swift */; };
 		76ABFA81262D7B90007A2D41 /* Availability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA80262D7B90007A2D41 /* Availability.swift */; };
 		76ABFA88262D8357007A2D41 /* UserInfoAvailabilityRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA87262D8357007A2D41 /* UserInfoAvailabilityRepresentable.swift */; };
-		76ABFA9D262DA1C6007A2D41 /* ResizableCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFA9C262DA1C6007A2D41 /* ResizableCollectionView.swift */; };
 		76ABFAA7262DC44C007A2D41 /* TableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFAA6262DC44C007A2D41 /* TableViewHeaderView.swift */; };
 		76ABFAB2262E1F1E007A2D41 /* UserInfoTableViewHeaderRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABFAB1262E1F1E007A2D41 /* UserInfoTableViewHeaderRepresentable.swift */; };
 		76ABFABE262F0E41007A2D41 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76ABFABD262F0E41007A2D41 /* HeaderView.xib */; };
@@ -111,10 +109,8 @@
 		76ABFA56262C6A0F007A2D41 /* UserInfoSkillsRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoSkillsRepresentable.swift; sourceTree = "<group>"; };
 		76ABFA59262C6A42007A2D41 /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
 		76ABFA6B262C7E81007A2D41 /* SkillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillCell.swift; sourceTree = "<group>"; };
-		76ABFA6E262C829D007A2D41 /* MyFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFlowLayout.swift; sourceTree = "<group>"; };
 		76ABFA80262D7B90007A2D41 /* Availability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Availability.swift; sourceTree = "<group>"; };
 		76ABFA87262D8357007A2D41 /* UserInfoAvailabilityRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoAvailabilityRepresentable.swift; sourceTree = "<group>"; };
-		76ABFA9C262DA1C6007A2D41 /* ResizableCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableCollectionView.swift; sourceTree = "<group>"; };
 		76ABFAA6262DC44C007A2D41 /* TableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHeaderView.swift; sourceTree = "<group>"; };
 		76ABFAB1262E1F1E007A2D41 /* UserInfoTableViewHeaderRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewHeaderRepresentable.swift; sourceTree = "<group>"; };
 		76ABFABD262F0E41007A2D41 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
@@ -219,10 +215,8 @@
 		763924A7261BD69C009097A6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				76BEEFD52619D8F500AD0321 /* UsersViewController.swift */,
-				767C37C526299ECE00D8980C /* UserInfoTableViewController.swift */,
-				76ABFA6E262C829D007A2D41 /* MyFlowLayout.swift */,
-				76ABFA9C262DA1C6007A2D41 /* ResizableCollectionView.swift */,
+				76F8F067263EE0640063EB61 /* UserDetailsController */,
+				76F8F065263EE03C0063EB61 /* UsersListController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -240,8 +234,6 @@
 		767C37B22624AA2700D8980C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				767C37B32624AA5000D8980C /* UsersViewController+UITableView.swift */,
-				76ABFAC4262F3344007A2D41 /* UserInfoTableViewController+UITableView.swift */,
 				767C37F2262C3B2D00D8980C /* ToDate+String.swift */,
 				767C37F5262C3B8600D8980C /* ToString+Date.swift */,
 				76ABFAC1262F1016007A2D41 /* AddTrailing+UILabel.swift */,
@@ -409,6 +401,40 @@
 			path = Headers;
 			sourceTree = "<group>";
 		};
+		76F8F065263EE03C0063EB61 /* UsersListController */ = {
+			isa = PBXGroup;
+			children = (
+				76F8F066263EE0510063EB61 /* Extensions */,
+				76BEEFD52619D8F500AD0321 /* UsersViewController.swift */,
+			);
+			path = UsersListController;
+			sourceTree = "<group>";
+		};
+		76F8F066263EE0510063EB61 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				767C37B32624AA5000D8980C /* UsersViewController+UITableView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		76F8F067263EE0640063EB61 /* UserDetailsController */ = {
+			isa = PBXGroup;
+			children = (
+				76F8F068263EE0730063EB61 /* Extensions */,
+				767C37C526299ECE00D8980C /* UserInfoTableViewController.swift */,
+			);
+			path = UserDetailsController;
+			sourceTree = "<group>";
+		};
+		76F8F068263EE0730063EB61 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				76ABFAC4262F3344007A2D41 /* UserInfoTableViewController+UITableView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		9E1FAF8EDCB8AE17D62A7A0D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -544,7 +570,6 @@
 				7639247A261B4ADD009097A6 /* LoadingTableViewCell.swift in Sources */,
 				767C37A92624765200D8980C /* UserTableViewCellRepresentable.swift in Sources */,
 				767C37C626299ECE00D8980C /* UserInfoTableViewController.swift in Sources */,
-				76ABFA6F262C829D007A2D41 /* MyFlowLayout.swift in Sources */,
 				76392480261B564B009097A6 /* UserViewModel.swift in Sources */,
 				76BEEFE82619DA7500AD0321 /* User.swift in Sources */,
 				767C37BB2625960500D8980C /* TableViewCellRepresentable.swift in Sources */,
@@ -560,7 +585,6 @@
 				767C37D22629A03000D8980C /* UserInfoAvailabilityTableViewCell.swift in Sources */,
 				767C37E4262C1A4000D8980C /* Work.swift in Sources */,
 				76ABFAA7262DC44C007A2D41 /* TableViewHeaderView.swift in Sources */,
-				76ABFA9D262DA1C6007A2D41 /* ResizableCollectionView.swift in Sources */,
 				76FC7A182638B0FC0053FFDE /* StretchyHeader.swift in Sources */,
 				767C37B82625954200D8980C /* LoadingTableViewCellRepresentable.swift in Sources */,
 				76F8F052263EB4780063EB61 /* UserInfoViewModel.swift in Sources */,

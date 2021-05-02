@@ -11,7 +11,7 @@ import UIKit
 class UserTableViewCellRepresentable: TableViewCellRepresentable {
     
     /// First job text
-    let FIRST_JOB_TEXT = "Is looking for their first job"
+    private let FIRST_JOB_TEXT = "Is looking for their first job"
     
     /// Name
     private(set) var name: String

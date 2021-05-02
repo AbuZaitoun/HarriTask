@@ -30,13 +30,5 @@ class UserInfoSkillsRepresentable: TableViewCellRepresentable {
         self.cellHeight = SkillsListTableViewCell.getHeight()
         self.reuseIdentifier = SkillsListTableViewCell.getReuseIdentifier()
     }
-    
-    /** Initializer
-     - Parameter skill: Skill
-    */
-//    init(with skill: Skill) {
-//        self.skillName = skill.name
-//        self.cellHeight = SkillsListTableViewCell.getHeight()
-//        self.reuseIdentifier = SkillsListTableViewCell.getReuseIdentifier()
-//    }
+
 }
