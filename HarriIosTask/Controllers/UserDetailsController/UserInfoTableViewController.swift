@@ -53,7 +53,6 @@ class UserInfoTableViewController: UIViewController {
         self.setupTableViewHeaderView()
         self.setupHeaderView()
         self.requestData()
-        
         self.tableView.isSkeletonable = true
         self.tableView.showAnimatedGradientSkeleton()
         
@@ -76,7 +75,7 @@ class UserInfoTableViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = self.whiteColor.withAlphaComponent(1)
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navbarFont!, NSAttributedString.Key.foregroundColor: self.harriBlue]
     }
-    
+
     /** View will disappear
      - Parameter animated: Boolean
      */
@@ -84,12 +83,7 @@ class UserInfoTableViewController: UIViewController {
         super.viewWillDisappear(animated)
         self.navigationController?.navigationBar.isTranslucent = false
     }
-    
-//    override func willMove(toParent parent: UIViewController?) {
-//        super.willMove(toParent: parent)
-//        self.navigationController?.navigationBar.barTintColor = UIColor(named: "AccentColor")
-//    }
-    
+ 
     /// Request data
     private func requestData() {
         UsersModel.fetchUserInfo(userID: String(self.user?.id ?? -1), completion: { [weak self] (userDetails, error) in
@@ -131,7 +125,6 @@ class UserInfoTableViewController: UIViewController {
     /// Initialize view models
     private func initializeViewModels() {
         self.infoViewModel = UserInfoViewModel()
-        self.headerView.delegate = self
     }
     
     /** Setup view controller
@@ -149,6 +142,7 @@ class UserInfoTableViewController: UIViewController {
         self.navigationController?.navigationBar.backgroundColor = self.whiteColor.withAlphaComponent(0)
     }
     
+    /// Setup header view
     private func setupHeaderView() {
         var heightOfSafeArea: CGFloat = 0
 
@@ -178,6 +172,7 @@ class UserInfoTableViewController: UIViewController {
         
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
+        
         self.title = ""
     }
     
@@ -204,11 +199,6 @@ class UserInfoTableViewController: UIViewController {
             }
         }
         
-        if alpha == 1 {
-//            self.navigationController?.navigationBar.isTranslucent = false
-        } else {
-//            self.navigationController?.navigationBar.isTranslucent = true
-        }
         self.infoViewModel.setAlpha(with: alpha)
         self.headerView.setup(with: infoViewModel.headerRepresentable)
         self.navigationController?.navigationBar.backgroundColor = self.whiteColor.withAlphaComponent(alpha)
@@ -217,9 +207,3 @@ class UserInfoTableViewController: UIViewController {
     
 }
 
-extension UserInfoTableViewController: HeaderViewDelegate {
-    func backButtonAction() {
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
-        let _ = self.navigationController?.popViewController(animated: true)
-    }
-}
