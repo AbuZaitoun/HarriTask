@@ -32,7 +32,7 @@ enum UsersRouter: URLRequestConvertible {
     case readUsers(params: Parameters)
     
     /// User info
-    case userInfo(params: Parameters, userID: String)
+    case userInfo(userID: String)
     
     /// Method
     var method: HTTPMethod {
@@ -45,11 +45,11 @@ enum UsersRouter: URLRequestConvertible {
     }
     
     /// Path
-    func path(userID: String) -> String {
+    func path() -> String {
         switch self {
         case .readUsers:
             return "search_users"
-        case .userInfo:
+        case .userInfo(let userID):
             return "profile/member/\(userID)"
         }
     }
@@ -66,10 +66,9 @@ enum UsersRouter: URLRequestConvertible {
         var url: URL
         switch self {
         case .readUsers(_):
-            url = usersListURL.appendingPathComponent(path(userID: ""))
-        case let .userInfo(_, userID):
-            url = userInfoURL.appendingPathComponent(path(userID: userID))
-            
+            url = usersListURL.appendingPathComponent(path())
+        case .userInfo(_):
+            url = userInfoURL.appendingPathComponent(path())
         }
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.rawValue
@@ -77,9 +76,10 @@ enum UsersRouter: URLRequestConvertible {
         switch self {
         case let .readUsers(parameters):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: parameters)
-        case .userInfo(_, _):
+        case .userInfo(_):
             break
         }
+        
         print(urlRequest)
         return urlRequest
     }

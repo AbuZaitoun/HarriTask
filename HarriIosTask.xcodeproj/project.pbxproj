@@ -215,8 +215,8 @@
 		763924A7261BD69C009097A6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				76F8F067263EE0640063EB61 /* UserDetailsController */,
 				76F8F065263EE03C0063EB61 /* UsersListController */,
+				76F8F067263EE0640063EB61 /* UserDetailsController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

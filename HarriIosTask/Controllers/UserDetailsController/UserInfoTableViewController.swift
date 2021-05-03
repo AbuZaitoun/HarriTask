@@ -7,6 +7,7 @@
 
 import UIKit
 import SkeletonView
+
 /// User Info Table View Controller
 class UserInfoTableViewController: UIViewController {
     
@@ -117,6 +118,7 @@ class UserInfoTableViewController: UIViewController {
         self.tableView.backgroundColor = UIColor(named: "BackgroundColor")
         self.tableView.contentInsetAdjustmentBehavior = .never
         self.extendedLayoutIncludesOpaqueBars = true;
+        
         self.tableView.tableHeaderView = tableViewHeaderView
     }
     
@@ -160,8 +162,7 @@ class UserInfoTableViewController: UIViewController {
     
     /// Set up navigation bar transculent
     private func setNavbarTransculent() {
-        //        self.navigationController?.setNavigationBarHidden(true, animated: true)
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default) //UIImage.init(named: "transparent.png")
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.title = ""

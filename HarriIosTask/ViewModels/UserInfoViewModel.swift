@@ -55,7 +55,9 @@ class UserInfoViewModel: ViewModel {
         for experience in userDetails.experience {
             self.experienceRepresentables.append(UserInfoExperienceRepresentable(with: experience.work))
         }
-        
+        if self.experienceRepresentables.isEmpty {
+            self.experienceRepresentables.append(ZeroExperienceRepresentable(with: "No experiences to show"))
+        }
         if !userDetails.skills.isEmpty {
             self.sortSkillsAccordingToLength(skills: userDetails.skills, width: width)
         } else {

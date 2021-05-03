@@ -156,7 +156,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
-                                <color key="sectionIndexBackgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" name="BackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserInfoAboutTableViewCell" id="nJh-kZ-NKf" customClass="UserInfoAboutTableViewCell" customModule="HarriIosTask" customModuleProvider="target">
                                         <rect key="frame" x="16" y="55.5" width="288" height="98.5"/>
@@ -383,7 +383,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bjd-Sq-ifv"/>
-                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="XJF-kt-ic2" firstAttribute="top" secondItem="WKV-8J-Mp0" secondAttribute="top" id="HUH-Go-RQz"/>
                             <constraint firstItem="XJF-kt-ic2" firstAttribute="leading" secondItem="bjd-Sq-ifv" secondAttribute="leading" id="aDX-Xa-73D"/>
@@ -426,6 +426,9 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.4779999852180481" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="BackgroundColor">
+            <color red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="HarriBlue">
             <color red="0.28999999165534973" green="0.56499999761581421" blue="0.88599997758865356" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -434,9 +437,6 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
