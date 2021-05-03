@@ -41,6 +41,8 @@ class UserInfoTableViewController: UIViewController {
     /// User info view model
     private(set) var infoViewModel: UserInfoViewModel!
   
+    /// Alpha
+    private(set) var alpha: CGFloat?
     
     /// View did lead
     override func viewDidLoad() {
@@ -73,7 +75,6 @@ class UserInfoTableViewController: UIViewController {
         self.navigationController?.navigationBar.backgroundColor = self.whiteColor.withAlphaComponent(0)
         self.navigationController?.navigationBar.tintColor = self.whiteColor.withAlphaComponent(1)
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navbarFont!, NSAttributedString.Key.foregroundColor: self.harriBlue]
-        
     }
     
     /** View will disappear
@@ -83,6 +84,11 @@ class UserInfoTableViewController: UIViewController {
         super.viewWillDisappear(animated)
         self.navigationController?.navigationBar.isTranslucent = false
     }
+    
+//    override func willMove(toParent parent: UIViewController?) {
+//        super.willMove(toParent: parent)
+//        self.navigationController?.navigationBar.barTintColor = UIColor(named: "AccentColor")
+//    }
     
     /// Request data
     private func requestData() {
@@ -117,7 +123,7 @@ class UserInfoTableViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.backgroundColor = UIColor(named: "BackgroundColor")
         self.tableView.contentInsetAdjustmentBehavior = .never
-        self.extendedLayoutIncludesOpaqueBars = true;
+        self.extendedLayoutIncludesOpaqueBars = true
         
         self.tableView.tableHeaderView = tableViewHeaderView
     }
@@ -163,6 +169,13 @@ class UserInfoTableViewController: UIViewController {
     /// Set up navigation bar transculent
     private func setNavbarTransculent() {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        
+        self.navigationController?.navigationBar.layer.masksToBounds = false
+        self.navigationController?.navigationBar.layer.shadowColor = UIColor.lightGray.cgColor
+        self.navigationController?.navigationBar.layer.shadowOpacity = 0
+        self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        self.navigationController?.navigationBar.layer.shadowRadius = 2
+        
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.title = ""
@@ -172,17 +185,29 @@ class UserInfoTableViewController: UIViewController {
      - Parameter alpha: Alpha
      */
     func setNavbar(backgroundColorAlpha alpha: CGFloat) {
+        self.alpha = alpha
         if alpha > 0.5 {
-            self.navigationController?.navigationBar.tintColor = self.harriBlue
-            self.title = user?.fullName
+            UIView.animate(withDuration: 0.6) { [weak self] in
+                guard let self = self else { return }
+                self.navigationController?.navigationBar.tintColor = self.harriBlue
+                self.title = self.user?.fullName
+                self.navigationController?.navigationBar.barStyle = .default
+                self.navigationController?.navigationBar.layer.shadowOpacity = 0.8
+            }
         } else {
-            self.navigationController?.navigationBar.tintColor = self.whiteColor
-            self.title = ""
+            UIView.animate(withDuration: 0.6) { [weak self] in
+                guard let self = self else { return }
+                self.navigationController?.navigationBar.tintColor = self.whiteColor
+                self.title = ""
+                self.navigationController?.navigationBar.barStyle = .black
+                self.navigationController?.navigationBar.layer.shadowOpacity = 0
+            }
         }
+        
         if alpha == 1 {
-            self.navigationController?.navigationBar.isTranslucent = false
+//            self.navigationController?.navigationBar.isTranslucent = false
         } else {
-            self.navigationController?.navigationBar.isTranslucent = true
+//            self.navigationController?.navigationBar.isTranslucent = true
         }
         self.infoViewModel.setAlpha(with: alpha)
         self.headerView.setup(with: infoViewModel.headerRepresentable)
@@ -198,4 +223,3 @@ extension UserInfoTableViewController: HeaderViewDelegate {
         let _ = self.navigationController?.popViewController(animated: true)
     }
 }
-

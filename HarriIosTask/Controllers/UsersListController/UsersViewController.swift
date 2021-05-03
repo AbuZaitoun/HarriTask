@@ -43,27 +43,34 @@ class UsersViewController: UIViewController {
         self.usersViewModel = UserViewModel(with: [], total: 1)
         self.setTableViewDelegates()
         self.setupPullToRefresh()
-        setNeedsStatusBarAppearanceUpdate()
+//        self.setNeedsStatusBarAppearanceUpdate()
+        
     }
     
 //    override var preferredStatusBarStyle: UIStatusBarStyle {
-//        return .lightContent
+//        return .darkContent
 //    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+//
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         setupNavigationTitle()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+//        setupNavigationTitle()
+        self.navigationController?.navigationBar.barStyle = .black
+    }
     /**
      setup navigation title
      */
     func setupNavigationTitle(){
         let navbarFont = UIFont(name: "OpenSans-Regular", size: 21)
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navbarFont!, NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navbarFont!, NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.title = "Harri"
         self.navigationController?.navigationBar.backgroundColor = UIColor(named: "AccentColor")
         self.navigationController?.navigationBar.barTintColor = UIColor(named: "AccentColor")
+        
     }
     
     /**
