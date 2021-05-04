@@ -84,6 +84,7 @@ extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
         let userInfoTableViewController = self.storyboard!.instantiateViewController(withIdentifier: "UserInfoTableViewController") as! UserInfoTableViewController
         userInfoTableViewController.setupViewController(user: representable.user ?? nil)
         self.navigationController!.pushViewController(userInfoTableViewController, animated: true)
+        
         self.mainTableView.deselectRow(at: indexPath, animated: true)
     }
 }

@@ -303,15 +303,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="288" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="N6T-Vn-Kb2">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bET-bD-Tnv">
                                                     <rect key="frame" x="15" y="15" width="258" height="69"/>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="N6T-Vn-Kb2" secondAttribute="trailing" constant="15" id="Jfm-9G-igy"/>
-                                                <constraint firstItem="N6T-Vn-Kb2" firstAttribute="leading" secondItem="jlP-0F-7aB" secondAttribute="leading" constant="15" id="UP6-Zf-3QT"/>
-                                                <constraint firstItem="N6T-Vn-Kb2" firstAttribute="top" secondItem="jlP-0F-7aB" secondAttribute="top" constant="15" id="sXD-8o-ZMt"/>
-                                                <constraint firstAttribute="bottom" secondItem="N6T-Vn-Kb2" secondAttribute="bottom" constant="15" id="vi1-eG-VY8"/>
+                                                <constraint firstItem="bET-bD-Tnv" firstAttribute="top" secondItem="jlP-0F-7aB" secondAttribute="top" constant="15" id="0Rd-gH-aNt"/>
+                                                <constraint firstAttribute="bottom" secondItem="bET-bD-Tnv" secondAttribute="bottom" constant="15" id="aAA-l7-Cjg"/>
+                                                <constraint firstAttribute="trailing" secondItem="bET-bD-Tnv" secondAttribute="trailing" constant="15" id="ii9-wq-eQA"/>
+                                                <constraint firstItem="bET-bD-Tnv" firstAttribute="leading" secondItem="jlP-0F-7aB" secondAttribute="leading" constant="15" id="v2I-nj-Ctt"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -319,7 +319,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outlet property="verticalStack" destination="N6T-Vn-Kb2" id="liC-TF-7ct"/>
+                                            <outlet property="verticalStack" destination="bET-bD-Tnv" id="5y3-k0-gSI"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserInfoAvailabilityTableViewCell" rowHeight="67" id="7tn-OF-WeD" userLabel="UserInfoAvailabilityTableViewCell" customClass="UserInfoAvailabilityTableViewCell" customModule="HarriIosTask" customModuleProvider="target">
@@ -394,18 +394,19 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <navigationItem key="navigationItem" id="xYP-y6-URN"/>
                     <connections>
                         <outlet property="tableView" destination="XJF-kt-ic2" id="OF0-fa-nhl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RPO-rn-4Jd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1747.826086956522" y="116.51785714285714"/>
+            <point key="canvasLocation" x="1781" y="116"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rfL-aX-4N1">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="F8Y-hG-6fu" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="F8Y-hG-6fu" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HrH-WQ-vHJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

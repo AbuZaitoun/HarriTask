@@ -57,12 +57,13 @@ class UserInfoTableViewController: UIViewController {
         self.tableView.showAnimatedGradientSkeleton()
         
     }
-    
+
     /** View will appear
      - Parameter animated: Boolean
      */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
         self.setNavbarTransculent()
     }
     
@@ -74,6 +75,7 @@ class UserInfoTableViewController: UIViewController {
         self.navigationController?.navigationBar.backgroundColor = self.whiteColor.withAlphaComponent(0)
         self.navigationController?.navigationBar.tintColor = self.whiteColor.withAlphaComponent(1)
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navbarFont!, NSAttributedString.Key.foregroundColor: self.harriBlue]
+
     }
 
     /** View will disappear
@@ -82,7 +84,18 @@ class UserInfoTableViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.barTintColor = UIColor(named: "AccentColor")
     }
+    
+    /** View will move
+     - Parameter parent: UIViewController
+     */
+//    override func willMove(toParent parent: UIViewController?) {
+//        super.willMove(toParent: parent)
+//        
+//        self.navigationController?.navigationBar.isTranslucent = false
+//        self.navigationController?.navigationBar.barTintColor = UIColor(named: "AccentColor")
+//    }
  
     /// Request data
     private func requestData() {
@@ -163,6 +176,7 @@ class UserInfoTableViewController: UIViewController {
     /// Set up navigation bar transculent
     private func setNavbarTransculent() {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
         
         self.navigationController?.navigationBar.layer.masksToBounds = false
         self.navigationController?.navigationBar.layer.shadowColor = UIColor.lightGray.cgColor
@@ -170,7 +184,6 @@ class UserInfoTableViewController: UIViewController {
         self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0, height: 2.0)
         self.navigationController?.navigationBar.layer.shadowRadius = 2
         
-        self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         
         self.title = ""
@@ -198,7 +211,7 @@ class UserInfoTableViewController: UIViewController {
                 self.navigationController?.navigationBar.layer.shadowOpacity = 0
             }
         }
-        
+
         self.infoViewModel.setAlpha(with: alpha)
         self.headerView.setup(with: infoViewModel.headerRepresentable)
         self.navigationController?.navigationBar.backgroundColor = self.whiteColor.withAlphaComponent(alpha)

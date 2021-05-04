@@ -12,6 +12,7 @@ class SkillsListTableViewCell: UITableViewCell {
     //    @IBOutlet weak var view: UIView!
     @IBOutlet weak var verticalStack: UIStackView!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.translatesAutoresizingMaskIntoConstraints = false
@@ -37,11 +38,15 @@ class SkillsListTableViewCell: UITableViewCell {
         var horizontalStack = UIStackView()
         horizontalStack.setupStack(with: padding.x)
         
+        
+//        linearLayout.setup(with: representable.skills ?? [], maxWidth: maxWidth, padding: padding)
+//        self.setNeedsLayout()
+//        self.layoutIfNeeded()
         for skill in representable.skills ?? [] {
             labelSize = skill.name.labelSize(for: font, widthLimit: (maxWidth - (padding.x*2)))
             cell = SkillCell(frame: CGRect(x: 0, y: 0, width: labelSize.width + 35, height: labelSize.height))
             cell.setupCell(with: skill.name)
-            
+
             if (labelSize.width + 40 + (padding.x*2)) > remainingWidth {
                 remainingWidth = maxWidth
                 verticalStack.addArrangedSubview(horizontalStack)

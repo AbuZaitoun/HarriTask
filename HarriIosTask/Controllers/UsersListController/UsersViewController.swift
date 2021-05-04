@@ -43,8 +43,9 @@ class UsersViewController: UIViewController {
         self.usersViewModel = UserViewModel(with: [], total: 1)
         self.setTableViewDelegates()
         self.setupPullToRefresh()
+ 
 //        self.setNeedsStatusBarAppearanceUpdate()
-        
+//        self.extendedLayoutIncludesOpaqueBars = true
     }
     
 //    override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -53,13 +54,15 @@ class UsersViewController: UIViewController {
 //
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.navigationController?.navigationBar.barStyle = .black
+        self.navigationController?.navigationBar.isTranslucent = false
         setupNavigationTitle()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        setupNavigationTitle()
-        self.navigationController?.navigationBar.barStyle = .black
+ 
     }
     /**
      setup navigation title
@@ -138,3 +141,16 @@ class UsersViewController: UIViewController {
 }
 
 
+public extension UIImage {
+    
+    convenience init(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
+        let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
+        color.setFill()
+        UIRectFill(rect)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        self.init(cgImage: (image?.cgImage!)!)
+    }
+    
+}
