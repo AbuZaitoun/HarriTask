@@ -8,25 +8,49 @@
 import UIKit
 import JNAvatarWithInitials
 
+/// TableView Header View
 class TableViewHeaderView: UIView {
     
-    
+    /// Image width
     private var imageWidth: NSLayoutConstraint!
+    
+    /// Width constraint
     private var widthConstraint: NSLayoutConstraint!
     
+    /// Send button
     private var sendButton: UIButton!
+    
+    /// Edit button
     private var editButton: UIButton!
+    
+    /// Profile picture
     private var profilePicture: JNAvatarWithInitials!
+    
+    /// Name label
     private var nameLabel: UILabel!
+    
+    /// Position label
     private var positionLabel: UILabel!
+    
+    /// Image view
     private var imageView: JNAvatarWithInitials!
     
-    
+    /// Image view button
     private var imageViewBottom = NSLayoutConstraint()
+    
+    /// Container view
     private var containerView: UIView!
+    
+    /// Container view height
     private var containerViewHeight = NSLayoutConstraint()
+    
+    /// Image view height
     private var imageViewHeight: NSLayoutConstraint!
     
+    /**
+     Initializer
+     - Parameter frame: CGRect
+     */
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -34,7 +58,7 @@ class TableViewHeaderView: UIView {
         self.addSubview(containerView)
         
         self.createBackgroundPicture()
-        self.setupBackgroundPicture()
+        self.setupBackgroundPictureProperties()
         self.createProfilePicture()
         self.setupProfilePictureProperties()
         self.createNameLabel()
@@ -43,11 +67,15 @@ class TableViewHeaderView: UIView {
         self.setupPositionLabelProperties()
         self.setViewConstraints()
         self.createButtons()
-        self.setupButtons()
+        self.setupButtonsProperties()
         self.setSkeletonableActive()
     }
     
-    func setViewConstraints() {
+    /**
+     Set view constraints
+     
+     */
+    private func setViewConstraints() {
         // UIView Constraints
         NSLayoutConstraint.activate([
             self.widthAnchor.constraint(equalTo: containerView.widthAnchor),
@@ -70,15 +98,19 @@ class TableViewHeaderView: UIView {
         imageViewHeight.isActive = true
     }
     
+    /**
+     Initializer
+     - Parameter coder: NSCoder
+     */
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    override func awakeFromNib() {
-        
-        //        self.widthConstraint.constant = UIScreen.main.bounds.width
-    }
-    
+
+    /**
+     Set up view with representable
+     - Parameter representable: UserInfoTableViewHeaderRepresentable
+     
+     */
     func setupView(with representable: UserInfoTableViewHeaderRepresentable) {
         self.nameLabel.text = representable.name
         self.nameLabel.hideSkeleton()
@@ -93,6 +125,11 @@ class TableViewHeaderView: UIView {
         self.editButton.isHidden = false
     }
     
+    /**
+     Scroll view did scroll
+     - Parameter scrollView: UIScrollView
+     
+     */
     func scrollViewDidScroll(scrollView: UIScrollView) {
         containerViewHeight.constant = scrollView.contentInset.top
         
@@ -102,6 +139,10 @@ class TableViewHeaderView: UIView {
         imageViewHeight.constant = max(offsetY + scrollView.contentInset.top, scrollView.contentInset.top)
     }
     
+    /**
+     Create profile picture
+     
+     */
     private func createProfilePicture(){
         self.profilePicture = JNAvatarWithInitials()
         self.containerView.addSubview(self.profilePicture)
@@ -112,6 +153,10 @@ class TableViewHeaderView: UIView {
         self.profilePicture.widthAnchor.constraint(equalToConstant: 64).isActive = true
     }
     
+    /**
+     Setup profile picture properties
+     
+     */
     private func setupProfilePictureProperties(){
         self.profilePicture.layer.cornerRadius = 32
         self.profilePicture.layer.borderWidth = 2
@@ -122,6 +167,10 @@ class TableViewHeaderView: UIView {
         self.profilePicture.initialLabelInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
     }
     
+    /**
+     Create name label
+     
+     */
     private func createNameLabel(){
         self.nameLabel = UILabel()
         self.nameLabel.text = "something something"
@@ -131,11 +180,19 @@ class TableViewHeaderView: UIView {
         self.nameLabel.centerXAnchor.constraint(equalTo: self.containerView.centerXAnchor).isActive = true
     }
     
+    /**
+     Setup name label properties
+     
+     */
     private func setupNameLabelProperties(){
         self.nameLabel.textColor = .white
         self.nameLabel.font = UIFont(name: "OpenSans-Regular", size: 20)
     }
     
+    /**
+     Create position label
+     
+     */
     private func createPositionLabel(){
         self.positionLabel = UILabel()
         self.positionLabel.text = ""
@@ -145,21 +202,38 @@ class TableViewHeaderView: UIView {
         self.positionLabel.centerXAnchor.constraint(equalTo: self.containerView.centerXAnchor).isActive = true
     }
     
+    /**
+     Set up position label properties
+     
+     */
     private func setupPositionLabelProperties(){
         self.positionLabel.textColor = .white
         self.positionLabel.font = UIFont(name: "OpenSans-Regular", size: 13)
     }
     
+    /**
+     Create background picture
+     
+     */
     private func createBackgroundPicture() {
         self.imageView = JNAvatarWithInitials()
         self.containerView.addSubview(self.imageView)
     }
-    private func setupBackgroundPicture(){
+    
+    /**
+     Set up background picture
+     
+     */
+    private func setupBackgroundPictureProperties(){
         self.imageView.clipsToBounds = true
         self.imageView.backgroundColor = .white
         self.imageView.contentMode = .scaleAspectFill
     }
     
+    /**
+     Create buttons
+     
+     */
     private func createButtons() {
         let view = UIView()
         self.containerView.addSubview(view)
@@ -191,7 +265,11 @@ class TableViewHeaderView: UIView {
         
     }
     
-    private func setupButtons(){
+    /**
+     Setup buttons
+     
+     */
+    private func setupButtonsProperties(){
         self.editButton.layer.cornerRadius = 21
         self.sendButton.layer.cornerRadius = 21
         self.editButton.backgroundColor = .white
@@ -214,6 +292,10 @@ class TableViewHeaderView: UIView {
         self.editButton.isHidden = true
     }
     
+    /**
+     Setup skeleton active
+     
+     */
     private func setSkeletonableActive() {
         self.containerView.isSkeletonable = true
         self.containerView.showSkeleton()

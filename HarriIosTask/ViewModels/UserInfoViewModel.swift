@@ -66,7 +66,9 @@ class UserInfoViewModel: ViewModel {
         self.availabilityRepresentables = [UserInfoAvailabilityRepresentable(with: userDetails.availability.availabilities)]
     }
     
-    /// Initializer
+    /**
+     Initializer
+     */
     init() {
         self.aboutRepresentables = []
         self.experienceRepresentables = []

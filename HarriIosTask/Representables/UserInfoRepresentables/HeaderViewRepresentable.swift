@@ -7,9 +7,16 @@
 
 import UIKit
 
+/// Header View Representable
 class HeaderViewRepresentable {
+    
+    /// Alpha
     var alpha: CGFloat
     
+    /**
+     initializer
+     - Parameter alpha: CGFloat
+     */
     init(alpha: CGFloat){
         self.alpha = alpha
     }

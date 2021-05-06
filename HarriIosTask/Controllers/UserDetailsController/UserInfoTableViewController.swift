@@ -44,7 +44,10 @@ class UserInfoTableViewController: UIViewController {
     /// Alpha
     private(set) var alpha: CGFloat?
     
-    /// View did lead
+    
+    /**
+     View did lead
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
         self.headerView = HeaderView(view: self.view)
@@ -59,6 +62,9 @@ class UserInfoTableViewController: UIViewController {
 //        navigationController?.interactivePopGestureRecognizer?.delegate = nil
         
     }
+    /** Place navigation bar
+     
+     */
     func placeNavigationBar(){
         
         //Create navigation item for presenting content
@@ -134,7 +140,9 @@ class UserInfoTableViewController: UIViewController {
     //        self.navigationController?.navigationBar.barTintColor = UIColor(named: "AccentColor")
     //    }
     
-    /// Request data
+    /** Request data
+     
+     */
     private func requestData() {
         UsersModel.fetchUserInfo(userID: String(self.user?.id ?? -1), completion: { [weak self] (userDetails, error) in
             guard let self = self else { return }
@@ -160,8 +168,9 @@ class UserInfoTableViewController: UIViewController {
             
         })
     }
-    
-    /// Set up table view
+    /** Setup table view
+     
+     */
     private func setupTableView(){
         self.tableView.dataSource = self
         self.tableView.delegate = self
@@ -172,7 +181,9 @@ class UserInfoTableViewController: UIViewController {
         self.tableView.tableHeaderView = tableViewHeaderView
     }
     
-    /// Initialize view models
+    /** Initialize view models
+     
+     */
     private func initializeViewModels() {
         self.infoViewModel = UserInfoViewModel()
     }
@@ -186,13 +197,17 @@ class UserInfoTableViewController: UIViewController {
         }
     }
     
-    /// Set up header view
+    /** Set up header view
+     
+     */
     func setupTableViewHeaderView(){
         self.navigationController?.navigationBar.tintColor = self.whiteColor.withAlphaComponent(1)
         self.navigationController?.navigationBar.backgroundColor = self.whiteColor.withAlphaComponent(0)
     }
     
-    /// Setup header view
+    /** Setup header view
+     
+     */
     private func setupHeaderView() {
         var heightOfSafeArea: CGFloat = 0
         
@@ -210,7 +225,10 @@ class UserInfoTableViewController: UIViewController {
         headerView.heightAnchor.constraint(equalToConstant: heightOfSafeArea).isActive = true
     }
     
-    /// Set up navigation bar transculent
+    
+    /** Set up navigation bar transculent
+     
+     */
     private func setNavbarTransculent() {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()

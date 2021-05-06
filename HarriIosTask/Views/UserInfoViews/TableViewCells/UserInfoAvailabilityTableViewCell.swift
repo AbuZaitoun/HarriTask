@@ -10,7 +10,7 @@ import UIKit
 /// User Info Availability Table View Cell
 class UserInfoAvailabilityTableViewCell: UITableViewCell {
 
-    
+    /// Vertical stack
     @IBOutlet weak var verticalStack: UIStackView!
     
     /// awake from nib
@@ -19,6 +19,9 @@ class UserInfoAvailabilityTableViewCell: UITableViewCell {
         self.translatesAutoresizingMaskIntoConstraints = false
     }
     
+    /**
+     Prepare for reuse
+     */
     override func prepareForReuse() {
         for view in self.verticalStack.arrangedSubviews {
             self.verticalStack.removeArrangedSubview(view)

@@ -52,6 +52,11 @@ class UsersViewController: UIViewController {
 //        return .darkContent
 //    }
 //
+    
+    /**
+     view did appear
+     - Parameter animated: Boolean
+     */
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.navigationController?.navigationBar.barStyle = .black
@@ -60,6 +65,10 @@ class UsersViewController: UIViewController {
         
     }
     
+    /**
+     view will appear
+     - Parameter animated: Boolean
+     */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
  

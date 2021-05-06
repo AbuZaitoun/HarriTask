@@ -67,7 +67,6 @@
 		76F8F052263EB4780063EB61 /* UserInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F8F051263EB4780063EB61 /* UserInfoViewModel.swift */; };
 		76F8F057263EC24D0063EB61 /* AvailabilityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F8F056263EC24D0063EB61 /* AvailabilityCell.swift */; };
 		76F8F05B263EC6700063EB61 /* AvailabilityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76F8F05A263EC6700063EB61 /* AvailabilityCell.xib */; };
-		76FC7A182638B0FC0053FFDE /* StretchyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FC7A172638B0FC0053FFDE /* StretchyHeader.swift */; };
 		AAB3ED51C2C673D55A725450 /* Pods_HarriIosTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73AEFEF0184910AD57C2EBF9 /* Pods_HarriIosTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -135,7 +134,6 @@
 		76F8F051263EB4780063EB61 /* UserInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewModel.swift; sourceTree = "<group>"; };
 		76F8F056263EC24D0063EB61 /* AvailabilityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailabilityCell.swift; sourceTree = "<group>"; };
 		76F8F05A263EC6700063EB61 /* AvailabilityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailabilityCell.xib; sourceTree = "<group>"; };
-		76FC7A172638B0FC0053FFDE /* StretchyHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeader.swift; sourceTree = "<group>"; };
 		9D4C55E279BCA97AC91F54A4 /* Pods-HarriIosTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarriIosTask.release.xcconfig"; path = "Target Support Files/Pods-HarriIosTask/Pods-HarriIosTask.release.xcconfig"; sourceTree = "<group>"; };
 		AB509C1364E2C818CFC4710E /* Pods-HarriIosTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarriIosTask.debug.xcconfig"; path = "Target Support Files/Pods-HarriIosTask/Pods-HarriIosTask.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -392,7 +390,6 @@
 			children = (
 				76ABFAD226304259007A2D41 /* UserInfoHeaderView.swift */,
 				76ABFAA6262DC44C007A2D41 /* TableViewHeaderView.swift */,
-				76FC7A172638B0FC0053FFDE /* StretchyHeader.swift */,
 				76ABFABD262F0E41007A2D41 /* HeaderView.xib */,
 			);
 			path = Headers;
@@ -581,7 +578,6 @@
 				767C37D22629A03000D8980C /* UserInfoAvailabilityTableViewCell.swift in Sources */,
 				767C37E4262C1A4000D8980C /* Work.swift in Sources */,
 				76ABFAA7262DC44C007A2D41 /* TableViewHeaderView.swift in Sources */,
-				76FC7A182638B0FC0053FFDE /* StretchyHeader.swift in Sources */,
 				767C37B82625954200D8980C /* LoadingTableViewCellRepresentable.swift in Sources */,
 				76F8F052263EB4780063EB61 /* UserInfoViewModel.swift in Sources */,
 				76F8F04C263E1D720063EB61 /* LinearLayoutView.swift in Sources */,

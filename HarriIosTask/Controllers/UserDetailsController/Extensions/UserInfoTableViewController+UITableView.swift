@@ -166,9 +166,22 @@ extension UserInfoTableViewController: UITableViewDelegate, SkeletonTableViewDat
             return ""
         }
     }
+    
+    /**
+     number of sections
+     - Parameter collectionSkeletonView: UITableView
+     - Returns int, number of sections
+     */
     func numSections(in collectionSkeletonView: UITableView) -> Int {
         return 4
     }
+    
+    /**
+     number of sections
+     - Parameter skeletonView: UITableView
+     - Parameter section: Integer
+     - Returns int, number of rows in sections
+     */
     func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:

@@ -12,6 +12,7 @@ class UserInfoAboutRepresentable: TableViewCellRepresentable {
     
     /// No info to show
     private let NO_INFO_TEXT = "No info to show"
+    
     /// About text
     private(set) var aboutText: NSAttributedString?
     
@@ -23,6 +24,7 @@ class UserInfoAboutRepresentable: TableViewCellRepresentable {
     
     /// Is expanded
     var isExpanded: Bool
+    
     /** Initializer
      - Parameter userInfo: UserInfo
     */

@@ -7,10 +7,17 @@
 
 import UIKit
 
+/// Availability Cell
 class AvailabilityCell: UIView {
-
+    
+    /// Label
     @IBOutlet weak var label: UILabel!
     
+    /**
+     Initializer
+     - Parameter frame: CGRect
+     
+     */
     override init(frame: CGRect) {
         
         super.init(frame: frame)
@@ -19,11 +26,19 @@ class AvailabilityCell: UIView {
         self.setupTitle()
     }
     
+    /**
+     Initializer
+     - Parameter coder: NSCoder
+     
+     */
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    /// setup title
+    /**
+     Setup title
+     
+     */
     func setupTitle(){
         
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -39,11 +54,19 @@ class AvailabilityCell: UIView {
         self.layer.cornerRadius = 5
     }
     
+    /**
+     Setup cell with string
+     - Parameter string: String
+     
+     */
     func setupCell(with string: String) {
         self.label.text = string
     }
     
-    /// awake from nib
+    /**
+     Awake from nib
+     
+     */
     override func awakeFromNib() {
         super.awakeFromNib()
         Bundle.main.loadNibNamed("AvailabilityCell", owner: self, options: nil)

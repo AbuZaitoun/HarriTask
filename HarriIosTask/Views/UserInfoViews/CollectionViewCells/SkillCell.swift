@@ -13,8 +13,13 @@ class SkillCell: UIView {
     /// Label
     @IBOutlet var label: UILabel!
     
+    /// Image
     @IBOutlet weak var image: UIImageView!
     
+    /**
+     Initializer
+     - Parameter frame: CGRect
+     */
     override init(frame: CGRect) {
         
         super.init(frame: frame)
@@ -39,18 +44,28 @@ class SkillCell: UIView {
         
     }
     
+    /**
+     Initializer
+     - Parameter coder: NSCoder
+     */
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    /// awake from nib
+    /**
+     Awake from nib
+
+     */
     override func awakeFromNib() {
         super.awakeFromNib()
         Bundle.main.loadNibNamed("SkillCell", owner: self, options: nil)
         self.setupTitle()
     }
     
-    /// setup title
+    /**
+     Setup title
+     
+     */
     func setupTitle(){
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor(named: "HarriBlue")?.cgColor
@@ -64,6 +79,10 @@ class SkillCell: UIView {
         self.label.text = representable.skillName ?? ""
     }
     
+    /**
+     Setup cell with string
+     - Parameter string: CGRect
+     */
     func setupCell(with string: String) {
         self.label.text = string
     }

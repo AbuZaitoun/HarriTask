@@ -7,17 +7,23 @@
 
 import UIKit
 
+/// Skills List TableView Cell
 class SkillsListTableViewCell: UITableViewCell {
     
     //    @IBOutlet weak var view: UIView!
     @IBOutlet weak var verticalStack: UIStackView!
     
-    
+    /**
+     Awake from nib
+     */
     override func awakeFromNib() {
         super.awakeFromNib()
         self.translatesAutoresizingMaskIntoConstraints = false
     }
     
+    /**
+     Prepare for reuse
+     */
     override func prepareForReuse() {
         for view in self.verticalStack.arrangedSubviews {
             self.verticalStack.removeArrangedSubview(view)
@@ -25,6 +31,11 @@ class SkillsListTableViewCell: UITableViewCell {
         }
     }
     
+    /**
+     Setup Cell with representable
+     - Parameter representable: UserInfoSkillsRepresentable
+     - Parameter width: CGFloat
+     */
     func setupCell(with representable: UserInfoSkillsRepresentable, width: CGFloat?){
         self.hideSkeleton()
         let maxWidth = (width ?? CGFloat(400)) - 30

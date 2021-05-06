@@ -20,6 +20,11 @@ class ZeroExperienceCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    /**
+     Setup cell with representable
+     - Parameter representable: ZeroExperienceRepresentable
+     */
     func setup(with representable: ZeroExperienceRepresentable) {
         self.label.text = representable.noExperienceText
     }
