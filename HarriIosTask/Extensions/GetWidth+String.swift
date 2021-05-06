@@ -7,7 +7,18 @@
 
 import Foundation
 import UIKit
+
+/// String
 extension String {
+    
+    
+    /**
+     label width
+     - Parameters:
+       - font: UIFont
+       - widthLimit: CGFloat
+     - Returns: CGFloat, width of label
+     */
     func labelWidth(for font: UIFont, widthLimit: CGFloat) -> CGFloat{
         let cellWord = self
         let size = CGSize(width: widthLimit, height: 33)
@@ -16,7 +27,13 @@ extension String {
         
         return finishSize.width
     }
-    
+    /**
+     label height
+     - Parameters:
+       - font: UIFont
+       - widthLimit: CGFloat
+     - Returns: CGFloat, height of label
+     */
     func labelHeight(for font: UIFont, widthLimit: CGFloat) -> CGFloat {
         let cellWord = self
         let size = CGSize(width: widthLimit, height: 33)
@@ -26,6 +43,13 @@ extension String {
         return finishSize.height
     }
     
+    /**
+     label size
+     - Parameters:
+       - font: UIFont
+       - widthLimit: CGFloat
+     - Returns: CGSize, size of label
+     */
     func labelSize(for font: UIFont, widthLimit: CGFloat) -> CGSize {
         let cellWord = self
         let size = CGSize(width: widthLimit, height: 40)

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		763393462634713100A712F7 /* GetWidth+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763393452634713100A712F7 /* GetWidth+String.swift */; };
-		7633934A263595CE00A712F7 /* Combinations+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76339349263595CE00A712F7 /* Combinations+Array.swift */; };
 		7633934D2636CA7A00A712F7 /* SkillsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7633934C2636CA7A00A712F7 /* SkillsListTableViewCell.swift */; };
 		763393502636CDDF00A712F7 /* SkillCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7633934F2636CDDF00A712F7 /* SkillCell.xib */; };
 		7639246A261B10FE009097A6 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76392469261B10FE009097A6 /* UserData.swift */; };
@@ -75,7 +74,6 @@
 /* Begin PBXFileReference section */
 		73AEFEF0184910AD57C2EBF9 /* Pods_HarriIosTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HarriIosTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		763393452634713100A712F7 /* GetWidth+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetWidth+String.swift"; sourceTree = "<group>"; };
-		76339349263595CE00A712F7 /* Combinations+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Combinations+Array.swift"; sourceTree = "<group>"; };
 		7633934C2636CA7A00A712F7 /* SkillsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsListTableViewCell.swift; sourceTree = "<group>"; };
 		7633934F2636CDDF00A712F7 /* SkillCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkillCell.xib; sourceTree = "<group>"; };
 		76392469261B10FE009097A6 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
@@ -238,7 +236,6 @@
 				767C37F5262C3B8600D8980C /* ToString+Date.swift */,
 				76ABFAC1262F1016007A2D41 /* AddTrailing+UILabel.swift */,
 				763393452634713100A712F7 /* GetWidth+String.swift */,
-				76339349263595CE00A712F7 /* Combinations+Array.swift */,
 				76F8F048263AB8610063EB61 /* setUp+UIStackView.swift */,
 			);
 			path = Extensions;
@@ -580,7 +577,6 @@
 				76ABFA88262D8357007A2D41 /* UserInfoAvailabilityRepresentable.swift in Sources */,
 				76CC6CEE263068620061FA82 /* ZeroExperienceRepresentable.swift in Sources */,
 				767C37EA262C2AE500D8980C /* UserInfoExperienceRepresentable.swift in Sources */,
-				7633934A263595CE00A712F7 /* Combinations+Array.swift in Sources */,
 				767C37F6262C3B8600D8980C /* ToString+Date.swift in Sources */,
 				767C37D22629A03000D8980C /* UserInfoAvailabilityTableViewCell.swift in Sources */,
 				767C37E4262C1A4000D8980C /* Work.swift in Sources */,
