@@ -56,14 +56,9 @@ class UserInfoTableViewController: UIViewController {
         self.setupTableViewHeaderView()
         self.setupHeaderView()
         self.requestData()
+        self.setupNavigationControllerBarColor()
         self.tableView.isSkeletonable = true
         self.tableView.showAnimatedGradientSkeleton()
-        self.navigationController?.navigationBar.backgroundColor = self.whiteColor.withAlphaComponent(0)
-        self.navigationController?.navigationBar.tintColor = self.whiteColor.withAlphaComponent(1)
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navbarFont!, NSAttributedString.Key.foregroundColor: self.harriBlue]
-        self.title = ""
-//        navigationController?.interactivePopGestureRecognizer?.delegate = nil
-        
     }
     /** Place navigation bar
      
@@ -98,7 +93,6 @@ class UserInfoTableViewController: UIViewController {
         navigationBar.tintColor = self.whiteColor.withAlphaComponent(1)
         
         navigationBar.items = [item]
-        navigationBar.delegate = self
     }
     
     /** View will appear
@@ -129,16 +123,6 @@ class UserInfoTableViewController: UIViewController {
         self.navigationController?.navigationBar.layer.zPosition = -1
     }
     
-    /** View will move
-     - Parameter parent: UIViewController
-     */
-    //    override func willMove(toParent parent: UIViewController?) {
-    //        super.willMove(toParent: parent)
-    //
-    //        self.navigationController?.navigationBar.isTranslucent = false
-    //        self.navigationController?.navigationBar.barTintColor = UIColor(named: "AccentColor")
-    //    }
-    
     /** Request data
      
      */
@@ -167,6 +151,7 @@ class UserInfoTableViewController: UIViewController {
             
         })
     }
+    
     /** Setup table view
      
      */
@@ -176,13 +161,14 @@ class UserInfoTableViewController: UIViewController {
         self.tableView.backgroundColor = UIColor(named: "BackgroundColor")
         self.tableView.contentInsetAdjustmentBehavior = .never
         self.extendedLayoutIncludesOpaqueBars = true
-        
         self.tableView.tableHeaderView = tableViewHeaderView
-        
-//        self.navigationController?.navigationBar.layer.zPosition = -1
-//        edgesForExtendedLayout = []
-
-//        UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.addSubview(tableViewHeaderView)
+    }
+    
+    private func setupNavigationControllerBarColor(){
+        self.navigationController?.navigationBar.backgroundColor = self.whiteColor.withAlphaComponent(0)
+        self.navigationController?.navigationBar.tintColor = self.whiteColor.withAlphaComponent(1)
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navbarFont!, NSAttributedString.Key.foregroundColor: self.harriBlue]
+        self.title = ""
     }
     
     /** Initialize view models
@@ -258,7 +244,6 @@ class UserInfoTableViewController: UIViewController {
                 self.title = self.user?.fullName
                 self.navigationController?.navigationBar.barStyle = .default
                 self.navigationController?.navigationBar.layer.shadowOpacity = 0.8
-//                self.navigationController?.navigationBar.layer.zPosition = 1
             }
         } else {
             UIView.animate(withDuration: 0.6) { [weak self] in
@@ -267,23 +252,11 @@ class UserInfoTableViewController: UIViewController {
                 self.title = ""
                 self.navigationController?.navigationBar.barStyle = .black
                 self.navigationController?.navigationBar.layer.shadowOpacity = 0
-//                self.navigationController?.navigationBar.layer.zPosition = -1
-                
             }
         }
-//        if alpha == 1 {
-//            self.navigationController?.setNavigationBarHidden(false, animated: true)
-//        }
+
         self.infoViewModel.setAlpha(with: alpha)
         self.headerView.setup(with: infoViewModel.headerRepresentable)
-//        self.navigationController?.navigationBar.backgroundColor = self.whiteColor.withAlphaComponent(alpha)
-//        self.navigationController?.navigationBar.barTintColor = self.whiteColor.withAlphaComponent(1)
     }
     
-}
-
-extension UserInfoTableViewController: UINavigationBarDelegate {
-    func position(for bar: UIBarPositioning) -> UIBarPosition {
-        return .topAttached
-    }
 }
