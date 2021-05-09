@@ -58,7 +58,10 @@ class UserInfoTableViewController: UIViewController {
         self.requestData()
         self.tableView.isSkeletonable = true
         self.tableView.showAnimatedGradientSkeleton()
-        
+        self.navigationController?.navigationBar.backgroundColor = self.whiteColor.withAlphaComponent(0)
+        self.navigationController?.navigationBar.tintColor = self.whiteColor.withAlphaComponent(1)
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navbarFont!, NSAttributedString.Key.foregroundColor: self.harriBlue]
+        self.title = ""
 //        navigationController?.interactivePopGestureRecognizer?.delegate = nil
         
     }
@@ -104,8 +107,6 @@ class UserInfoTableViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.clipsToBounds = false
-//        self.navigationController?.setNavigationBarHidden(true, animated: false)
-//        self.placeNavigationBar()
         self.setNavbarTransculent()
     }
     
@@ -114,10 +115,7 @@ class UserInfoTableViewController: UIViewController {
      */
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.navigationController?.navigationBar.backgroundColor = self.whiteColor.withAlphaComponent(0)
-        self.navigationController?.navigationBar.tintColor = self.whiteColor.withAlphaComponent(1)
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navbarFont!, NSAttributedString.Key.foregroundColor: self.harriBlue]
-        
+        self.navigationController?.navigationBar.layer.zPosition = 1
     }
     
     /** View will disappear
@@ -128,6 +126,7 @@ class UserInfoTableViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.barTintColor = UIColor(named: "AccentColor")
         self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationController?.navigationBar.layer.zPosition = -1
     }
     
     /** View will move
@@ -179,6 +178,11 @@ class UserInfoTableViewController: UIViewController {
         self.extendedLayoutIncludesOpaqueBars = true
         
         self.tableView.tableHeaderView = tableViewHeaderView
+        
+//        self.navigationController?.navigationBar.layer.zPosition = -1
+//        edgesForExtendedLayout = []
+
+//        UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.addSubview(tableViewHeaderView)
     }
     
     /** Initialize view models
@@ -222,7 +226,7 @@ class UserInfoTableViewController: UIViewController {
         headerView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         headerView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
         headerView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-        headerView.heightAnchor.constraint(equalToConstant: heightOfSafeArea).isActive = true
+        headerView.heightAnchor.constraint(equalToConstant: heightOfSafeArea + ((self.navigationController?.navigationBar.frame.size.height) ?? CGFloat(0))).isActive = true
     }
     
     
@@ -240,8 +244,6 @@ class UserInfoTableViewController: UIViewController {
         self.navigationController?.navigationBar.layer.shadowRadius = 2
         
         self.navigationController?.navigationBar.isTranslucent = true
-        
-        self.title = ""
     }
     
     /** Set up navitation bar background color
@@ -256,6 +258,7 @@ class UserInfoTableViewController: UIViewController {
                 self.title = self.user?.fullName
                 self.navigationController?.navigationBar.barStyle = .default
                 self.navigationController?.navigationBar.layer.shadowOpacity = 0.8
+//                self.navigationController?.navigationBar.layer.zPosition = 1
             }
         } else {
             UIView.animate(withDuration: 0.6) { [weak self] in
@@ -264,13 +267,17 @@ class UserInfoTableViewController: UIViewController {
                 self.title = ""
                 self.navigationController?.navigationBar.barStyle = .black
                 self.navigationController?.navigationBar.layer.shadowOpacity = 0
+//                self.navigationController?.navigationBar.layer.zPosition = -1
+                
             }
         }
-        
+//        if alpha == 1 {
+//            self.navigationController?.setNavigationBarHidden(false, animated: true)
+//        }
         self.infoViewModel.setAlpha(with: alpha)
         self.headerView.setup(with: infoViewModel.headerRepresentable)
-        self.navigationController?.navigationBar.backgroundColor = self.whiteColor.withAlphaComponent(alpha)
-        self.navigationController?.navigationBar.barTintColor = self.whiteColor.withAlphaComponent(1)
+//        self.navigationController?.navigationBar.backgroundColor = self.whiteColor.withAlphaComponent(alpha)
+//        self.navigationController?.navigationBar.barTintColor = self.whiteColor.withAlphaComponent(1)
     }
     
 }
