@@ -59,7 +59,6 @@ class UsersViewController: UIViewController {
      */
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.navigationController?.navigationBar.barStyle = .black
         self.navigationController?.navigationBar.isTranslucent = false
         setupNavigationTitle()
         
@@ -71,6 +70,7 @@ class UsersViewController: UIViewController {
      */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.barStyle = .black
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     /**
