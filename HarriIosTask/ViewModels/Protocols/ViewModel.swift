@@ -9,6 +9,9 @@ import UIKit
 
 /// View Model
 protocol ViewModel {
+    
+    var NUMBER_OF_SECTIONS: Int { get set }
+    
     /**
      Get number of sections
      - Returns: Number of Sections as Int.
@@ -36,4 +39,10 @@ protocol ViewModel {
      - Returns: Cell representable as tableView cell representable.
      */
     func representableForRow(at indexPath: IndexPath) -> TableViewCellRepresentable?
+}
+
+extension ViewModel {
+    func numberOfSections() -> Int {
+        return NUMBER_OF_SECTIONS
+    }
 }

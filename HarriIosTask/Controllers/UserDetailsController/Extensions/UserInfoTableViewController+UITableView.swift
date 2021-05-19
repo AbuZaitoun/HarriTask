@@ -17,7 +17,7 @@ extension UserInfoTableViewController: UITableViewDelegate, SkeletonTableViewDat
      - Returns: Integer, number of sections in tableView
      */
     func numberOfSections(in tableView: UITableView) -> Int {
-        return self.NUMBER_OF_SECTIONS
+        return self.infoViewModel.numberOfSections()
     }
     
     /** Number of rows in section

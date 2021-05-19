@@ -61,7 +61,6 @@ class UsersViewController: UIViewController {
         super.viewDidAppear(animated)
         self.navigationController?.navigationBar.isTranslucent = false
         setupNavigationTitle()
-        
     }
     
     /**
@@ -78,8 +77,8 @@ class UsersViewController: UIViewController {
      */
     func setupNavigationTitle(){
         let navbarFont = UIFont(name: "OpenSans-Regular", size: 21)
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navbarFont!, NSAttributedString.Key.foregroundColor: UIColor.white]
-        navigationController?.title = "Harri"
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navbarFont!, NSAttributedString.Key.foregroundColor: UIColor.white]
+        self.navigationController?.title = "Harri"
         self.navigationController?.navigationBar.backgroundColor = UIColor(named: "AccentColor")
         self.navigationController?.navigationBar.barTintColor = UIColor(named: "AccentColor")
         

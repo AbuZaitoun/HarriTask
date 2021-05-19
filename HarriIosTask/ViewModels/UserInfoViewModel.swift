@@ -11,7 +11,7 @@ import UIKit
 class UserInfoViewModel: ViewModel {
     
     /// Number  of sections
-    private let NUMBER_OF_SECTIONS = 4
+    var NUMBER_OF_SECTIONS: Int = 4
     
     /// About representables
     var aboutRepresentables: [TableViewCellRepresentable]
@@ -46,11 +46,7 @@ class UserInfoViewModel: ViewModel {
         }
         
         self.aboutRepresentables = [UserInfoAboutRepresentable(with: userDetails.userInfo)]
-        self.experienceRepresentables = []
-        self.availabilityRepresentables = []
-        self.skillsRepresentables = []
         self.tableViewHeaderRepresentable = UserInfoTableViewHeaderRepresentable(with: user)
-        self.headerRepresentable = HeaderViewRepresentable(alpha: 0)
         
         for experience in userDetails.experience {
             self.experienceRepresentables.append(UserInfoExperienceRepresentable(with: experience.work))

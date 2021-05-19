@@ -10,7 +10,7 @@ import UIKit
 class UserViewModel: ViewModel {
     
     /// Number of sections
-    private let NUMBER_OF_SECTIONS = 1
+    var NUMBER_OF_SECTIONS: Int = 1
     
     /// Users
     private(set) var users: [User]
@@ -61,14 +61,6 @@ class UserViewModel: ViewModel {
     }
     
     // MARK: - ViewModel Conformance
-    
-    /**
-     Get number of sections
-     - Returns: Number of Sections as Int.
-     */
-    func numberOfSections() -> Int {
-        return self.NUMBER_OF_SECTIONS
-    }
     
     /**
      Get number of rows in sections.

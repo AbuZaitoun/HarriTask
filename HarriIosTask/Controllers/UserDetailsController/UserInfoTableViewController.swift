@@ -14,9 +14,6 @@ class UserInfoTableViewController: UIViewController {
     /// Table view
     @IBOutlet weak var tableView: UITableView!
     
-    /// Number of sections
-    let NUMBER_OF_SECTIONS = 4
-    
     /// navigation bar font
     let navbarFont = UIFont(name: "OpenSans-Regular", size: 14)
     
@@ -60,6 +57,7 @@ class UserInfoTableViewController: UIViewController {
         self.tableView.isSkeletonable = true
         self.tableView.showAnimatedGradientSkeleton()
     }
+    
     /** Place navigation bar
      
      */
@@ -121,6 +119,7 @@ class UserInfoTableViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = UIColor(named: "AccentColor")
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         self.navigationController?.navigationBar.layer.zPosition = -1
+        self.navigationController?.title = "Harri"
     }
     
     /** Request data
