@@ -10,6 +10,9 @@ import Foundation
 /// String
 extension String {
 
+    enum DateFormats: String {
+        case defaultFormat = "EEE, DD MMM yyyy HH:mm:ss zzz"
+    }
     
     /** Convert String to Date with given format
      - Parameter format: String, date format

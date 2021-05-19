@@ -80,7 +80,7 @@ enum UsersRouter: URLRequestConvertible {
             break
         }
         
-//        print(urlRequest.headers)
+        print(urlRequest)
         return urlRequest
     }
     

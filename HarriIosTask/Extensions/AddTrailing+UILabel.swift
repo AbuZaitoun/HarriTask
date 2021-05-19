@@ -61,7 +61,6 @@ extension UILabel {
         return self.text!.count
     }
     
-    
     /// Is UILabel Truncated
     var isTruncated: Bool {
         

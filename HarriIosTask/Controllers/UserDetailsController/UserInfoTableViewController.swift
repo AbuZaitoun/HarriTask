@@ -254,7 +254,7 @@ class UserInfoTableViewController: UIViewController {
                 self.navigationController?.navigationBar.layer.shadowOpacity = 0
             }
         }
-
+        
         self.infoViewModel.setAlpha(with: alpha)
         self.headerView.setup(with: infoViewModel.headerRepresentable)
     }
