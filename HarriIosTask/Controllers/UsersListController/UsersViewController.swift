@@ -43,15 +43,7 @@ class UsersViewController: UIViewController {
         self.usersViewModel = UserViewModel(with: [], total: 1)
         self.setTableViewDelegates()
         self.setupPullToRefresh()
- 
-//        self.setNeedsStatusBarAppearanceUpdate()
-//        self.extendedLayoutIncludesOpaqueBars = true
     }
-    
-//    override var preferredStatusBarStyle: UIStatusBarStyle {
-//        return .darkContent
-//    }
-//
     
     /**
      view did appear
